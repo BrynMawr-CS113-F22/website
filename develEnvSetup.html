@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.16">
+<title>Setting up your development environment</title>
+<link rel="stylesheet" href="style/cs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article">
+<div id="header">
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_setting_up_your_development_environment">Setting up your development environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Step 1: Install VS Code</strong>
+First, download VS Code from <a href="https://code.visualstudio.com/download" class="bare">https://code.visualstudio.com/download</a> for your operating system and then run the installer. You can accept the default settings for all configuration options.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2: Install Java</strong>
+The course textbook also provides software tools that we will use in this course for writing Java programs. Go to the appropriate link for your operating system:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mac: <a href="https://lift.cs.princeton.edu/java/mac/" class="bare">https://lift.cs.princeton.edu/java/mac/</a></p>
+</li>
+<li>
+<p>Windows: <a href="https://lift.cs.princeton.edu/java/windows/" class="bare">https://lift.cs.princeton.edu/java/windows/</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Follow the instructions only for "0. Install the Java Programming Environment" and not the other steps. It&#8217;s okay if you do, but you&#8217;ll be spending time installing things that you won&#8217;t need!</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3: Check that it works</strong></p>
+</div>
+<div class="paragraph">
+<p>Below are written instructions by Professor Murphy:</p>
+</div>
+<div class="paragraph">
+<p>Find the VS Code application on your computer and then run it. You should see the VS Code Welcome screen.
+Then, in the menu bar at the top, choose "Terminal" and then "New Terminal" from the dropdown menu. The terminal should appear at the bottom of the Welcome screen.
+A terminal is a tool that allows you to type commands that you want to run; we will be using it a lot in this course.</p>
+</div>
+<div class="paragraph">
+<p>If you are using Windows, you may need to do one extra configuration step.
+In the Terminal window, you will see a dropdown menu toward the right of the screen that may read "1: powershell" or "1: cmd". If you see "powershell" or "cmd" there, then do these steps, but you can skip these if you see "bash" there.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click the dropdown menu to expand it, and then choose "Select Default Shell" from the menu</p>
+</li>
+<li>
+<p>At the top of the VS Code window, you should see a list of options, one of which should start "Git Bash". Choose that one.</p>
+</li>
+<li>
+<p>Now choose "Terminal" from the main menu at the top of the window, and then select "New Terminal" from the dropdown menu.</p>
+</li>
+<li>
+<p>You should now see "2: bash" or similar toward the right of the Terminal window.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the Terminal window, type the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>java-introcs -version</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and hit Enter/Return. This runs the Java command and displays the version of Java that you are using.</p>
+</div>
+<div class="paragraph">
+<p>You should see</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>java version "13.0.1" 2019-10-15</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>openjdk version "11.0.2" 2019-01-15</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or something similar, and maybe a few extra lines after that. If so, then you&#8217;re all set!</p>
+</div>
+<div class="paragraph">
+<p>However, if you see something like</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>bash: java-introcs: command not found</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>make sure that you have correctly typed the command above. If you&#8217;re sure that you have, it may be that Java wasn&#8217;t properly installed.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-08-12 11:48:10 -0400
+</div>
+</div>
+</body>
+</html>

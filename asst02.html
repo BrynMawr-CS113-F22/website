@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.16">
+<title>Assignment 2: Conditional love!</title>
+<link rel="stylesheet" href="style/cs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_assignment_2_conditional_love">Assignment 2: Conditional love!</a></li>
+<li><a href="#_what_are_the_hours">1. What are the hours?</a></li>
+<li><a href="#_pythagorean_triples">2. Pythagorean Triples</a></li>
+<li><a href="#_speeding_fines">3. Speeding fines!</a></li>
+<li><a href="#_what_to_hand_in">4. What to hand-in</a>
+<ul class="sectlevel2">
+<li><a href="#_how_to_hand_in">4.1. How to hand-in</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_assignment_2_conditional_love">Assignment 2: Conditional love!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Due Thursday, September 22, before midnight</strong></p>
+</div>
+<div class="paragraph">
+<p>The goals of this assignment are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Work with conditional statements</p>
+</li>
+<li>
+<p>Work with boolean types</p>
+</li>
+<li>
+<p>Work with both command line arguments and interactive input</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_are_the_hours">1. What are the hours?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Implement a program <code>Hours.java</code> which inputs the number of minutes and outputs the number of hourse in
+with human friendly text. Note that when the number of hours is one, we print
+<strong>hour</strong> and not <strong>hours</strong>! When the number of minutes is one, we print <strong>minute</strong> and
+not <strong>minutes</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java Hours 67</strong>
+1 hour and 7 minutes
+
+$ <strong>java Hours 453</strong>
+7 hours and 33 minutes
+
+$ <strong>java Hours 360</strong>
+6 hours and 0 minutes
+
+$ <strong>java Hours 61</strong>
+1 hour and 1 minute</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You may assume that the input to the program is a positive integer, i.e. a
+whole number greater than 0.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pythagorean_triples">2. Pythagorean Triples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>credit: Sara Mathieson</em></p>
+</div>
+<div class="paragraph">
+<p>A [Pythagorean triple](<a href="https://en.wikipedia.org/wiki/Pythagorean_triple" class="bare">https://en.wikipedia.org/wiki/Pythagorean_triple</a>) is a
+set of three positive integers <strong>a</strong>, <strong>b</strong>, and <strong>c</strong> such that the sum of the
+squares of two of the numbers equals the square of the third. i.e.</p>
+</div>
+<div class="paragraph">
+<p>\(a^2 + b^2 = c^2\)</p>
+</div>
+<div class="paragraph">
+<p>In this example, <strong>a</strong> and <strong>b</strong> represent the shorter sides of a right triangle and
+<strong>c</strong> represents the hypotenuse.</p>
+</div>
+<div class="paragraph">
+<p>Write a program in <code>Pythagoras.java</code> that determines whether or not three numbers
+entered by the user form a valid Pythagorean triple. The numbers can be in any
+order. If the numbers do form a Pythagorean triple, print out a message that
+includes the hypotenuse (longest side). If not, print out a helpful message.
+Here are a few examples of how your program should work:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java Pythagoras</strong>
+Enter side 1: <strong>4</strong>
+Enter side 2: <strong>5</strong>
+Enter side 3: <strong>3</strong>
+Pythagorean triple with hypotenuse 5
+
+$ <strong>java Pythagoras</strong>
+Enter side 1: <strong>13</strong>
+Enter side 2: <strong>5</strong>
+Enter side 3: <strong>12</strong>
+Pythagorean triple with hypotenuse 13
+
+$ <strong>java Pythagoras</strong>
+Enter side 1: <strong>8</strong>
+Enter side 2: <strong>4</strong>
+Enter side 3: <strong>9</strong>
+Not a Pythagorean triple!</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_speeding_fines">3. Speeding fines!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>credit: Lisa Meeden</em></p>
+</div>
+<div class="paragraph">
+<p>Write a program called <code>Speeding.java</code> that calculates speeding fines based on the traffic laws of the state of Pennsylvania.  Here is a short description of the fine structure:</p>
+</div>
+<div class="paragraph">
+<p><em>For most speeding violations, the fine is $35 plus $2 for every
+mile <strong>in excess of 5 mph</strong> over the limit. However, if the maximum limit is 65 mph or higher, the fine is $42.50 plus $2 for every mile <strong>in excess of 5 mph</strong> over the limit.</em></p>
+</div>
+<div class="paragraph">
+<p>The goal of this law is to discourage motorists from driving
+significantly over the posted limits.  If the motorist is traveling
+just slightly over the limit (within 5 mph), then only a base fine is
+applied.  However, if the motorist&#8217;s speed exceeds the limit by more
+than 5 mph, then an extra fine is applied.</p>
+</div>
+<div class="paragraph">
+<p>See the table below for some example scenarios.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Example Fines</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Speed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Limit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Over</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Excess &gt; 5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Base fine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extra fine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total fine</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">45</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.00</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">52</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35.00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35.00</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">65</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35.00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20.00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55.00</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">69</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">65</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42.50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42.50</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">75</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">65</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42.50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10.00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">52.50</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Below are some examples of the running program. User input is shown in
+<strong>bold</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java Speeding</strong>
+
+Enter speed limit: <strong>55</strong>
+Enter clocked speed: <strong>45</strong>
+
+Motorist is within the limit
+
+$ <strong>java Speeding</strong>
+
+Enter speed limit: <strong>55</strong>
+Enter clocked speed: <strong>58</strong>
+
+Motorist is over the limit by 3 mph
+Total fine is: $35.0
+
+$ <strong>java Speeding</strong>
+
+Enter speed limit: <strong>55</strong>
+Enter clocked speed: <strong>63</strong>
+
+Motorist is over the limit by 8 mph
+
+Base fine is: $35.0
+Additional $2 per 3 miles in excess of 5 mph over limit
+Total fine is: $41.0
+
+$ <strong>java Speeding</strong>
+
+Enter speed limit: <strong>65</strong>
+Enter clocked speed: <strong>69</strong>
+
+Motorist is over the limit by 4 mph
+
+Total fine is: $42.5</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_to_hand_in">4. What to hand-in</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The programs, <code>Pythagoras.java</code>, <code>Hours.java</code>, and <code>Speeding.java</code>.</p>
+</li>
+<li>
+<p>Make sure each program has a header containing your name, date, and purpose of the program</p>
+</li>
+<li>
+<p>A brief write-up containing your name, assignment number, and a few sentences about how long you
+spent on the assignment and any interesting bugs you solved.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_how_to_hand_in">4.1. How to hand-in</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Copy your programs to your dropbox, into the folder called <code>A2</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-08-12 12:19:16 -0400
+</div>
+</div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</body>
+</html>

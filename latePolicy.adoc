@@ -1,0 +1,24 @@
+
+=== Late Policy
+
+Because practice is so important for learning how to program, we will do frequent 
+exercises, assignments, and practice throughout the term.
+
+The purpose of this work is to give you hands on experience with the topics
+from class. Most of this work will be due in lecture or labs. The  
+weekly time commitment for this course is aimed to be 10 hours or less per week.
+
+No late work will be accepted. Why? Because it's important that you do not
+fall behind in the material. *It is better to submit incomplete work than to
+fall behind!*
+
+However, we realize that you may not be able to complete a deadline for any 
+number of valid reasons. We will drop your lowest assignment, lab, and 
+presentation grades. 
+
+If you need to miss a lab, you can submit your exercises
+electronically (to Dropbox) by midnight on the day the exercises are assigned.
+
+If you need to miss an exam, you must make arrangements ahead of time. If you
+cannot give notice ahead of time because of a medical emergency, you will
+need to provide a doctor's note to schedule a make-up quiz.

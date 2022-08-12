@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.16">
+<title>Jam 5: Study Guide</title>
+<link rel="stylesheet" href="style/cs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article">
+<div id="header">
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_jam_5_study_guide">Jam 5: Study Guide</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jams are open book. 40 minutes in lab.</p>
+</div>
+<div class="paragraph">
+<p><strong>Topics:</strong></p>
+</div>
+<div class="paragraph">
+<p>This quiz includes the previous topics from jams 1-4 plus</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Runtime analysis/big-O notation</p>
+</li>
+<li>
+<p>O(1)&#8201;&#8212;&#8201;constant time</p>
+</li>
+<li>
+<p>O(log<sub>2</sub>N)&#8201;&#8212;&#8201;logarithmic (ex: binary search)</p>
+</li>
+<li>
+<p>O(N)&#8201;&#8212;&#8201;linear (ex: linear search)</p>
+</li>
+<li>
+<p>O(N<sup>2</sup>)&#8201;&#8212;&#8201;quadratic (ex: bubble sort)</p>
+</li>
+<li>
+<p>Recursion</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Write Java programs to check your answers. Or you can ask a TA or instructor
+to give feedback on your responses.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_practice_questions">Practice questions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>1) How many <strong>steps</strong> are required for each of the following? Classify each one
+as either O(N), O(N<sup>2</sup>), O(log<sub>2</sub> N), O(N log<sub>2</sub> N), or O(1).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int N = getInputSize();
+for (int i = 0; i &lt; N; i++)
+{
+    for (int j = 0; j &lt; N; j++)
+    {
+        println(i, j);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int N = getInputSize();
+while (N &gt; 1)
+{
+    print(N)
+    N = N/2
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int N = getInputSize();
+for (int i = 0; i &lt; N; i++)
+{
+    for (int j = 0; j &lt; 10; j++)
+    {
+        print(i*j);
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-08-12 11:54:21 -0400
+</div>
+</div>
+</body>
+</html>

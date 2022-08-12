@@ -1,0 +1,139 @@
+
+
+[cols="1,2,6a", options="header"]
+|===
+| Week 
+| Date 
+| Topics & ToDo
+
+//-----------------------------
+| 0
+| Week of Aug 29
+| *Course introduction, Hello World* anchor:hello[]
+
+* Algorithms, command line interface (CLI), compilation and running
+* Read: Sedgewick and Wayne, Sec 1.1
+* Read: link:develEnvSetup.html[Setting up your development environment]
+* link:asst00.html[Assignment 0]: *Due September 8th*
+//* link:notes-normoyle/week-aug29.html[Lecture Notes and Resources (Normoyle)] 
+//* link:notes-poliak/week-aug29.html[Lecture Notes and Resources (Poliak)] 
+
+//-----------------------------
+| 1 
+| Week of Sept 5
+| *Variables and data types* anchor:variables[]
+
+* *NO LECTURE MONDAY, September 5th* 
+* link:asst01.html[Assignment 1]: *Due September 15th*
+* Terminal, directories/files, Input and output, Basic data types (int,double,String), Variables 
+* Read: Sedgewick and Wayne, Sec 1.2 (Skip `boolean`)
+
+//-----------------------------
+|2
+| Week of Sept 12th
+|*Conditionals* anchor:if[]
+
+* Read: Sedgewick and Wayne, Sec 1.2 (`boolean`), Sec 1.3 (`if/else`)
+* link:asst02.html[Assignment 2]: *Due September 22*
+* link:jam1Guide.html[Jam 1 Study Guide]
+
+//-----------------------------
+|3
+| Week of Sept 19th
+|*Loops* anchor:loop[]
+
+* Read: Sedgewick and Wayne, Sec 1.3 (`while` and `for` loops)
+* link:asst03.html[Assignment 3]: *Due September 29th*
+* Code Jam I: Variables and data types
+
+//-----------------------------
+|4
+| Week of Sept 26th
+|*Arrays, Strings, File I/O* anchor:arrays[]
+
+* Read: Sedgewick and Wayne, Sec 1.4, 1.5, (Strings) 3.1
+* link:asst04.html[Assignment 4]: *Due October 6*
+* link:jam2Guide.html[Jam 2 Study Guide]
+
+//-----------------------------
+|5
+| Week of Oct 3rd
+|*Functions* anchor:functions1[]
+
+* Read: Sedgewick and Wayne, Sec 2.1
+* link:asst05.html[Assignment 5]: *Due October 20*
+
+//-----------------------------
+|6
+| Week of Oct 10th (Fall Break)
+|
+
+* *NO LECTURES, LABS, ASSIGNMENTS*
+
+//-----------------------------
+|7
+| Week of Oct 17th
+|*Functions* anchor:functions2[]
+
+* Read: Sedgewick and Wayne, Sec 2.1
+* link:asst06.html[Assignment 6]: *Due October 27*
+
+//-----------------------------
+|8
+| Week of Oct 24th 
+|*Object oriented programming: using objects* anchor:objects1[]
+
+* Read: Sedgewick and Wayne, Sec 3.1, 3.2
+* link:asst07.html[Assignment 7]: *Due *
+
+//-----------------------------
+|9
+| Week of October 31st
+|*Objects oriented programming: creating objects* anchor:objects2[]
+
+* Read: Sedgewick and Wayne, Sec 3.1, 3.2
+* link:jam3Guide.html[Jam 3 Guide]
+* link:asst08.html[Assignment 8]: **
+
+//-----------------------------
+|10
+|Week of Nov 7th
+|*Search and sort* anchor:search[]
+
+* Read: Sedgewick and Wayne, Sec 4.2
+* Presentations III: Arrays, strings, advanced IO
+* link:jam4Guide.html[Jam 4 Guide]
+* link:asst09.html[Assignment 9]: *Due *
+
+//-----------------------------
+|11
+|Week of Nov 14th
+|*More search and sort; Runtime analysis* anchor:analysis[]
+
+* Read: Sedgewick and Wayne, Sec 2.3
+* link:jam4Guide.html[Jam 4 Guide]
+
+//-----------------------------
+|12
+|Week of Nov 21st
+|*Recursion* anchor:recursion[]
+
+* *NO CLASS THURSDAY, NOV 24th*
+* link:jam5Guide.html[Final exam guide]
+
+//-----------------------------
+|13
+|Week of Nov 28th
+|
+
+* Read: Sedgewick and Wayne, Sec 4.4
+
+//-----------------------------
+|14
+|Week of Dec 5th
+|*Final Thoughts. ArrayList, HashMap and Dictionary* anchor:datastructures[]
+
+* Read: Sedgewick and Wayne, Sec 4.4
+* link:jam5Guide.html[Final exam guide]
+
+|===

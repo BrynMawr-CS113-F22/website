@@ -1,0 +1,104 @@
+include::header.adoc[]
+
+:title: Assignment 0: Hello CS113!
+:Author Initials: ASN
+:Date:    2020-02-07
+:Revision: 0.1
+
+= {title}
+
+The assignment as two parts. 
+
+**Part 1: Due Thursday, September 1st, before midnight**
+
+* Sign-up for dropbox and send me (anormoyle at brynmawr.edu) the email address associated with the account.  
+
+**Part 2: Due Thursday, September 8th, before midnight**
+
+* Join slack
+* Look at the website!
+* Install your development environment
+* Write your first program
+
+:sectnums:
+
+= Sign-up for Dropbox 
+
+**Due Thursday, September 1**
+
+Please go to dropbox.com and register as soon as possible. We will be using dropbox for 
+assignments, exams, and exercises. 
+
+Create a dropbox account and send an e-mail to the instructor (anormoyle at
+brynmawr.edu) with the e-mail used for dropbox account. You will then get an
+invite to share a folder for the course. 
+
+WARNING: Dropbox has an option to automatically backup your computer but the free account only gives you 2GB of space. 
+Do not choose this option when you install Dropbox. Otherwise, your dropbox can fill up immediately. 
+
+= Course setup
+
+**Due Thursday, September 8th**
+
+== Try slack
+
+I will be inviting you all to join the course slack channel. In the
+introduction channel, say and introduce yourself:
+
+* What is your preferred name and pronouns?
+* Tell us your favorite food! 
+
+== Read the website
+
+Start by reading through **all** of the link:../index.html[class webpage]!
+Bookmark this page on your browser, or use some other method that helps you 
+keep this information handy. All course materials and announcements will be 
+posted on the course webpage! 
+
+Pay special attention to the link:../index.html#_schedule[Schedule]. 
+
+== Setup Java
+
+This class will teach the fundamentals of programming using Java.
+
+link:../develEnvSetup.html[Use these instructions to set-up your development environment.]
+
+== Write a program
+
+Write a program, `Fortune.java`, which prints a fortune like the ones typically found 
+in fortune cookies. Use the program as a starting point. The program below is based on 
+HelloWorld from program 1.1.1 in Sedgewick and Wayne.
+
+[source,java]
+----
+// Name: 
+// Date:
+// Description: Print a fortune to the console
+
+public class Fortune {
+
+  public static void main(String[] args) {
+    System.out.println("Hello World!"); // todo: your message here
+  }
+}
+----
+
+Below is an example of compiling and running your program.
+
+[source,java]
+----
+$ javac Fortune.java
+$ java Fortune
+A journey of a thousand miles begins with a single step.
+----
+
+== What to hand-in
+
+. The program, `Fortune.java`
+. Make sure your program has a header containing your name, date, and purpose of the program
+
+== How to hand-in
+
+. Copy your program, `Fortune.java`, to your dropbox, into the folder called `A0`. The 
+instructor will create the folder `A0` for you once you notify her with your Dropbox 
+email address.

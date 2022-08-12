@@ -1,0 +1,165 @@
+include::header.adoc[]
+
+:title: Assignment 2: Conditional love! 
+:Author Initials: ASN
+:Date:    2020-02-07
+:Revision: 0.1
+
+= {title}
+
+**Due Thursday, September 22, before midnight**
+
+The goals of this assignment are:
+
+* Work with conditional statements
+* Work with boolean types
+* Work with both command line arguments and interactive input 
+
+:stem: latexmath
+:sectnums:
+
+= What are the hours?
+
+Implement a program `Hours.java` which inputs the number of minutes and outputs the number of hourse in 
+with human friendly text. Note that when the number of hours is one, we print 
+*hour* and not *hours*! When the number of minutes is one, we print *minute* and 
+not *minutes*.
+
+[source,subs="quotes"]
+----
+$ **java Hours 67**
+1 hour and 7 minutes
+
+$ **java Hours 453**
+7 hours and 33 minutes
+
+$ **java Hours 360**
+6 hours and 0 minutes
+
+$ **java Hours 61**
+1 hour and 1 minute
+----
+
+You may assume that the input to the program is a positive integer, i.e. a
+whole number greater than 0. 
+
+
+# Pythagorean Triples
+
+_credit: Sara Mathieson_
+
+A [Pythagorean triple](https://en.wikipedia.org/wiki/Pythagorean_triple) is a
+set of three positive integers *a*, *b*, and *c* such that the sum of the
+squares of two of the numbers equals the square of the third. i.e.
+
+latexmath:[a^2 + b^2 = c^2]
+
+In this example, *a* and *b* represent the shorter sides of a right triangle and
+*c* represents the hypotenuse.
+
+Write a program in `Pythagoras.java` that determines whether or not three numbers
+entered by the user form a valid Pythagorean triple. The numbers can be in any
+order. If the numbers do form a Pythagorean triple, print out a message that
+includes the hypotenuse (longest side). If not, print out a helpful message.
+Here are a few examples of how your program should work:
+
+[source,subs="quotes"]
+----
+$ **java Pythagoras**
+Enter side 1: **4**
+Enter side 2: **5**
+Enter side 3: **3**
+Pythagorean triple with hypotenuse 5
+
+$ **java Pythagoras**
+Enter side 1: **13**
+Enter side 2: **5**
+Enter side 3: **12**
+Pythagorean triple with hypotenuse 13
+
+$ **java Pythagoras**
+Enter side 1: **8**
+Enter side 2: **4**
+Enter side 3: **9**
+Not a Pythagorean triple!
+----
+
+= Speeding fines!
+
+_credit: Lisa Meeden_
+
+Write a program called `Speeding.java` that calculates speeding fines based on the traffic laws of the state of Pennsylvania.  Here is a short description of the fine structure:
+
+_For most speeding violations, the fine is $35 plus $2 for every
+mile **in excess of 5 mph** over the limit. However, if the maximum limit is 65 mph or higher, the fine is $42.50 plus $2 for every mile **in excess of 5 mph** over the limit._
+
+The goal of this law is to discourage motorists from driving
+significantly over the posted limits.  If the motorist is traveling
+just slightly over the limit (within 5 mph), then only a base fine is
+applied.  However, if the motorist's speed exceeds the limit by more
+than 5 mph, then an extra fine is applied.
+
+See the table below for some example scenarios.
+
+.Example Fines
+|===
+| Speed | Limit | Over | Excess > 5 |  Base fine | Extra fine | Total fine
+| 45 | 50 |  0 |  0 |  0.00 |  0.00 |  0.00
+| 52 | 50 |  2 |  0 | 35.00 |  0.00 | 35.00
+| 65 | 50 | 15 | 10 | 35.00 | 20.00 | 55.00
+| 69 | 65 |  4 |  0 | 42.50 |  0.00 | 42.50
+| 75 | 65 | 10 |  5 | 42.50 | 10.00 | 52.50
+|===
+
+Below are some examples of the running program. User input is shown in
+**bold**.
+
+[source,subs="quotes"]
+----
+$ **java Speeding**
+
+Enter speed limit: **55**
+Enter clocked speed: **45**
+
+Motorist is within the limit
+
+$ **java Speeding**
+
+Enter speed limit: **55**
+Enter clocked speed: **58**
+
+Motorist is over the limit by 3 mph
+Total fine is: $35.0
+
+$ **java Speeding**
+
+Enter speed limit: **55**
+Enter clocked speed: **63**
+
+Motorist is over the limit by 8 mph
+
+Base fine is: $35.0
+Additional $2 per 3 miles in excess of 5 mph over limit
+Total fine is: $41.0
+
+$ **java Speeding**
+
+Enter speed limit: **65**
+Enter clocked speed: **69**
+
+Motorist is over the limit by 4 mph
+
+Total fine is: $42.5
+----
+
+
+= What to hand-in
+
+. The programs, `Pythagoras.java`, `Hours.java`, and `Speeding.java`.
+. Make sure each program has a header containing your name, date, and purpose of the program
+. A brief write-up containing your name, assignment number, and a few sentences about how long you 
+spent on the assignment and any interesting bugs you solved.  
+
+== How to hand-in
+
+. Copy your programs to your dropbox, into the folder called `A2`. 

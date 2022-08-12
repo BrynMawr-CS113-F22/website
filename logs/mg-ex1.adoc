@@ -1,0 +1,100 @@
+[subs="quotes,attributes"]
+----
+$ **java MemoryGame**
+
+   ~ ~  Welcome to M*E*M*O*R*Y G*A*M*E v1.0 ~ ~
+
+  Pick two cards at a time and see if they match.
+  Keep picking pairs of cards until you match them all!
+
+
+
+========================================================================
+ ===0===  ===1===  ===2===  ===3===  ===4===  ===5===  ===6===  ===7===  ===8===  ===9===
+Turn #1:
+card to flip> **0**
+                 robin
+Turn #1:
+card to flip> **1**
+                 crane
+Nope...
+
+
+========================================================================
+ ===0===  ===1===  ===2===  ===3===  ===4===  ===5===  ===6===  ===7===  ===8===  ===9===
+Turn #2:
+card to flip> **2**
+                 robin
+Turn #2:
+card to flip> **0**
+                 robin
+Correct!
+
+
+========================================================================
+  robin   ===1===   robin   ===3===  ===4===  ===5===  ===6===  ===7===  ===8===  ===9===
+Turn #3:
+card to flip> **3**
+                 heron
+Turn #3:
+card to flip> **4**
+                 goose
+Nope...
+
+
+========================================================================
+  robin   ===1===   robin   ===3===  ===4===  ===5===  ===6===  ===7===  ===8===  ===9===
+Turn #4:
+card to flip> **5**
+                 raven
+Turn #4:
+card to flip> **6**
+                 raven
+Correct!
+
+
+========================================================================
+  robin   ===1===   robin   ===3===  ===4===   raven    raven   ===7===  ===8===  ===9===
+Turn #5:
+card to flip> **7**
+                 crane
+Turn #5:
+card to flip> **1**
+                 crane
+Correct!
+
+
+========================================================================
+  robin    crane    robin   ===3===  ===4===   raven    raven    crane   ===8===  ===9===
+Turn #6:
+card to flip> **8**
+                 heron
+Turn #6:
+card to flip> **3**
+                 heron
+Correct!
+
+
+========================================================================
+  robin    crane    robin    heron   ===4===   raven    raven    crane    heron   ===9===
+Turn #7:
+card to flip> **4**
+                 goose
+Turn #7:
+card to flip> **9**
+                 goose
+Correct!
+
+
+========================================================================
+  robin    crane    robin    heron    goose    raven    raven    crane    heron    goose
+
+10 cards matched in 7 turns.
+Not bad.
+----
+
+link:mg-ex2.html[Example 2]
+
+link:mg-ex3.html[Example 3]
+
+link:../asst07.html[back to lab 7]

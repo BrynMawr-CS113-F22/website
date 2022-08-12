@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.16">
+<title>Assignment 6: Be classy</title>
+<link rel="stylesheet" href="style/cs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_assignment_6_be_classy">Assignment 6: Be classy</a></li>
+<li><a href="#_sound">Sound</a></li>
+<li><a href="#_soundlibrary">SoundLibrary</a></li>
+<li><a href="#_soundboard">SoundBoard</a></li>
+<li><a href="#_extra_challenge">Extra challenge</a></li>
+<li><a href="#_what_to_hand_in">What to hand-in</a>
+<ul class="sectlevel2">
+<li><a href="#_how_to_hand_in">How to hand-in</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_assignment_6_be_classy">Assignment 6: Be classy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Due Thursday, October 27, before midnight</strong></p>
+</div>
+<div class="paragraph">
+<p>The goals of this assignment are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Work with classes, and objects</p>
+</li>
+<li>
+<p>Work with loops, conditionals, and variables</p>
+</li>
+<li>
+<p>Work with arrays, Strings, and files</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In this assignment, you will implement a
+<a href="https://en.wikipedia.org/wiki/Soundboard_(computer_program)">sound
+board</a>, a program for playing short sound clips.</p>
+</div>
+<div class="paragraph">
+<p>We will use classes to organize our program. The <code>Sound</code> class will represent
+individual clips, stored in a WAV file. The <code>SoundLibrary</code> class will manage
+a list of <code>Sound</code> objects. The full program, <code>SoundBoard</code>, will
+present the user with a list of sounds and allow them to play them.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sound">Sound</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Write a program, <code>Sound.java</code>, which implements and tests a class names <code>Sound</code>. Your sound class
+represents a sound clip stored in a WAV. It should contain the name, duration, and WAV file of
+the sound.</p>
+</div>
+<div class="paragraph">
+<p><strong>Requirements</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Sound</code> contains the following data (all data should be private):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>mName of the sound (String)</p>
+</li>
+<li>
+<p>mDuration of the sound in seconds (double)</p>
+</li>
+<li>
+<p>mFilename of the WAV file (String)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>Sound</code> contains the following methods:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Constructor <code>Sound(String name, double duration, String fileName)</code>, which initializes the object with the given information.</p>
+</li>
+<li>
+<p><code>void play()</code>, which plays the sound stored in this class by calling <code>StdAudio.play</code></p>
+</li>
+<li>
+<p><code>String getName()</code>, accessor for the sound&#8217;s name</p>
+</li>
+<li>
+<p><code>double getDuration()</code>, accessor for the sound&#8217;s duration</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In <code>main</code>, test all the functions in your class. For example, the following code should produce
+the following output (and play the cricket sound).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>public static void main(String[] args) {
+    Sound sound = new Sound("cricket", 0.5, "wav/337435__ev-dawg__cricket.wav");
+    System.out.printf("Sound: %s (%.2fs)\n", sound.getName(), sound.getDuration());
+    sound.play();
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>javac-introcs Song.java</strong>
+$ <strong>java-introcs</strong> Song
+Sound: cricket (0.50s)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_soundlibrary">SoundLibrary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Write a program, <code>SoundLibrary.java</code>, which stores a list of songs</p>
+</div>
+<div class="paragraph">
+<p><strong>Features</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SoundLibrary</code> contains the following data (all data should be private):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>array of Sounds (Sound[])</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>SoundLibrary contains the following methods:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Constructor <code>SoundLibrary(String filename)</code>, initializes the object using a list of songs stored in a file</p>
+</li>
+<li>
+<p><code>void list()</code>, lists all the sounds available in the library</p>
+</li>
+<li>
+<p><code>int getNumSounds()</code>, returns the number of sounds in the library</p>
+</li>
+<li>
+<p><code>void play(int songNumber)</code>, plays the sound corresponding to the given soundNumber. The first sound in the library has soundNumber 0. The second sound has soundNumber 1, etc.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In <code>main</code>, test all the functions in your class. For example, the following code should produce
+the following output (and play the sound entitled "magic").</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>public static void main(String[] args) {
+    SoundLibrary library = new SoundLibrary("sounds.txt");
+    library.list();
+    library.play(1);
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>javac-introcs SongLibrary.java</strong>
+$ <strong>java-introcs</strong> SongLibrary
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To initialize the sound library, you will need to read in and parse the file <code>sounds.txt</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The first line in <code>sounds.txt</code> contains the number of sounds in the file</p>
+</li>
+<li>
+<p>Each subsequent line corresponds to a single sound. The information for each sound is separated by spaces</p>
+<div class="ulist">
+<ul>
+<li>
+<p>sound name</p>
+</li>
+<li>
+<p>sound duration</p>
+</li>
+<li>
+<p>sound filename (relative path)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_soundboard">SoundBoard</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Write a program, <code>SoundBoard.java</code>, that uses <code>SoundLibrary</code> to list and play sounds.
+This program shows the user a menu of sounds and lets them choose different sounds to play.</p>
+</div>
+<div class="paragraph">
+<p>Your program should support the following commands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>quit</strong>: Quit the program</p>
+</li>
+<li>
+<p><strong>&lt;id&gt;</strong>: Play the song with the given id. Prints an error if the id is invalid.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If the user enters an invalid command, your program should print an error.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>javac-introcs SoundBoard.java</strong>
+$ <strong>java-introcs SoundBoard</strong>
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: -1
+Invalid command: -1
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command:
+Invalid command:
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: play
+Invalid command: play
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: 9
+Invalid song id: 9
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: 1
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: quit</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_extra_challenge">Extra challenge</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Try adding your own songs and flair!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_to_hand_in">What to hand-in</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The programs, <code>SoundBoard.java</code>, <code>Sound.java</code>, and <code>SoundLibrary.java</code></p>
+</li>
+<li>
+<p>Make sure your programs have a header containing your name, date, and description.</p>
+</li>
+<li>
+<p>A brief write-up containing your name, assignment number, and a few sentences about how long you
+spent on the assignment and any interesting bugs you solved.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_how_to_hand_in">How to hand-in</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Copy your files to your dropbox, into the folder called <code>A06</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-08-12 12:22:32 -0400
+</div>
+</div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</body>
+</html>

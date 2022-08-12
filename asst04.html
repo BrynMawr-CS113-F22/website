@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.16">
+<title>Assignment 4: Get carried array.</title>
+<link rel="stylesheet" href="style/cs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_assignment_4_get_carried_array">Assignment 4: Get carried array.</a>
+<ul class="sectlevel2">
+<li><a href="#_coding_guidelines">Coding guidelines</a></li>
+</ul>
+</li>
+<li><a href="#_cant_get_a_word_in_entwise">1. Can&#8217;t get a word in entwise</a></li>
+<li><a href="#_crossword">2. Crossword</a></li>
+<li><a href="#_letter_frequency">3. Letter Frequency</a>
+<ul class="sectlevel2">
+<li><a href="#_before_you_begin">3.1. Before You Begin</a></li>
+<li><a href="#_count_characters">3.2. Count characters</a></li>
+<li><a href="#_scale_values">3.3. Scale values</a></li>
+<li><a href="#_draw_a_histogram">3.4. Draw a histogram</a></li>
+<li><a href="#_extra_challenge">3.5. Extra challenge</a></li>
+</ul>
+</li>
+<li><a href="#_what_to_hand_in">4. What to hand-in</a>
+<ul class="sectlevel2">
+<li><a href="#_how_to_hand_in">4.1. How to hand-in</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_assignment_4_get_carried_array">Assignment 4: Get carried array.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Due Thursday, October 6, before midnight</strong></p>
+</div>
+<div class="paragraph">
+<p>The goals of this assignment are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Work with loops, conditionals, and variables</p>
+</li>
+<li>
+<p>Work with arrays and strings</p>
+</li>
+<li>
+<p>Use the draw API included with your textbook</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_coding_guidelines">Coding guidelines</h3>
+<div class="paragraph">
+<p>In addition to producing the correct output, in this assignment you are also asked to
+write code that is easy to read and understand. In particular, part of your score on this
+assignment will be determined by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Variable naming: Variables should have meaningful names that indicate what they represent, using full English words or common abbreviations, e.g. “wins” or “votes” instead of “w” or “vot”.</p>
+</li>
+<li>
+<p>Appearance:The code should be formatted so that indentation and spacing make it easy to understand which parts of the code are within the bodies of if-statements and loops.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Additionally, there should be spacing between variables and operators to make it easy to read each individual line of code.
+This is called <strong>style</strong> and is an essential requirement for producing clean, readable code.
+For example, a piece of code that determines the maximum value in an array called values should look something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>int  max = values[0];
+for (int i = 1; i &lt; values.length; i++) {
+    if (values[i] &gt; max) {
+        max = values[i];
+    }
+}
+System.out.println("Max is " + max);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Not like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>int  a=values[0];
+for (int i=1;i&lt;values.length;i++) {
+if (values[i]&gt;a) {
+a=values[i];
+}
+}
+System.out.println("Max is "+a);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Please speak with your TAs or instructor if you have any questions about style!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cant_get_a_word_in_entwise">1. Can&#8217;t get a word in entwise</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>"We must not be hasty."
+-- Treebeard</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <a href="https://lotr.fandom.com/wiki/Ents">Ents</a> in Lord of the Rings were a noble
+race of tree herders, whose language was "long and sonorous".
+Ents live a very long time and so speak very&#8230;&#8203;carefully&#8230;&#8203;and&#8230;&#8203;.very&#8230;&#8203;s.l.o.w.l.y.</p>
+</div>
+<div class="paragraph">
+<p>Write a program ,<code>Slow.java</code>, that turns a phrase into ent-speech. Your program
+should ask for the pause length and a phrase to change. Your program should
+output an ent-phrase. Ent-phrases contain '.' between each letter in the input.</p>
+</div>
+<div class="paragraph">
+<p>Two examples of the running program are shown below. User input is shown in <strong>bold</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java Slow</strong>
+Pause length: <strong>3</strong>
+Text: <strong>Surprise!</strong>
+S...u...r...p...r...i...s...e...!...
+
+$ <strong>java Slow</strong>
+Pause length: <strong>5</strong>
+Text: <strong>Hmmm?</strong>
+H.....m.....m.....m.....?.....</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_crossword">2. Crossword</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In <code>Crossword.java</code>, implement a program that inputs text and outputs a word square whose letters
+are arranged like a crossword puzzle.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
+Enter a phrase: <strong>top</strong>
+
+top
+o o
+pot
+
+$ <strong>java Crossword</strong>
+Enter a phrase: <strong>otter</strong>
+
+otter
+t   e
+t   t
+e   t
+retto</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Features:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The first row should match the text that was entered</p>
+</li>
+<li>
+<p>The last row is the reverse of the input text</p>
+</li>
+<li>
+<p>The left side spells the input word from top to bottom</p>
+</li>
+<li>
+<p>The right side spells the input word from bottom to top</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If this problem looks daunting, solve it one step at a time!
+Let&#8217;s break this problem into simpler subproblems and work our way up
+to the final solution.</p>
+</div>
+<div class="paragraph">
+<p><strong>Subproblem 1: Top row</strong></p>
+</div>
+<div class="paragraph">
+<p>The top row prints the input string. Write a program that outputs the
+user&#8217;s input.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
+Enter a phrase: <strong>otter</strong>
+
+otter</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Subproblem 2: Bottom row</strong></p>
+</div>
+<div class="paragraph">
+<p>Using string accumulation, compute the reverse of the input string.
+Then print both the original and reversed string.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
+Enter a phrase: <strong>otter</strong>
+
+otter
+retto</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Subproblem 3: Left column</strong></p>
+</div>
+<div class="paragraph">
+<p>The left column prints each character on its own line, excluding the
+first and last character. To start, simply print all the characters
+on their own line.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
+Enter a phrase: <strong>otter</strong>
+
+otter
+o
+t
+t
+e
+r
+retto</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, exclude the first and last characters.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
+Enter a phrase: <strong>otter</strong>
+
+otter
+t
+t
+e
+retto</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Subproblem 4: Right column</strong></p>
+</div>
+<div class="paragraph">
+<p>Excluding the first and last character, print each character of the
+reversed string on its own line. Don&#8217;t worry about spacing to start.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
+Enter a phrase: <strong>otter</strong>
+
+otter
+t e
+t t
+e t
+retto</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, add spaces between the left and right columns.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
+Enter a phrase: <strong>otter</strong>
+
+otter
+t   e
+t   t
+e   t
+retto</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_letter_frequency">3. Letter Frequency</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>credit: Deepak Kumar</em></p>
+</div>
+<div class="paragraph">
+<p>Write a program, <code>LetterFrequency.java</code>, that plots the frequency of different letters in a corpus
+of text using a <a href="https://en.wikipedia.org/wiki/Histogram">histogram</a>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Download the text</strong>: <a href="https://cs.brynmawr.edu/Courses/cs113/fall2020dk/tolstoy.txt">tolstoy.txt</a></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This question is based on this <a href="https://cs.brynmawr.edu/Courses/cs113/fall2020dk/Assignment4.pdf">this writeup</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_before_you_begin">3.1. Before You Begin</h3>
+<div class="paragraph">
+<p>Because this assignment focuses on keeping track of the number of occurrences of
+individual letters in the program input, we will be making heavy use of the Java
+char datatype, which was presented in Section 1.2 of your course textbook.
+Review this part of your textbook if you are not familiar with this datatype.</p>
+</div>
+<div class="paragraph">
+<p>A Java <strong>char</strong> variable represents a single character, which can be a letter
+like ‘a’ or ‘M’; a digit like ‘2’ or ‘8’; or punctuation like ‘+’ or ‘?’.</p>
+</div>
+<div class="paragraph">
+<p>When working with letters, as we will do in this assignment, it is even
+possible to do math with char variables, for instance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>char first = 'k';
+char second = (char)(first + 3);
+StdOut.printf("%c", second);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This code will print
+the letter ‘n’, since ‘n’ is three letters after ‘k’ in the alphabet, and the
+“%c” format string means to treat the value as a char. Similarly, you could
+have something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>char letter = 'g';
+int value = letter - 'a';
+StdOut.printf("%d", value);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This code will print 6, since ‘g’ is six letters
+after ‘a’. Be sure you understand this before starting, and ask your
+TAs or Instructor or post a question on slack if you are not sure how this works!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_count_characters">3.2. Count characters</h3>
+<div class="paragraph">
+<p>The first step in building the histogram is to read the input text one
+character at a time, and to keep track of and then display (to stdout) the
+number of occurrences of each letter between ‘a’ and ‘z’.</p>
+</div>
+<div class="paragraph">
+<p>For instance, if the input text were “java yeah!”, the program should
+indicate that the letter ‘a’ occurs three times and that the letters ‘e’,
+‘h’, ‘j’, ‘v’, and ‘y’ each
+occur once. It should ignore the blank space between “java” and “yeah!”, as
+well as the ‘!’ character, since those are not letters.</p>
+</div>
+<div class="paragraph">
+<p>Your program should
+display the number of occurrences for all 26 letters, even if a given letter
+does not appear. For instance, in the above example, the output should look
+like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>a: 3
+b: 0
+c: 0
+d: 0
+e: 1
+. . . output omitted but you get the idea...
+x: 0
+y: 1
+z: 0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For simplicity, you may assume that your program only
+needs to keep track of lowercase letters, i.e. that any uppercase characters
+in the input have already been converted to lowercase, and your program only
+needs to track the 26 lowercase letters used in English.</p>
+</div>
+<div class="paragraph">
+<p>The following hints
+should help you with this part of the assignment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can use StdIn.isEmpty() to determine whether or not there is more input text to read.</p>
+</li>
+<li>
+<p>You can use StdIn.readChar() to read a single character from the input and store the character in a char variable.</p>
+</li>
+<li>
+<p>Use a 26-element array of counts to keep track of number of occurrences of each letter. Do not define 26 different variables to store the number of occurrences of each letter!</p>
+</li>
+<li>
+<p>You should store the number of occurrences of the letter ‘a’ in index #0, the number of occurrences of ‘b’ in index #1, and so on. You can use the “math with char variables” advice from above to figure out the corresponding array index for each letter.</p>
+</li>
+<li>
+<p>To determine whether a char variable holds a lowercase letter, you can determine whether it is in the range [‘a’, ‘z’] in the same way in which you would determine whether an int variable is in a certain numerical range by using comparison operators.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To test your program with the default
+source for stdin, i.e. the Terminal, then follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Run the program with the command <code>java-introcs LetterFrequency</code></p>
+</li>
+<li>
+<p>Type characters into the Terminal. Don’t worry about putting spaces between them; your program should be able to read each character one at a time. Your program should only be counting the occurrences of lowercase letters, i.e. ‘a’ through ‘z’.</p>
+</li>
+<li>
+<p>When you are done entering characters, you can indicate that there are no more characters to read (so that StdIn.isEmpty() will return true) by typing Ctrl-D (that is, pressing the Control and D keys at the same time) if you are using a Mac, or Enter then Ctrl-Z then Enter if you are using Windows.</p>
+</li>
+<li>
+<p>Your program should then display the number of times you entered each character from ‘a’ to ‘z’.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once you have tested your program by entering characters
+into the Terminal, try it with the text of “War and Peace”, which is
+available in the file <code>tolstoy.txt</code>. Assuming that <code>tolstoy.txt</code> is in the same
+directory as your Java source code, all you need to do is run the program
+like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>java-introcs LetterFrequency < tolstoy.txt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then you should see the
+number of occurrences for each of the characters ‘a’ through ‘z’. Your
+program should produce the following output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>a: 204416
+b: 34371
+c: 60658
+d: 117751
+e: 313007
+f: 54504
+g: 50907
+h: 166515
+i: 172640
+j: 2485
+k: 20282
+l: 96032
+m: 61282
+n: 183126
+o: 191487
+p: 44717
+q: 2319
+r: 146889
+s: 162125
+t: 224506
+u: 64917
+v: 26787
+w: 58928
+x: 4032
+y: 45936
+z: 2386</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Be sure you complete this part before moving on to Part 2!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_scale_values">3.3. Scale values</h3>
+<div class="paragraph">
+<p>At this point, we know the number of occurrences of each lowercase letter,
+but before we can draw the histogram, we need to scale the values so that the
+letter that occurs the most has a value of 1.0, and the other letters’ values
+are scaled accordingly.</p>
+</div>
+<div class="paragraph">
+<p>For instance, using the example of “War and Peace,”
+the letter ‘e’ occurs 313,007 times, which is the most. So we scale the value
+for ‘e’ to 1.0.</p>
+</div>
+<div class="paragraph">
+<p>Then we determine the value for each of the other letters by
+dividing by 313,007, such that ‘a’ gets a value of 204,416 / 313,007 = 0.653,
+since ‘a’ occurs 65.3% as much as ‘e’, and so on.</p>
+</div>
+<div class="paragraph">
+<p>Modify yourLetterFrequency
+program so that it scales the values for each letter based on the number of
+occurrences of the letter that appears the most, and then prints out each
+letter ‘a’ through ‘z’ and its new, scaled value to three digits of
+precision, i.e. three digits after the decimal point.</p>
+</div>
+<div class="paragraph">
+<p>For instance, when
+running the program with “War and Peace” as the input, the output for this
+part should be as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>a: 0.653
+b: 0.110
+c: 0.194
+d: 0.376
+e: 1.000
+f: 0.174
+g: 0.163
+h: 0.532
+i: 0.552
+j: 0.008
+k: 0.065
+l: 0.307
+m: 0.196
+n: 0.585
+o: 0.612
+p: 0.143
+q: 0.007
+r: 0.469
+s: 0.518
+t: 0.717
+u: 0.207
+v: 0.086
+w: 0.188
+x: 0.013
+y: 0.147
+z: 0.008</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Be sure you complete this part before moving on to Part 3!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_draw_a_histogram">3.4. Draw a histogram</h3>
+<div class="paragraph">
+<p>Now that we know the relative/scaled values for the
+number of occurrences of each letter, we can use the StdDraw library to draw
+the histogram and represent these values visually.</p>
+</div>
+<div class="paragraph">
+<p>Our histogram will consist
+of a rectangle for each letter, going left to right ‘a’ through ‘z’, with the
+height of each letter being equal to the relative/scaled value calculated in
+Part 2.</p>
+</div>
+<div class="paragraph">
+<p>To draw a rectangle using this library, you can
+call</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>StdDraw.rectangle(x, y, r1, r2)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>x is the x-axis coordinate of the
+center of the rectangle</p>
+</li>
+<li>
+<p>y is the y-axis coordinate of the center of the
+rectangle</p>
+</li>
+<li>
+<p>r1 the x-axis distance from the center of the rectangle to a
+vertical side, i.e. half the width</p>
+</li>
+<li>
+<p>r2 is y-axis distance from the center of
+the rectangle to a horizontal side, i.e. half the height.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Recall that the
+default coordinate system in the StdDraw library is [0.0, 1.0] on both the x-
+and y-axes. For our purposes, this is fine for the y-axis because the
+relative/scaled values from Part 2 are all in [0.0, 1.0] anyway, and will
+represent the height of each rectangle. However, since we will have 26
+rectangles, we can rescale the x-coordinates to [0.0, 26.0] using
+<code>StdDraw.setXscale(0, 26)</code> so that the width of each rectangle is 1 and not
+1/26. This will make the math a little easier.Using the above, we can now
+describe how to draw the rectangle for the ith letter (starting from 0, which
+is ‘a’):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>x is i + 0.5; this is so that the x-coordinate of the center of the
+‘a’ rectangle is 0.5, the x-coordinate of the center of the ‘b’ rectangle is
+1.5, and so on.</p>
+</li>
+<li>
+<p>y is 0.5 times the letter’s scaled value (from Part 2)</p>
+</li>
+<li>
+<p>r1 is
+0.5, since this is half the width</p>
+</li>
+<li>
+<p>r2 is 0.5 times the letter’s scaled value
+(from Part 2), since this is half the height.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Modify your LetterFrequency
+program so that it uses StdDraw to draw a rectangle for each lowercase letter
+as described above. Your program output should look something like the
+picture shown below</p>
+</div>
+<div class="paragraph">
+<p><strong>Submit an image of your histogram along with your code for this week&#8217;s assignment</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/A04-WarAndPeace-Histogram.png" alt="A04 WarAndPeace Histogram">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_extra_challenge">3.5. Extra challenge</h3>
+<div class="paragraph">
+<p>Add labels and colors to your histogram. For example, below different colors are used for alternating bars. Each
+bar is labeled with its corresponding letter.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/A04-WarAndPeace-Histogram-Pretty.png" alt="A04 WarAndPeace Histogram Pretty">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_to_hand_in">4. What to hand-in</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The programs, <code>Slow.java</code>, <code>Crossword.java</code>, and <code>LetterFrequency.java</code>.</p>
+</li>
+<li>
+<p>An image of your histogram, drawn for the last question.</p>
+</li>
+<li>
+<p>Make sure each program has a header containing your name, date, and purpose of the program</p>
+</li>
+<li>
+<p>A brief write-up containing your name, assignment number, and a few sentences about how long you
+spent on the assignment and any interesting bugs you solved. Be sure to highlight any
+customizations you make for your own histogram.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_how_to_hand_in">4.1. How to hand-in</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Copy your programs to your dropbox, into the folder called <code>A04</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-08-12 12:21:54 -0400
+</div>
+</div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</body>
+</html>

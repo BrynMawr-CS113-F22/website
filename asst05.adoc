@@ -1,0 +1,233 @@
+include::header.adoc[]
+
+:title: Assignment 5: Can't spell functions without fun
+:Author Initials: ASN
+:Date:    2020-02-07
+:Revision: 0.1
+
+= {title}
+
+**Due Thursday, October 20, before midnight**
+
+The goals of this assignment are:
+
+* Work with loops, conditionals, and variables
+* Work with arrays and strings
+* Implement and call functions
+
+:stem: latexmath
+
+= Tic-tac-toe
+
+_credit: Sara Mathieson_
+
+Write a program, `Tictactoe.java`, that implements the game of 
+link:https://en.wikipedia.org/wiki/Tic-tac-toe[tic-tac-toe]. 
+In this game, players alternate between placing their symbol (either an "X" or an "O")
+inside a 3x3 grid of squares. The first player to get "3 in a row" (either on a
+row, a column, or diagonally) wins.
+
+In our version, the user will play against the computer (the Artificial Intelligence, or "AI").
+The AI will always play first and use the symbol "O", and the user will play second with a
+symbol "X". The game can end with the user winning, the AI winning, or a draw.
+
+Here are examples of these three situations:
+
+* link:logs/a5-userwin.html[User wins]
+* link:logs/a5-aiwins.html[AI wins]
+* link:logs/a5-tie.html[Tie]
+
+== 3x3 Board
+
+In order to implement tic-tac-toe we will be using a **list of characters** to represent
+the board. The board will begin as a list of 9 empty spaces:
+
+[source]
+----
+char[] board = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
+----
+
+The board will be modified over the course of the game. 
+For debugging, use the Java function `Array.toString(board)`. 
+For example, suppose the AI chooses 3, we can print the board with:
+
+[source]
+----
+board[3] = 'O';
+System.out.println(java.util.Arrays.toString(board));
+----
+
+The above code will print the following to the console:
+
+[source]
+----
+[' ',' ',' ','O',' ',' ',' ',' ',' ']
+----
+
+And then if the user plays 7 and we print, the board will look like:
+
+[source]
+----
+[' ',' ',' ','O',' ',' ',' ','X',' ']
+----
+
+
+== Main Function
+
+Your `main()` function should use the functions below to do the bulk of the work.  
+  The general outline of the program is as follows:
+
+. Print out a welcome message. You can do this in main, or define a function for it.
+. Set up initial variables before entering the game loop. You will need at least the board and a way to keep track of whether someone has won yet.
+. Set up your game loop. Each time through the loop, either the user will play, or the AI will play. The board will be *modified* during each turn. If one of the players has won, the loop should exit. 
+. Print the output of the game, such as "AI won!", "You won!", "A tie!" 
+
+== AI turn
+
+
+Implement a function, `aiTurn`. This function should place an `O` at a random
+open spot on the board. `aiTurn` should be called from `main` during the game
+loop. 
+
+You implementation should have this specification:
+
+[source]
+----
+// Function: aiTurn
+// Implements one turn of the AI player. 
+//   Default behavior: chooses a random open spot
+// Input board (char[]): the 3x3 tic-tac-toe board 
+// Returns (int): the index of the board that is modified
+public static int aiTurn(char[] board)
+----
+
+This function takes in a **list of characters** and determines where the AI
+should place an 'O'. The cells are numbered 0-8,
+inclusive. The choice cannot be a cell that is already taken by a symbol. 
+
+You can choose whether to have the function modify the board (the change will persist 
+after the function returns because arrays are *mutable*) or to modify the 
+board after the function returns to `main`, using the returned integer. 
+
+You are welcome to make an "intelligent" AI, but the recommended approach is
+to make the computer choose a cell randomly. A simple approach is to continually 
+choose random cells until it finds a free one.
+
+After the AI's turn, `main` should print the AI's choice
+
+```
+AI chooses: 7
+```
+
+== Player turn
+
+Implement a function, `userTurn`, that implements the player's turn. This function should 
+check that the user enters a valid integer. 
+
+. The integer is between 0 and 8, inclusive.
+. The cell is not already taken by a symbol.
+
+Keep asking the user to choose an integer until they choose a valid cell. For example,
+if there were already a symbol in the 5 cell, the player turn might look like this:
+
+[source,subs=quotes]
+----
+Enter 0-8 for your choice: **5**
+Invalid input: 5
+Enter 0-8 for your choice: **10**
+Invalid input: 10
+Enter 0-8 for your choice: **-3**
+Invalid input: -3
+Enter 0-8 for your choice: **0**
+----
+
+`playerTurn` should implement the following specification
+
+[source]
+----
+// Function: playerTurn
+// Asks the user which cell they want to place their `X`. 
+//    Ensures the player chooses a valid index.
+// Input board (char[]): the 3x3 tic-tac-toe board
+// Returns (int): the index chosen by the player 
+public static int playerTurn(char[] board)
+----
+
+You can choose whether to have the function modify the board (the change will persist 
+after the function returns because arrays are *mutable*) or to modify the 
+board after the function returns in `main`, using the returned integer. 
+
+== Display the board
+
+Implement a function, `displayBoard`, that prints the current board to the screen.
+Below is the specification
+
+[source]
+----
+// Function: displayBoard
+// Displays the tic-tac-toe board as a 3x3 grid 
+// Input board (char[]): the tic-tac-toe board
+// Returns: none
+public static void displayBoard(char[] board)
+----
+
+Board is an array with 9 characters. You need to print it as a 3x3 square grid.
+One approach is the use a for loop that progresses in threes, for example, see 
+what happens when you try this code
+
+[source]
+----
+for (int i = 0; i < 9; i += 3) {
+  System.out.printf("%d|%d|%d\n", i, i+1, i+2);
+}
+----
+
+== Check for wins
+
+Implement a function, `isWinner` which tests whether either the AI or player wins.
+Below is the specification
+
+[source]
+----
+Function: isWinner
+Returns true if the given symbol controls a complete row, col, or diagonal; False otherwise
+Input board (char[]): the 3x3 tic-tac-toe board
+Input sym (char): the character, either 'O' or 'X'
+Return (boolean): true if the sym has won the board; false otherwise
+----
+
+Note that we can detect that a tie has ocurred if no turns are left and no one won the 
+game.
+
+For example, calling isWinner with the following board and `'X'` returns false but with `'O'`
+returns true
+
+[source]
+----
+-------
+|O|X|X|
+|O|O|O|
+|X|X|O|
+-------
+----
+
+= Extra challenge
+
+Implement your own unique tic-tac-toe game in `MyTicTacToe.java`. Be sure to point out to us 
+your work in your readme. Below are ideas
+
+* Implement more sophisticated decision making for the AI turn
+* Use StdDraw to display the board with graphics
+* Support bigger boards!
+
+= What to hand-in
+
+. The program, `Tictactoe.java`, and if applicable, `MyTictactoe.java`
+. Make sure your program has a header containing your name, date, and purpose of the program
+. A brief write-up containing your name, assignment number, and a few sentences about how long you 
+spent on the assignment and any interesting bugs you solved. Be sure to highlight any 
+customizations you made for your game!!
+
+== How to hand-in
+
+. Copy your files to your dropbox, into the folder called `A05`. 

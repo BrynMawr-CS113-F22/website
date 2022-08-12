@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.16">
+<title>Assignment 3: Loops, I did it again!</title>
+<link rel="stylesheet" href="style/cs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_assignment_3_loops_i_did_it_again">Assignment 3: Loops, I did it again!</a></li>
+<li><a href="#_grandmas_pies">1. Grandma&#8217;s Pies</a></li>
+<li><a href="#_digital_pet">2. Digital pet</a></li>
+<li><a href="#_poll_predictor">3. Poll predictor</a></li>
+<li><a href="#_what_to_hand_in">4. What to hand-in</a>
+<ul class="sectlevel2">
+<li><a href="#_how_to_hand_in">4.1. How to hand-in</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_assignment_3_loops_i_did_it_again">Assignment 3: Loops, I did it again!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Due Thursday, September 29, before midnight</strong></p>
+</div>
+<div class="paragraph">
+<p>The goals of this assignment are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Work with loops</p>
+</li>
+<li>
+<p>Work with if statements</p>
+</li>
+<li>
+<p>Work with accumulator variables</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_grandmas_pies">1. Grandma&#8217;s Pies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Write a program, <code>Pies.java</code>, which prints messages about your ancestor&#8217;s pies.
+Your program should ask for a number of ancestors and then print messages about
+each ancestor&#8217;s Pies.</p>
+</div>
+<div class="paragraph">
+<p>Two examples of the running program are shown below. User input is shown in <strong>bold</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java Pies</strong>
+Enter a number: <strong>0</strong>
+
+$ <strong>java Ancestor</strong>
+Enter a number: <strong>1</strong>
+
+My grandmother's pies are the best!
+
+$ <strong>java Ancestor</strong>
+Enter a number: <strong>6</strong>
+
+My grandmother's pies are the best!
+My great grandmother's pies are the best!
+My great great grandmother's pies are the best!
+My great great great grandmother's pies are the best!
+My great great great great grandmother's pies are the best!
+My great great great great great grandmother's pies are the best!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You may assume that the user only inputs valid numbers.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_digital_pet">2. Digital pet</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Write a program, <code>Pet.java</code>, that simulates a virtual pet. Each
+day you must feed your pet. Your pet starts with a weight of 100 pounds. You
+start with 100 food pellets. The user should specify how many days to simulate
+your virtual pet.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Each day, your pet burns between 10 and 20 pounds.</p>
+</li>
+<li>
+<p>When your feed your pet, your food gives between 0 and 2 times the pounds.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Below is an example</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java Pet</strong>
+Your pet weighs 100 pounds
+You have 100 pellets
+Enter the number of days: <strong>3</strong>
+
+Day 1
+Your pet lost 10 pounds and now weighs 90 pounds
+How many pellets do you want to feed your pet? <strong>10</strong>
+You fed your pet 10 pellets
+Your pet gained 10 pounds and now weighs 100 pounds
+You have 90 pellets left
+
+Day 2
+Your pet lost 11 pounds and now weighs 89 pounds
+How many pellets do you want to feed your pet? <strong>50</strong>
+You fed your pet 50 pellets
+Your pet gained 100 pounds and now weighs 189 pounds
+You have 40 pellets left
+
+Day 3
+Your pet lost 14 pounds and now weighs 175 pounds
+How many pellets do you want to feed your pet? <strong>20</strong>
+You fed your pet 20 pellets
+Your pet gained 0 pounds and now weighs 175 pounds
+You have 20 pellets left</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Requirements and tips:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To compute the amount of pounds lost per day, you need to generate a random number
+between 10 and 20 (inclusive).</p>
+</li>
+<li>
+<p>To compute the amount of pounds gained per pellet, you need to generate a random number
+between 0 and 2 (inclusive). Then multiply the number of pellets by this number.</p>
+</li>
+<li>
+<p>The user should not be allowed to feed their pet more pellets than they have! Check whether the requested amount is too much and adjust it if it is.</p>
+</li>
+<li>
+<p>Your pet&#8217;s weight should not go below zero! Check for a negative weight and clamp it to zero.</p>
+</li>
+<li>
+<p>If you personalize your pet, be sure to point this out in your readme!</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Below the user tries to feed more pellets than they have available:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ java Pet
+Your pet weighs 100 pounds
+You have 100 pellets
+Enter the number of days: 2
+
+Day 1
+Your pet lost 18 pounds and now weighs 82 pounds
+How many pellets do you want to feed your pet? 300
+Not enough pellets! We will feed 100 pellets
+You fed your pet 100 pellets
+Your pet gained 0 pounds and now weighs 82 pounds
+You have 0 pellets left
+
+Day 2
+Your pet lost 13 pounds and now weighs 69 pounds
+How many pellets do you want to feed your pet? 100
+Not enough pellets! We will feed 0 pellets
+You fed your pet 0 pellets
+Your pet gained 0 pounds and now weighs 69 pounds
+You have 0 pellets left</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Below the pet&#8217;s weight goes to zero.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ java Pet
+Your pet weighs 100 pounds
+You have 100 pellets
+Enter the number of days: 6
+
+Day 1
+Your pet lost 20 pounds and now weighs 80 pounds
+How many pellets do you want to feed your pet? 0
+You fed your pet 0 pellets
+Your pet gained 0 pounds and now weighs 80 pounds
+You have 100 pellets left
+
+Day 2
+Your pet lost 20 pounds and now weighs 60 pounds
+How many pellets do you want to feed your pet? 0
+You fed your pet 0 pellets
+Your pet gained 0 pounds and now weighs 60 pounds
+You have 100 pellets left
+
+Day 3
+Your pet lost 20 pounds and now weighs 40 pounds
+How many pellets do you want to feed your pet? 0
+You fed your pet 0 pellets
+Your pet gained 0 pounds and now weighs 40 pounds
+You have 100 pellets left
+
+Day 4
+Your pet lost 20 pounds and now weighs 20 pounds
+How many pellets do you want to feed your pet? 0
+You fed your pet 0 pellets
+Your pet gained 0 pounds and now weighs 20 pounds
+You have 100 pellets left
+
+Day 5
+Your pet lost 20 pounds and now weighs 0 pounds
+How many pellets do you want to feed your pet? 0
+You fed your pet 0 pellets
+Your pet gained 0 pounds and now weighs 0 pounds
+You have 100 pellets left
+
+Day 6
+Your pet lost 20 pounds and now weighs 0 pounds
+How many pellets do you want to feed your pet? 0
+You fed your pet 0 pellets
+Your pet gained 0 pounds and now weighs 0 pounds
+You have 100 pellets left</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_poll_predictor">3. Poll predictor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>credit: Deepak Kumar</em></p>
+</div>
+<div class="paragraph">
+<p>Write a program, <code>Predictor.java</code>, which predicts a candidate&#8217;s likelihood of victory given its current polling number and margin of error. For example, if a poll predicts that a candidate has a 47% chance of winning a state with a 6% margin of error, can we make an overall prediction that the candidate will win a state?</p>
+</div>
+<div class="paragraph">
+<p>One way to do this is to simulate an actual vote incorporating the margin of error. Let&#8217;s say, a poll (POLL) in a state shows that a candidate is likely to receive 47% of the vote in their favor with a margin of error +/- 6% (MOE). With this information, we can do a simulation of the state&#8217;s voting, and arrive at the % of votes received by the candidate in a poll:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>SamplePoll = POLL + X * MOE</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where X is a number in the range [-1.0..1.0]. For example, if X is -0.5, then the candidate will receive 0.47 + -0.5 * 0.06 = 0.44. This means, in this instance, the candidate received only 44% of the votes (i.e. losing the state). Alternately, if X turns out to be 0.8 then the candidate will receive 0.47 + 0.8 * 0.06 = 0.518 or 51.8% of the votes cast thereby winning the state.</p>
+</div>
+<div class="paragraph">
+<p>We can use Java&#8217;s Math.random() function to generate values of X in the range [-1.0..1.0) and perform a simulation of several sample elections based on POLL and MOE to see if a candidate is likely to win or lose a state. For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java-introcs Predictor Keystone 0.47 0.06 1000000</strong>
+Candidate win likelihood for Keystone state is 25.02%</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above means that after performing 1 million randomized simulated polls based on POLL and MOE the candidate has a 25% likelihood of winning Keystone state. Here are some more examples.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java-introcs Predictor Keystone 0.53 0.06 1000000</strong>
+Candidate win likelihood for Keystone state is 74.99%
+
+$ <strong>java-introcs Predictor Golden 0.49 0.07 1000000</strong>
+Candidate win likelihood for Golden state is 42.82%
+
+$ <strong>java-introcs Predictor Nutmeg 0.51 0.02 1000000</strong>
+Candidate win likelihood for Nutmeg state is 75.01%</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You program, <code>Predictor.java</code>, should take the following command line arguments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>state</code>: (String) state name. For example, Keystone, Golden, or Nutmeg</p>
+</li>
+<li>
+<p><code>POLL</code>: (double) polling number, a double in the range [0,1]. For example, 0.53, 0.49, or 0.51</p>
+</li>
+<li>
+<p><code>MOE</code>: (double) margin of error, a double in range [0,1]. For example, 0.06, 0.07, or 0.02</p>
+</li>
+<li>
+<p><code>N</code>: (int) number of simulation iterations. For example, 1000000</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Your program, <code>Predictor.java</code>, should implement the following algorithm</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>wins = 0
+Repeat N times
+   Compute SamplePoll = POLL + randomNumber * MOE
+   If SamplePoll &gt; 0.5 then
+       Increment wins by 1
+   Compute and output overall win likelihood = (wins/N)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Poll data</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STATE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Poll</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Margin of Error</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Garden</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">48%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Empire</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">53%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nutmeg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Golden</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">52%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LoneStar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">49%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5%</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>In your writeup, include the likelihoods computed by your program for all states, using
+N = 1000000.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Pretty printing is implemented using <code>StdOut.printf</code> as described in section 1.5 of your textbook. Using <code>printf</code> requires that you compile with the command <code>javac-introcs</code> and run with the command <code>java-introcs</code>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_to_hand_in">4. What to hand-in</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The programs, <code>Pies.java</code>, <code>Pet.java</code>, <code>Predictor.java</code>.</p>
+</li>
+<li>
+<p>Make sure each program has a header containing your name, date, and purpose of the program</p>
+</li>
+<li>
+<p>A brief write-up containing your name, assignment number, and a few sentences about how long you
+spent on the assignment and any interesting bugs you solved. <strong>Don&#8217;t forget to include the likelihoods
+computed by your Predictor!</strong></p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_how_to_hand_in">4.1. How to hand-in</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Copy your programs and writeup to your dropbox, into the folder called <code>A03</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-08-12 12:19:27 -0400
+</div>
+</div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</body>
+</html>

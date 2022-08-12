@@ -1,0 +1,497 @@
+include::header.adoc[]
+
+:title: Assignment 4: Get carried array.
+:Author Initials: ASN
+:Date:    2020-02-07
+:Revision: 0.1
+
+= {title}
+
+**Due Thursday, October 6, before midnight**
+
+The goals of this assignment are:
+
+* Work with loops, conditionals, and variables
+* Work with arrays and strings
+* Use the draw API included with your textbook
+
+:stem: latexmath
+
+== Coding guidelines
+
+In addition to producing the correct output, in this assignment you are also asked to 
+write code that is easy to read and understand. In particular, part of your score on this 
+assignment will be determined by:
+
+* Variable naming: Variables should have meaningful names that indicate what they represent, using full English words or common abbreviations, e.g. “wins” or “votes” instead of “w” or “vot”.
+* Appearance:The code should be formatted so that indentation and spacing make it easy to understand which parts of the code are within the bodies of if-statements and loops. 
+
+Additionally, there should be spacing between variables and operators to make it easy to read each individual line of code.
+This is called *style* and is an essential requirement for producing clean, readable code. 
+For example, a piece of code that determines the maximum value in an array called values should look something like this:
+
+[source]
+----
+int  max = values[0];
+for (int i = 1; i < values.length; i++) {
+    if (values[i] > max) {
+        max = values[i];
+    }
+}
+System.out.println("Max is " + max); 
+----
+
+Not like this:
+
+[source]
+----
+int  a=values[0];
+for (int i=1;i<values.length;i++) {
+if (values[i]>a) { 
+a=values[i];
+}
+}
+System.out.println("Max is "+a); 
+----
+
+Please speak with your TAs or instructor if you have any questions about style!
+
+:sectnums:
+
+= Can't get a word in entwise
+
+    "We must not be hasty." 
+    -- Treebeard 
+
+The https://lotr.fandom.com/wiki/Ents[Ents] in Lord of the Rings were a noble 
+race of tree herders, whose language was "long and sonorous". 
+Ents live a very long time and so speak very...carefully...and....very...s.l.o.w.l.y. 
+
+Write a program ,`Slow.java`, that turns a phrase into ent-speech. Your program 
+should ask for the pause length and a phrase to change. Your program should 
+output an ent-phrase. Ent-phrases contain '.' between each letter in the input. 
+
+Two examples of the running program are shown below. User input is shown in *bold*.
+
+[source,subs="quotes"]
+----
+$ **java Slow**
+Pause length: **3**
+Text: **Surprise!**
+S...u...r...p...r...i...s...e...!...
+
+$ **java Slow**
+Pause length: **5**
+Text: **Hmmm?**
+H.....m.....m.....m.....?.....
+----
+
+= Crossword
+
+In `Crossword.java`, implement a program that inputs text and outputs a word square whose letters 
+are arranged like a crossword puzzle.
+
+[source,java,subs="quotes"]
+----
+$ *java Crossword*
+Enter a phrase: **top**
+
+top
+o o
+pot
+
+$ *java Crossword*
+Enter a phrase: **otter**
+
+otter
+t   e
+t   t
+e   t
+retto
+
+----
+
+Features:
+
+* The first row should match the text that was entered
+* The last row is the reverse of the input text
+* The left side spells the input word from top to bottom
+* The right side spells the input word from bottom to top
+
+If this problem looks daunting, solve it one step at a time! 
+Let's break this problem into simpler subproblems and work our way up
+to the final solution.
+
+*Subproblem 1: Top row*
+
+The top row prints the input string. Write a program that outputs the 
+user's input. 
+
+[source,java,subs="quotes"]
+----
+$ **java Crossword**
+Enter a phrase: **otter**
+
+otter
+----
+
+*Subproblem 2: Bottom row*
+
+Using string accumulation, compute the reverse of the input string. 
+Then print both the original and reversed string.
+
+[source,java,subs="quotes"]
+----
+$ **java Crossword**
+Enter a phrase: **otter**
+
+otter
+retto
+----
+
+*Subproblem 3: Left column*
+
+The left column prints each character on its own line, excluding the 
+first and last character. To start, simply print all the characters 
+on their own line.
+
+[source,java,subs="quotes"]
+----
+$ **java Crossword**
+Enter a phrase: **otter**
+
+otter
+o
+t
+t
+e
+r
+retto
+----
+
+Now, exclude the first and last characters.
+
+[source,java,subs="quotes"]
+----
+$ **java Crossword**
+Enter a phrase: **otter**
+
+otter
+t
+t
+e
+retto
+----
+
+*Subproblem 4: Right column*
+
+Excluding the first and last character, print each character of the 
+reversed string on its own line. Don't worry about spacing to start.
+
+[source,java,subs="quotes"]
+----
+$ **java Crossword**
+Enter a phrase: **otter**
+
+otter
+t e
+t t
+e t
+retto
+----
+
+Now, add spaces between the left and right columns.
+
+[source,java,subs="quotes"]
+----
+$ *java Crossword*
+Enter a phrase: **otter**
+
+otter
+t   e
+t   t
+e   t
+retto
+----
+
+= Letter Frequency 
+
+_credit: Deepak Kumar_
+
+Write a program, `LetterFrequency.java`, that plots the frequency of different letters in a corpus 
+of text using a link:https://en.wikipedia.org/wiki/Histogram[histogram].
+
+*Download the text*: link:https://cs.brynmawr.edu/Courses/cs113/fall2020dk/tolstoy.txt[tolstoy.txt]
+
+NOTE: This question is based on this link:https://cs.brynmawr.edu/Courses/cs113/fall2020dk/Assignment4.pdf[this writeup].
+
+== Before You Begin
+
+Because this assignment focuses on keeping track of the number of occurrences of 
+individual letters in the program input, we will be making heavy use of the Java 
+char datatype, which was presented in Section 1.2 of your course textbook. 
+Review this part of your textbook if you are not familiar with this datatype.
+
+A Java *char* variable represents a single character, which can be a letter
+like ‘a’ or ‘M’; a digit like ‘2’ or ‘8’; or punctuation like ‘+’ or ‘?’.
+
+When working with letters, as we will do in this assignment, it is even
+possible to do math with char variables, for instance:
+
+[source]
+----
+char first = 'k';
+char second = (char)(first + 3); 
+StdOut.printf("%c", second);
+----
+
+This code will print
+the letter ‘n’, since ‘n’ is three letters after ‘k’ in the alphabet, and the
+“%c” format string means to treat the value as a char. Similarly, you could
+have something like this:
+
+[source]
+----
+char letter = 'g';
+int value = letter - 'a';
+StdOut.printf("%d", value); 
+----
+
+This code will print 6, since ‘g’ is six letters
+after ‘a’. Be sure you understand this before starting, and ask your
+TAs or Instructor or post a question on slack if you are not sure how this works!
+
+== Count characters
+
+The first step in building the histogram is to read the input text one
+character at a time, and to keep track of and then display (to stdout) the
+number of occurrences of each letter between ‘a’ and ‘z’. 
+
+For instance, if the input text were “java yeah!”, the program should
+indicate that the letter ‘a’ occurs three times and that the letters ‘e’,
+‘h’, ‘j’, ‘v’, and ‘y’ each
+occur once. It should ignore the blank space between “java” and “yeah!”, as
+well as the ‘!’ character, since those are not letters. 
+
+Your program should
+display the number of occurrences for all 26 letters, even if a given letter
+does not appear. For instance, in the above example, the output should look
+like this:
+
+[source]
+----
+a: 3 
+b: 0 
+c: 0 
+d: 0 
+e: 1 
+. . . output omitted but you get the idea... 
+x: 0 
+y: 1 
+z: 0 
+----
+
+For simplicity, you may assume that your program only
+needs to keep track of lowercase letters, i.e. that any uppercase characters
+in the input have already been converted to lowercase, and your program only
+needs to track the 26 lowercase letters used in English.
+
+The following hints
+should help you with this part of the assignment:
+
+* You can use StdIn.isEmpty() to determine whether or not there is more input text to read. 
+* You can use StdIn.readChar() to read a single character from the input and store the character in a char variable. 
+* Use a 26-element array of counts to keep track of number of occurrences of each letter. Do not define 26 different variables to store the number of occurrences of each letter!
+* You should store the number of occurrences of the letter ‘a’ in index #0, the number of occurrences of ‘b’ in index #1, and so on. You can use the “math with char variables” advice from above to figure out the corresponding array index for each letter. 
+* To determine whether a char variable holds a lowercase letter, you can determine whether it is in the range [‘a’, ‘z’] in the same way in which you would determine whether an int variable is in a certain numerical range by using comparison operators. 
+
+To test your program with the default
+source for stdin, i.e. the Terminal, then follow these steps:
+
+. Run the program with the command `java-introcs LetterFrequency`
+. Type characters into the Terminal. Don’t worry about putting spaces between them; your program should be able to read each character one at a time. Your program should only be counting the occurrences of lowercase letters, i.e. ‘a’ through ‘z’.
+. When you are done entering characters, you can indicate that there are no more characters to read (so that StdIn.isEmpty() will return true) by typing Ctrl-D (that is, pressing the Control and D keys at the same time) if you are using a Mac, or Enter then Ctrl-Z then Enter if you are using Windows.
+. Your program should then display the number of times you entered each character from ‘a’ to ‘z’. 
+
+Once you have tested your program by entering characters
+into the Terminal, try it with the text of “War and Peace”, which is
+available in the file `tolstoy.txt`. Assuming that `tolstoy.txt` is in the same
+directory as your Java source code, all you need to do is run the program
+like this:
+
+[source,subs=quotes]
+----
+java-introcs LetterFrequency < tolstoy.txt
+----
+
+Then you should see the
+number of occurrences for each of the characters ‘a’ through ‘z’. Your
+program should produce the following output:
+
+[source]
+----
+a: 204416 
+b: 34371 
+c: 60658 
+d: 117751 
+e: 313007 
+f: 54504 
+g: 50907 
+h: 166515 
+i: 172640 
+j: 2485 
+k: 20282 
+l: 96032 
+m: 61282 
+n: 183126 
+o: 191487 
+p: 44717 
+q: 2319 
+r: 146889 
+s: 162125 
+t: 224506 
+u: 64917 
+v: 26787 
+w: 58928 
+x: 4032 
+y: 45936 
+z: 2386 
+----
+
+Be sure you complete this part before moving on to Part 2!
+
+== Scale values
+
+At this point, we know the number of occurrences of each lowercase letter,
+but before we can draw the histogram, we need to scale the values so that the
+letter that occurs the most has a value of 1.0, and the other letters’ values
+are scaled accordingly.
+
+For instance, using the example of “War and Peace,”
+the letter ‘e’ occurs 313,007 times, which is the most. So we scale the value
+for ‘e’ to 1.0. 
+
+Then we determine the value for each of the other letters by
+dividing by 313,007, such that ‘a’ gets a value of 204,416 / 313,007 = 0.653,
+since ‘a’ occurs 65.3% as much as ‘e’, and so on.
+
+Modify yourLetterFrequency
+program so that it scales the values for each letter based on the number of
+occurrences of the letter that appears the most, and then prints out each
+letter ‘a’ through ‘z’ and its new, scaled value to three digits of
+precision, i.e. three digits after the decimal point. 
+
+For instance, when
+running the program with “War and Peace” as the input, the output for this
+part should be as follows:
+
+[source]
+----
+a: 0.653 
+b: 0.110 
+c: 0.194 
+d: 0.376 
+e: 1.000 
+f: 0.174 
+g: 0.163 
+h: 0.532 
+i: 0.552 
+j: 0.008 
+k: 0.065 
+l: 0.307 
+m: 0.196 
+n: 0.585
+o: 0.612 
+p: 0.143 
+q: 0.007 
+r: 0.469 
+s: 0.518 
+t: 0.717 
+u: 0.207 
+v: 0.086 
+w: 0.188 
+x: 0.013 
+y: 0.147 
+z: 0.008 
+----
+
+Be sure you complete this part before moving on to Part 3!
+
+== Draw a histogram
+
+Now that we know the relative/scaled values for the
+number of occurrences of each letter, we can use the StdDraw library to draw
+the histogram and represent these values visually.
+
+Our histogram will consist
+of a rectangle for each letter, going left to right ‘a’ through ‘z’, with the
+height of each letter being equal to the relative/scaled value calculated in
+Part 2.
+
+To draw a rectangle using this library, you can
+call 
+
+[source]
+----
+StdDraw.rectangle(x, y, r1, r2) 
+----
+
+where:
+
+* x is the x-axis coordinate of the
+center of the rectangle
+* y is the y-axis coordinate of the center of the
+rectangle
+* r1 the x-axis distance from the center of the rectangle to a
+vertical side, i.e. half the width 
+* r2 is y-axis distance from the center of
+the rectangle to a horizontal side, i.e. half the height.
+
+Recall that the
+default coordinate system in the StdDraw library is [0.0, 1.0] on both the x-
+and y-axes. For our purposes, this is fine for the y-axis because the
+relative/scaled values from Part 2 are all in [0.0, 1.0] anyway, and will
+represent the height of each rectangle. However, since we will have 26
+rectangles, we can rescale the x-coordinates to [0.0, 26.0] using
+`StdDraw.setXscale(0, 26)` so that the width of each rectangle is 1 and not
+1/26. This will make the math a little easier.Using the above, we can now
+describe how to draw the rectangle for the ith letter (starting from 0, which
+is ‘a’):
+
+* x is i + 0.5; this is so that the x-coordinate of the center of the
+‘a’ rectangle is 0.5, the x-coordinate of the center of the ‘b’ rectangle is
+1.5, and so on.
+* y is 0.5 times the letter’s scaled value (from Part 2)
+* r1 is
+0.5, since this is half the width 
+* r2 is 0.5 times the letter’s scaled value
+(from Part 2), since this is half the height.
+
+Modify your LetterFrequency
+program so that it uses StdDraw to draw a rectangle for each lowercase letter
+as described above. Your program output should look something like the
+picture shown below
+
+*Submit an image of your histogram along with your code for this week's assignment*
+
+image::A04-WarAndPeace-Histogram.png[]
+
+== Extra challenge
+
+Add labels and colors to your histogram. For example, below different colors are used for alternating bars. Each 
+bar is labeled with its corresponding letter.
+
+image::A04-WarAndPeace-Histogram-Pretty.png[]
+
+= What to hand-in
+
+. The programs, `Slow.java`, `Crossword.java`, and `LetterFrequency.java`.
+. An image of your histogram, drawn for the last question.
+. Make sure each program has a header containing your name, date, and purpose of the program
+. A brief write-up containing your name, assignment number, and a few sentences about how long you 
+spent on the assignment and any interesting bugs you solved. Be sure to highlight any 
+customizations you make for your own histogram. 
+
+== How to hand-in
+
+. Copy your programs to your dropbox, into the folder called `A04`. 

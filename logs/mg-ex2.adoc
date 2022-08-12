@@ -1,0 +1,76 @@
+This example shows how to handle:
+
+* non-integer input (zebra)
+* integer input that is out of range (99)
+* trying to flip the same card (doesn't count as a turn)
+* picking a card that was already matched 
+
+[subs="quotes,attributes"]
+----
+$ **java MemoryGame.java**
+
+   ~ ~  Welcome to M*E*M*O*R*Y G*A*M*E v1.0 ~ ~
+
+  Pick two cards at a time and see if they match.
+  Keep picking pairs of cards until you match them all!
+
+
+
+========================================================================
+ ===0===  ===1===  ===2===  ===3===  ===4===  ===5===  ===6===  ===7===  ===8===  ===9===
+Turn #1:
+card to flip> **0**
+                 raven
+Turn #1:
+card to flip> **zebra**
+card to flip> **99**
+Please enter a card from 0 to 9!
+card to flip> **-40**
+card to flip> **1**
+                 heron
+Nope...
+
+
+========================================================================
+ ===0===  ===1===  ===2===  ===3===  ===4===  ===5===  ===6===  ===7===  ===8===  ===9===
+Turn #2:
+card to flip> **3**
+                 raven
+Turn #2:
+card to flip> **3**
+                 raven
+Duh...you can't flip the same card!
+
+
+========================================================================
+ ===0===  ===1===  ===2===  ===3===  ===4===  ===5===  ===6===  ===7===  ===8===  ===9===
+Turn #2:
+card to flip> **0**
+                 raven
+Turn #2:
+card to flip> **3**
+                 raven
+Correct!
+
+
+========================================================================
+  raven   ===1===  ===2===   raven   ===4===  ===5===  ===6===  ===7===  ===8===  ===9===
+Turn #3:
+card to flip> **0**
+You already matched that card...
+card to flip> **3**
+You already matched that card...
+card to flip> **5**
+                 robin
+Turn #3:
+card to flip> **6**
+                 egret
+Nope...
+
+----
+
+link:mg-ex1.html[Example 1]
+
+link:mg-ex3.html[Example 3]
+
+link:../asst07.html[back to lab 7]

@@ -1,0 +1,145 @@
+include::header.adoc[]
+
+:title: CS113 Lab 9: Recursion excursion
+:Author Initials: ASN
+:labnum: 08
+
+= {title}
+
+*Due Thursday, November 17, before midnight*
+
+*Goals*
+
+* Practice writing recursive functions
+
+= Recursive functions
+
+In the file, `Recursion.java`, write each of the following functions
+*recursively*. You are given link:Recursion.java[basecode] containing
+functions stubs along with a `main` for testing. You can download the 
+link:Recursion.java[basecode] here or use the file in Dropbox.
+
+* link:#q1[even numbers]
+* link:#q3[reverse a string]
+* link:#q4[blastoff]
+* link:#q5[get integer divisible by 3 ]
+* link:#q6[xerox]
+* link:#q7[raise to power]
+* link:#q8[is palindrome?]
+* link:#q12[count in string]
+//* link:#q1[sum a list]
+//* link:#q2[max of a list]
+//* link:#q9[is sorted?]
+//* link:#q10[in list? ]
+//* link:#q11[coin flips ]
+
+NOTE: You must not modify the function parameters and return types for the given functions!
+
+. even numbers anchor:q1[]
++
+Function `reven(int n)` should recursively sum the even numbers starting at 2 and ending at n. 
+For example, `reven(10)` should return 2+4+6+8+10 = 30. 
++
+//1) sum a list anchor:q1[]
+//Function should recursively sum all items in a given list and return the sum.
+//For example: the list `{1,2,3,4,5}` should return 15, and an empty list should
+//return 0. 
++
+//2) max of a list anchor:q2[]
+//Function should recursively find the largest item in the list and return
+//it. For example: the list `{5,20,-4,18}` has max of 20.
++
+. reverse a string anchor:q3[]
++
+Function `rrevStr(String word)` should return the reverse of a given string.
+For example: the reverse of `"hello"` is `"olleh"`.
++
+. blastoff anchor:q4[]
++
+Function `rblastoff(int n)`should count down (print one number per line) from the given
+start number to 1, then print "blastoff!".
+For example, `rblastoff(10)` should count down from 10 to 1, then print
+"blastoff!".
++
+. get integer divisible by 3 anchor:q5[]
++
+Function (`rgetMod()`) asks the user to enter an integer that is divisible
+by 3. Assume the user will enter an integer. If the given integer is not divisible 
+by 3 (Hint: use `%` to check), the function should recursively ask the user for 
+another integer. This function should return the valid integer. 
+Below is console output from running `rgetMod`.
++
+[source,subs=quotes]
+----
+Enter a number: *4*
+Not divisible by 3!
+Enter a number: *6*
+----
++
+NOTE: `rgetMod` should return the user's number! 
++
+. xerox anchor:q6[]
++
+Function (`rxerox(String phrase,int n)`) should generate and
+return a String containing `n` copies of the item.
+For example, `rxerox("paper", 4)` should return `"paperpaperpaperpaper"`,
+and `rxerox("2", 10)` should return `"2222222222"`.
++
+. raise to power anchor:q7[]
++
+Function `rraise(int n, int m)` returns `n` raised to the mth power.
+For example, calling `rraise(6,2)` returns 36.
++
+. is palindrome? anchor:q8[]
++
+Function `risPalindrome(String text)` returns `true` if given text is a palindrome
+(same forwards and backwards) and `false` otherwise. For example, `risPalindrome("HANNAH")`
+should return `true`.
++
+//9) is sorted?           anchor:q9[]
+//Function `risSorted(L)` returns `true` if the given list is in-order and `false` otherwise.
+//For example, the list `{1,2,3,4,5}` should return `true`.
++
+//10) in list? anchor:q10[]
+//Function `rinList(x,L)` returns `true` if `x` is in the list `L`.
+//For example, `rinList` should return `true` if x is 3 and the list is 
+//`{-1,2,4,3,6}`. 
++
+//11) coin flips anchor:q11[]
+//Function `rcoinFlip(n)` flips a coin `n` times, and returns the total
+//number of Heads. For example, `rcoinFlip(100)` might return 50 (or 49, or
+//51, etc). (Hint: to toss a coin, compute a random int which is either 0 or 1).
++
+. count in String  anchor:q12[]
++
+Function `rcount(char x,String S)` returns how many times `x` is in the String `S`.
+For example, `rcount("a", "aardvark")` should return 3.
+
+= Testing your functions
+
+You are given test code in `main`. Functions that return a value are tested using the 
+`test` function. This function throws an exception if the function returns an incorrect value. 
+For example, suppose there is a bug in our function `rrevStr`, running gives this error
+
+[source]
+----
+java.lang.Exception: Test Failed: yolleh != olleh
+        at Recursion.test(Recursion.java:118)
+        at Recursion.main(Recursion.java:133)
+----
+
+The above error shows us that our function returned "yolleh" but should have 
+returned the value "olleh". We can also see that the function we need to fix 
+is called on line 133. 
+
+We encourage you to add your own tests! 
+
+= What to hand-in
+
+. The program, `Recursion.java`
+. Make sure your programs have a header containing your name, date, and description.
+. No writeup is necessary for this assignment
+
+== How to hand-in
+
+. Copy your files to your dropbox, into the folder called `A09`. 

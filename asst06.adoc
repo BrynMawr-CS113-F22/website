@@ -1,0 +1,218 @@
+include::header.adoc[]
+
+:title: Assignment 6: Be classy
+:Author Initials: ASN
+:Date:    2020-02-07
+:Revision: 0.1
+
+= {title}
+
+**Due Thursday, October 27, before midnight**
+
+The goals of this assignment are:
+
+* Work with classes, and objects
+* Work with loops, conditionals, and variables
+* Work with arrays, Strings, and files
+
+In this assignment, you will implement a
+link:https://en.wikipedia.org/wiki/Soundboard_(computer_program)[sound
+board], a program for playing short sound clips. 
+
+We will use classes to organize our program. The `Sound` class will represent 
+individual clips, stored in a WAV file. The `SoundLibrary` class will manage 
+a list of `Sound` objects. The full program, `SoundBoard`, will 
+present the user with a list of sounds and allow them to play them.
+
+:stem: latexmath
+
+= Sound
+
+Write a program, `Sound.java`, which implements and tests a class names `Sound`. Your sound class 
+represents a sound clip stored in a WAV. It should contain the name, duration, and WAV file of 
+the sound. 
+
+*Requirements*
+
+* `Sound` contains the following data (all data should be private): 
+** mName of the sound (String)
+** mDuration of the sound in seconds (double)
+** mFilename of the WAV file (String)
+
+* `Sound` contains the following methods:
+** Constructor `Sound(String name, double duration, String fileName)`, which initializes the object with the given information.
+** `void play()`, which plays the sound stored in this class by calling `StdAudio.play`   
+** `String getName()`, accessor for the sound's name
+** `double getDuration()`, accessor for the sound's duration
+
+In `main`, test all the functions in your class. For example, the following code should produce 
+the following output (and play the cricket sound). 
+
+[source]
+----
+public static void main(String[] args) {
+    Sound sound = new Sound("cricket", 0.5, "wav/337435__ev-dawg__cricket.wav");
+    System.out.printf("Sound: %s (%.2fs)\n", sound.getName(), sound.getDuration());
+    sound.play();
+}
+----
+
+[source,subs=quotes]
+----
+$ *javac-introcs Song.java*
+$ *java-introcs* Song
+Sound: cricket (0.50s)
+----
+
+= SoundLibrary
+
+Write a program, `SoundLibrary.java`, which stores a list of songs
+
+*Features*
+
+* `SoundLibrary` contains the following data (all data should be private): 
+** array of Sounds (Sound[])
+
+* SoundLibrary contains the following methods:
+** Constructor `SoundLibrary(String filename)`, initializes the object using a list of songs stored in a file
+** `void list()`, lists all the sounds available in the library
+** `int getNumSounds()`, returns the number of sounds in the library
+** `void play(int songNumber)`, plays the sound corresponding to the given soundNumber. The first sound in the library has soundNumber 0. The second sound has soundNumber 1, etc. 
+
+In `main`, test all the functions in your class. For example, the following code should produce 
+the following output (and play the sound entitled "magic"). 
+
+[source]
+----
+public static void main(String[] args) {
+    SoundLibrary library = new SoundLibrary("sounds.txt");
+    library.list();
+    library.play(1);
+}
+----
+
+[source,subs=quotes]
+----
+$ *javac-introcs SongLibrary.java*
+$ *java-introcs* SongLibrary
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+----
+
+To initialize the sound library, you will need to read in and parse the file `sounds.txt`. 
+
+* The first line in `sounds.txt` contains the number of sounds in the file
+* Each subsequent line corresponds to a single sound. The information for each sound is separated by spaces 
+** sound name
+** sound duration
+** sound filename (relative path)
+
+= SoundBoard
+
+Write a program, `SoundBoard.java`, that uses `SoundLibrary` to list and play sounds. 
+This program shows the user a menu of sounds and lets them choose different sounds to play. 
+
+Your program should support the following commands: 
+
+* *quit*: Quit the program
+* *<id>*: Play the song with the given id. Prints an error if the id is invalid. 
+
+If the user enters an invalid command, your program should print an error.
+
+[source,subs=quotes]
+----
+$ *javac-introcs SoundBoard.java*
+$ *java-introcs SoundBoard*
+0) meow - 1.00s    
+1) magic - 6.00s   
+2) gong - 12.00s   
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s    
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: -1
+Invalid command: -1
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command:
+Invalid command: 
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: play
+Invalid command: play
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: 9
+Invalid song id: 9
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: 1
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: quit
+----
+
+= Extra challenge
+
+Try adding your own songs and flair!
+
+= What to hand-in
+
+. The programs, `SoundBoard.java`, `Sound.java`, and `SoundLibrary.java`
+. Make sure your programs have a header containing your name, date, and description.
+. A brief write-up containing your name, assignment number, and a few sentences about how long you 
+spent on the assignment and any interesting bugs you solved. 
+
+== How to hand-in
+
+. Copy your files to your dropbox, into the folder called `A06`. 

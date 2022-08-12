@@ -1,0 +1,87 @@
+
+[source,subs=quotes]
+----
+$ **java Tictactoe**
+
+-----------------------
+Welcome to Tic-Tac-Toe!
+-----------------------
+
+Enter your choice like the numbers below:
+-------
+|0|1|2|
+|3|4|5|
+|6|7|8|
+-------
+
+AI chooses: 0
+-------
+|O| | |
+| | | |
+| | | |
+-------
+
+Enter 0-8 for your choice: **2**
+-------
+|O| |X|
+| | | |
+| | | |
+-------
+
+AI chooses: 8
+-------
+|O| |X|
+| | | |
+| | |O|
+-------
+
+Enter 0-8 for your choice: **6**
+-------
+|O| |X|
+| | | |
+|X| |O|
+-------
+
+AI chooses: 3
+-------
+|O| |X|
+|O| | |
+|X| |O|
+-------
+
+Enter 0-8 for your choice: **1**
+-------
+|O|X|X|
+|O| | |
+|X| |O|
+-------
+
+AI chooses: 5
+-------
+|O|X|X|
+|O| |O|
+|X| |O|
+-------
+
+Enter 0-8 for your choice: **7**
+-------
+|O|X|X|
+|O| |O|
+|X|X|O|
+-------
+
+AI chooses: 4
+-------
+|O|X|X|
+|O|O|O|
+|X|X|O|
+-------
+
+-------
+|O|X|X|
+|O|O|O|
+|X|X|O|
+-------
+
+AI wins!
+----

@@ -1,0 +1,67 @@
+include::header.adoc[]
+
+:title: Setting up your development environment
+:Author Initials: ASN, CM
+:Date:    2021-02-05
+:Revision: 0.1
+:!toc:
+
+= {title}
+
+**Step 1: Install VS Code**
+First, download VS Code from https://code.visualstudio.com/download for your operating system and then run the installer. You can accept the default settings for all configuration options.
+ 
+**Step 2: Install Java**
+The course textbook also provides software tools that we will use in this course for writing Java programs. Go to the appropriate link for your operating system:
+
+* Mac: https://lift.cs.princeton.edu/java/mac/
+* Windows: https://lift.cs.princeton.edu/java/windows/
+
+Follow the instructions only for "0. Install the Java Programming Environment" and not the other steps. It's okay if you do, but you'll be spending time installing things that you won't need!
+ 
+**Step 3: Check that it works**
+
+Below are written instructions by Professor Murphy: 
+
+Find the VS Code application on your computer and then run it. You should see the VS Code Welcome screen.
+Then, in the menu bar at the top, choose "Terminal" and then "New Terminal" from the dropdown menu. The terminal should appear at the bottom of the Welcome screen.
+A terminal is a tool that allows you to type commands that you want to run; we will be using it a lot in this course.
+ 
+If you are using Windows, you may need to do one extra configuration step.
+In the Terminal window, you will see a dropdown menu toward the right of the screen that may read "1: powershell" or "1: cmd". If you see "powershell" or "cmd" there, then do these steps, but you can skip these if you see "bash" there.
+
+* Click the dropdown menu to expand it, and then choose "Select Default Shell" from the menu
+* At the top of the VS Code window, you should see a list of options, one of which should start "Git Bash". Choose that one.
+* Now choose "Terminal" from the main menu at the top of the window, and then select "New Terminal" from the dropdown menu.
+* You should now see "2: bash" or similar toward the right of the Terminal window.
+ 
+In the Terminal window, type the following:
+
+```
+java-introcs -version
+```
+
+and hit Enter/Return. This runs the Java command and displays the version of Java that you are using.
+ 
+You should see 
+
+```
+java version "13.0.1" 2019-10-15
+```
+
+or
+
+```
+openjdk version "11.0.2" 2019-01-15
+```
+
+or something similar, and maybe a few extra lines after that. If so, then you're all set!
+ 
+However, if you see something like
+
+```
+bash: java-introcs: command not found
+```
+
+make sure that you have correctly typed the command above. If you're sure that you have, it may be that Java wasn't properly installed.
+

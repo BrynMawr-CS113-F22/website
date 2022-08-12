@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.16">
+<title>CS113 Lab 8: Searching and sorting</title>
+<link rel="stylesheet" href="style/cs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_cs113_lab_8_searching_and_sorting">CS113 Lab 8: Searching and sorting</a></li>
+<li><a href="#_restaurant_dataset">Restaurant dataset</a></li>
+<li><a href="#_restaurant_class">1. Restaurant class</a></li>
+<li><a href="#_restaurant_utilities">2. Restaurant utilities</a>
+<ul class="sectlevel2">
+<li><a href="#_load">2.1. Load</a></li>
+<li><a href="#_print">2.2. Print</a></li>
+<li><a href="#_test">2.3. Test</a></li>
+</ul>
+</li>
+<li><a href="#_restaurant_app">3. Restaurant App</a>
+<ul class="sectlevel2">
+<li><a href="#_search_names">3.1. Search names</a></li>
+<li><a href="#_city_summary">3.2. City summary</a></li>
+<li><a href="#_search_categories">3.3. Search categories</a></li>
+</ul>
+</li>
+<li><a href="#_what_to_hand_in">4. What to hand-in</a>
+<ul class="sectlevel2">
+<li><a href="#_how_to_hand_in">4.1. How to hand-in</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_cs113_lab_8_searching_and_sorting">CS113 Lab 8: Searching and sorting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Due Thursday, November 10, before midnight</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Goals</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read data from a file</p>
+</li>
+<li>
+<p>Use lists and classes to store data</p>
+</li>
+<li>
+<p>Use search and sort to work with a real-life data set</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You are given basecode and data for this assignment. Check your dropbox to get started!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_restaurant_dataset">Restaurant dataset</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For this assignment, we will be working with data from a real life
+<a href="https://www.yelp.com/dataset">dataset</a> maintained by
+<a href="https://www.yelp.com">Yelp</a>. Yelp provides information and reviews for a
+wide range of businesses. We will look at a subset containing only
+restaurants, bars, and cafes.</p>
+</div>
+<div class="paragraph">
+<p>The dataset is available as a CSV file (CSV stands for "comma separated values").
+Each line of the file contains information for a single restaurant.
+The restaurants are listed in the file in <strong>alphabetical order by name</strong>.</p>
+</div>
+<div class="paragraph">
+<p>How have two datasets to work with in this assignment. They can be found in your dropbox.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>restaurants.csv</p>
+</li>
+<li>
+<p>restaurants-small.csv</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Below is an example line.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>1 Pot,Calgary,AB,31,3.500000,Buffets; Chinese; Hot Pot; Restaurants; Dim Sum; Asian Fusion; Fondue</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Each line contains the following information.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Restaurant name ("1 Pot")</p>
+</li>
+<li>
+<p>City where restaurant is located (Calgary)</p>
+</li>
+<li>
+<p>State/Provence where restaurant is located (AB)</p>
+</li>
+<li>
+<p>Number of reviews (31)</p>
+</li>
+<li>
+<p>Average review (3.5)</p>
+</li>
+<li>
+<p>Categories for the restaurant (Buffets; Chinese; Hot Pot; Restaurants; Dim Sum; Asian Fusion; Fondue
+) Categories are separated with a <code>;</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_restaurant_class">1. Restaurant class</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Implement a class, <code>Restaurant</code>, in the file <code>Restaurant.java</code>. This class should hold the data
+we read in from our CSV files. This class should also have accessors for each instance variable.
+Test your class in a <code>main</code> function defined in <code>Restaurant.java</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Data</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Restaurant Name (String)</p>
+</li>
+<li>
+<p>City (String)</p>
+</li>
+<li>
+<p>State (String)</p>
+</li>
+<li>
+<p>Average stars (double)</p>
+</li>
+<li>
+<p>Number of reviews (int)</p>
+</li>
+<li>
+<p>categories (array of String)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Methods</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Constructor. This function should initialize the data inside <code>Restaurant</code></p>
+</li>
+<li>
+<p>Accessors for the restaurant name, city, state, review count, average review, and categories</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>public String getName()</code></p>
+</li>
+<li>
+<p><code>public String getCity()</code></p>
+</li>
+<li>
+<p><code>public String getState()</code></p>
+</li>
+<li>
+<p><code>public int getReviewCount()</code></p>
+</li>
+<li>
+<p><code>public double getStars()</code></p>
+</li>
+<li>
+<p><code>public String[] getCategories()</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Below is example output for a <code>main</code> which tests Restaurant.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java Restaurant</strong>
+           Name: Test
+           City: Philadelphia,PA
+        Reviews: 10
+          Stars: 3.5
+     Categories: [BBQ, Cafe]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_restaurant_utilities">2. Restaurant utilities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Implement a class, <code>RestaurantUtil</code>, that implements two static functions for working
+with Restaurants.</p>
+</div>
+<div class="sect2">
+<h3 id="_load">2.1. Load</h3>
+<div class="paragraph">
+<p>In the file, <code>RestaurantUtil.java</code>, write a function, <code>Load</code>, that reads a file containing restaurant information into an array.</p>
+</div>
+<div class="paragraph">
+<p>This function should adhere to the following specification.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>// Function: Load
+// Read the restaurant information in filename and return an array of restaurants
+// Input: filename (String), the file to read. Should be a CSV of restaurants
+// Returns Restaurant[] (array of Restaurant)
+public static void Restaurant[] Load(String filename)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Hints and recommendations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use the class <code>In</code>, defined in java-introcs, to load the file, e.g. <code>In file = new In(filename)</code></p>
+</li>
+<li>
+<p>Read in all the lines of the file at once using the function <code>String[] lines = file.readAllLines()</code></p>
+</li>
+<li>
+<p>Use the function, <code>split</code>, to split a string based on a character. For example <code>String[] items = current.split(",")</code> would split a line into an array of <code>String</code> based on commas.</p>
+</li>
+<li>
+<p>Initialize an array of restaurants based on the number of lines</p>
+</li>
+<li>
+<p>For each line, create a Restaurant object and save it in the array</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_print">2.2. Print</h3>
+<div class="paragraph">
+<p>In the file, <code>RestaurantUtil.java</code>, write a function, <code>Print</code>, that prints the restaurants in an array.
+You may format the display how you wish, but the output should be clean and easy to read.</p>
+</div>
+<div class="paragraph">
+<p>This function should adhere to the following specification.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>// Function: Print
+// Print the first `maxToShow` restaurants in the array restaurants
+// Input: restaurants (Restaurant[]), an array containing restaurants
+// Input: maxToShow (int), the number of items to show
+// Returns none
+public static void Print(Restaurant[] restaurants, int maxToShow)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_test">2.3. Test</h3>
+<div class="paragraph">
+<p>In the file <code>RestaurantUtil.java</code>, test <code>Load</code> and <code>Print</code> in main.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Load the file <code>restaurants-small.csv</code></p>
+</li>
+<li>
+<p>Call Print with maxToShow = 3</p>
+</li>
+<li>
+<p>Call Print with maxToShow = 100</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Below is sample output</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java-introcs RestaurantUtil</strong>
+
+                              Restaurant                    Location    Reviews Stars
+                              ----------                    --------    ------- -----
+                                   1 Pot                 Calgary, AB       31   3.5
+                                    BRGR              Pittsburgh, PA      442   3.5
+                             Brown Derby               Cleveland, OH       52   3.0
+
+Showing 3 out of 12 restaurants
+
+                              Restaurant                    Location    Reviews Stars
+                              ----------                    --------    ------- -----
+                                   1 Pot                 Calgary, AB       31   3.5
+                                    BRGR              Pittsburgh, PA      442   3.5
+                             Brown Derby               Cleveland, OH       52   3.0
+                                 Eureka!               Las Vegas, NV      231   4.5
+                                 Faberge                Montreal, QC      347   4.0
+                                  Le Lab                Montreal, QC      230   4.5
+                                Poke Bar               Charlotte, NC       26   4.0
+                                     POP                 Toronto, ON        4   4.5
+                           The Dog House               Cleveland, OH       10   4.0
+                                The Haam                 Toronto, ON       83   4.0
+                            Vitality Tap                 Calgary, AB        7   4.5
+                             Wacky Wings             Mississauga, ON       96   3.0
+
+Showing 12 out of 12 restaurants</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_restaurant_app">3. Restaurant App</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the file, <code>RestaurantApp.java</code>, implement an application that lets users search
+for restaurant information from our dataset. Your application should have three
+features:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Searching for a restaurant by name</p>
+</li>
+<li>
+<p>Summarizing the restaurants in a given city</p>
+</li>
+<li>
+<p>Searching for restaurants that fit a given category</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Below is sample output:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="logs/yelp-name-search.txt">Searching by restaurant name.</a></p>
+</li>
+<li>
+<p><a href="logs/yelp-city-search.txt">Summarizing city restaurants.</a></p>
+</li>
+<li>
+<p><a href="logs/yelp-keyword-category-search.txt">Searching by category.</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>General hint and requirements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Your program should not crash on bad input</p>
+</li>
+<li>
+<p>Your program should have an option to Quit</p>
+</li>
+<li>
+<p>We recommend you implement each feature in its own function.</p>
+</li>
+<li>
+<p>We recommend you load the data set and implement your main application loop in <code>main</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Below is a possible algorithm for your application&#8217;s <code>main</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>dataset = Load("restaurant.csv")
+while !timeToQuit
+    show the options to the user
+    ask the user for their choice
+    if choice == 1
+       doRestaurantNameLookup(dataset)
+    else if choice == 2
+       doCityStats(dataset)
+    else if choice == 3
+       doSearchByCategory(dataset)</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_search_names">3.1. Search names</h3>
+<div class="paragraph">
+<p>Implement a feature which allows the user to search by name.</p>
+</div>
+<div class="paragraph">
+<p><a href="logs/yelp-name-search.txt">Click here to see examples of running this feature.</a></p>
+</div>
+<div class="paragraph">
+<p>Features:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ask the user for the name to search for</p>
+</li>
+<li>
+<p>The search should be case <strong>insensitive</strong>. Hint: Use <code>toLowerCase()</code> when comparing strings.</p>
+</li>
+<li>
+<p>Because the names are alphabetized, use binary search to find a name</p>
+</li>
+<li>
+<p>If a restaurant is found, display all its information in a table.
+Your output does not need to be identical, but it should be clean and easy to read.</p>
+</li>
+<li>
+<p>You are not allowed to use any of Python’s built-in search functions.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_city_summary">3.2. City summary</h3>
+<div class="paragraph">
+<p>Implement a feature which summarizes the restaurants for a given city.</p>
+</div>
+<div class="paragraph">
+<p><a href="logs/yelp-city-search.txt">Click here to see an example of running this feature.</a></p>
+</div>
+<div class="paragraph">
+<p>Features:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ask the user for a city and state to search</p>
+</li>
+<li>
+<p>Prints the number of restaurants in that city</p>
+</li>
+<li>
+<p>Prints the average number of reviews for a restaurant</p>
+</li>
+<li>
+<p>Prints the max number of reviews for a restaurant</p>
+</li>
+<li>
+<p>Prints the min number of reviews for a restaurant</p>
+</li>
+<li>
+<p>Prints the average number of Stars</p>
+</li>
+<li>
+<p>Outputs the results in a table with aligned columns</p>
+</li>
+<li>
+<p>You may not use built-in min, max, or sum functions!</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This dataset includes restaurants for Las Vegas, Phoenix, Mississauga,
+Toronto, Montreal, Calgary, Cleveland, Charlotte, Pittsburgh, Scottsdale.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_search_categories">3.3. Search categories</h3>
+<div class="paragraph">
+<p>Implement a feature that allows the user to search restaurant categories for a
+keyword.</p>
+</div>
+<div class="paragraph">
+<p><a href="logs/yelp-keyword-category-search.txt">Click here for examples of searching categories.</a></p>
+</div>
+<div class="paragraph">
+<p>Features/Hints:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You are given a function <code>filterByKeyword</code> that returns an array of restaurants which match the keyword. Study this function to see examples of</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Doing case-insenstive string comparisons (Hint: use <code>toLowerCase()</code>)</p>
+</li>
+<li>
+<p>The keyword can appear anywhere in the list of categories (Hint: use <code>contains</code>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Sort the filtered restaurants by number of reviews</p>
+</li>
+<li>
+<p>The program should show the name, location, review count, and stars for each restaurant</p>
+</li>
+<li>
+<p>You may not use Java&#8217;s built-in sorting algorithms!</p>
+</li>
+<li>
+<p>&#8230;&#8203;but you can implement any sorting algorithm you like best!</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To implement this feature, you should first get a list of all restaurants that match the keyword.
+Then you should sort this list based on the number of reviews. Then, you should show the top 25
+results to the user. Below is psuedocode for this feature</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>ask user for the keyword
+Restaurant[] filtered = searchCategoryByKeyword(keyword, dataset)
+if filtered has more than 0 items in it
+   sort filtered by number of reviews (from most reviews to least)
+   Print the top 25 items in filterByKeyword
+else
+   tell user that keyword is not found</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_to_hand_in">4. What to hand-in</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The programs, <code>Restaurant.java</code>, RestaurantUtil.java`, and <code>RestaurantApp.java</code></p>
+</li>
+<li>
+<p>Make sure your programs have a header containing your name, date, and description.</p>
+</li>
+<li>
+<p>Make sure your program can run from the Dropbox directory. You should include the data files and any supporting files your program needs to run.</p>
+</li>
+<li>
+<p>Make sure your submitted program loads the large file, <code>restaurants.csv</code></p>
+</li>
+<li>
+<p>A brief write-up containing your name, assignment number, and a few sentences about how long you
+spent on the assignment and any interesting customizations you made.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_how_to_hand_in">4.1. How to hand-in</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Copy your files to your dropbox, into the folder called <code>A08</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-08-12 12:23:09 -0400
+</div>
+</div>
+</body>
+</html>

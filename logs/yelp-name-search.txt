@@ -1,0 +1,61 @@
+========== Welcome to Restaurant App =========
+
+1. Search by name
+2. City summary
+3. Search categories
+4. Quit
+
+your choice --> 1
+Enter a restaurant name: Faberge
+
+           Name: Faberge
+           City: Montreal,QC
+        Reviews: 347
+          Stars: 4.0
+     Categories: [Restaurants, Creperies, Burgers, Breakfast & Brunch]
+
+
+1. Search by name
+2. City summary
+3. Search categories 
+4. Quit
+
+your choice --> 1
+Enter a restaurant name: The Haam
+
+           Name: The Haam
+           City: Toronto,ON
+        Reviews: 83
+          Stars: 4.0
+     Categories: [Restaurants, Bars, Breakfast & Brunch, Sushi Bars, Japanese, Mexican, Asian Fusion, Nightlife, Korean]
+
+
+1. Search by name
+2. City summary
+3. Search category
+4. Quit
+
+your choice --> 1
+Enter a restaurant name: BRGR
+
+           Name: BRGR
+           City: Pittsburgh,PA
+        Reviews: 442
+          Stars: 3.5
+     Categories: [American (Traditional), Caterers, Burgers, Event Planning & Services, Restaurants]
+
+1. Search by name
+2. City summary
+3. Search category
+4. Quit
+
+your choice --> 1
+Enter a restaurant name: Orange
+Not found!
+
+1. Search by name
+2. Review query
+3. Search category
+4. Quit
+
+your choice --> 4

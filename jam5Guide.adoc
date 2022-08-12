@@ -1,0 +1,64 @@
+include::header.adoc[]
+
+:title: Jam 5: Study Guide
+:Author Initials: ASN
+:Date:    2020-08-15
+:Revision: 0.1
+:!toc:
+
+= {title}
+
+Jams are open book. 40 minutes in lab.
+
+*Topics:*
+
+This quiz includes the previous topics from jams 1-4 plus
+
+* Runtime analysis/big-O notation
+    * O(1) -- constant time
+    * O(log+++<sub>2</sub>+++N) -- logarithmic (ex: binary search)
+    * O(N) -- linear (ex: linear search)
+    * O(N+++<sup>2</sup>+++) -- quadratic (ex: bubble sort)
+* Recursion
+
+Write Java programs to check your answers. Or you can ask a TA or instructor 
+to give feedback on your responses.
+
+= Practice questions
+
+1) How many *steps* are required for each of the following? Classify each one 
+as either O(N), O(N+++<sup>2</sup>+++), O(log+++<sub>2</sub>+++ N), O(N log+++<sub>2</sub>+++ N), or O(1). 
+
+[source,java]
+----
+int N = getInputSize();
+for (int i = 0; i < N; i++) 
+{
+    for (int j = 0; j < N; j++) 
+    {
+        println(i, j);
+    }
+}
+----
++
+[source,java]
+----
+int N = getInputSize();
+while (N > 1)
+{
+    print(N)
+    N = N/2
+}
+----
++
+[source,java]
+----
+int N = getInputSize();
+for (int i = 0; i < N; i++)
+{
+    for (int j = 0; j < 10; j++) 
+    {
+        print(i*j);
+    }
+}
+----

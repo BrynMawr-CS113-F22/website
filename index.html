@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.16">
+<title>Computer Science I</title>
+<link rel="stylesheet" href="style/front.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>CS 113: Computer Science I&#8201;&#8212;&#8201;Fall 2022</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_announcements">Announcements</a></li>
+<li><a href="#_schedule"><strong>Schedule</strong></a></li>
+<li><a href="#_course_info">Course Info</a>
+<ul class="sectlevel2">
+<li><a href="#_meeting_times">Meeting Times</a></li>
+<li><a href="#_ta_office_hours_tdb">TA Office Hours <strong>TDB</strong></a></li>
+</ul>
+</li>
+<li><a href="#_text_and_software">Text and Software</a></li>
+<li><a href="#_grading_policies">Grading Policies</a>
+<ul class="sectlevel2">
+<li><a href="#_labs_and_exams">Labs and Exams</a></li>
+<li><a href="#_late_policy">Late Policy</a></li>
+</ul>
+</li>
+<li><a href="#_academic_integrity">Academic Integrity</a></li>
+<li><a href="#_academic_accommodations">Academic Accommodations</a></li>
+<li><a href="#_external_links">External Links</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1 anns">
+<h2 id="_announcements">Announcements</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Lectures start the week of <strong>August 29th</strong>!</p>
+</li>
+<li>
+<p>You can install Java on your own laptop! <a href="develEnvSetup.html">See here for instructions</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_schedule"><strong>Schedule</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The syllabus may change during the semester. Please check here every week for updates
+on lecture content, worksheets, and assignments.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Week</th>
+<th class="tableblock halign-left valign-top">Date</th>
+<th class="tableblock halign-left valign-top">Topics &amp; ToDo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of Aug 29</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Course introduction, Hello World</strong> <a id="hello"></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Algorithms, command line interface (CLI), compilation and running</p>
+</li>
+<li>
+<p>Read: Sedgewick and Wayne, Sec 1.1</p>
+</li>
+<li>
+<p>Read: <a href="develEnvSetup.html">Setting up your development environment</a></p>
+</li>
+<li>
+<p><a href="asst00.html">Assignment 0</a>: <strong>Due September 8th</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of Sept 5</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Variables and data types</strong> <a id="variables"></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>NO LECTURE MONDAY, September 5th</strong></p>
+</li>
+<li>
+<p><a href="asst01.html">Assignment 1</a>: <strong>Due September 15th</strong></p>
+</li>
+<li>
+<p>Terminal, directories/files, Input and output, Basic data types (int,double,String), Variables</p>
+</li>
+<li>
+<p>Read: Sedgewick and Wayne, Sec 1.2 (Skip <code>boolean</code>)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of Sept 12th</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Conditionals</strong> <a id="if"></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read: Sedgewick and Wayne, Sec 1.2 (<code>boolean</code>), Sec 1.3 (<code>if/else</code>)</p>
+</li>
+<li>
+<p><a href="asst02.html">Assignment 2</a>: <strong>Due September 22</strong></p>
+</li>
+<li>
+<p><a href="jam1Guide.html">Jam 1 Study Guide</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of Sept 19th</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Loops</strong> <a id="loop"></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read: Sedgewick and Wayne, Sec 1.3 (<code>while</code> and <code>for</code> loops)</p>
+</li>
+<li>
+<p><a href="asst03.html">Assignment 3</a>: <strong>Due September 29th</strong></p>
+</li>
+<li>
+<p>Code Jam I: Variables and data types</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of Sept 26th</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Arrays, Strings, File I/O</strong> <a id="arrays"></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read: Sedgewick and Wayne, Sec 1.4, 1.5, (Strings) 3.1</p>
+</li>
+<li>
+<p><a href="asst04.html">Assignment 4</a>: <strong>Due October 6</strong></p>
+</li>
+<li>
+<p><a href="jam2Guide.html">Jam 2 Study Guide</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of Oct 3rd</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Functions</strong> <a id="functions1"></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read: Sedgewick and Wayne, Sec 2.1</p>
+</li>
+<li>
+<p><a href="asst05.html">Assignment 5</a>: <strong>Due October 20</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of Oct 10th (Fall Break)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>NO LECTURES, LABS, ASSIGNMENTS</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of Oct 17th</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Functions</strong> <a id="functions2"></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read: Sedgewick and Wayne, Sec 2.1</p>
+</li>
+<li>
+<p><a href="asst06.html">Assignment 6</a>: <strong>Due October 27</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of Oct 24th</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Object oriented programming: using objects</strong> <a id="objects1"></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read: Sedgewick and Wayne, Sec 3.1, 3.2</p>
+</li>
+<li>
+<p><a href="asst07.html">Assignment 7</a>: *Due *</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of October 31st</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Objects oriented programming: creating objects</strong> <a id="objects2"></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read: Sedgewick and Wayne, Sec 3.1, 3.2</p>
+</li>
+<li>
+<p><a href="jam3Guide.html">Jam 3 Guide</a></p>
+</li>
+<li>
+<p><a href="asst08.html">Assignment 8</a>: **</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of Nov 7th</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Search and sort</strong> <a id="search"></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read: Sedgewick and Wayne, Sec 4.2</p>
+</li>
+<li>
+<p>Presentations III: Arrays, strings, advanced IO</p>
+</li>
+<li>
+<p><a href="jam4Guide.html">Jam 4 Guide</a></p>
+</li>
+<li>
+<p><a href="asst09.html">Assignment 9</a>: *Due *</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of Nov 14th</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>More search and sort; Runtime analysis</strong> <a id="analysis"></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read: Sedgewick and Wayne, Sec 2.3</p>
+</li>
+<li>
+<p><a href="jam4Guide.html">Jam 4 Guide</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of Nov 21st</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Recursion</strong> <a id="recursion"></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>NO CLASS THURSDAY, NOV 24th</strong></p>
+</li>
+<li>
+<p><a href="jam5Guide.html">Final exam guide</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of Nov 28th</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Read: Sedgewick and Wayne, Sec 4.4</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Week of Dec 5th</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Final Thoughts. ArrayList, HashMap and Dictionary</strong> <a id="datastructures"></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read: Sedgewick and Wayne, Sec 4.4</p>
+</li>
+<li>
+<p><a href="jam5Guide.html">Final exam guide</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_course_info">Course Info</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Welcome to CS113</strong>, an introduction to computer science. This class covers
+the basics of computer programming using Java. Students will learn
+fundamental programming concepts, such as variables, conditional statements,
+loops, functions, and classes. Students will develop their ability to write
+programs to solve a variety of problems, read existing programs,
+and find and fix errors in existing code.</p>
+</div>
+<div class="paragraph">
+<p>No prior computer programming experience is necessary or expected for this
+class. If you have never programmed, or don&#8217;t know much about computers, this
+class is for YOU! However, we do ask students to have "quantitative readiness
+(QA)". In this course, QA means a willingness to confront equations and
+concepts with curiosity. Students may need to do additional learning outside
+of class if they encounter mathematical concepts to which they do not have
+previous exposure.</p>
+</div>
+<div class="paragraph">
+<p>Computer programmers must mix systematic thinking with creativity. Programming
+can be time-consuming and difficult work, but the results are rewarding!</p>
+</div>
+<div class="paragraph">
+<p><em>This course is appropriate for all students who want to learn how to read, write,
+and debug computer programs as well as learn solve problems like a computer scientist</em>.</p>
+</div>
+<div class="sect2">
+<h3 id="_meeting_times">Meeting Times</h3>
+<table class="tableblock frame-all grid-all fit-content center">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Activity</th>
+<th class="tableblock halign-left valign-top">Location</th>
+<th class="tableblock halign-left valign-top">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lecture (Section 1 - Normoyle)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Park 338</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MW 1:10-2:30pm EST</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lecture (Section 2 - Poliak)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Park 300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TTH 12:55-2:15pm EST</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lab A (Poliak)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Park 230</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tuesday, 2:25 PM- 3:15 PM EST</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lab B (Poliak)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Park 230</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Thursday, 11:55 AM-12:45 PM EST</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lab C (Normoyle)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Park 231</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wednesday, 2:40 PM- 4:00 PM EST</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Office Hours (Normoyle)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TDB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wednesday, 4-5 PM EST, Thursday afternoons (TBD)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Office Hours (Poliak)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TDB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TBD</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_ta_office_hours_tdb">TA Office Hours <strong>TDB</strong></h3>
+<div class="paragraph">
+<p>All TA office hours will be in person in the computer science labs in the Park
+Science Center.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_text_and_software">Text and Software</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Introduction to Programming in Java (Second Edition)</strong> by Robert Sedgewick &amp; Kevin Wayne. Addison-Wesley 2017. Available in Campus Bookstore, or purchase online from Amazon.com (Price on August 19, 2020 is $35.99 for e-text, $65.00 paperback). Book&#8217;s companion website: Click here.</p>
+</li>
+<li>
+<p><strong>Dropbox Account</strong> Please go to <a href="https://dropbox.com/">dropbox.com</a> and register. You will be using dropbox to submit assignments.</p>
+</li>
+<li>
+<p><strong>Slack</strong> Please go to <a href="https://slack.com/signin">slack.com</a>. Our workspace is BrynMawr-CS110-F20. You can ask questions and request one-on-one help over zoom using this course&#8217;s slack channel.</p>
+</li>
+<li>
+<p><strong>Development environment</strong> This refers to the tools we will use to write and run code. We will distribute an installer to help you set this up. We will use git bash, OpenJDK-11, and Visual Studio Code (VS Code).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Resources</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="develEnvSetup.html">Instructions for setting up Java on your own laptop</a></p>
+</li>
+<li>
+<p><a href="https://github.com/BrynMawr-CS113-F22/code-examples-normoyle">JAVA programs from Professor Normoyle&#8217;s lectures</a></p>
+</li>
+<li>
+<p><a href="https://github.com/BrynMawr-CS113-F22/code-examples-poliak">JAVA programs from Professor Poliak&#8217;s lectures</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_grading_policies">Grading Policies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All graded work will receive a grade, 4.0, 3.7, 3.3, 3.0, 2.7, 2.3, 2.0, 1.7,
+1.3, 1.0, or 0.0. At the end of the semester, final grades will be calculated
+as a weighted average of all grades according to the following weights:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Final Exam</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assignments</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Participation</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_labs_and_exams">Labs and Exams</h3>
+<div class="paragraph">
+<p>In labs, we will have 6 practice quizzes for the final exams, each structured like
+a mini-code jam where you work together in teams. Each quiz will have a study guide
+so you know what types of questions to expect. During lab, you will be randomly assigned
+a partner and given 40 minutes to complete the questions. The following week in lab, we
+will go over answers for the quiz.</p>
+</div>
+<div class="paragraph">
+<p>If you cannot attend a lab, please let the instructor know in advance.
+There are no make-up opportunities for labs&#8201;&#8212;&#8201;the missing work will be re-weighted
+to be part of your final exam.</p>
+</div>
+<div class="paragraph">
+<p>There will be one final exam for the semester. Details and dates will be
+released during the semester.  Please read the section on
+<a href="#_accommodations">accomodations</a> if you are in need of extra time.  You
+must inform us of accommodations or conflicts at least 2 weeks in advance of
+the exam.</p>
+</div>
+<div class="paragraph">
+<p>Quizzes and exams will be open book. You will be given sample questions
+beforehand to help you study. <strong>Warning!</strong> Do not rely heavily on your notes
+for quizzes. You will need to have concepts memorized in order to finish
+within the time limit!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_late_policy">Late Policy</h3>
+<div class="paragraph">
+<p>Because practice is so important for learning how to program, we will do frequent
+exercises, assignments, and practice throughout the term.</p>
+</div>
+<div class="paragraph">
+<p>The purpose of this work is to give you hands on experience with the topics
+from class. Most of this work will be due in lecture or labs. The
+weekly time commitment for this course is aimed to be 10 hours or less per week.</p>
+</div>
+<div class="paragraph">
+<p>No late work will be accepted. Why? Because it&#8217;s important that you do not
+fall behind in the material. <strong>It is better to submit incomplete work than to
+fall behind!</strong></p>
+</div>
+<div class="paragraph">
+<p>However, we realize that you may not be able to complete a deadline for any
+number of valid reasons. We will drop your lowest assignment, lab, and
+presentation grades.</p>
+</div>
+<div class="paragraph">
+<p>If you need to miss a lab, you can submit your exercises
+electronically (to Dropbox) by midnight on the day the exercises are assigned.</p>
+</div>
+<div class="paragraph">
+<p>If you need to miss an exam, you must make arrangements ahead of time. If you
+cannot give notice ahead of time because of a medical emergency, you will
+need to provide a doctor&#8217;s note to schedule a make-up quiz.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_academic_integrity">Academic Integrity</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At Bryn Mawr, we assume students are trustworthy and work with honesty and
+integrity. <a href="https://www.brynmawr.edu/deans/academic-and-community-integrity">Look here for information about Bryn Mawr&#8217;s Honor Code.</a></p>
+</div>
+<div class="paragraph">
+<p>As you progress in this course, you will see that programming is a creative
+process, similar to writing. The same problem can be solved in
+multiple ways. It&#8217;s essential that you develop your own skills for developing
+algorithms and implementing them through programs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Discussing ideas and approaches to problems with others on a general level is
+fine (in fact, we encourage you to discuss general strategies with each other),
+but you should never read anyone else&#8217;s code or let anyone else read your
+code.</strong>  All code you submit should be your own with the following permissible
+exceptions: code distributed in class, and code found in the course text book.
+In these cases, you should always include detailed comments that indicates on
+which parts of the assignment you received help, and what your sources were.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Please don&#8217;t hesitate to ask the awesome teaching assistants (TAs) for help. They provide TA hours most week nights and are excellent mentors!</p>
+</li>
+<li>
+<p>Please discuss the readings and associated topics with each other. Work together to understand the material. Reading groups to discuss the material are highly recommended&#8201;&#8212;&#8201;we will explore many ideas and it helps to have multiple people working together to understand them.</p>
+</li>
+<li>
+<p>It is fine to discuss the topics covered in the homeworks, to discuss approaches to problems, and to sketch out general solutions. However, you MUST write up the homework answers, solutions, and programs individually without sharing specific details, mathematical results, program code, etc.</p>
+</li>
+<li>
+<p>Under NO circumstances should you share computer code with another student.  Similarly, you are not permitted to use code found on the internet for any of your assignments.</p>
+</li>
+<li>
+<p>Exams, of course, must be your own individual work.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_academic_accommodations">Academic Accommodations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All classes will be recorded and close-captioned. Links to lectures will be
+posted on the class syllabus.</p>
+</div>
+<div class="paragraph">
+<p>Any student who has a disability-related need to record this class first must
+speak with the Director of Access Services, Deb Alder, as part of university
+policy. Class members need to be aware that this class may be recorded.</p>
+</div>
+<div class="paragraph">
+<p>To receive an accommodation for a course activity (such as more time on quizzes
+and exams), you must have an Accommodation Letter from the Office of Student
+Disability Services <strong>and</strong> you need to contact us to work out the details of
+your accommodation at least <strong>two weeks prior</strong> to the activity. Forms can be
+emailed to me, the instructor.</p>
+</div>
+<div class="paragraph">
+<p>You are also welcome to contact us privately to discuss your academic needs.
+However, all disability-related accommodations must be arranged, in advance,
+through Student Disability Services.</p>
+</div>
+<div class="paragraph">
+<p>Students needing academic accommodations for a disability must first register
+with Access Services. Students can call 610-526-7516 to make an appointment
+with the Director of Access Services, Deb Alder, or email her at
+<a href="mailto:dalder@brynmawr.edu">dalder@brynmawr.edu</a> to begin this confidential process.  Once registered,
+students should schedule an appointment with the professor as early in the
+semester as possible to share the verification form and make appropriate
+arrangements. Please note that accommodations are not retroactive and require
+advance notice to implement. More information can be obtained at the Access
+Services website. (<a href="http://www.brynmawr.edu/access-services/" class="bare">http://www.brynmawr.edu/access-services/</a>)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_external_links">External Links</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Links that are related to the course may be posted here. If you have suggestions for links, let us know.</p>
+</div>
+<div class="ulist unstyled">
+<ul class="unstyled">
+<li>
+<p><a href="http://www.dropbox.com/">Dropbox</a></p>
+</li>
+<li>
+<p><a href="https://www.brynmawr.edu/academicsupport/academic-and-student-support-services">Academic Support, including help with math and quantitative skills!</a></p>
+</li>
+<li>
+<p>This site was generated with <a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/">asciidoctor</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-08-12 11:55:46 -0400
+</div>
+</div>
+</body>
+</html>

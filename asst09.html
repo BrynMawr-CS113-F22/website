@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.16">
+<title>CS113 Lab 9: Recursion excursion</title>
+<link rel="stylesheet" href="style/cs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_cs113_lab_9_recursion_excursion">CS113 Lab 9: Recursion excursion</a></li>
+<li><a href="#_recursive_functions">Recursive functions</a></li>
+<li><a href="#_testing_your_functions">Testing your functions</a></li>
+<li><a href="#_what_to_hand_in">What to hand-in</a>
+<ul class="sectlevel2">
+<li><a href="#_how_to_hand_in">How to hand-in</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_cs113_lab_9_recursion_excursion">CS113 Lab 9: Recursion excursion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Due Thursday, November 17, before midnight</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Goals</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Practice writing recursive functions</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_recursive_functions">Recursive functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the file, <code>Recursion.java</code>, write each of the following functions
+<strong>recursively</strong>. You are given <a href="Recursion.java">basecode</a> containing
+functions stubs along with a <code>main</code> for testing. You can download the
+<a href="Recursion.java">basecode</a> here or use the file in Dropbox.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#q1">even numbers</a></p>
+</li>
+<li>
+<p><a href="#q3">reverse a string</a></p>
+</li>
+<li>
+<p><a href="#q4">blastoff</a></p>
+</li>
+<li>
+<p><a href="#q5">get integer divisible by 3 </a></p>
+</li>
+<li>
+<p><a href="#q6">xerox</a></p>
+</li>
+<li>
+<p><a href="#q7">raise to power</a></p>
+</li>
+<li>
+<p><a href="#q8">is palindrome?</a></p>
+</li>
+<li>
+<p><a href="#q12">count in string</a></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You must not modify the function parameters and return types for the given functions!
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>even numbers <a id="q1"></a></p>
+<div class="paragraph">
+<p>Function <code>reven(int n)</code> should recursively sum the even numbers starting at 2 and ending at n.
+For example, <code>reven(10)</code> should return 2+4+6+8+10 = 30.</p>
+</div>
+</li>
+<li>
+<p>reverse a string <a id="q3"></a></p>
+<div class="paragraph">
+<p>Function <code>rrevStr(String word)</code> should return the reverse of a given string.
+For example: the reverse of <code>"hello"</code> is <code>"olleh"</code>.</p>
+</div>
+</li>
+<li>
+<p>blastoff <a id="q4"></a></p>
+<div class="paragraph">
+<p>Function <code>rblastoff(int n)`should count down (print one number per line) from the given
+start number to 1, then print "blastoff!".
+For example, `rblastoff(10)</code> should count down from 10 to 1, then print
+"blastoff!".</p>
+</div>
+</li>
+<li>
+<p>get integer divisible by 3 <a id="q5"></a></p>
+<div class="paragraph">
+<p>Function (<code>rgetMod()</code>) asks the user to enter an integer that is divisible
+by 3. Assume the user will enter an integer. If the given integer is not divisible
+by 3 (Hint: use <code>%</code> to check), the function should recursively ask the user for
+another integer. This function should return the valid integer.
+Below is console output from running <code>rgetMod</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Enter a number: <strong>4</strong>
+Not divisible by 3!
+Enter a number: <strong>6</strong></code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>rgetMod</code> should return the user&#8217;s number!
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>xerox <a id="q6"></a></p>
+<div class="paragraph">
+<p>Function (<code>rxerox(String phrase,int n)</code>) should generate and
+return a String containing <code>n</code> copies of the item.
+For example, <code>rxerox("paper", 4)</code> should return <code>"paperpaperpaperpaper"</code>,
+and <code>rxerox("2", 10)</code> should return <code>"2222222222"</code>.</p>
+</div>
+</li>
+<li>
+<p>raise to power <a id="q7"></a></p>
+<div class="paragraph">
+<p>Function <code>rraise(int n, int m)</code> returns <code>n</code> raised to the mth power.
+For example, calling <code>rraise(6,2)</code> returns 36.</p>
+</div>
+</li>
+<li>
+<p>is palindrome? <a id="q8"></a></p>
+<div class="paragraph">
+<p>Function <code>risPalindrome(String text)</code> returns <code>true</code> if given text is a palindrome
+(same forwards and backwards) and <code>false</code> otherwise. For example, <code>risPalindrome("HANNAH")</code>
+should return <code>true</code>.</p>
+</div>
+</li>
+<li>
+<p>count in String  <a id="q12"></a></p>
+<div class="paragraph">
+<p>Function <code>rcount(char x,String S)</code> returns how many times <code>x</code> is in the String <code>S</code>.
+For example, <code>rcount("a", "aardvark")</code> should return 3.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testing_your_functions">Testing your functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You are given test code in <code>main</code>. Functions that return a value are tested using the
+<code>test</code> function. This function throws an exception if the function returns an incorrect value.
+For example, suppose there is a bug in our function <code>rrevStr</code>, running gives this error</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>java.lang.Exception: Test Failed: yolleh != olleh
+        at Recursion.test(Recursion.java:118)
+        at Recursion.main(Recursion.java:133)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above error shows us that our function returned "yolleh" but should have
+returned the value "olleh". We can also see that the function we need to fix
+is called on line 133.</p>
+</div>
+<div class="paragraph">
+<p>We encourage you to add your own tests!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_to_hand_in">What to hand-in</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The program, <code>Recursion.java</code></p>
+</li>
+<li>
+<p>Make sure your programs have a header containing your name, date, and description.</p>
+</li>
+<li>
+<p>No writeup is necessary for this assignment</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_how_to_hand_in">How to hand-in</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Copy your files to your dropbox, into the folder called <code>A09</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-08-12 12:23:33 -0400
+</div>
+</div>
+</body>
+</html>

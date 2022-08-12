@@ -1,0 +1,104 @@
+$ java-introcs RestaurantApp.java 
+========== Welcome to Restaurant App =========
+1. Search by name
+2. City summary
+3. Search categories
+4. Quit
+
+your choice --> 3
+Enter a keyword: korean
+                              Restaurant                    Location    Reviews Stars
+                              ----------                    --------    ------- -----
+                Gangnam Asian BBQ Dining               Las Vegas, NV     3449   4.5
+                            Pho Kim Long               Las Vegas, NV     3013   3.5
+                        Hobak Korean BBQ               Las Vegas, NV     1445   4.5
+                              Sushi Kaya               Las Vegas, NV     1079   3.5
+                                 Noodles               Las Vegas, NV     1017   3.0
+                 Soyo Korean Barstaurant               Las Vegas, NV      913   4.0
+                     Momofuku Noodle Bar                 Toronto, ON      897   3.0
+               Buldogis Gourmet Hot Dogs               Las Vegas, NV      865   4.5
+                                Pho So 1               Las Vegas, NV      839   3.5
+                 Seoul Food Meat Company               Charlotte, NC      830   4.0
+                                Sushi 21               Las Vegas, NV      718   4.0
+                                Tofu Hut               Las Vegas, NV      693   3.5
+     Biwon Korean BBQ & Sushi Restaurant               Las Vegas, NV      660   4.0
+                         Sura BBQ Buffet               Las Vegas, NV      643   3.5
+             Goong Korean BBQ Restaurant               Las Vegas, NV      586   4.5
+                                Q Bistro               Las Vegas, NV      516   4.5
+                               Magal BBQ               Las Vegas, NV      511   4.5
+                        Karaoke Q Studio               Las Vegas, NV      506   4.5
+                               Honey Pig               Las Vegas, NV      503   3.5
+                        Lee's Korean BBQ               Las Vegas, NV      483   3.5
+                            KoMex Fusion               Las Vegas, NV      455   4.5
+Dae Jang Keum Korean BBQ & Tofu Restaurant             Las Vegas, NV      428   3.0
+                          Buffet At Asia               Las Vegas, NV      415   3.0
+                  Sizzle Korean Barbeque                 Phoenix, AZ      407   4.0
+                          Lulu's Noodles              Pittsburgh, PA      394   3.0
+
+Showing 25 out of 570 restaurants
+
+1. Search by name
+2. City summary
+3. Search categories
+4. Quit
+
+your choice --> 3
+Enter a keyword: blue
+                              Restaurant                    Location    Reviews Stars
+                              ----------                    --------    ------- -----
+                             Cajun Queen               Charlotte, NC      712   4.0
+                    Hillstone Restaurant                 Phoenix, AZ      701   4.0
+                           Jardin Nelson                Montreal, QC      510   4.0
+                 Wildfish Seafood Grille              Scottsdale, AZ      505   4.0
+                          Carly's Bistro                 Phoenix, AZ      394   4.0
+                                Hob Nobs                 Phoenix, AZ      307   4.0
+                       Velvet Tango Room               Cleveland, OH      295   4.0
+                          Society Lounge               Cleveland, OH      218   4.0
+      James Street Gastropub & Speakeasy              Pittsburgh, PA      216   3.5
+                   Blue Restaurant & Bar               Charlotte, NC      207   3.5
+               Casablanca Rooftop Lounge              Scottsdale, AZ      187   3.5
+                               Nighttown               Cleveland, OH      176   3.5
+                    BB King's Blues Club               Las Vegas, NV      173   3.0
+           Bobby's Restaurant and Lounge              Scottsdale, AZ      169   3.0
+          The Rex Hotel Jazz & Blues Bar                 Toronto, ON      130   3.5
+                   Reposado Bar & Lounge                 Toronto, ON      125   4.0
+                      Parkview Nite Club               Cleveland, OH      111   4.0
+                   BluNotes of Charlotte               Charlotte, NC      108   2.5
+                  Remington's Restaurant              Scottsdale, AZ      106   3.0
+                         Jalisco Cantina               Las Vegas, NV      104   3.5
+         Lucy Ethiopian Restaurant & Bar               Las Vegas, NV      104   4.0
+                      The Compound Grill                 Phoenix, AZ       90   3.5
+           Cagneys Steakhouse & Wine Bar             Mississauga, ON       89   4.0
+              N'awlins Jazz Bar & Dining                 Toronto, ON       84   3.5
+                         Brothers Lounge               Cleveland, OH       66   4.0
+
+Showing 25 out of 60 restaurants
+
+1. Search by name
+2. City summary
+3. Search categories
+4. Quit
+
+your choice --> 3
+Enter a keyword: orange
+orange not found
+
+1. Search by name
+2. City summary
+3. Search categories
+4. Quit
+
+your choice --> 3
+Enter a keyword: hat
+                              Restaurant                    Location    Reviews Stars
+                              ----------                    --------    ------- -----
+           In-N-Out Burger Company store               Las Vegas, NV        4   5.0
+
+Showing 1 out of 1 restaurants
+
+1. Search by name
+2. City summary
+3. Search categories
+4. Quit
+
+your choice --> 4

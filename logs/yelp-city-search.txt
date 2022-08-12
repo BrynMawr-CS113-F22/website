@@ -1,0 +1,82 @@
+$ java-introcs RestaurantApp.java 
+========== Welcome to Restaurant App =========
+
+1. Search by name
+2. City summary
+3. Search categories
+4. Quit
+
+your choice --> 2
+Enter a city: Toronto
+Enter a state: ON
+Statistics for Toronto,ON:
+
+        Count:                                     6105
+        Average number of stars:                   3.54
+        Average number of reviews:                48.52
+        Max number of reviews:                     2121
+        Min number of reviews:                        3
+
+
+1. Search by name
+2. City summary
+3. Search categories
+4. Quit
+
+your choice --> 2
+Enter a city: toronto
+Enter a state: oh
+Statistics for toronto,oh:
+
+        Count:                                        1
+        Average number of stars:                   4.00
+        Average number of reviews:                 9.00
+        Max number of reviews:                        9
+        Min number of reviews:                        9
+
+
+1. Search by name
+2. City summary
+3. Search categories
+4. Quit
+
+your choice --> 2
+Enter a city: las vegas
+Enter a state: nv
+Statistics for las vegas,nv:
+
+        Count:                                     4356
+        Average number of stars:                   3.69
+        Average number of reviews:               210.43
+        Max number of reviews:                     8348
+        Min number of reviews:                        3
+
+
+1. Search by name
+2. City summary
+3. Search categories
+4. Quit
+
+your choice --> 2
+Enter a city: Boston
+Enter a state: ma
+No search results for Boston,ma
+
+
+1. Search by name
+2. City summary
+3. Search categories
+4. Quit
+
+your choice --> 2
+Enter a city: las vegas
+Enter a state: fl
+No search results for las vegas,fl
+
+
+1. Search by name
+2. City summary
+3. Search categories
+4. Quit
+
+your choice --> 4

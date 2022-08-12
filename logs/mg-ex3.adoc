@@ -1,0 +1,73 @@
+[subs="quotes,attributes"]
+----
+$ *java MemoryGame*
+
+  ~ ~  Welcome to  M E M O R Y  G A M E  v1.0 ~ ~
+
+  Pick two cards at a time and see if they match.
+  Keep picking pairs of cards until you match them all!
+
+
+========================================================================
+ ===0===  ===1===  ===2===  ===3===  ===4===  ===5===  ===6===  ===7===  ===8===  ===9===
+Turn #1:
+card to flip> 0
+                 finch
+Turn #1:
+card to flip> 1
+                 egret
+Nope...
+
+
+========================================================================
+ ===0===  ===1===  ===2===  ===3===  ===4===  ===5===  ===6===  ===7===  ===8===  ===9===
+Turn #2:
+card to flip> 2
+                 quail
+Turn #2:
+card to flip> 3
+                 quail
+Correct!
+
+
+========================================================================
+...
+...
+(lots of incorrect guesses here...)
+...
+...
+========================================================================
+ ===0===   egret    quail    quail   ===4===   goose    egret   ===7===   goose   ===9===
+Turn #18:
+card to flip> 9
+                 raven
+Turn #18:
+card to flip> 4
+                 raven
+Correct!
+
+
+========================================================================
+ ===0===   egret    quail    quail    raven    goose    egret   ===7===   goose    raven
+Turn #19:
+card to flip> 7
+                 finch
+Turn #19:
+card to flip> 0
+                 finch
+Correct!
+
+
+========================================================================
+  finch    egret    quail    quail    raven    goose    egret    finch    goose    raven
+
+10 cards matched in 19 turns.
+Better luck next time!
+
+----
+
+link:mg-ex1.html[Example 1]
+
+link:mg-ex2.html[Example 2]
+
+link:../asst07.html[back to lab 7]
