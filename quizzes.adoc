@@ -1,11 +1,11 @@
 
 === Labs and Exams 
 
-In labs, we will have 6 practice quizzes for the final exams, each structured like 
+In labs, we will have practice quizzes for the final exams, each structured like 
 a mini-code jam where you work together in teams. Each quiz will have a study guide 
 so you know what types of questions to expect. During lab, you will be randomly assigned
 a partner and given 40 minutes to complete the questions. The following week in lab, we 
-will go over answers for the quiz. 
+will go over answers for the previous week. 
 
 If you cannot attend a lab, please let the instructor know in advance. 
 There are no make-up opportunities for labs -- the missing work will be re-weighted 
