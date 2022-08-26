@@ -11,7 +11,7 @@ The assignment as two parts.
 
 **Part 1: Due Thursday, September 1st, before midnight**
 
-* Sign-up for dropbox and send me (anormoyle at brynmawr.edu) the email address associated with the account.  
+* Sign-up for dropbox and send your instructor (anormoyle at brynmawr.edu for Section I or apoliak at brynmawr.edu for Section II) the email address associated with the account.  
 
 **Part 2: Due Thursday, September 8th, before midnight**
 
@@ -29,8 +29,8 @@ The assignment as two parts.
 Please go to dropbox.com and register as soon as possible. We will be using dropbox for 
 assignments, exams, and exercises. 
 
-Create a dropbox account and send an e-mail to the instructor (anormoyle at
-brynmawr.edu) with the e-mail used for dropbox account. You will then get an
+Create a dropbox account and send an e-mail to the appropriate instructor (anormoyle at
+brynmawr.edu for Section I or apoliak at brynmawr.edu for Section II) with the e-mail used for dropbox account. You will then get an
 invite to share a folder for the course. 
 
 WARNING: Dropbox has an option to automatically backup your computer but the free account only gives you 2GB of space. 
