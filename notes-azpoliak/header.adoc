@@ -1,0 +1,10 @@
+:lang: en
+:stylesdir: ../style
+:stylesheet: cs.css
+:linkcss:
+:icons: font
+:imagesdir: img
+:xrefstyle: short
+:leveloffset: +1
+:toc: left
+:csweb: https://brynmawr-cs113-f22.github.io/website/

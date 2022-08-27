@@ -1,0 +1,6 @@
+include::header.adoc[]
+
+:title: Notes: Week of dec05
+:Revision: 0.1
+
+= {title}
