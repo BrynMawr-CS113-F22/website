@@ -14,6 +14,7 @@ include::header.adoc[]
 
 * Lectures start the week of *August 29th*! 
 * You can install Java on your own laptop! link:develEnvSetup.html[See here for instructions].
+* TA hours for the first week will be Aug 30, Aug 31, and Sept 1 (Tue-Thu) from 6-10pm in Park 231!
 
 == **Schedule**
 
@@ -56,26 +57,16 @@ and debug computer programs as well as learn solve problems like a computer scie
 | Lab A (Poliak) | Park 230 | Tuesday, 2:25 PM- 3:15 PM EST
 | Lab B (Poliak) | Park 230 | Thursday, 11:55 AM-12:45 PM EST
 | Lab C (Normoyle) |  Park 231 | Wednesday, 2:40 PM- 4:00 PM EST
-| Office Hours (Normoyle) | TDB | Wednesday, 4-5 PM EST, Thursday afternoons (TBD)   
+| Office Hours (Normoyle) | Park 200B | Wednesday, 4-5 PM EST, Thursday afternoons (By appointment)   
 | Office Hours (Poliak) | Park 200C |  Wednesday, 10-11am EST
+| TA Office Hours | Park 231 |  Sunday-Thursday, 6-10 PM EST
 
 |===
 
-=== TA Office Hours *TDB*
+=== TA Office Hours 
 
-All TA office hours will be in person in the computer science labs in the Park
-Science Center. 
-
-//[.center,options="header,autowidth"]
-//|===
-//| Day | Morning | 6-8pm | 7-9pm | 8-10pm 
-//| Sun | | | | Yuxiao 
-//| Mon | | | Al |
-//| Tues | |Angie | Sarah | 
-//| Weds | Angie (9-11am) | | Sarah | 
-//| Thurs | | Judy | Al | Yuxiao
-//| Fri | | | |
-//|===
+All TA office hours will be in person in the computer science labs (*Park 231*) in the Park
+Science Center. TA office hours will be in the evenings, Sun-Thurs 6-10pm 
 
 == Text and Software
 
@@ -112,6 +103,8 @@ include::latePolicy.adoc[]
 include::integrity.adoc[]
 
 include::accomodations.adoc[]
+
+include::covidpolicy.adoc[]
 
 == External Links
 

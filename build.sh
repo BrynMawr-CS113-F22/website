@@ -1,3 +1,3 @@
 #! /bin/bash
 
-asciidoctor *.adoc logs/*.adoc
+asciidoctor *.adoc */*.adoc
