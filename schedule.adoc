@@ -9,7 +9,7 @@
 //-----------------------------
 | 0
 | Week of Aug 29
-| *Course introduction, Hello World* anchor:hello[]
+| *Course introduction, Hello World* anchor:week01[]
 
 * Algorithms, command line interface (CLI), compilation and running
 * Read: Sedgewick and Wayne, Sec 1.1
@@ -17,11 +17,12 @@
 * link:asst00.html[Assignment 0]: *Due September 8th*
 * link:notes-alinen/notes-aug29.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-aug29.html[Lecture Notes and Resources (Poliak)] 
+* Lab activity: Setting up your development environment 
 
 //-----------------------------
 | 1 
 | Week of Sept 5
-| *Variables and data types* anchor:variables[]
+| *Variables and data types* anchor:week02[]
 
 * *NO LECTURE MONDAY, September 5th* 
 * link:asst01.html[Assignment 1]: *Due September 15th*
@@ -29,49 +30,51 @@
 * Read: Sedgewick and Wayne, Sec 1.2 (Skip `boolean`)
 * link:notes-alinen/notes-sep05.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-sep05.html[Lecture Notes and Resources (Poliak)] 
+* Lab activity: TBD
 
 //-----------------------------
 |2
 | Week of Sept 12th
-|*Conditionals* anchor:if[]
+|*Conditionals* anchor:week03[]
 
 * Read: Sedgewick and Wayne, Sec 1.2 (`boolean`), Sec 1.3 (`if/else`)
 * link:asst02.html[Assignment 2]: *Due September 22*
-* link:jam1Guide.html[Jam 1 Study Guide]
 * link:notes-alinen/notes-sep12.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-sep12.html[Lecture Notes and Resources (Poliak)] 
+* Lab activity: Code Jam 01, link:jam1Guide.html[Jam 1 Study Guide]
 
 //-----------------------------
 |3
 | Week of Sept 19th
-|*Loops* anchor:loop[]
+|*Loops* anchor:week04[]
 
 * Read: Sedgewick and Wayne, Sec 1.3 (`while` and `for` loops)
 * link:asst03.html[Assignment 3]: *Due September 29th*
-* Code Jam I: Variables and data types
 * link:notes-alinen/notes-sep19.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-sep19.html[Lecture Notes and Resources (Poliak)] 
+* Lab activity: TBD
 
 //-----------------------------
 |4
 | Week of Sept 26th
-|*Arrays, Strings, File I/O* anchor:arrays[]
+|*Arrays, Strings, File I/O* anchor:week05[]
 
 * Read: Sedgewick and Wayne, Sec 1.4, 1.5, (Strings) 3.1
 * link:asst04.html[Assignment 4]: *Due October 6*
-* link:jam2Guide.html[Jam 2 Study Guide]
 * link:notes-alinen/notes-sep26.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-sep26.html[Lecture Notes and Resources (Poliak)] 
+* Lab activity: Code jam 02, link:jam2Guide.html[Jam 2 Study Guide]
 
 //-----------------------------
 |5
 | Week of Oct 3rd
-|*Functions* anchor:functions1[]
+|*Functions* anchor:week06[]
 
 * Read: Sedgewick and Wayne, Sec 2.1
 * link:asst05.html[Assignment 5]: *Due October 20*
 * link:notes-alinen/notes-oct03.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct03.html[Lecture Notes and Resources (Poliak)] 
+* Lab activity: TBD
 
 //-----------------------------
 |6
@@ -83,70 +86,73 @@
 //-----------------------------
 |7
 | Week of Oct 17th
-|*Functions* anchor:functions2[]
+|*Functions* anchor:week07[]
 
 * Read: Sedgewick and Wayne, Sec 2.1
 * link:asst06.html[Assignment 6]: *Due October 27*
 * link:notes-alinen/notes-oct17.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct17.html[Lecture Notes and Resources (Poliak)] 
+* Lab activity: TBD
 
 //-----------------------------
 |8
 | Week of Oct 24th 
-|*Object oriented programming: using objects* anchor:objects1[]
+|*Object oriented programming: using objects* anchor:week08[]
 
 * Read: Sedgewick and Wayne, Sec 3.1, 3.2
 * link:asst07.html[Assignment 7]: *Due *
 * link:notes-alinen/notes-oct24.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct24.html[Lecture Notes and Resources (Poliak)] 
+* Lab activity: Code jam 03, link:jam3Guide.html[Jam 3 Study Guide]
 
 //-----------------------------
 |9
 | Week of October 31st
-|*Objects oriented programming: creating objects* anchor:objects2[]
+|*Objects oriented programming: creating objects* anchor:week09[]
 
 * Read: Sedgewick and Wayne, Sec 3.1, 3.2
-* link:jam3Guide.html[Jam 3 Guide]
 * link:asst08.html[Assignment 8]: **
 * link:notes-alinen/notes-oct31.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct31.html[Lecture Notes and Resources (Poliak)] 
+* Lab activity: TBD
 
 //-----------------------------
 |10
 |Week of Nov 7th
-|*Search and sort* anchor:search[]
+|*Search and sort* anchor:week10[]
 
 * Read: Sedgewick and Wayne, Sec 4.2
 * Presentations III: Arrays, strings, advanced IO
-* link:jam4Guide.html[Jam 4 Guide]
 * link:asst09.html[Assignment 9]: *Due *
 * link:notes-alinen/notes-nov07.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov07.html[Lecture Notes and Resources (Poliak)] 
+* Lab activity: Code jam 04, link:jam4Guide.html[Jam 4 Study Guide]
 
 //-----------------------------
 |11
 |Week of Nov 14th
-|*More search and sort; Runtime analysis* anchor:analysis[]
+|*More search and sort; Runtime analysis* anchor:week11[]
 
 * Read: Sedgewick and Wayne, Sec 2.3
 * link:jam4Guide.html[Jam 4 Guide]
 * link:notes-alinen/notes-nov14.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov14.html[Lecture Notes and Resources (Poliak)] 
+* Lab activity: TBD
 
 //-----------------------------
 |12
 |Week of Nov 21st
-|*Recursion* anchor:recursion[]
+|*Recursion* anchor:week12[]
 
 * *NO CLASS THURSDAY, NOV 24th*
-* link:jam5Guide.html[Final exam guide]
 * link:notes-alinen/notes-nov21.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov21.html[Lecture Notes and Resources (Poliak)] 
+* Lab activity: Code Jam 05, link:jam5Guide.html[Code jam 05]
 
 //-----------------------------
 |13
 |Week of Nov 28th
-|
+|*Data structures: List and Dictionary* anchor:week13[]
 
 * Read: Sedgewick and Wayne, Sec 4.4
 * link:notes-alinen/notes-nov28.html[Lecture Notes and Resources (Normoyle)] 
@@ -155,11 +161,13 @@
 //-----------------------------
 |14
 |Week of Dec 5th
-|*Final Thoughts. ArrayList, HashMap and Dictionary* anchor:datastructures[]
+|*Final Thoughts. ArrayList, HashMap and Dictionary* anchor:week14[]
 
 * Read: Sedgewick and Wayne, Sec 4.4
 * link:jam5Guide.html[Final exam guide]
 * link:notes-alinen/notes-dec05.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-dec05.html[Lecture Notes and Resources (Poliak)] 
+* Lab activity: Code Jam 06, link:jam6Guide.html[Code jam 06 study guide]
+* Final exam study guide, link:[Final exam study guide]
 
 |===
