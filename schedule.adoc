@@ -63,7 +63,7 @@
 * link:asst04.html[Assignment 4]: *Due October 6*
 * link:notes-alinen/notes-sep26.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-sep26.html[Lecture Notes and Resources (Poliak)] 
-* Lab activity: Code jam 02, link:jam2Guide.html[Jam 2 Study Guide]
+* Lab activity: TBD
 
 //-----------------------------
 |5
@@ -74,7 +74,7 @@
 * link:asst05.html[Assignment 5]: *Due October 20*
 * link:notes-alinen/notes-oct03.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct03.html[Lecture Notes and Resources (Poliak)] 
-* Lab activity: TBD
+* Lab activity: Code jam 02, link:jam2Guide.html[Jam 2 Study Guide]
 
 //-----------------------------
 |6
