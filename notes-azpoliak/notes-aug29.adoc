@@ -6,3 +6,18 @@ include::header.adoc[]
 = Tuesday Aug 30th
 
 * Attendance sheet - https://forms.gle/eDQcnW1DpZUDtCta8
+
+== Terminal commands
+
+- `ls` - list files in the current directory
+- `cd <optional directory name>` - move to the listed directory. If no directory is given, you will be moved to your home directory
+- `cat <file name>` - print the contents of the file name
+- `pwd` - print the path to the working directory
+
+== Compiling and running a java program
+
+Run `javac <filename>` in terminal. This will create a `class` file. Make sure the filename ends in `.java` and has a main method. Also, make sure the class name in the file matches the name of the file (except for the class name should not have .java)
+
+Run `java <className>`. Make sure to not include `.class`
+
+= Thursday Sep 1st
