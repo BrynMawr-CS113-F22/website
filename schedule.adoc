@@ -16,7 +16,8 @@
 * Read: link:develEnvSetup.html[Setting up your development environment]
 * link:asst00.html[Assignment 0]: *Due September 8th*
 * link:notes-alinen/notes-aug29.html[Lecture Notes and Resources (Normoyle)] 
-* link:notes-azpoliak/notes-aug29.html[Lecture Notes and Resources (Poliak)] 
+* link:notes-azpoliak/notes-aug29.html[Lecture Notes and Resources (Poliak)]
+* link:slides-azpoliak/lecture00_introduction_08_30.pdf[Lecture 00 slides (Poliak)] 
 * Lab activity: Setting up your development environment 
 
 //-----------------------------
@@ -29,7 +30,7 @@
 * Terminal, directories/files, Input and output, Basic data types (int,double,String), Variables 
 * Read: Sedgewick and Wayne, Sec 1.2 (Skip `boolean`)
 * link:notes-alinen/notes-sep05.html[Lecture Notes and Resources (Normoyle)] 
-* link:notes-azpoliak/notes-sep05.html[Lecture Notes and Resources (Poliak)] 
+* link:notes-azpoliak/notes-sep05.html[Lecture Notes and Resources (Poliak)]
 * Lab activity: Working with the command line
 
 //-----------------------------
