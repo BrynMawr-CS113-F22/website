@@ -17,6 +17,7 @@ The assignment as two parts.
 
 * Join slack
 * Look at the website!
+* Fill out this brief pre-course https://forms.gle/LwuMrXuezsiGW1h87[survey]. 
 * Install your development environment
 * Write your first program
 
@@ -35,6 +36,7 @@ invite to share a folder for the course.
 
 WARNING: Dropbox has an option to automatically backup your computer but the free account only gives you 2GB of space. 
 Do not choose this option when you install Dropbox. Otherwise, your dropbox can fill up immediately. 
+
 
 = Course setup
 
@@ -56,6 +58,10 @@ keep this information handy. All course materials and announcements will be
 posted on the course webpage! 
 
 Pay special attention to the link:../index.html#_schedule[Schedule]. 
+
+== Pre-course survey
+
+Fill out this brief pre-course https://forms.gle/LwuMrXuezsiGW1h87[survey]. Your answers will help your instructors get to know you and learn what you hope to get out of this course.
 
 == Setup Java
 
