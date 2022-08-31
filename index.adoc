@@ -79,8 +79,8 @@ Science Center. TA office hours will be in the evenings, Sun-Thurs 6-10pm
 *Resources*
 
 * link:develEnvSetup.html[Instructions for setting up Java on your own laptop]
-* link:https://github.com/BrynMawr-CS113-F22/code-examples-normoyle[JAVA programs from Professor Normoyle's lectures]
-* link:https://github.com/BrynMawr-CS113-F22/code-examples-poliak[JAVA programs from Professor Poliak's lectures]
+* link:https://github.com/BrynMawr-CS113-F22/class-examples-normoyle[JAVA programs from Professor Normoyle's lectures]
+* link:https://github.com/BrynMawr-CS113-F22/class-examples-poliak[JAVA programs from Professor Poliak's lectures]
 
 == Grading Policies
 
