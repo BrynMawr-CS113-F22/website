@@ -52,12 +52,12 @@ introduction channel, say and introduce yourself:
 
 == Read the website
 
-Start by reading through **all** of the link:../index.html[class webpage]!
+Start by reading through **all** of the link:./index.html[class webpage]!
 Bookmark this page on your browser, or use some other method that helps you 
 keep this information handy. All course materials and announcements will be 
 posted on the course webpage! 
 
-Pay special attention to the link:../index.html#_schedule[Schedule]. 
+Pay special attention to the link:./index.html#_schedule[Schedule]. 
 
 == Pre-course survey
 
@@ -67,7 +67,7 @@ Fill out this brief pre-course https://forms.gle/LwuMrXuezsiGW1h87[survey]. Your
 
 This class will teach the fundamentals of programming using Java.
 
-link:../develEnvSetup.html[Use these instructions to set-up your development environment.]
+link:./develEnvSetup.html[Use these instructions to set-up your development environment.]
 
 == Write a program
 
