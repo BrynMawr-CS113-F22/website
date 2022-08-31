@@ -21,3 +21,5 @@ Run `javac <filename>` in terminal. This will create a `class` file. Make sure t
 Run `java <className>`. Make sure to not include `.class`
 
 = Thursday Sep 1st
+
+* Attendance sheet - https://forms.gle/7aPq9pK27HxxNQZN7
