@@ -15,6 +15,7 @@ include::header.adoc[]
 * Lectures start the week of *August 29th*! 
 * You can install Java on your own laptop! link:develEnvSetup.html[See here for instructions].
 * TA hours for the first week will be Aug 30, Aug 31, and Sept 1 (Tue-Thu) from 6-10pm in Park 231!
+* TA hours for Sunday, Sept 4 and Monday, Sept 5 will be 6-8pm
 * Current week notes: link:#week01[Week 01]
 
 == **Schedule**
