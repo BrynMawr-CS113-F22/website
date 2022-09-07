@@ -15,9 +15,9 @@
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_assignment_1_first_programs">Assignment 1: First Programs!</a></li>
-<li><a href="#_menu_generator">1. Menu generator</a></li>
-<li><a href="#_cakes_for_sale">2. Cakes for sale</a></li>
-<li><a href="#_calculator">3. Calculator</a></li>
+<li><a href="#_task_tracker">1. Task Tracker</a></li>
+<li><a href="#_calorie_tracker">2. Calorie Tracker</a></li>
+<li><a href="#_pet_agency">3. Pet Agency</a></li>
 <li><a href="#_what_to_hand_in">4. What to hand-in</a>
 <ul class="sectlevel2">
 <li><a href="#_how_to_hand_in">4.1. How to hand-in</a></li>
@@ -52,83 +52,145 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_menu_generator">1. Menu generator</h2>
+<h2 id="_task_tracker">1. Task Tracker</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>credit: Sara Mathieson</em></p>
+<p>Write a program, <code>Tasks.java</code> that computes the time when the user will finish
+their tasks. You can assume that all times are integers that represent the time
+on a [<a href="http://militarytimechart.com">24-hr "military" clock</a>.
+For example, 7 PM is 19:00, or 19, in this representation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>javac Tasks.java</strong>
+$ <strong>java Tasks</strong>
+Enter the current hour: <strong>23</strong>
+Enter the task duration: <strong>5</strong>
+
+You will finish at 4:00 o'clock.
+
+$ <strong>java Tasks</strong>
+Enter the current hour: <strong>9</strong>
+Enter the task duration: <strong>5</strong>
+
+You will finish at 14:00 o'clock.</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>You are in charge of writing a script for the daily specials at a new restaurant
-in Swarthmore: Corner Cafe. In <code>Menu.java</code>, write a program that will ask the
-restaurant for three pieces of information: the <em>soup</em> of the day, the <em>special</em>
-of the day, and the <em>dessert</em> of the day. Your program should then use this
-information to generate a short description of the daily specials (i.e. a
-restaurant [<strong>madlib</strong>](<a href="https://en.wikipedia.org/wiki/Mad_Libs)" class="bare">https://en.wikipedia.org/wiki/Mad_Libs)</a>).</p>
+<p>Hints:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use modulo % to compute the completion time.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_calorie_tracker">2. Calorie Tracker</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Write a program called <code>Calories.java</code> that computes the amount of calories
+a person burns in a week while walking. On average, a person burns 100 calories
+for each mile walked. Unlike the previous question, where we read data from the
+console, use <strong>command-line arguments</strong> to get the number of miles walked.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>javac Calories.java</strong>
+$ <strong>java Calories 3.5</strong>
+You burned 350.0 calories!
+$ <strong>java Calories 0</strong>
+You burned 0.0 calories!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Hints and requirements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use a double to store the number of miles</p>
+</li>
+<li>
+<p>Use <code>System.out.printf</code> to print the number of calories</p>
+</li>
+<li>
+<p>Assume that your first command line argument (e.g. args[0]) is a positive double!</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+It&#8217;s ok if your program throws an exception if no argument is given! When this happens,
+you will get a runtime error. For example
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java Calories</strong>
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+        at Calories.main(Calories.java:3)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pet_agency">3. Pet Agency</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You are in charge of writing a script for the Bryn Mawr Pet Adoption Agency. In
+<code>Adopt.java</code>, write a program that will ask the user for an <em>animal</em>, an
+<em>integer</em>, a <em>noun</em>, and and a <em>decimal number</em>.  Your program should then use this
+information to generate a short description of what the pets need at the adoption agency.
+(i.e. a This question is an example of a
+[<strong>madlib</strong>](<a href="https://en.wikipedia.org/wiki/Mad_Libs)" class="bare">https://en.wikipedia.org/wiki/Mad_Libs)</a>).</p>
 </div>
 <div class="paragraph">
 <p>Here are two examples (user input in <strong>bold</strong>):</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Menu.java</strong>
-Soup: <strong>wild rice</strong>
-Special: <strong>salmon</strong>
-Dessert: <strong>peach cobbler</strong>
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Pets.java</strong>
+Animal: <strong>owls</strong>
+Integer: <strong>3</strong>
+Noun: <strong>hats</strong>
+Decimal: <strong>1.3</strong>
 
-Welcome to Corner Cafe!
-Our soup of the day is wild rice.
-The special tonight is salmon,
-and for dessert, try our world-famous peach cobbler.
+Welcome to the Bryn Mawr Pet Adoption Agency!
+We have 3 owls in need of hats and 1.3% of your love!
 
-$ <strong>java Menu.java</strong>
-Soup: <strong>cup noodles</strong>
-Special: <strong>pizza</strong>
-Dessert: <strong>M&Ms</strong>
+$ <strong>java Pets.java</strong>
+Animal: <strong>slugs</strong>
+Integer: <strong>3000</strong>
+Noun: <strong>peaches</strong>
+Decimal: <strong>110.3</strong>
 
-Welcome to Corner Cafe!
-Our soup of the day is cup noodles.
-The special tonight is pizza,
-and for dessert, try our world-famous M&Ms.</code></pre>
+Welcome to the Bryn Mawr Pet Adoption Agency!
+We have 3000 slugs in need of peaches and 110.3% of your love!</code></pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_cakes_for_sale">2. Cakes for sale</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Write a program called <code>Cakes.java</code> that computes the price of a cake for the
-famous bakery <code>Artisanal Squares</code>. This bakery makes exclusive square cakes, with
-prices proportional to the area.</p>
+<p>Hints:</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>$ <strong>java Cakes.java</strong>
-What is the cake width? <strong>3</strong>
-What is the cake height? <strong>4.5</strong>
-What is the cost per square inch? <strong>3</strong>
-The cake cost is $40.5</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_calculator">3. Calculator</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Write a program, <code>Calculator.java</code> that asks the user for two numbers and returns the sum, difference, product, and division of them.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>$ <strong>java Calculator.java</strong>
-Enter the first number: <strong>3.5</strong>
-Enter the second number: <strong>9.1</strong>
-
-3.5 * 9.1 = 31.849999999999998
-3.5 / 9.1 = 0.38461538461538464
-3.5 + 9.1 = 12.6
-3.5 - 9.1 = -5.6</code></pre>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use either a <code>float</code> or <code>double</code> variable to hold the decimal type</p>
+</li>
+<li>
+<p>Use <code>System.out.printf</code> to print the decimal value with single precision.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -164,7 +226,7 @@ spent on the assignment, any customizations you made, and any interesting bugs y
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-27 10:36:51 -0400
+Last updated 2022-09-07 10:14:45 -0400
 </div>
 </div>
 </body>
