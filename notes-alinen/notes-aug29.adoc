@@ -4,3 +4,12 @@ include::header.adoc[]
 :Revision: 0.1
 
 = {title}
+
+Lecture Videos:
+
+* link:https://brynmawr.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=ac65eed4-0678-4e4f-9088-af02014f2f67[Part 1]
+* link:https://brynmawr.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=cb778f90-c712-43f5-b0e0-af0201501d9b[Part 2]
+
+Code:
+
+* link:https://github.com/BrynMawr-CS113-F22/class-examples-normoyle/tree/main/week01-aug29[Lecture programs]
