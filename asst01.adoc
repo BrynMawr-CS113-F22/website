@@ -115,7 +115,7 @@ Hints:
 
 = What to hand-in
 
-. The programs, `Menu.java`, `Cakes.java`, and `Calculator.java`.
+. The programs, `Task.java`, `Calories.java`, and `Adopt.java`.
 . Make sure each program has a header containing your name, date, and purpose of the program
 . A brief write-up containing your name, assignment number, and a few sentences about how long you 
 spent on the assignment, any customizations you made, and any interesting bugs you solved. 
