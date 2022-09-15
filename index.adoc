@@ -14,6 +14,7 @@ include::header.adoc[]
 
 * You can install Java on your own laptop! link:develEnvSetup.html[See here for instructions].
 * link:asst01.html[Assignment 1] has been posted: *Due September 15th*
+* link:asst02.html[Assignment 2] has been posted: *Due September 22nd*
 * Current week notes: link:#week02[Week 02]
 
 == **Schedule**
