@@ -18,183 +18,85 @@ The goals of this assignment are:
 :stem: latexmath
 :sectnums:
 
-= Grandma's Pies
+= Banner
 
-Write a program, `Pies.java`, which prints messages about your ancestor's pies. 
-Your program should ask for a number of ancestors and then print messages about 
-each ancestor's Pies.
+Write a program, `Banner.java`, that draws an ascii border around a phrase given by the 
+user.
 
 Two examples of the running program are shown below. User input is shown in *bold*.
 
 [source,subs="quotes"]
 ----
-$ **java Pies**
-Enter a number: **0**
+$ **java Banner**
+Enter a phrase: **Welcome, Friends!**
+Enter a decorator character: **+**
++++++++++++++++++++++
++ Welcome, Friends! +
++++++++++++++++++++++
 
-$ **java Ancestor**
-Enter a number: **1**
-
-My grandmother's pies are the best!
-
-$ **java Ancestor**
-Enter a number: **6**
-
-My grandmother's pies are the best!
-My great grandmother's pies are the best!
-My great great grandmother's pies are the best!
-My great great great grandmother's pies are the best!
-My great great great great grandmother's pies are the best!
-My great great great great great grandmother's pies are the best!
+$ **java Banner**
+Enter a phrase: **Show me the money!**
+Enter a decorator character: **$**
+$$$$$$$$$$$$$$$$$$$$$$
+$ Show me the money! $
+$$$$$$$$$$$$$$$$$$$$$$
 ----
 
-You may assume that the user only inputs valid numbers. 
+Hints and Requirements:
 
-= Digital pet
+* Your border should fit around the entered phrase as in the examples. 
 
-Write a program, `Pet.java`, that simulates a virtual pet. Each
-day you must feed your pet. Your pet starts with a weight of 100 pounds. You 
-start with 100 food pellets. The user should specify how many days to simulate 
-your virtual pet.
+= Paper Fortune Teller
 
-  * Each day, your pet burns between 10 and 20 pounds.
-  * When your feed your pet, your food gives between 0 and 2 times the pounds.
+Whom will you marry? How many kids will you have? Back in the old days, we
+turned to link:https://en.wikipedia.org/wiki/Paper_fortune_teller[paper fortune
+tellers] to answer these along with many other burning questions about our
+lives. 
+
+Write a program, `FortuneTeller.java`, that implements a paper fortune teller. 
+Your fortune teller should implement the following algorithm:
 
 Below is an example
 
 [source,subs="quotes"]
 ----
-$ **java Pet**
-Your pet weighs 100 pounds
-You have 100 pellets
-Enter the number of days: **3**
-
-Day 1
-Your pet lost 10 pounds and now weighs 90 pounds
-How many pellets do you want to feed your pet? **10**
-You fed your pet 10 pellets
-Your pet gained 10 pounds and now weighs 100 pounds
-You have 90 pellets left
-
-Day 2
-Your pet lost 11 pounds and now weighs 89 pounds
-How many pellets do you want to feed your pet? **50**
-You fed your pet 50 pellets
-Your pet gained 100 pounds and now weighs 189 pounds
-You have 40 pellets left
-
-Day 3
-Your pet lost 14 pounds and now weighs 175 pounds
-How many pellets do you want to feed your pet? **20**
-You fed your pet 20 pellets
-Your pet gained 0 pounds and now weighs 175 pounds
-You have 20 pellets left
+$ **java FortuneTeller**
 ----
 
 Requirements and tips:
 
-* To compute the amount of pounds lost per day, you need to generate a random number 
-between 10 and 20 (inclusive).
-* To compute the amount of pounds gained per pellet, you need to generate a random number 
-between 0 and 2 (inclusive). Then multiply the number of pellets by this number.
-* The user should not be allowed to feed their pet more pellets than they have! Check whether the requested amount is too much and adjust it if it is. 
-* Your pet's weight should not go below zero! Check for a negative weight and clamp it to zero.
-* If you personalize your pet, be sure to point this out in your readme!
-
-Below the user tries to feed more pellets than they have available:
-
-[source,java]
-----
-$ java Pet
-Your pet weighs 100 pounds
-You have 100 pellets
-Enter the number of days: 2
-
-Day 1
-Your pet lost 18 pounds and now weighs 82 pounds
-How many pellets do you want to feed your pet? 300
-Not enough pellets! We will feed 100 pellets
-You fed your pet 100 pellets
-Your pet gained 0 pounds and now weighs 82 pounds
-You have 0 pellets left
-
-Day 2
-Your pet lost 13 pounds and now weighs 69 pounds
-How many pellets do you want to feed your pet? 100
-Not enough pellets! We will feed 0 pellets
-You fed your pet 0 pellets
-Your pet gained 0 pounds and now weighs 69 pounds
-You have 0 pellets left
-----
-
-Below the pet's weight goes to zero. 
-
-[source,java]
-----
-$ java Pet
-Your pet weighs 100 pounds
-You have 100 pellets
-Enter the number of days: 6
-
-Day 1
-Your pet lost 20 pounds and now weighs 80 pounds
-How many pellets do you want to feed your pet? 0
-You fed your pet 0 pellets
-Your pet gained 0 pounds and now weighs 80 pounds
-You have 100 pellets left
-
-Day 2
-Your pet lost 20 pounds and now weighs 60 pounds
-How many pellets do you want to feed your pet? 0
-You fed your pet 0 pellets
-Your pet gained 0 pounds and now weighs 60 pounds
-You have 100 pellets left
-
-Day 3
-Your pet lost 20 pounds and now weighs 40 pounds
-How many pellets do you want to feed your pet? 0
-You fed your pet 0 pellets
-Your pet gained 0 pounds and now weighs 40 pounds
-You have 100 pellets left
-
-Day 4
-Your pet lost 20 pounds and now weighs 20 pounds
-How many pellets do you want to feed your pet? 0
-You fed your pet 0 pellets
-Your pet gained 0 pounds and now weighs 20 pounds
-You have 100 pellets left
-
-Day 5
-Your pet lost 20 pounds and now weighs 0 pounds
-How many pellets do you want to feed your pet? 0
-You fed your pet 0 pellets
-Your pet gained 0 pounds and now weighs 0 pounds
-You have 100 pellets left
-
-Day 6
-Your pet lost 20 pounds and now weighs 0 pounds
-How many pellets do you want to feed your pet? 0
-You fed your pet 0 pellets
-Your pet gained 0 pounds and now weighs 0 pounds
-You have 100 pellets left
-----
-
+* 
 
 = Poll predictor
 
 _credit: Deepak Kumar_
 
-Write a program, `Predictor.java`, which predicts a candidate's likelihood of victory given its current polling number and margin of error. For example, if a poll predicts that a candidate has a 47% chance of winning a state with a 6% margin of error, can we make an overall prediction that the candidate will win a state? 
+Write a program, `Predictor.java`, which predicts a candidate's likelihood of
+victory given its current polling number and margin of error. For example, if a
+poll predicts that a candidate has a 47% chance of winning a state with a 6%
+margin of error, can we make an overall prediction that the candidate will win
+a state? 
 
-One way to do this is to simulate an actual vote incorporating the margin of error. Let's say, a poll (POLL) in a state shows that a candidate is likely to receive 47% of the vote in their favor with a margin of error +/- 6% (MOE). With this information, we can do a simulation of the state's voting, and arrive at the % of votes received by the candidate in a poll:
+One way to do this is to simulate an actual vote incorporating the margin of
+error. Let's say, a poll (POLL) in a state shows that a candidate is likely to
+receive 47% of the vote in their favor with a margin of error +/- 6% (MOE).
+With this information, we can do a simulation of the state's voting, and arrive
+at the % of votes received by the candidate in a poll:
 
 [source]
 ----
 SamplePoll = POLL + X * MOE
 ----
 
-Where X is a number in the range [-1.0..1.0]. For example, if X is -0.5, then the candidate will receive 0.47 + -0.5 * 0.06 = 0.44. This means, in this instance, the candidate received only 44% of the votes (i.e. losing the state). Alternately, if X turns out to be 0.8 then the candidate will receive 0.47 + 0.8 * 0.06 = 0.518 or 51.8% of the votes cast thereby winning the state.
+Where X is a number in the range [-1.0..1.0]. For example, if X is -0.5, then
+the candidate will receive 0.47 + -0.5 * 0.06 = 0.44. This means, in this
+instance, the candidate received only 44% of the votes (i.e. losing the state).
+Alternately, if X turns out to be 0.8 then the candidate will receive 0.47 +
+0.8 * 0.06 = 0.518 or 51.8% of the votes cast thereby winning the state.
 
-We can use Java's Math.random() function to generate values of X in the range [-1.0..1.0) and perform a simulation of several sample elections based on POLL and MOE to see if a candidate is likely to win or lose a state. For example, 
+We can use Java's Math.random() function to generate values of X in the range
+[-1.0..1.0) and perform a simulation of several sample elections based on POLL
+and MOE to see if a candidate is likely to win or lose a state. For example, 
 
 
 [source,subs="quotes"]
@@ -253,7 +155,7 @@ NOTE: Pretty printing is implemented using `StdOut.printf` as described in secti
 
 = What to hand-in
 
-. The programs, `Pies.java`, `Pet.java`, `Predictor.java`.
+. The programs, `Banner.java`, `FortuneTeller.java`, `Predictor.java`.
 . Make sure each program has a header containing your name, date, and purpose of the program
 . A brief write-up containing your name, assignment number, and a few sentences about how long you 
 spent on the assignment and any interesting bugs you solved. *Don't forget to include the likelihoods 
