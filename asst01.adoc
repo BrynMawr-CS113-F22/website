@@ -89,7 +89,7 @@ Here are two examples (user input in **bold**):
 
 [source,java,subs="quotes"]
 ----
-$ **java Pets.java**
+$ **java Adopt.java**
 Animal: **owls**
 Integer: **3**
 Noun: **hats**
@@ -98,7 +98,7 @@ Decimal: **1.3**
 Welcome to the Bryn Mawr Pet Adoption Agency!
 We have 3 owls in need of hats and 1.3% of your love!
 
-$ **java Pets.java**
+$ **java Adopt.java**
 Animal: **slugs**
 Integer: **3000**
 Noun: **peaches**
@@ -122,4 +122,4 @@ spent on the assignment, any customizations you made, and any interesting bugs y
 
 == How to hand-in
 
-. Copy your programs to your dropbox, into the folder called `A1`. 
+. Copy your programs to your dropbox, into the folder called `A01`. 
