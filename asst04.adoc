@@ -58,6 +58,49 @@ Please speak with your TAs or instructor if you have any questions about style!
 
 :sectnums:
 
+= Paper Fortune Teller 
+
+Will you marry? Should you take that job? Back in the old days, we
+turned to link:https://en.wikipedia.org/wiki/Paper_fortune_teller[paper fortune
+tellers] to answer these along with many other burning questions about our
+lives. 
+
+Write a program, `FortuneTeller.java`, that implements a paper fortune teller. 
+Your fortune teller should implement the following algorithm:
+
+1. Ask the user to select either red, blue, yellow, or green
+
+2. If the number of characters in the selected color is even, ask the user to choose one of the following numbers: 1,2,5,6.
+If the number of characters is odd, ask the user to choose one of the following numbers: 3,4,7,8
+
+3. If the chosen number is even, ask the user to choose between the same numbers as step 2.
+If the chosen number is odd, ask the user to choose between the other set of numbers.
+
+4. Give the user an answer based on the following table
+
+.responses
+1 It is certain.
+2 Without a doubt.
+3 Outlook good.
+4 Reply hazy, try again.
+5 Concentrate and ask again.
+6 Better not tell you now.
+7 My sources say no.
+8 Don't count on it.
+
+Below is an example
+
+[source,subs="quotes"]
+----
+$ **java FortuneTeller**
+----
+
+Requirements and tips:
+
+* You must validate the user's input. For example, if they must enter either 1,2,5,6 and they enter "blue" or "0" or "100", the program should respond with a message and ask again. 
+
+
+
 = Can't get a word in entwise
 
     "We must not be hasty." 

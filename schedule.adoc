@@ -32,7 +32,7 @@
 * link:notes-alinen/notes-sep05.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-sep05.html[Lecture Notes and Resources (Poliak)]
 * link:slides-azpoliak/lecture02_09_06.pdf[Lecture 02 slides (Poliak)] link:slides-azpoliak/lecture03_09_08.pdf[Lecture 03 slides (Poliak)]
-* Lab activity: Working with the command line
+* Lab activity: Code Jam 01 Practice, link:jam1Guide.html[Jam 1 Study Guide]
 
 //-----------------------------
 |2
@@ -55,7 +55,7 @@
 * link:.html[Assignment 3]: *Due September 29th*
 * link:notes-alinen/notes-sep19.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-sep19.html[Lecture Notes and Resources (Poliak)] 
-* Lab activity: TBD
+* Lab activity: Code Jam 02 Practice, link:jam2Guide.html[Jam 2 Study Guide]
 
 //-----------------------------
 |4
@@ -66,7 +66,7 @@
 * link:.html[Assignment 4]: *Due October 6*
 * link:notes-alinen/notes-sep26.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-sep26.html[Lecture Notes and Resources (Poliak)] 
-* Lab activity: TBD
+* Lab activity: Code Jam 02, link:jam2Guide.html[Jam 2 Study Guide]
 
 //-----------------------------
 |5
@@ -77,7 +77,7 @@
 * link:.html[Assignment 5]: *Due October 20*
 * link:notes-alinen/notes-oct03.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct03.html[Lecture Notes and Resources (Poliak)] 
-* Lab activity: Code jam 02, link:jam2Guide.html[Jam 2 Study Guide]
+* Lab activity: TBD 
 
 //-----------------------------
 |6
@@ -95,7 +95,7 @@
 * link:.html[Assignment 6]: *Due October 27*
 * link:notes-alinen/notes-oct17.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct17.html[Lecture Notes and Resources (Poliak)] 
-* Lab activity: TBD
+* Lab activity: Code Jam 03 Practice
 
 //-----------------------------
 |8
@@ -117,7 +117,7 @@
 * link:.html[Assignment 8]: **
 * link:notes-alinen/notes-oct31.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct31.html[Lecture Notes and Resources (Poliak)] 
-* Lab activity: TBD
+* Lab activity: Code Jam 04 Practice
 
 //-----------------------------
 |10
@@ -140,7 +140,7 @@
 * link:jam4Guide.html[Jam 4 Guide]
 * link:notes-alinen/notes-nov14.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov14.html[Lecture Notes and Resources (Poliak)] 
-* Lab activity: TBD
+* Lab activity: Code Jam 05 Practice
 
 //-----------------------------
 |12
@@ -160,6 +160,7 @@
 * Read: Sedgewick and Wayne, Sec 4.4
 * link:notes-alinen/notes-nov28.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov28.html[Lecture Notes and Resources (Poliak)] 
+* Lab activity: Code Jam 06 Practice
 
 //-----------------------------
 |14

@@ -46,30 +46,53 @@ Hints and Requirements:
 
 * Your border should fit around the entered phrase as in the examples. 
 
-= Paper Fortune Teller
+= Checkerboard
 
-Whom will you marry? How many kids will you have? Back in the old days, we
-turned to link:https://en.wikipedia.org/wiki/Paper_fortune_teller[paper fortune
-tellers] to answer these along with many other burning questions about our
-lives. 
-
-Write a program, `FortuneTeller.java`, that implements a paper fortune teller. 
-Your fortune teller should implement the following algorithm:
-
-Below is an example
+Write a program, `CheckerBoard.java`, that asks the user for a size and 
+uses a nested loop to print a two-dimensional size-by-size checkerboard pattern
+consisting of spaces and asterisks.
 
 [source,subs="quotes"]
 ----
-$ **java FortuneTeller**
+$ **java Checkerboard**
 ----
 
-Requirements and tips:
+= ISBN
 
-* 
+Write a program, `ISBN.java`, that computes the checksum and prints the ISBN number 
+for a given 9-digit number.
 
-= Poll predictor
+The ISBN number is 10-digit code that uniquely specifies a book. For example, 
+the ISBN number for _Harry Potter and the Socerer's Stone_ is 9780747532743.
 
-_credit: Deepak Kumar_
+The right-most digit is a _checksum_ digit that can be computed using the other 9 digits. 
+Suppose we have an ISBN number, defined as stem:+d_{10} d_9 d_8 d_7 d_6 d_5 d_4 d_3 d_2 d_1+, 
+where each stem:+d_i+ is a digit with value between 0 and 9. For example, 
+for _Harry Potter_, d_{10} is 9; d_9 is 7; d_8 is 8; etc.
+
+The ISBN number has the property that the following expression must be a multiple of 11.
+
+[stem]
+++++
+10d_{10} + 9d_9 + 8d_8 + 7d_7 + 6d_6 + 5d_5 + 4d_4 + 3d_3 + 2d_2 + d_1
+++++
+
+Therefore, to find the checksum you should test each digit, from 0 to 9, to find 
+a value for d_1 that results in a number that is a multiple of 11. Below are 
+examples of running this program. User input is in bold.
+
+[source,subs="quotes"]
+----
+$ **java ISBN**
+----
+
+Features and Requirements:
+
+* Your program must use _command line arguments_!
+* Use % to determine whether the ISBN formula is a multiple of 11
+
+= Let's make a deal
+= Poll Predictor
 
 Write a program, `Predictor.java`, which predicts a candidate's likelihood of
 victory given its current polling number and margin of error. For example, if a

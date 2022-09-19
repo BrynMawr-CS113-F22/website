@@ -15,12 +15,14 @@
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_assignment_3_loops_i_did_it_again">Assignment 3: Loops, I did it again!</a></li>
-<li><a href="#_grandmas_pies">1. Grandma&#8217;s Pies</a></li>
-<li><a href="#_digital_pet">2. Digital pet</a></li>
-<li><a href="#_poll_predictor">3. Poll predictor</a></li>
-<li><a href="#_what_to_hand_in">4. What to hand-in</a>
+<li><a href="#_banner">1. Banner</a></li>
+<li><a href="#_checkerboard">2. Checkerboard</a></li>
+<li><a href="#_isbn">3. ISBN</a></li>
+<li><a href="#_lets_make_a_deal">4. Let&#8217;s make a deal</a></li>
+<li><a href="#_poll_predictor">5. Poll Predictor</a></li>
+<li><a href="#_what_to_hand_in">6. What to hand-in</a>
 <ul class="sectlevel2">
-<li><a href="#_how_to_hand_in">4.1. How to hand-in</a></li>
+<li><a href="#_how_to_hand_in">6.1. How to hand-in</a></li>
 </ul>
 </li>
 </ul>
@@ -52,210 +54,131 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_grandmas_pies">1. Grandma&#8217;s Pies</h2>
+<h2 id="_banner">1. Banner</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Write a program, <code>Pies.java</code>, which prints messages about your ancestor&#8217;s pies.
-Your program should ask for a number of ancestors and then print messages about
-each ancestor&#8217;s Pies.</p>
+<p>Write a program, <code>Banner.java</code>, that draws an ascii border around a phrase given by the
+user.</p>
 </div>
 <div class="paragraph">
 <p>Two examples of the running program are shown below. User input is shown in <strong>bold</strong>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>$ <strong>java Pies</strong>
-Enter a number: <strong>0</strong>
+<pre class="highlight"><code>$ <strong>java Banner</strong>
+Enter a phrase: <strong>Welcome, Friends!</strong>
+Enter a decorator character: <strong>+</strong>
++++++++++++++++++++++
++ Welcome, Friends! +
++++++++++++++++++++++
 
-$ <strong>java Ancestor</strong>
-Enter a number: <strong>1</strong>
-
-My grandmother's pies are the best!
-
-$ <strong>java Ancestor</strong>
-Enter a number: <strong>6</strong>
-
-My grandmother's pies are the best!
-My great grandmother's pies are the best!
-My great great grandmother's pies are the best!
-My great great great grandmother's pies are the best!
-My great great great great grandmother's pies are the best!
-My great great great great great grandmother's pies are the best!</code></pre>
+$ <strong>java Banner</strong>
+Enter a phrase: <strong>Show me the money!</strong>
+Enter a decorator character: <strong>$</strong>
+$$$$$$$$$$$$$$$$$$$$$$
+$ Show me the money! $
+$$$$$$$$$$$$$$$$$$$$$$</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>You may assume that the user only inputs valid numbers.</p>
+<p>Hints and Requirements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Your border should fit around the entered phrase as in the examples.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_digital_pet">2. Digital pet</h2>
+<h2 id="_checkerboard">2. Checkerboard</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Write a program, <code>Pet.java</code>, that simulates a virtual pet. Each
-day you must feed your pet. Your pet starts with a weight of 100 pounds. You
-start with 100 food pellets. The user should specify how many days to simulate
-your virtual pet.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Each day, your pet burns between 10 and 20 pounds.</p>
-</li>
-<li>
-<p>When your feed your pet, your food gives between 0 and 2 times the pounds.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Below is an example</p>
+<p>Write a program, <code>CheckerBoard.java</code>, that asks the user for a size and
+uses a nested loop to print a two-dimensional size-by-size checkerboard pattern
+consisting of spaces and asterisks.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>$ <strong>java Pet</strong>
-Your pet weighs 100 pounds
-You have 100 pellets
-Enter the number of days: <strong>3</strong>
-
-Day 1
-Your pet lost 10 pounds and now weighs 90 pounds
-How many pellets do you want to feed your pet? <strong>10</strong>
-You fed your pet 10 pellets
-Your pet gained 10 pounds and now weighs 100 pounds
-You have 90 pellets left
-
-Day 2
-Your pet lost 11 pounds and now weighs 89 pounds
-How many pellets do you want to feed your pet? <strong>50</strong>
-You fed your pet 50 pellets
-Your pet gained 100 pounds and now weighs 189 pounds
-You have 40 pellets left
-
-Day 3
-Your pet lost 14 pounds and now weighs 175 pounds
-How many pellets do you want to feed your pet? <strong>20</strong>
-You fed your pet 20 pellets
-Your pet gained 0 pounds and now weighs 175 pounds
-You have 20 pellets left</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Requirements and tips:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>To compute the amount of pounds lost per day, you need to generate a random number
-between 10 and 20 (inclusive).</p>
-</li>
-<li>
-<p>To compute the amount of pounds gained per pellet, you need to generate a random number
-between 0 and 2 (inclusive). Then multiply the number of pellets by this number.</p>
-</li>
-<li>
-<p>The user should not be allowed to feed their pet more pellets than they have! Check whether the requested amount is too much and adjust it if it is.</p>
-</li>
-<li>
-<p>Your pet&#8217;s weight should not go below zero! Check for a negative weight and clamp it to zero.</p>
-</li>
-<li>
-<p>If you personalize your pet, be sure to point this out in your readme!</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Below the user tries to feed more pellets than they have available:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">$ java Pet
-Your pet weighs 100 pounds
-You have 100 pellets
-Enter the number of days: 2
-
-Day 1
-Your pet lost 18 pounds and now weighs 82 pounds
-How many pellets do you want to feed your pet? 300
-Not enough pellets! We will feed 100 pellets
-You fed your pet 100 pellets
-Your pet gained 0 pounds and now weighs 82 pounds
-You have 0 pellets left
-
-Day 2
-Your pet lost 13 pounds and now weighs 69 pounds
-How many pellets do you want to feed your pet? 100
-Not enough pellets! We will feed 0 pellets
-You fed your pet 0 pellets
-Your pet gained 0 pounds and now weighs 69 pounds
-You have 0 pellets left</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Below the pet&#8217;s weight goes to zero.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">$ java Pet
-Your pet weighs 100 pounds
-You have 100 pellets
-Enter the number of days: 6
-
-Day 1
-Your pet lost 20 pounds and now weighs 80 pounds
-How many pellets do you want to feed your pet? 0
-You fed your pet 0 pellets
-Your pet gained 0 pounds and now weighs 80 pounds
-You have 100 pellets left
-
-Day 2
-Your pet lost 20 pounds and now weighs 60 pounds
-How many pellets do you want to feed your pet? 0
-You fed your pet 0 pellets
-Your pet gained 0 pounds and now weighs 60 pounds
-You have 100 pellets left
-
-Day 3
-Your pet lost 20 pounds and now weighs 40 pounds
-How many pellets do you want to feed your pet? 0
-You fed your pet 0 pellets
-Your pet gained 0 pounds and now weighs 40 pounds
-You have 100 pellets left
-
-Day 4
-Your pet lost 20 pounds and now weighs 20 pounds
-How many pellets do you want to feed your pet? 0
-You fed your pet 0 pellets
-Your pet gained 0 pounds and now weighs 20 pounds
-You have 100 pellets left
-
-Day 5
-Your pet lost 20 pounds and now weighs 0 pounds
-How many pellets do you want to feed your pet? 0
-You fed your pet 0 pellets
-Your pet gained 0 pounds and now weighs 0 pounds
-You have 100 pellets left
-
-Day 6
-Your pet lost 20 pounds and now weighs 0 pounds
-How many pellets do you want to feed your pet? 0
-You fed your pet 0 pellets
-Your pet gained 0 pounds and now weighs 0 pounds
-You have 100 pellets left</code></pre>
+<pre class="highlight"><code>$ <strong>java Checkerboard</strong></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_poll_predictor">3. Poll predictor</h2>
+<h2 id="_isbn">3. ISBN</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>credit: Deepak Kumar</em></p>
+<p>Write a program, <code>ISBN.java</code>, that computes the checksum and prints the ISBN number
+for a given 9-digit number.</p>
 </div>
 <div class="paragraph">
-<p>Write a program, <code>Predictor.java</code>, which predicts a candidate&#8217;s likelihood of victory given its current polling number and margin of error. For example, if a poll predicts that a candidate has a 47% chance of winning a state with a 6% margin of error, can we make an overall prediction that the candidate will win a state?</p>
+<p>The ISBN number is 10-digit code that uniquely specifies a book. For example,
+the ISBN number for <em>Harry Potter and the Socerer&#8217;s Stone</em> is 9780747532743.</p>
 </div>
 <div class="paragraph">
-<p>One way to do this is to simulate an actual vote incorporating the margin of error. Let&#8217;s say, a poll (POLL) in a state shows that a candidate is likely to receive 47% of the vote in their favor with a margin of error +/- 6% (MOE). With this information, we can do a simulation of the state&#8217;s voting, and arrive at the % of votes received by the candidate in a poll:</p>
+<p>The right-most digit is a <em>checksum</em> digit that can be computed using the other 9 digits.
+Suppose we have an ISBN number, defined as stem:+d_{10} d_9 d_8 d_7 d_6 d_5 d_4 d_3 d_2 d_1+,
+where each stem:+d_i+ is a digit with value between 0 and 9. For example,
+for <em>Harry Potter</em>, d_{10} is 9; d_9 is 7; d_8 is 8; etc.</p>
+</div>
+<div class="paragraph">
+<p>The ISBN number has the property that the following expression must be a multiple of 11.</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[10d_{10} + 9d_9 + 8d_8 + 7d_7 + 6d_6 + 5d_5 + 4d_4 + 3d_3 + 2d_2 + d_1\]
+</div>
+</div>
+<div class="paragraph">
+<p>Therefore, to find the checksum you should test each digit, from 0 to 9, to find
+a value for d_1 that results in a number that is a multiple of 11. Below are
+examples of running this program. User input is in bold.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java ISBN</strong></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Features and Requirements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Your program must use <em>command line arguments</em>!</p>
+</li>
+<li>
+<p>Use % to determine whether the ISBN formula is a multiple of 11</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lets_make_a_deal">4. Let&#8217;s make a deal</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_poll_predictor">5. Poll Predictor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Write a program, <code>Predictor.java</code>, which predicts a candidate&#8217;s likelihood of
+victory given its current polling number and margin of error. For example, if a
+poll predicts that a candidate has a 47% chance of winning a state with a 6%
+margin of error, can we make an overall prediction that the candidate will win
+a state?</p>
+</div>
+<div class="paragraph">
+<p>One way to do this is to simulate an actual vote incorporating the margin of
+error. Let&#8217;s say, a poll (POLL) in a state shows that a candidate is likely to
+receive 47% of the vote in their favor with a margin of error +/- 6% (MOE).
+With this information, we can do a simulation of the state&#8217;s voting, and arrive
+at the % of votes received by the candidate in a poll:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -263,10 +186,16 @@ You have 100 pellets left</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Where X is a number in the range [-1.0..1.0]. For example, if X is -0.5, then the candidate will receive 0.47 + -0.5 * 0.06 = 0.44. This means, in this instance, the candidate received only 44% of the votes (i.e. losing the state). Alternately, if X turns out to be 0.8 then the candidate will receive 0.47 + 0.8 * 0.06 = 0.518 or 51.8% of the votes cast thereby winning the state.</p>
+<p>Where X is a number in the range [-1.0..1.0]. For example, if X is -0.5, then
+the candidate will receive 0.47 + -0.5 * 0.06 = 0.44. This means, in this
+instance, the candidate received only 44% of the votes (i.e. losing the state).
+Alternately, if X turns out to be 0.8 then the candidate will receive 0.47<br>
+0.8 * 0.06 = 0.518 or 51.8% of the votes cast thereby winning the state.</p>
 </div>
 <div class="paragraph">
-<p>We can use Java&#8217;s Math.random() function to generate values of X in the range [-1.0..1.0) and perform a simulation of several sample elections based on POLL and MOE to see if a candidate is likely to win or lose a state. For example,</p>
+<p>We can use Java&#8217;s Math.random() function to generate values of X in the range
+[-1.0..1.0) and perform a simulation of several sample elections based on POLL
+and MOE to see if a candidate is likely to win or lose a state. For example,</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -380,12 +309,12 @@ Pretty printing is implemented using <code>StdOut.printf</code> as described in 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_what_to_hand_in">4. What to hand-in</h2>
+<h2 id="_what_to_hand_in">6. What to hand-in</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The programs, <code>Pies.java</code>, <code>Pet.java</code>, <code>Predictor.java</code>.</p>
+<p>The programs, <code>Banner.java</code>, <code>FortuneTeller.java</code>, <code>Predictor.java</code>.</p>
 </li>
 <li>
 <p>Make sure each program has a header containing your name, date, and purpose of the program</p>
@@ -398,7 +327,7 @@ computed by your Predictor!</strong></p>
 </ol>
 </div>
 <div class="sect2">
-<h3 id="_how_to_hand_in">4.1. How to hand-in</h3>
+<h3 id="_how_to_hand_in">6.1. How to hand-in</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -412,7 +341,7 @@ computed by your Predictor!</strong></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-27 10:36:51 -0400
+Last updated 2022-09-16 13:07:03 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">
