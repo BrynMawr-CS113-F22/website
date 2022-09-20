@@ -43,7 +43,7 @@
 * link:asst02.html[Assignment 2]: *Due September 22*
 * link:notes-alinen/notes-sep12.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-sep12.html[Lecture Notes and Resources (Poliak)] 
-* link:slides-azpoliak/lecture04_09_13.pdf[Lecture 04 slides (Poliak)] link:/slides-azpoliak/lecture05_09_15.pdf[Lecture 05 slides (Poliak)]
+* link:slides-azpoliak/lecture04_09_13.pdf[Lecture 04 slides (Poliak)] link:slides-azpoliak/lecture05_09_15.pdf[Lecture 05 slides (Poliak)]
 * Lab activity: Code Jam 01, link:jam1Guide.html[Jam 1 Study Guide]
 
 //-----------------------------
@@ -56,6 +56,7 @@
 * link:notes-alinen/notes-sep19.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-sep19.html[Lecture Notes and Resources (Poliak)] 
 * Lab activity: Code Jam 02 Practice, link:jam2Guide.html[Jam 2 Study Guide]
+* link:slides-azpoliak/lecture06_09_20.pdf[Lecture 06 slides (Poliak)]
 
 //-----------------------------
 |4
