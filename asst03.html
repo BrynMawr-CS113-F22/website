@@ -18,11 +18,10 @@
 <li><a href="#_banner">1. Banner</a></li>
 <li><a href="#_checkerboard">2. Checkerboard</a></li>
 <li><a href="#_isbn">3. ISBN</a></li>
-<li><a href="#_lets_make_a_deal">4. Let&#8217;s make a deal</a></li>
-<li><a href="#_poll_predictor">5. Poll Predictor</a></li>
-<li><a href="#_what_to_hand_in">6. What to hand-in</a>
+<li><a href="#_poll_predictor">4. Poll Predictor</a></li>
+<li><a href="#_what_to_hand_in">5. What to hand-in</a>
 <ul class="sectlevel2">
-<li><a href="#_how_to_hand_in">6.1. How to hand-in</a></li>
+<li><a href="#_how_to_hand_in">5.1. How to hand-in</a></li>
 </ul>
 </li>
 </ul>
@@ -73,11 +72,11 @@ Enter a decorator character: <strong>+</strong>
 +++++++++++++++++++++
 
 $ <strong>java Banner</strong>
-Enter a phrase: <strong>Show me the money!</strong>
+Enter a phrase: <strong>Applesauce!</strong>
 Enter a decorator character: <strong>$</strong>
-$$$$$$$$$$$$$$$$$$$$$$
-$ Show me the money! $
-$$$$$$$$$$$$$$$$$$$$$$</code></pre>
+$$$$$$$$$$$$$$$
+$ Applesauce! $
+$$$$$$$$$$$$$$$</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -88,6 +87,12 @@ $$$$$$$$$$$$$$$$$$$$$$</code></pre>
 <li>
 <p>Your border should fit around the entered phrase as in the examples.</p>
 </li>
+<li>
+<p>You can read both the phrase and decorator character as Strings</p>
+</li>
+<li>
+<p>You can assume the user will enter a single character as a decorator</p>
+</li>
 </ul>
 </div>
 </div>
@@ -96,13 +101,26 @@ $$$$$$$$$$$$$$$$$$$$$$</code></pre>
 <h2 id="_checkerboard">2. Checkerboard</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Write a program, <code>CheckerBoard.java</code>, that asks the user for a size and
+<p>Write a program, <code>Checkerboard.java</code>, that asks the user for a size and
 uses a nested loop to print a two-dimensional size-by-size checkerboard pattern
-consisting of spaces and asterisks.</p>
+consisting of dashes and o&#8217;s.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>$ <strong>java Checkerboard</strong></code></pre>
+<pre class="highlight"><code>$ <strong>javac Checkerboard.java</strong>
+$ <strong>java Checkerboard</strong>
+Enter a size: <strong>11</strong>
+o-o-o-o-o-o
+-o-o-o-o-o-
+o-o-o-o-o-o
+-o-o-o-o-o-
+o-o-o-o-o-o
+-o-o-o-o-o-
+o-o-o-o-o-o
+-o-o-o-o-o-
+o-o-o-o-o-o
+-o-o-o-o-o-
+o-o-o-o-o-o</code></pre>
 </div>
 </div>
 </div>
@@ -115,35 +133,47 @@ consisting of spaces and asterisks.</p>
 for a given 9-digit number.</p>
 </div>
 <div class="paragraph">
-<p>The ISBN number is 10-digit code that uniquely specifies a book. For example,
-the ISBN number for <em>Harry Potter and the Socerer&#8217;s Stone</em> is 9780747532743.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/ISBN">ISBN</a> number is 10-digit code that uniquely specifies a book. For example,
+the ISBN number for <em>Harry Potter and the Socerer&#8217;s Stone</em> is 978059035</p>
 </div>
 <div class="paragraph">
 <p>The right-most digit is a <em>checksum</em> digit that can be computed using the other 9 digits.
-Suppose we have an ISBN number, defined as stem:+d_{10} d_9 d_8 d_7 d_6 d_5 d_4 d_3 d_2 d_1+,
-where each stem:+d_i+ is a digit with value between 0 and 9. For example,
-for <em>Harry Potter</em>, d_{10} is 9; d_9 is 7; d_8 is 8; etc.</p>
+Suppose we have an ISBN number, defined as</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[d_{10} d_9 d_8 d_7 d_6 d_5 d_4 d_3 d_2 d_1\]
+</div>
+</div>
+<div class="paragraph">
+<p>where each \(d_i\) is a digit with value between 0 and 9. For example,
+for <em>Harry Potter</em>'s ISBN number, \(d_{10}\) is 9; \(d_9\) is 7; \(d_8\) is 8; etc.</p>
 </div>
 <div class="paragraph">
 <p>The ISBN number has the property that the following expression must be a multiple of 11.</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\[10d_{10} + 9d_9 + 8d_8 + 7d_7 + 6d_6 + 5d_5 + 4d_4 + 3d_3 + 2d_2 + d_1\]
+\[10d_{10} + 9d_9 + 8d_8 + 7d_7 + 6d_6 + 5d_5 + 4d_4 + 3d_3 + 2d_2 + 1d_1\]
 </div>
 </div>
 <div class="paragraph">
 <p>Therefore, to find the checksum you should test each digit, from 0 to 9, to find
-a value for d_1 that results in a number that is a multiple of 11. Below are
-examples of running this program. User input is in bold.</p>
+a value for \(d_1\) that results in a number that is a multiple of 11.
+The value for \(d_1\) is called the <em>checksum digit</em>.</p>
+</div>
+<div class="paragraph">
+<p>Below are examples of running this program. User input is in bold.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>$ <strong>java ISBN</strong></code></pre>
+<pre class="highlight"><code>$ <strong>java ISBN 817525766</strong>
+The checksum digit is 0
+The full ISBN number is 8175257660</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Features and Requirements:</p>
+<p>Features, Hints and Requirements:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -153,18 +183,43 @@ examples of running this program. User input is in bold.</p>
 <li>
 <p>Use % to determine whether the ISBN formula is a multiple of 11</p>
 </li>
+<li>
+<p>You can assume that the input with be a 9 digit number</p>
+</li>
+<li>
+<p>You should print the checksum along with the 10 digit ISBN number.</p>
+</li>
 </ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The input is the first 9 digits of the ISBN number. An easy way to
+parse this is to go through each character of the input string and convert each
+individually to a digit. One way to do this is use the function <code>Character.getNumericValue(c);</code> .
+For example,
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>String example = "123456789";
+for (int i = 0; i &lt; example.length(); i++) {
+    char c = example.charAt(i);
+    int digit = Character.getNumericValue();
+    System.out.println(digit);
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_lets_make_a_deal">4. Let&#8217;s make a deal</h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_poll_predictor">5. Poll Predictor</h2>
+<h2 id="_poll_predictor">4. Poll Predictor</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Write a program, <code>Predictor.java</code>, which predicts a candidate&#8217;s likelihood of
@@ -309,7 +364,7 @@ Pretty printing is implemented using <code>StdOut.printf</code> as described in 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_what_to_hand_in">6. What to hand-in</h2>
+<h2 id="_what_to_hand_in">5. What to hand-in</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -327,7 +382,7 @@ computed by your Predictor!</strong></p>
 </ol>
 </div>
 <div class="sect2">
-<h3 id="_how_to_hand_in">6.1. How to hand-in</h3>
+<h3 id="_how_to_hand_in">5.1. How to hand-in</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -341,7 +396,7 @@ computed by your Predictor!</strong></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-09-16 13:07:03 -0400
+Last updated 2022-09-21 11:53:24 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">
