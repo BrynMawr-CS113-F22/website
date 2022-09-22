@@ -56,7 +56,7 @@
 * link:notes-alinen/notes-sep19.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-sep19.html[Lecture Notes and Resources (Poliak)] 
 * Lab activity: Code Jam 02 Practice, link:jam2Guide.html[Jam 2 Study Guide]
-* link:slides-azpoliak/lecture06_09_20.pdf[Lecture 06 slides (Poliak)]
+* link:slides-azpoliak/lecture06_09_20.pdf[Lecture 06 slides (Poliak)] link:slides-azpoliak/lecture07_09_22.pdf[Lecture 07 slides (Poliak)]
 
 //-----------------------------
 |4
