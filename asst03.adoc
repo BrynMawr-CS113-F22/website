@@ -42,7 +42,7 @@ $ Applesauce! $
 $$$$$$$$$$$$$$$
 ----
 
-Hints and Requirements:
+Requirements:
 
 * Your border should fit around the entered phrase as in the examples. 
 * You can read both the phrase and decorator character as Strings
@@ -78,7 +78,7 @@ Write a program, `ISBN.java`, that computes the checksum and prints the ISBN num
 for a given 9-digit number.
 
 The link:https://en.wikipedia.org/wiki/ISBN[ISBN] number is 10-digit code that uniquely specifies a book. For example, 
-the ISBN number for _Harry Potter and the Socerer's Stone_ is 978059035
+the ISBN number for _Harry Potter and the Socerer's Stone_ is java ISBN 0747532745
 
 The right-most digit is a _checksum_ digit that can be computed using the other 9 digits. 
 Suppose we have an ISBN number, defined as 
@@ -110,25 +110,34 @@ $ **java ISBN 817525766**
 The checksum digit is 0
 The full ISBN number is 8175257660
 
+$ **java ISBN 074753274**
+The checksum digit is 5
+The full ISBN number is java ISBN 0747532745
 ----
 
-Features, Hints and Requirements:
+Requirements:
 
 * Your program must use _command line arguments_!
 * Use % to determine whether the ISBN formula is a multiple of 11
 * You can assume that the input with be a 9 digit number
 * You should print the checksum along with the 10 digit ISBN number. 
 
+Hints:
+
 NOTE: The input is the first 9 digits of the ISBN number. An easy way to 
 parse this is to go through each character of the input string and convert each 
-individually to a digit. One way to do this is use the function `Character.getNumericValue(c);` .
-For example, 
+individually to a digit. One way to do this is use the fact that characters 
+correspond to numbers "under the hood" according to the link:https://www.asciitable.com/[ASCII Table]. 
+If we subtract the character '0', we 
+get the offset of the digit from zero. See below for an example. 
+Alternatively, you can also use the function
+link:https://www.tutorialspoint.com/java/lang/character_getnumericvalue.htm[`Character.getNumericValue(c);`].
 [source]
 ----
 String example = "123456789";
 for (int i = 0; i < example.length(); i++) {
     char c = example.charAt(i);
-    int digit = Character.getNumericValue();
+    int digit = c - '0';
     System.out.println(digit);
 }
 ----
@@ -215,11 +224,9 @@ Repeat N times
 In your writeup, include the likelihoods computed by your program for all states, using 
 N = 1000000.
 
-NOTE: Pretty printing is implemented using `StdOut.printf` as described in section 1.5 of your textbook. Using `printf` requires that you compile with the command `javac-introcs` and run with the command `java-introcs`.
-
 = What to hand-in
 
-. The programs, `Banner.java`, `FortuneTeller.java`, `Predictor.java`.
+. The programs, `Banner.java`, `Checkerboard.java`, `ISBN.java`, and `Predictor.java`.
 . Make sure each program has a header containing your name, date, and purpose of the program
 . A brief write-up containing your name, assignment number, and a few sentences about how long you 
 spent on the assignment and any interesting bugs you solved. *Don't forget to include the likelihoods 

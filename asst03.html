@@ -80,7 +80,7 @@ $$$$$$$$$$$$$$$</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Hints and Requirements:</p>
+<p>Requirements:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -134,7 +134,7 @@ for a given 9-digit number.</p>
 </div>
 <div class="paragraph">
 <p>The <a href="https://en.wikipedia.org/wiki/ISBN">ISBN</a> number is 10-digit code that uniquely specifies a book. For example,
-the ISBN number for <em>Harry Potter and the Socerer&#8217;s Stone</em> is 978059035</p>
+the ISBN number for <em>Harry Potter and the Socerer&#8217;s Stone</em> is java ISBN 0747532745</p>
 </div>
 <div class="paragraph">
 <p>The right-most digit is a <em>checksum</em> digit that can be computed using the other 9 digits.
@@ -169,11 +169,15 @@ The value for \(d_1\) is called the <em>checksum digit</em>.</p>
 <div class="content">
 <pre class="highlight"><code>$ <strong>java ISBN 817525766</strong>
 The checksum digit is 0
-The full ISBN number is 8175257660</code></pre>
+The full ISBN number is 8175257660
+
+$ <strong>java ISBN 074753274</strong>
+The checksum digit is 5
+The full ISBN number is java ISBN 0747532745</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Features, Hints and Requirements:</p>
+<p>Requirements:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -191,6 +195,9 @@ The full ISBN number is 8175257660</code></pre>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Hints:</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -200,8 +207,12 @@ The full ISBN number is 8175257660</code></pre>
 <td class="content">
 The input is the first 9 digits of the ISBN number. An easy way to
 parse this is to go through each character of the input string and convert each
-individually to a digit. One way to do this is use the function <code>Character.getNumericValue(c);</code> .
-For example,
+individually to a digit. One way to do this is use the fact that characters
+correspond to numbers "under the hood" according to the <a href="https://www.asciitable.com/">ASCII Table</a>.
+If we subtract the character '0', we
+get the offset of the digit from zero. See below for an example.
+Alternatively, you can also use the function
+<a href="https://www.tutorialspoint.com/java/lang/character_getnumericvalue.htm"><code>Character.getNumericValue(c);</code></a>.
 </td>
 </tr>
 </table>
@@ -211,7 +222,7 @@ For example,
 <pre class="highlight"><code>String example = "123456789";
 for (int i = 0; i &lt; example.length(); i++) {
     char c = example.charAt(i);
-    int digit = Character.getNumericValue();
+    int digit = c - '0';
     System.out.println(digit);
 }</code></pre>
 </div>
@@ -349,18 +360,6 @@ Repeat N times
 <p>In your writeup, include the likelihoods computed by your program for all states, using
 N = 1000000.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Pretty printing is implemented using <code>StdOut.printf</code> as described in section 1.5 of your textbook. Using <code>printf</code> requires that you compile with the command <code>javac-introcs</code> and run with the command <code>java-introcs</code>.
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -369,7 +368,7 @@ Pretty printing is implemented using <code>StdOut.printf</code> as described in 
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The programs, <code>Banner.java</code>, <code>FortuneTeller.java</code>, <code>Predictor.java</code>.</p>
+<p>The programs, <code>Banner.java</code>, <code>Checkerboard.java</code>, <code>ISBN.java</code>, and <code>Predictor.java</code>.</p>
 </li>
 <li>
 <p>Make sure each program has a header containing your name, date, and purpose of the program</p>
@@ -396,7 +395,7 @@ computed by your Predictor!</strong></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-09-21 11:53:24 -0400
+Last updated 2022-09-22 11:29:39 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">

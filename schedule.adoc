@@ -52,7 +52,7 @@
 |*Loops* anchor:week04[]
 
 * Read: Sedgewick and Wayne, Sec 1.3 (`while` and `for` loops)
-* link:.html[Assignment 3]: *Due September 29th*
+* link:asst03.html[Assignment 3]: *Due September 29th*
 * link:notes-alinen/notes-sep19.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-sep19.html[Lecture Notes and Resources (Poliak)] 
 * Lab activity: Code Jam 02 Practice, link:jam2Guide.html[Jam 2 Study Guide]
