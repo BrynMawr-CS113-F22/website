@@ -20,20 +20,19 @@
 </ul>
 </li>
 <li><a href="#_paper_fortune_teller">1. Paper Fortune Teller</a></li>
-<li><a href="#_cant_get_a_word_in_entwise">2. Can&#8217;t get a word in entwise</a></li>
-<li><a href="#_crossword">3. Crossword</a></li>
-<li><a href="#_letter_frequency">4. Letter Frequency</a>
+<li><a href="#_fibonacci">2. Fibonacci</a></li>
+<li><a href="#_letter_frequency">3. Letter Frequency</a>
 <ul class="sectlevel2">
-<li><a href="#_before_you_begin">4.1. Before You Begin</a></li>
-<li><a href="#_count_characters">4.2. Count characters</a></li>
-<li><a href="#_scale_values">4.3. Scale values</a></li>
-<li><a href="#_draw_a_histogram">4.4. Draw a histogram</a></li>
-<li><a href="#_extra_challenge">4.5. Extra challenge</a></li>
+<li><a href="#_before_you_begin">3.1. Before You Begin</a></li>
+<li><a href="#_count_characters">3.2. Count characters</a></li>
+<li><a href="#_scale_values">3.3. Scale values</a></li>
+<li><a href="#_draw_a_histogram">3.4. Draw a histogram</a></li>
+<li><a href="#_extra_challenge">3.5. Extra challenge</a></li>
 </ul>
 </li>
-<li><a href="#_what_to_hand_in">5. What to hand-in</a>
+<li><a href="#_what_to_hand_in">4. What to hand-in</a>
 <ul class="sectlevel2">
-<li><a href="#_how_to_hand_in">5.1. How to hand-in</a></li>
+<li><a href="#_how_to_hand_in">4.1. How to hand-in</a></li>
 </ul>
 </li>
 </ul>
@@ -142,7 +141,7 @@ If the number of characters is odd, ask the user to choose one of the following 
 If the chosen number is odd, ask the user to choose between the other set of numbers.</p>
 </li>
 <li>
-<p>Give the user an answer based on the following table</p>
+<p>Finally, give the user an answer based on the following table</p>
 </li>
 </ol>
 </div>
@@ -178,198 +177,49 @@ If the chosen number is odd, ask the user to choose between the other set of num
 </div>
 </div>
 <div class="sect1">
-<h2 id="_cant_get_a_word_in_entwise">2. Can&#8217;t get a word in entwise</h2>
+<h2 id="_fibonacci">2. Fibonacci</h2>
 <div class="sectionbody">
-<div class="literalblock">
+<div class="paragraph">
+<p>Write a program, <code>Fibonacci.java</code>, that stores the first N values of the Fibonacci
+sequence in an array and prints it out. Your program should take the number of values
+as a <em>command line argument</em>. Each value \(F_n\) in the <a href="https://www.mathsisfun.com/numbers/fibonacci-sequence.html">Fibonacci sequence</a> is equal to the sum of the previous two values.
+In other words,</p>
+</div>
+<div class="stemblock">
 <div class="content">
-<pre>"We must not be hasty."
--- Treebeard</pre>
+\[F_n = F_{n-1} + F_{n-2}
+F_2 = 1
+F_1 = 1\]
 </div>
-</div>
-<div class="paragraph">
-<p>The <a href="https://lotr.fandom.com/wiki/Ents">Ents</a> in Lord of the Rings were a noble
-race of tree herders, whose language was "long and sonorous".
-Ents live a very long time and so speak very&#8230;&#8203;carefully&#8230;&#8203;and&#8230;&#8203;.very&#8230;&#8203;s.l.o.w.l.y.</p>
-</div>
-<div class="paragraph">
-<p>Write a program ,<code>Slow.java</code>, that turns a phrase into ent-speech. Your program
-should ask for the pause length and a phrase to change. Your program should
-output an ent-phrase. Ent-phrases contain '.' between each letter in the input.</p>
-</div>
-<div class="paragraph">
-<p>Two examples of the running program are shown below. User input is shown in <strong>bold</strong>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>$ <strong>java Slow</strong>
-Pause length: <strong>3</strong>
-Text: <strong>Surprise!</strong>
-S...u...r...p...r...i...s...e...!...
+<pre class="highlight"><code>$ <strong>java Fibonacci 10</strong>
+1 1 2 3 5 8 13 21 34 55
 
-$ <strong>java Slow</strong>
-Pause length: <strong>5</strong>
-Text: <strong>Hmmm?</strong>
-H.....m.....m.....m.....?.....</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_crossword">3. Crossword</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In <code>Crossword.java</code>, implement a program that inputs text and outputs a word square whose letters
-are arranged like a crossword puzzle.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
-Enter a phrase: <strong>top</strong>
+$ <strong>java Fibonacci 1</strong>
+1
 
-top
-o o
-pot
-
-$ <strong>java Crossword</strong>
-Enter a phrase: <strong>otter</strong>
-
-otter
-t   e
-t   t
-e   t
-retto</code></pre>
+$ <strong>java Fibonacci 0</strong></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Features:</p>
+<p>Requirements:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The first row should match the text that was entered</p>
+<p>Your program should use comamnd line arguments</p>
 </li>
 <li>
-<p>The last row is the reverse of the input text</p>
-</li>
-<li>
-<p>The left side spells the input word from top to bottom</p>
-</li>
-<li>
-<p>The right side spells the input word from bottom to top</p>
+<p>Your program can assume the user enters a non-negative argument</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>If this problem looks daunting, solve it one step at a time!
-Let&#8217;s break this problem into simpler subproblems and work our way up
-to the final solution.</p>
-</div>
-<div class="paragraph">
-<p><strong>Subproblem 1: Top row</strong></p>
-</div>
-<div class="paragraph">
-<p>The top row prints the input string. Write a program that outputs the
-user&#8217;s input.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
-Enter a phrase: <strong>otter</strong>
-
-otter</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Subproblem 2: Bottom row</strong></p>
-</div>
-<div class="paragraph">
-<p>Using string accumulation, compute the reverse of the input string.
-Then print both the original and reversed string.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
-Enter a phrase: <strong>otter</strong>
-
-otter
-retto</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Subproblem 3: Left column</strong></p>
-</div>
-<div class="paragraph">
-<p>The left column prints each character on its own line, excluding the
-first and last character. To start, simply print all the characters
-on their own line.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
-Enter a phrase: <strong>otter</strong>
-
-otter
-o
-t
-t
-e
-r
-retto</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Now, exclude the first and last characters.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
-Enter a phrase: <strong>otter</strong>
-
-otter
-t
-t
-e
-retto</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Subproblem 4: Right column</strong></p>
-</div>
-<div class="paragraph">
-<p>Excluding the first and last character, print each character of the
-reversed string on its own line. Don&#8217;t worry about spacing to start.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
-Enter a phrase: <strong>otter</strong>
-
-otter
-t e
-t t
-e t
-retto</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Now, add spaces between the left and right columns.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
-Enter a phrase: <strong>otter</strong>
-
-otter
-t   e
-t   t
-e   t
-retto</code></pre>
-</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_letter_frequency">4. Letter Frequency</h2>
+<h2 id="_letter_frequency">3. Letter Frequency</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><em>credit: Deepak Kumar</em></p>
@@ -394,7 +244,7 @@ This question is based on this <a href="https://cs.brynmawr.edu/Courses/cs113/fa
 </table>
 </div>
 <div class="sect2">
-<h3 id="_before_you_begin">4.1. Before You Begin</h3>
+<h3 id="_before_you_begin">3.1. Before You Begin</h3>
 <div class="paragraph">
 <p>Because this assignment focuses on keeping track of the number of occurrences of
 individual letters in the program input, we will be making heavy use of the Java
@@ -436,7 +286,7 @@ TAs or Instructor or post a question on slack if you are not sure how this works
 </div>
 </div>
 <div class="sect2">
-<h3 id="_count_characters">4.2. Count characters</h3>
+<h3 id="_count_characters">3.2. Count characters</h3>
 <div class="paragraph">
 <p>The first step in building the histogram is to read the input text one
 character at a time, and to keep track of and then display (to stdout) the
@@ -569,7 +419,7 @@ z: 2386</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_scale_values">4.3. Scale values</h3>
+<h3 id="_scale_values">3.3. Scale values</h3>
 <div class="paragraph">
 <p>At this point, we know the number of occurrences of each lowercase letter,
 but before we can draw the histogram, we need to scale the values so that the
@@ -633,7 +483,7 @@ z: 0.008</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_draw_a_histogram">4.4. Draw a histogram</h3>
+<h3 id="_draw_a_histogram">3.4. Draw a histogram</h3>
 <div class="paragraph">
 <p>Now that we know the relative/scaled values for the
 number of occurrences of each letter, we can use the StdDraw library to draw
@@ -725,7 +575,7 @@ picture shown below</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_extra_challenge">4.5. Extra challenge</h3>
+<h3 id="_extra_challenge">3.5. Extra challenge</h3>
 <div class="paragraph">
 <p>Add labels and colors to your histogram. For example, below different colors are used for alternating bars. Each
 bar is labeled with its corresponding letter.</p>
@@ -739,7 +589,7 @@ bar is labeled with its corresponding letter.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_what_to_hand_in">5. What to hand-in</h2>
+<h2 id="_what_to_hand_in">4. What to hand-in</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -760,7 +610,7 @@ customizations you make for your own histogram.</p>
 </ol>
 </div>
 <div class="sect2">
-<h3 id="_how_to_hand_in">5.1. How to hand-in</h3>
+<h3 id="_how_to_hand_in">4.1. How to hand-in</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -774,7 +624,7 @@ customizations you make for your own histogram.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-09-16 12:46:47 -0400
+Last updated 2022-09-26 13:01:54 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">

@@ -76,7 +76,7 @@ If the number of characters is odd, ask the user to choose one of the following 
 3. If the chosen number is even, ask the user to choose between the same numbers as step 2.
 If the chosen number is odd, ask the user to choose between the other set of numbers.
 
-4. Give the user an answer based on the following table
+4. Finally, give the user an answer based on the following table
 
 .responses
 1 It is certain.
@@ -100,162 +100,35 @@ Requirements and tips:
 * You must validate the user's input. For example, if they must enter either 1,2,5,6 and they enter "blue" or "0" or "100", the program should respond with a message and ask again. 
 
 
+= Fibonacci
 
-= Can't get a word in entwise
+Write a program, `Fibonacci.java`, that stores the first N values of the Fibonacci 
+sequence in an array and prints it out. Your program should take the number of values 
+as a _command line argument_. Each value stem:[F_n] in the link:https://www.mathsisfun.com/numbers/fibonacci-sequence.html[Fibonacci sequence] is equal to the sum of the previous two values. 
+In other words,
 
-    "We must not be hasty." 
-    -- Treebeard 
-
-The https://lotr.fandom.com/wiki/Ents[Ents] in Lord of the Rings were a noble 
-race of tree herders, whose language was "long and sonorous". 
-Ents live a very long time and so speak very...carefully...and....very...s.l.o.w.l.y. 
-
-Write a program ,`Slow.java`, that turns a phrase into ent-speech. Your program 
-should ask for the pause length and a phrase to change. Your program should 
-output an ent-phrase. Ent-phrases contain '.' between each letter in the input. 
-
-Two examples of the running program are shown below. User input is shown in *bold*.
+[stem]
+++++
+F_n = F_{n-1} + F_{n-2}
+F_2 = 1
+F_1 = 1
+++++
 
 [source,subs="quotes"]
 ----
-$ **java Slow**
-Pause length: **3**
-Text: **Surprise!**
-S...u...r...p...r...i...s...e...!...
+$ **java Fibonacci 10**
+1 1 2 3 5 8 13 21 34 55
 
-$ **java Slow**
-Pause length: **5**
-Text: **Hmmm?**
-H.....m.....m.....m.....?.....
+$ **java Fibonacci 1**
+1
+
+$ **java Fibonacci 0**
 ----
 
-= Crossword
+Requirements:
 
-In `Crossword.java`, implement a program that inputs text and outputs a word square whose letters 
-are arranged like a crossword puzzle.
-
-[source,java,subs="quotes"]
-----
-$ *java Crossword*
-Enter a phrase: **top**
-
-top
-o o
-pot
-
-$ *java Crossword*
-Enter a phrase: **otter**
-
-otter
-t   e
-t   t
-e   t
-retto
-
-----
-
-Features:
-
-* The first row should match the text that was entered
-* The last row is the reverse of the input text
-* The left side spells the input word from top to bottom
-* The right side spells the input word from bottom to top
-
-If this problem looks daunting, solve it one step at a time! 
-Let's break this problem into simpler subproblems and work our way up
-to the final solution.
-
-*Subproblem 1: Top row*
-
-The top row prints the input string. Write a program that outputs the 
-user's input. 
-
-[source,java,subs="quotes"]
-----
-$ **java Crossword**
-Enter a phrase: **otter**
-
-otter
-----
-
-*Subproblem 2: Bottom row*
-
-Using string accumulation, compute the reverse of the input string. 
-Then print both the original and reversed string.
-
-[source,java,subs="quotes"]
-----
-$ **java Crossword**
-Enter a phrase: **otter**
-
-otter
-retto
-----
-
-*Subproblem 3: Left column*
-
-The left column prints each character on its own line, excluding the 
-first and last character. To start, simply print all the characters 
-on their own line.
-
-[source,java,subs="quotes"]
-----
-$ **java Crossword**
-Enter a phrase: **otter**
-
-otter
-o
-t
-t
-e
-r
-retto
-----
-
-Now, exclude the first and last characters.
-
-[source,java,subs="quotes"]
-----
-$ **java Crossword**
-Enter a phrase: **otter**
-
-otter
-t
-t
-e
-retto
-----
-
-*Subproblem 4: Right column*
-
-Excluding the first and last character, print each character of the 
-reversed string on its own line. Don't worry about spacing to start.
-
-[source,java,subs="quotes"]
-----
-$ **java Crossword**
-Enter a phrase: **otter**
-
-otter
-t e
-t t
-e t
-retto
-----
-
-Now, add spaces between the left and right columns.
-
-[source,java,subs="quotes"]
-----
-$ *java Crossword*
-Enter a phrase: **otter**
-
-otter
-t   e
-t   t
-e   t
-retto
-----
+* Your program should use comamnd line arguments
+* Your program can assume the user enters a non-negative argument 
 
 = Letter Frequency 
 
