@@ -78,7 +78,7 @@
 * link:.html[Assignment 5]: *Due October 20*
 * link:notes-alinen/notes-oct03.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct03.html[Lecture Notes and Resources (Poliak)] 
-* Lab activity: TBD 
+* Lab activity: Code Jam 02 Review
 
 //-----------------------------
 |6
