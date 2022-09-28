@@ -89,7 +89,7 @@ d_{10} d_9 d_8 d_7 d_6 d_5 d_4 d_3 d_2 d_1
 ++++
 
 where each stem:[d_i] is a digit with value between 0 and 9. For example, 
-for _Harry Potter_'s ISBN number, stem:[d_{10}] is 9; stem:[d_9] is 7; stem:[d_8] is 8; etc.
+for _Harry Potter_'s ISBN number, stem:[d_{10}] is 0; stem:[d_9] is 7; stem:[d_8] is 4; etc.
 
 The ISBN number has the property that the following expression must be a multiple of 11.
 
