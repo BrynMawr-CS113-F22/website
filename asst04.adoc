@@ -67,8 +67,8 @@ In other words,
 
 [stem]
 ++++
-F_n = F_{n-1} + F_{n-2}
-F_2 = 1
+F_n = F_{n-1} + F_{n-2}, 
+F_2 = 1, 
 F_1 = 1
 ++++
 
@@ -86,7 +86,137 @@ $ **java Fibonacci 0**
 Requirements:
 
 * Your program should use comamnd line arguments
-* Your program can assume the user enters a non-negative argument 
+* Your program can assume the user enters a non-negative integer 
+
+
+= Crossword
+
+In `Crossword.java`, implement a program that inputs text and outputs a word square whose letters
+are arranged like a crossword puzzle.
+
+[source,java,subs="quotes"]
+----
+$ *java Crossword*
+Enter a phrase: **top**
+
+top
+o o
+pot
+
+$ *java Crossword*
+Enter a phrase: **otter**
+
+otter
+t   e
+t   t
+e   t
+retto
+
+----
+
+Features:
+
+* The first row should match the text that was entered
+* The last row is the reverse of the input text
+* The left side spells the input word from top to bottom
+* The right side spells the input word from bottom to top
+
+If this problem looks daunting, solve it one step at a time!
+Let's break this problem into simpler subproblems and work our way up
+to the final solution.
+
+== Subproblem 1: Top row
+
+The top row prints the input string. Write a program that outputs the
+user's input.
+
+[source,java,subs="quotes"]
+----
+$ **java Crossword**
+Enter a phrase: **otter**
+
+otter
+----
+
+== Subproblem 2: Bottom row
+
+Using string accumulation, compute the reverse of the input string.
+Then print both the original and reversed string.
+
+[source,java,subs="quotes"]
+----
+$ **java Crossword**
+Enter a phrase: **otter**
+
+otter
+retto
+----
+
+== Subproblem 3: Left column
+
+The left column prints each character on its own line, excluding the
+first and last character. To start, simply print all the characters
+on their own line.
+
+[source,java,subs="quotes"]
+----
+$ **java Crossword**
+Enter a phrase: **otter**
+
+otter
+o
+t
+t
+e
+r
+retto
+----
+
+Now, exclude the first and last characters.
+
+[source,java,subs="quotes"]
+----
+$ **java Crossword**
+Enter a phrase: **otter**
+
+otter
+t
+t
+e
+retto
+----
+
+== Subproblem 4: Right colums
+
+Excluding the first and last character, print each character of the
+reversed string on its own line. Don't worry about spacing to start.
+
+[source,java,subs="quotes"]
+----
+$ **java Crossword**
+Enter a phrase: **otter**
+
+otter
+t e
+t t
+e t
+retto
+----
+
+Now, add spaces between the left and right columns.
+
+[source,java,subs="quotes"]
+----
+$ *java Crossword*
+Enter a phrase: **otter**
+
+otter
+t   e
+t   t
+e   t
+retto
+----
+
 
 = Letter Frequency 
 
@@ -95,9 +225,9 @@ _credit: Deepak Kumar_
 Write a program, `LetterFrequency.java`, that plots the frequency of different letters in a corpus 
 of text using a link:https://en.wikipedia.org/wiki/Histogram[histogram].
 
-*Download the text*: link:https://cs.brynmawr.edu/Courses/cs113/fall2020dk/tolstoy.txt[tolstoy.txt]
+*Download the text*: link:http://165.106.10.202/Courses/cs113/spring2022/Assignments/tolstoy.txt[tolstoy.txt]
 
-NOTE: This question is based on this link:https://cs.brynmawr.edu/Courses/cs113/fall2020dk/Assignment4.pdf[this writeup].
+NOTE: This question is based on this link:http://165.106.10.202/Courses/cs113/spring2022/Assignments/Assignment4.pdf[this writeup].
 
 == Before You Begin
 
@@ -359,7 +489,7 @@ image::A04-WarAndPeace-Histogram-Pretty.png[]
 
 = What to hand-in
 
-. The programs, `Slow.java`, `Crossword.java`, and `LetterFrequency.java`.
+. The programs, `Fibonacci.java`, `Crossword.java`, and `LetterFrequency.java`.
 . An image of your histogram, drawn for the last question.
 . Make sure each program has a header containing your name, date, and purpose of the program
 . A brief write-up containing your name, assignment number, and a few sentences about how long you 

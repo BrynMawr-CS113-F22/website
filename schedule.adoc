@@ -64,7 +64,7 @@
 |*Arrays, Strings, File I/O* anchor:week05[]
 
 * Read: Sedgewick and Wayne, Sec 1.4, 1.5, (Strings) 3.1
-* link:.html[Assignment 4]: *Due October 6*
+* link:asst04.html[Assignment 4]: *Due October 6*
 * link:notes-alinen/notes-sep26.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-sep26.html[Lecture Notes and Resources (Poliak)] 
 * Lab activity: Code Jam 02, link:jam2Guide.html[Jam 2 Study Guide]

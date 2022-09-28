@@ -20,18 +20,26 @@
 </ul>
 </li>
 <li><a href="#_fibonacci">1. Fibonacci</a></li>
-<li><a href="#_letter_frequency">2. Letter Frequency</a>
+<li><a href="#_crossword">2. Crossword</a>
 <ul class="sectlevel2">
-<li><a href="#_before_you_begin">2.1. Before You Begin</a></li>
-<li><a href="#_count_characters">2.2. Count characters</a></li>
-<li><a href="#_scale_values">2.3. Scale values</a></li>
-<li><a href="#_draw_a_histogram">2.4. Draw a histogram</a></li>
-<li><a href="#_extra_challenge">2.5. Extra challenge</a></li>
+<li><a href="#_subproblem_1_top_row">2.1. Subproblem 1: Top row</a></li>
+<li><a href="#_subproblem_2_bottom_row">2.2. Subproblem 2: Bottom row</a></li>
+<li><a href="#_subproblem_3_left_column">2.3. Subproblem 3: Left column</a></li>
+<li><a href="#_subproblem_4_right_colums">2.4. Subproblem 4: Right colums</a></li>
 </ul>
 </li>
-<li><a href="#_what_to_hand_in">3. What to hand-in</a>
+<li><a href="#_letter_frequency">3. Letter Frequency</a>
 <ul class="sectlevel2">
-<li><a href="#_how_to_hand_in">3.1. How to hand-in</a></li>
+<li><a href="#_before_you_begin">3.1. Before You Begin</a></li>
+<li><a href="#_count_characters">3.2. Count characters</a></li>
+<li><a href="#_scale_values">3.3. Scale values</a></li>
+<li><a href="#_draw_a_histogram">3.4. Draw a histogram</a></li>
+<li><a href="#_extra_challenge">3.5. Extra challenge</a></li>
+</ul>
+</li>
+<li><a href="#_what_to_hand_in">4. What to hand-in</a>
+<ul class="sectlevel2">
+<li><a href="#_how_to_hand_in">4.1. How to hand-in</a></li>
 </ul>
 </li>
 </ul>
@@ -124,8 +132,8 @@ In other words,</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\[F_n = F_{n-1} + F_{n-2}
-F_2 = 1
+\[F_n = F_{n-1} + F_{n-2},
+F_2 = 1,
 F_1 = 1\]
 </div>
 </div>
@@ -149,14 +157,168 @@ $ <strong>java Fibonacci 0</strong></code></pre>
 <p>Your program should use comamnd line arguments</p>
 </li>
 <li>
-<p>Your program can assume the user enters a non-negative argument</p>
+<p>Your program can assume the user enters a non-negative integer</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_letter_frequency">2. Letter Frequency</h2>
+<h2 id="_crossword">2. Crossword</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In <code>Crossword.java</code>, implement a program that inputs text and outputs a word square whose letters
+are arranged like a crossword puzzle.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
+Enter a phrase: <strong>top</strong>
+
+top
+o o
+pot
+
+$ <strong>java Crossword</strong>
+Enter a phrase: <strong>otter</strong>
+
+otter
+t   e
+t   t
+e   t
+retto</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Features:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The first row should match the text that was entered</p>
+</li>
+<li>
+<p>The last row is the reverse of the input text</p>
+</li>
+<li>
+<p>The left side spells the input word from top to bottom</p>
+</li>
+<li>
+<p>The right side spells the input word from bottom to top</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If this problem looks daunting, solve it one step at a time!
+Let&#8217;s break this problem into simpler subproblems and work our way up
+to the final solution.</p>
+</div>
+<div class="sect2">
+<h3 id="_subproblem_1_top_row">2.1. Subproblem 1: Top row</h3>
+<div class="paragraph">
+<p>The top row prints the input string. Write a program that outputs the
+user&#8217;s input.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
+Enter a phrase: <strong>otter</strong>
+
+otter</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_subproblem_2_bottom_row">2.2. Subproblem 2: Bottom row</h3>
+<div class="paragraph">
+<p>Using string accumulation, compute the reverse of the input string.
+Then print both the original and reversed string.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
+Enter a phrase: <strong>otter</strong>
+
+otter
+retto</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_subproblem_3_left_column">2.3. Subproblem 3: Left column</h3>
+<div class="paragraph">
+<p>The left column prints each character on its own line, excluding the
+first and last character. To start, simply print all the characters
+on their own line.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
+Enter a phrase: <strong>otter</strong>
+
+otter
+o
+t
+t
+e
+r
+retto</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, exclude the first and last characters.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
+Enter a phrase: <strong>otter</strong>
+
+otter
+t
+t
+e
+retto</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_subproblem_4_right_colums">2.4. Subproblem 4: Right colums</h3>
+<div class="paragraph">
+<p>Excluding the first and last character, print each character of the
+reversed string on its own line. Don&#8217;t worry about spacing to start.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
+Enter a phrase: <strong>otter</strong>
+
+otter
+t e
+t t
+e t
+retto</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, add spaces between the left and right columns.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">$ <strong>java Crossword</strong>
+Enter a phrase: <strong>otter</strong>
+
+otter
+t   e
+t   t
+e   t
+retto</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_letter_frequency">3. Letter Frequency</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><em>credit: Deepak Kumar</em></p>
@@ -166,7 +328,7 @@ $ <strong>java Fibonacci 0</strong></code></pre>
 of text using a <a href="https://en.wikipedia.org/wiki/Histogram">histogram</a>.</p>
 </div>
 <div class="paragraph">
-<p><strong>Download the text</strong>: <a href="https://cs.brynmawr.edu/Courses/cs113/fall2020dk/tolstoy.txt">tolstoy.txt</a></p>
+<p><strong>Download the text</strong>: <a href="http://165.106.10.202/Courses/cs113/spring2022/Assignments/tolstoy.txt">tolstoy.txt</a></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -175,13 +337,13 @@ of text using a <a href="https://en.wikipedia.org/wiki/Histogram">histogram</a>.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This question is based on this <a href="https://cs.brynmawr.edu/Courses/cs113/fall2020dk/Assignment4.pdf">this writeup</a>.
+This question is based on this <a href="http://165.106.10.202/Courses/cs113/spring2022/Assignments/Assignment4.pdf">this writeup</a>.
 </td>
 </tr>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_before_you_begin">2.1. Before You Begin</h3>
+<h3 id="_before_you_begin">3.1. Before You Begin</h3>
 <div class="paragraph">
 <p>Because this assignment focuses on keeping track of the number of occurrences of
 individual letters in the program input, we will be making heavy use of the Java
@@ -223,7 +385,7 @@ TAs or Instructor or post a question on slack if you are not sure how this works
 </div>
 </div>
 <div class="sect2">
-<h3 id="_count_characters">2.2. Count characters</h3>
+<h3 id="_count_characters">3.2. Count characters</h3>
 <div class="paragraph">
 <p>The first step in building the histogram is to read the input text one
 character at a time, and to keep track of and then display (to stdout) the
@@ -356,7 +518,7 @@ z: 2386</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_scale_values">2.3. Scale values</h3>
+<h3 id="_scale_values">3.3. Scale values</h3>
 <div class="paragraph">
 <p>At this point, we know the number of occurrences of each lowercase letter,
 but before we can draw the histogram, we need to scale the values so that the
@@ -420,7 +582,7 @@ z: 0.008</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_draw_a_histogram">2.4. Draw a histogram</h3>
+<h3 id="_draw_a_histogram">3.4. Draw a histogram</h3>
 <div class="paragraph">
 <p>Now that we know the relative/scaled values for the
 number of occurrences of each letter, we can use the StdDraw library to draw
@@ -512,7 +674,7 @@ picture shown below</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_extra_challenge">2.5. Extra challenge</h3>
+<h3 id="_extra_challenge">3.5. Extra challenge</h3>
 <div class="paragraph">
 <p>Add labels and colors to your histogram. For example, below different colors are used for alternating bars. Each
 bar is labeled with its corresponding letter.</p>
@@ -526,12 +688,12 @@ bar is labeled with its corresponding letter.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_what_to_hand_in">3. What to hand-in</h2>
+<h2 id="_what_to_hand_in">4. What to hand-in</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The programs, <code>Slow.java</code>, <code>Crossword.java</code>, and <code>LetterFrequency.java</code>.</p>
+<p>The programs, <code>Fibonacci.java</code>, <code>Crossword.java</code>, and <code>LetterFrequency.java</code>.</p>
 </li>
 <li>
 <p>An image of your histogram, drawn for the last question.</p>
@@ -547,7 +709,7 @@ customizations you make for your own histogram.</p>
 </ol>
 </div>
 <div class="sect2">
-<h3 id="_how_to_hand_in">3.1. How to hand-in</h3>
+<h3 id="_how_to_hand_in">4.1. How to hand-in</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -561,7 +723,7 @@ customizations you make for your own histogram.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-09-26 21:01:14 -0400
+Last updated 2022-09-28 11:32:13 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">
