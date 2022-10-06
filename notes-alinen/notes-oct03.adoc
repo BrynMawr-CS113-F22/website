@@ -4,3 +4,7 @@ include::header.adoc[]
 :Revision: 0.1
 
 = {title}
+
+link:https://brynmawr.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=20adb778-4e4d-4bb4-9c8f-af250156b054[Video - Wed]
+
+link:https://github.com/BrynMawr-CS113-F22/class-examples-normoyle/tree/main/week06-oct3[Class examples]
