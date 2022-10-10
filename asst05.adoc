@@ -123,6 +123,8 @@ your choice -->
 
 = Patterns
 
+_credit: Jeffrey Knerr_
+
 This program will use various functions to draw patterns in the terminal
 window. We'll write and test each function as we go, then use the
 `menu(opts)` function from above to allow the user to pick which
