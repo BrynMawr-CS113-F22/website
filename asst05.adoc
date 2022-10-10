@@ -28,7 +28,7 @@ following function signature
 // Given a list of Strings (user options), displays the strings in a numerical 
 //   menu and asks the user for their choice
 // param opts (String[]): list of String representing all options
-// return (int): the id of the option chosen by the user. id is in range [0, opts.length()-1].
+// return (int): the id of the option chosen by the user. id is in range [0, opts.length-1].
 public static int menu(String[] opts)
 ----
 
@@ -55,7 +55,7 @@ display:
 
 Your function needs to work for _any_ size String[] array (2 options, 5
 options, 27 options, etc), and *should return an integer* in the range
-`[0, opts.length()]`.
+`[0, opts.length]`.
 
 Furthermore, **your function needs to check that the user entered a valid
 number**. You should re-use your `IsInteger` function and use it to test 
