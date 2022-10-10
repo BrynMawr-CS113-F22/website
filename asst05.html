@@ -15,17 +15,16 @@
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_assignment_5_cant_spell_functions_without_fun">Assignment 5: Can&#8217;t spell functions without fun</a></li>
-<li><a href="#_tic_tac_toe">Tic-tac-toe</a>
+<li><a href="#_menu">Menu</a></li>
+<li><a href="#_patterns">Patterns</a>
 <ul class="sectlevel2">
-<li><a href="#_3x3_board">3x3 Board</a></li>
-<li><a href="#_main_function">Main Function</a></li>
-<li><a href="#_ai_turn">AI turn</a></li>
-<li><a href="#_player_turn">Player turn</a></li>
-<li><a href="#_display_the_board">Display the board</a></li>
-<li><a href="#_check_for_wins">Check for wins</a></li>
+<li><a href="#_block">Block</a></li>
+<li><a href="#_triangle">Triangle</a></li>
+<li><a href="#_reverse">Reverse</a></li>
+<li><a href="#_diamond">Diamond</a></li>
+<li><a href="#_menu_2">Menu</a></li>
 </ul>
 </li>
-<li><a href="#_extra_challenge">Extra challenge</a></li>
 <li><a href="#_what_to_hand_in">What to hand-in</a>
 <ul class="sectlevel2">
 <li><a href="#_how_to_hand_in">How to hand-in</a></li>
@@ -47,290 +46,448 @@
 <div class="ulist">
 <ul>
 <li>
+<p>Write programs containing multiple functions</p>
+</li>
+<li>
 <p>Work with loops, conditionals, and variables</p>
-</li>
-<li>
-<p>Work with arrays and strings</p>
-</li>
-<li>
-<p>Implement and call functions</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_tic_tac_toe">Tic-tac-toe</h2>
+<h2 id="_menu">Menu</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>credit: Sara Mathieson</em></p>
+<p><em>credit: Jeffrey Knerr</em></p>
 </div>
 <div class="paragraph">
-<p>Write a program, <code>Tictactoe.java</code>, that implements the game of
-<a href="https://en.wikipedia.org/wiki/Tic-tac-toe">tic-tac-toe</a>.
-In this game, players alternate between placing their symbol (either an "X" or an "O")
-inside a 3x3 grid of squares. The first player to get "3 in a row" (either on a
-row, a column, or diagonally) wins.</p>
+<p>In the file called <code>Menu.java</code> implement a static function called <code>menu</code> that has the
+following function signature</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>// Given a list of Strings (user options), displays the strings in a numerical
+//   menu and asks the user for their choice
+// param opts (String[]): list of String representing all options
+// return (int): the id of the option chosen by the user. id is in range [0, opts.length()-1].
+public static int menu(String[] opts)</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>In our version, the user will play against the computer (the Artificial Intelligence, or "AI").
-The AI will always play first and use the symbol "O", and the user will play second with a
-symbol "X". The game can end with the user winning, the AI winning, or a draw.</p>
+<p>This function should work with <em>any</em> list of string options. For example, if
+the list of options is <code>["yes","no"]</code>, your function will display a
+simple menu with two options:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code> 1. yes
+ 2. no</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Here are examples of these three situations:</p>
+<p>and then ask the user to choose one of the options (1 or 2). Similarly, if
+the list of options is <code>["sit","stay","bark"]</code>, your function will
+display:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code> 1. sit
+ 2. stay
+ 3. bark</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Your function needs to work for <em>any</em> size String[] array (2 options, 5
+options, 27 options, etc), and <strong>should return an integer</strong> in the range
+<code>[0, opts.length()]</code>.</p>
+</div>
+<div class="paragraph">
+<p>Furthermore, <strong>your function needs to check that the user entered a valid
+number</strong>. You should re-use your <code>IsInteger</code> function and use it to test
+whether the user provides a value within the valid range.</p>
+</div>
+<div class="paragraph">
+<p>Once you know you have an integer, <strong>make sure the user enters a number
+from the displayed menu</strong>, asking <em>again</em> if they enter a number too high
+or too low. Once the function gets a <em>valid</em> number, it should
+<em>return</em> that number as an integer to <code>main()</code>.</p>
 </div>
 <div class="ulist">
+<div class="title">Helpful Code Examples</div>
 <ul>
 <li>
-<p><a href="logs/a5-userwin.html">User wins</a></p>
+<p><a href="https://github.com/BrynMawr-CS113-F22/class-examples-normoyle/blob/main/week06-oct3/CheckInput.java">CheckInput.java - Contains the IsInteger function from class</a></p>
 </li>
 <li>
-<p><a href="logs/a5-aiwins.html">AI wins</a></p>
-</li>
-<li>
-<p><a href="logs/a5-tie.html">Tie</a></p>
+<p><a href="https://github.com/BrynMawr-CS113-F22/class-examples-normoyle/blob/main/week06-oct3/Guess.java">Guess.java - Uses IsInteger to check whether a value is a valid integer within a given range.</a></p>
 </li>
 </ul>
 </div>
-<div class="sect2">
-<h3 id="_3x3_board">3x3 Board</h3>
 <div class="paragraph">
-<p>In order to implement tic-tac-toe we will be using a <strong>list of characters</strong> to represent
-the board. The board will begin as a list of 9 empty spaces:</p>
+<p>Here&#8217;s an example of the full program, with the user entering invalid
+integers at first. Note how the function continues to ask again and again until the user
+enters a valid choice (hint: use a <code>while</code> loop for that part).</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>char[] board = {' ',' ',' ',' ',' ',' ',' ',' ',' '};</code></pre>
+<pre class="highlight"><code>$ <strong>javac Menu.java CheckInput.java</strong>
+$ <strong>java Menu</strong>
+ 1. yes
+ 2. no
+
+your choice --> <strong>0</strong>
+please enter a valid choice!!!
+
+your choice --> <strong>zebra</strong>
+please enter a positive integer...
+
+your choice --> <strong>-1</strong>
+please enter a positive integer...
+
+your choice --> <strong>99</strong>
+please enter a valid choice!!!
+
+your choice --> <strong>1</strong>
+You chose: 1</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The board will be modified over the course of the game.
-For debugging, use the Java function <code>Array.toString(board)</code>.
-For example, suppose the AI chooses 3, we can print the board with:</p>
+<p>In <code>Menu.java</code>, use the following simple <code>main()</code> function to test your menu
+function.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>board[3] = 'O';
-System.out.println(java.util.Arrays.toString(board));</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">public static void main(String[] args) {
+  String[] opts = {"yes","no"};
+  int choice = menu(opts);
+  System.out.println("You chose: " + choice);
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The above code will print the following to the console:</p>
+<p>Once your function is working, please add at least one additional option
+("maybe"?) to <code>opts</code> in <code>main()</code> to make sure your function works with more than two options.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>[' ',' ',' ','O',' ',' ',' ',' ',' ']</code></pre>
+<pre class="highlight"><code>$ <strong>java Menu</strong>
+ 1. yes
+ 2. no
+ 3. maybe
+
+your choice --></code></pre>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_patterns">Patterns</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This program will use various functions to draw patterns in the terminal
+window. We&#8217;ll write and test each function as we go, then use the
+<code>menu(opts)</code> function from above to allow the user to pick which
+function to run.</p>
 </div>
 <div class="paragraph">
-<p>And then if the user plays 7 and we print, the board will look like:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>[' ',' ',' ','O',' ',' ',' ','X',' ']</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_main_function">Main Function</h3>
-<div class="paragraph">
-<p>Your <code>main()</code> function should use the functions below to do the bulk of the work.
-  The general outline of the program is as follows:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Print out a welcome message. You can do this in main, or define a function for it.</p>
-</li>
-<li>
-<p>Set up initial variables before entering the game loop. You will need at least the board and a way to keep track of whether someone has won yet.</p>
-</li>
-<li>
-<p>Set up your game loop. Each time through the loop, either the user will play, or the AI will play. The board will be <strong>modified</strong> during each turn. If one of the players has won, the loop should exit.</p>
-</li>
-<li>
-<p>Print the output of the game, such as "AI won!", "You won!", "A tie!"</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_ai_turn">AI turn</h3>
-<div class="paragraph">
-<p>Implement a function, <code>aiTurn</code>. This function should place an <code>O</code> at a random
-open spot on the board. <code>aiTurn</code> should be called from <code>main</code> during the game
-loop.</p>
-</div>
-<div class="paragraph">
-<p>You implementation should have this specification:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>// Function: aiTurn
-// Implements one turn of the AI player.
-//   Default behavior: chooses a random open spot
-// Input board (char[]): the 3x3 tic-tac-toe board
-// Returns (int): the index of the board that is modified
-public static int aiTurn(char[] board)</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This function takes in a <strong>list of characters</strong> and determines where the AI
-should place an 'O'. The cells are numbered 0-8,
-inclusive. The choice cannot be a cell that is already taken by a symbol.</p>
-</div>
-<div class="paragraph">
-<p>You can choose whether to have the function modify the board (the change will persist
-after the function returns because arrays are <strong>mutable</strong>) or to modify the
-board after the function returns to <code>main</code>, using the returned integer.</p>
-</div>
-<div class="paragraph">
-<p>You are welcome to make an "intelligent" AI, but the recommended approach is
-to make the computer choose a cell randomly. A simple approach is to continually
-choose random cells until it finds a free one.</p>
-</div>
-<div class="paragraph">
-<p>After the AI&#8217;s turn, <code>main</code> should print the AI&#8217;s choice</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>AI chooses: 7</code></pre>
-</div>
-</div>
+<p>Start by writing and testing each of the following functions (in <code>Patterns.java</code>).</p>
 </div>
 <div class="sect2">
-<h3 id="_player_turn">Player turn</h3>
+<h3 id="_block">Block</h3>
 <div class="paragraph">
-<p>Implement a function, <code>userTurn</code>, that implements the player&#8217;s turn. This function should
-check that the user enters a valid integer.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The integer is between 0 and 8, inclusive.</p>
-</li>
-<li>
-<p>The cell is not already taken by a symbol.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Keep asking the user to choose an integer until they choose a valid cell. For example,
-if there were already a symbol in the 5 cell, the player turn might look like this:</p>
+<p>Implement the <code>block</code> function according to the following specification</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>Enter 0-8 for your choice: <strong>5</strong>
-Invalid input: 5
-Enter 0-8 for your choice: <strong>10</strong>
-Invalid input: 10
-Enter 0-8 for your choice: <strong>-3</strong>
-Invalid input: -3
-Enter 0-8 for your choice: <strong>0</strong></code></pre>
+<pre class="highlight"><code>// Draw an n by n block to the console
+// param n (int): the size of the block
+// param ch (char): the character to fill the block
+public static void block(int n, char ch)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><code>playerTurn</code> should implement the following specification</p>
+<p>This function takes a number (<code>n</code>) and a character (<code>ch</code>) and prints a
+block of nxn characters. For example, calling <code>block(5,'X')</code> would
+display this to the terminal:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>XXXXX
+XXXXX
+XXXXX
+XXXXX
+XXXXX</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and calling <code>block(10,'Q')</code> would display a 10x10 block of Qs.</p>
+</div>
+<div class="paragraph">
+<p>In <code>Patterns.java</code> add your <code>block(n,ch)</code> function and call it with a
+simple <code>main()</code> function to test that it works:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>// Function: playerTurn
-// Asks the user which cell they want to place their `X`.
-//    Ensures the player chooses a valid index.
-// Input board (char[]): the 3x3 tic-tac-toe board
-// Returns (int): the index chosen by the player
-public static int playerTurn(char[] board)</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You can choose whether to have the function modify the board (the change will persist
-after the function returns because arrays are <strong>mutable</strong>) or to modify the
-board after the function returns in <code>main</code>, using the returned integer.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_display_the_board">Display the board</h3>
-<div class="paragraph">
-<p>Implement a function, <code>displayBoard</code>, that prints the current board to the screen.
-Below is the specification</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>// Function: displayBoard
-// Displays the tic-tac-toe board as a 3x3 grid
-// Input board (char[]): the tic-tac-toe board
-// Returns: none
-public static void displayBoard(char[] board)</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Board is an array with 9 characters. You need to print it as a 3x3 square grid.
-One approach is the use a for loop that progresses in threes, for example, see
-what happens when you try this code</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>for (int i = 0; i &lt; 9; i += 3) {
-  System.out.printf("%d|%d|%d\n", i, i+1, i+2);
+<pre class="highlight"><code class="language-python" data-lang="python">public static void main(String[] args) {
+  int n = Integer.parseInt(args[0]);
+  block(n,'X');
 }</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_check_for_wins">Check for wins</h3>
+<h3 id="_triangle">Triangle</h3>
 <div class="paragraph">
-<p>Implement a function, <code>isWinner</code> which tests whether either the AI or player wins.
-Below is the specification</p>
+<p>Implement the <code>triangle</code> function according to the following specification</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>Function: isWinner
-Returns true if the given symbol controls a complete row, col, or diagonal; False otherwise
-Input board (char[]): the 3x3 tic-tac-toe board
-Input sym (char): the character, either 'O' or 'X'
-Return (boolean): true if the sym has won the board; false otherwise</code></pre>
+<pre class="highlight"><code>// Draw a right triangle with height n to the console
+// param n (int): the height of the triangle
+// param ch (char): the character to fill the shape
+public static void triangle(int n, char ch)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Note that we can detect that a tie has ocurred if no turns are left and no one won the
-game.</p>
+<p>Similar to the <code>block()</code> function, this function takes a number and a character,
+and displays a <em>triangle</em> pattern. Calling <code>triangle(7,'Y')</code> would display this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Y
+YY
+YYY
+YYYY
+YYYYY
+YYYYYY
+YYYYYYY</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>For example, calling isWinner with the following board and <code>'X'</code> returns false but with <code>'O'</code>
-returns true</p>
+<p>In <code>Patterns.java</code> add your <code>void triangle(int n,char ch)</code> function and call it
+from <code>main()</code> to test that it works.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reverse">Reverse</h3>
+<div class="paragraph">
+<p>Implement the <code>reverse</code> function according to the following specification</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>-------
-|O|X|X|
-|O|O|O|
-|X|X|O|
--------</code></pre>
+<pre class="highlight"><code>// Draw a reverse right triangle with height n to the console
+// param n (int): the height of the triangle
+// param ch (char): the character to fill the shape
+public static void reverse(int n, char ch)</code></pre>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_extra_challenge">Extra challenge</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Implement your own unique tic-tac-toe game in <code>MyTicTacToe.java</code>. Be sure to point out to us
-your work in your readme. Below are ideas</p>
+<p>Similar to the <code>triangle()</code> function, this function takes a number and a character,
+and displays a <em>reverse triangle</em> pattern. Calling <code>reverse(5,'P')</code> would display this:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Implement more sophisticated decision making for the AI turn</p>
-</li>
-<li>
-<p>Use StdDraw to display the board with graphics</p>
-</li>
-<li>
-<p>Support bigger boards!</p>
-</li>
-</ul>
+<div class="literalblock">
+<div class="content">
+<pre>    P
+   PP
+  PPP
+ PPPP
+PPPPP</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In <code>Patterns.java</code> add your <code>void reverse(int n,char ch)</code> function and call it
+from <code>main()</code> to test that it works.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_diamond">Diamond</h3>
+<div class="paragraph">
+<p>Implement the <code>diamond</code> function according to the following specification</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>// Draw a diamond height 2*n to the console
+// param n (int): the half-height of the diamond
+// param ch (char): the character to fill the shape
+public static void diamond(int n, char ch)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Last one! Calling <code>diamond(5,'J')</code> would display this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>    JJ
+   JJJJ
+  JJJJJJ
+ JJJJJJJJ
+JJJJJJJJJJ
+JJJJJJJJJJ
+ JJJJJJJJ
+  JJJJJJ
+   JJJJ
+    JJ</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice that, for the above example, the first 5 lines just look
+like the output of <code>reverse()</code> and <code>triangle()</code> put together. You can&#8217;t
+call them together to make those 5 lines, but you <em>can</em> use code similar
+to what&#8217;s in those functions to display the first 5 lines. Then the
+bottom 5 lines can be done with a separate <code>for</code> loop.</p>
+</div>
+<div class="paragraph">
+<p>In <code>Patterns.java</code> add your <code>void diamond(int n, char ch)</code> function and call it
+from <code>main()</code> to test that it works.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_menu_2">Menu</h3>
+<div class="paragraph">
+<p>Finally, call your <code>int menu(String[] opts)</code> function
+from the previous program to <code>Patterns.java</code>.
+Then rewrite <code>main()</code> to allow the user to pick which pattern to draw, or to quit the program.
+If the user decides to display a pattern, pick the number (<code>n</code>) and the
+character (<code>ch</code>) using the random library. Make the number
+from 5-15, and the character an uppercase letter from A-G.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To compute a random number, choose an integer from 0 to 25 inclusive
+and then add it to the character <code>a</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Your final program should allow the user to continue selecting patterns
+to draw, until they select the "quit" option</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s one possible run of the final program:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>javac Patterns.java Menu.java CheckInput.java</strong>
+$ <strong>java Patterns</strong>
+ 1. block
+ 2. triangle
+ 3. reverse
+ 4. diamond
+ 5. quit
+
+your choice --> <strong>1</strong>
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+
+ 1. block
+ 2. triangle
+ 3. reverse
+ 4. diamond
+ 5. quit
+
+your choice --> <strong>2</strong>
+F
+FF
+FFF
+FFFF
+FFFFF
+FFFFFF
+FFFFFFF
+FFFFFFFF
+FFFFFFFFF
+FFFFFFFFFF
+FFFFFFFFFFF
+
+ 1. block
+ 2. triangle
+ 3. reverse
+ 4. diamond
+ 5. quit
+
+your choice --> <strong>1</strong>
+BBBBBB
+BBBBBB
+BBBBBB
+BBBBBB
+BBBBBB
+BBBBBB
+
+ 1. block
+ 2. triangle
+ 3. reverse
+ 4. diamond
+ 5. quit
+
+your choice --> <strong>1</strong>
+GGGGGGGGG
+GGGGGGGGG
+GGGGGGGGG
+GGGGGGGGG
+GGGGGGGGG
+GGGGGGGGG
+GGGGGGGGG
+GGGGGGGGG
+GGGGGGGGG
+
+ 1. block
+ 2. triangle
+ 3. reverse
+ 4. diamond
+ 5. quit
+
+your choice --> <strong>3</strong>
+              A
+             AA
+            AAA
+           AAAA
+          AAAAA
+         AAAAAA
+        AAAAAAA
+       AAAAAAAA
+      AAAAAAAAA
+     AAAAAAAAAA
+    AAAAAAAAAAA
+   AAAAAAAAAAAA
+  AAAAAAAAAAAAA
+ AAAAAAAAAAAAAA
+AAAAAAAAAAAAAAA
+
+ 1. block
+ 2. triangle
+ 3. reverse
+ 4. diamond
+ 5. quit
+
+your choice --> <strong>5</strong></code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can call <code>javac *.java</code> to compile all the java files in your current directory.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -340,15 +497,15 @@ your work in your readme. Below are ideas</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The program, <code>Tictactoe.java</code>, and if applicable, <code>MyTictactoe.java</code></p>
+<p>The programs, <code>CheckInput.java</code>, <code>Menu.java</code> and <code>Patterns.java</code></p>
 </li>
 <li>
 <p>Make sure your program has a header containing your name, date, and purpose of the program</p>
 </li>
 <li>
 <p>A brief write-up containing your name, assignment number, and a few sentences about how long you
-spent on the assignment and any interesting bugs you solved. Be sure to highlight any
-customizations you made for your game!!</p>
+spent on the assignment and any interesting bugs you solved. Be sure to describe the unique pattern
+you implemented!</p>
 </li>
 </ol>
 </div>
@@ -367,7 +524,7 @@ customizations you made for your game!!</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-27 10:36:51 -0400
+Last updated 2022-10-10 17:51:47 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">

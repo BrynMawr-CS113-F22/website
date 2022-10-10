@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<title>Assignment 6: Be classy</title>
+<title>Assignment 5: Can't spell functions without fun</title>
 <link rel="stylesheet" href="style/cs.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -14,10 +14,17 @@
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_assignment_6_be_classy">Assignment 6: Be classy</a></li>
-<li><a href="#_sound">Sound</a></li>
-<li><a href="#_soundlibrary">SoundLibrary</a></li>
-<li><a href="#_soundboard">SoundBoard</a></li>
+<li><a href="#_assignment_5_cant_spell_functions_without_fun">Assignment 5: Can&#8217;t spell functions without fun</a></li>
+<li><a href="#_minesweeper">Minesweeper</a>
+<ul class="sectlevel2">
+<li><a href="#_3x3_board">3x3 Board</a></li>
+<li><a href="#_main_function">Main Function</a></li>
+<li><a href="#_ai_turn">AI turn</a></li>
+<li><a href="#_player_turn">Player turn</a></li>
+<li><a href="#_display_the_board">Display the board</a></li>
+<li><a href="#_check_for_wins">Check for wins</a></li>
+</ul>
+</li>
 <li><a href="#_extra_challenge">Extra challenge</a></li>
 <li><a href="#_what_to_hand_in">What to hand-in</a>
 <ul class="sectlevel2">
@@ -29,10 +36,10 @@
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_assignment_6_be_classy">Assignment 6: Be classy</h2>
+<h2 id="_assignment_5_cant_spell_functions_without_fun">Assignment 5: Can&#8217;t spell functions without fun</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Due Thursday, October 27, before midnight</strong></p>
+<p><strong>Due Thursday, October 20, before midnight</strong></p>
 </div>
 <div class="paragraph">
 <p>The goals of this assignment are:</p>
@@ -40,296 +47,263 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Work with classes, and objects</p>
+<p>Write programs containing multiple functions</p>
 </li>
 <li>
 <p>Work with loops, conditionals, and variables</p>
 </li>
-<li>
-<p>Work with arrays, Strings, and files</p>
-</li>
 </ul>
-</div>
-<div class="paragraph">
-<p>In this assignment, you will implement a
-<a href="https://en.wikipedia.org/wiki/Soundboard_(computer_program)">sound
-board</a>, a program for playing short sound clips.</p>
-</div>
-<div class="paragraph">
-<p>We will use classes to organize our program. The <code>Sound</code> class will represent
-individual clips, stored in a WAV file. The <code>SoundLibrary</code> class will manage
-a list of <code>Sound</code> objects. The full program, <code>SoundBoard</code>, will
-present the user with a list of sounds and allow them to play them.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_sound">Sound</h2>
+<h2 id="_minesweeper">Minesweeper</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Write a program, <code>Sound.java</code>, which implements and tests a class names <code>Sound</code>. Your sound class
-represents a sound clip stored in a WAV. It should contain the name, duration, and WAV file of
-the sound.</p>
+<p>Write a program, <code>Minesweeper.java</code>, that implements the game of
+<a href="https://minesweeper.online">minesweeper</a>.</p>
 </div>
 <div class="paragraph">
-<p><strong>Requirements</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Sound</code> contains the following data (all data should be private):</p>
-<div class="ulist">
-<ul>
-<li>
-<p>mName of the sound (String)</p>
-</li>
-<li>
-<p>mDuration of the sound in seconds (double)</p>
-</li>
-<li>
-<p>mFilename of the WAV file (String)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Sound</code> contains the following methods:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Constructor <code>Sound(String name, double duration, String fileName)</code>, which initializes the object with the given information.</p>
-</li>
-<li>
-<p><code>void play()</code>, which plays the sound stored in this class by calling <code>StdAudio.play</code></p>
-</li>
-<li>
-<p><code>String getName()</code>, accessor for the sound&#8217;s name</p>
-</li>
-<li>
-<p><code>double getDuration()</code>, accessor for the sound&#8217;s duration</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<p>In this game, players alternate between placing their symbol (either an "X" or an "O")
+inside a 3x3 grid of squares. The first player to get "3 in a row" (either on a
+row, a column, or diagonally) wins.</p>
 </div>
 <div class="paragraph">
-<p>In <code>main</code>, test all the functions in your class. For example, the following code should produce
-the following output (and play the cricket sound).</p>
+<p>In our version, the user will play against the computer (the Artificial Intelligence, or "AI").
+The AI will always play first and use the symbol "O", and the user will play second with a
+symbol "X". The game can end with the user winning, the AI winning, or a draw.</p>
+</div>
+<div class="paragraph">
+<p>Here are examples of these three situations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="logs/a5-userwin.html">User wins</a></p>
+</li>
+<li>
+<p><a href="logs/a5-aiwins.html">AI wins</a></p>
+</li>
+<li>
+<p><a href="logs/a5-tie.html">Tie</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_3x3_board">3x3 Board</h3>
+<div class="paragraph">
+<p>In order to implement tic-tac-toe we will be using a <strong>list of characters</strong> to represent
+the board. The board will begin as a list of 9 empty spaces:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>public static void main(String[] args) {
-    Sound sound = new Sound("cricket", 0.5, "wav/337435__ev-dawg__cricket.wav");
-    System.out.printf("Sound: %s (%.2fs)\n", sound.getName(), sound.getDuration());
-    sound.play();
+<pre class="highlight"><code>char[] board = {' ',' ',' ',' ',' ',' ',' ',' ',' '};</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The board will be modified over the course of the game.
+For debugging, use the Java function <code>Array.toString(board)</code>.
+For example, suppose the AI chooses 3, we can print the board with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>board[3] = 'O';
+System.out.println(java.util.Arrays.toString(board));</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above code will print the following to the console:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>[' ',' ',' ','O',' ',' ',' ',' ',' ']</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And then if the user plays 7 and we print, the board will look like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>[' ',' ',' ','O',' ',' ',' ','X',' ']</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_main_function">Main Function</h3>
+<div class="paragraph">
+<p>Your <code>main()</code> function should use the functions below to do the bulk of the work.
+  The general outline of the program is as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Print out a welcome message. You can do this in main, or define a function for it.</p>
+</li>
+<li>
+<p>Set up initial variables before entering the game loop. You will need at least the board and a way to keep track of whether someone has won yet.</p>
+</li>
+<li>
+<p>Set up your game loop. Each time through the loop, either the user will play, or the AI will play. The board will be <strong>modified</strong> during each turn. If one of the players has won, the loop should exit.</p>
+</li>
+<li>
+<p>Print the output of the game, such as "AI won!", "You won!", "A tie!"</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ai_turn">AI turn</h3>
+<div class="paragraph">
+<p>Implement a function, <code>aiTurn</code>. This function should place an <code>O</code> at a random
+open spot on the board. <code>aiTurn</code> should be called from <code>main</code> during the game
+loop.</p>
+</div>
+<div class="paragraph">
+<p>You implementation should have this specification:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>// Function: aiTurn
+// Implements one turn of the AI player.
+//   Default behavior: chooses a random open spot
+// Input board (char[]): the 3x3 tic-tac-toe board
+// Returns (int): the index of the board that is modified
+public static int aiTurn(char[] board)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This function takes in a <strong>list of characters</strong> and determines where the AI
+should place an 'O'. The cells are numbered 0-8,
+inclusive. The choice cannot be a cell that is already taken by a symbol.</p>
+</div>
+<div class="paragraph">
+<p>You can choose whether to have the function modify the board (the change will persist
+after the function returns because arrays are <strong>mutable</strong>) or to modify the
+board after the function returns to <code>main</code>, using the returned integer.</p>
+</div>
+<div class="paragraph">
+<p>You are welcome to make an "intelligent" AI, but the recommended approach is
+to make the computer choose a cell randomly. A simple approach is to continually
+choose random cells until it finds a free one.</p>
+</div>
+<div class="paragraph">
+<p>After the AI&#8217;s turn, <code>main</code> should print the AI&#8217;s choice</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>AI chooses: 7</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_player_turn">Player turn</h3>
+<div class="paragraph">
+<p>Implement a function, <code>userTurn</code>, that implements the player&#8217;s turn. This function should
+check that the user enters a valid integer.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The integer is between 0 and 8, inclusive.</p>
+</li>
+<li>
+<p>The cell is not already taken by a symbol.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Keep asking the user to choose an integer until they choose a valid cell. For example,
+if there were already a symbol in the 5 cell, the player turn might look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Enter 0-8 for your choice: <strong>5</strong>
+Invalid input: 5
+Enter 0-8 for your choice: <strong>10</strong>
+Invalid input: 10
+Enter 0-8 for your choice: <strong>-3</strong>
+Invalid input: -3
+Enter 0-8 for your choice: <strong>0</strong></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>playerTurn</code> should implement the following specification</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>// Function: playerTurn
+// Asks the user which cell they want to place their `X`.
+//    Ensures the player chooses a valid index.
+// Input board (char[]): the 3x3 tic-tac-toe board
+// Returns (int): the index chosen by the player
+public static int playerTurn(char[] board)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can choose whether to have the function modify the board (the change will persist
+after the function returns because arrays are <strong>mutable</strong>) or to modify the
+board after the function returns in <code>main</code>, using the returned integer.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_display_the_board">Display the board</h3>
+<div class="paragraph">
+<p>Implement a function, <code>displayBoard</code>, that prints the current board to the screen.
+Below is the specification</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>// Function: displayBoard
+// Displays the tic-tac-toe board as a 3x3 grid
+// Input board (char[]): the tic-tac-toe board
+// Returns: none
+public static void displayBoard(char[] board)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Board is an array with 9 characters. You need to print it as a 3x3 square grid.
+One approach is the use a for loop that progresses in threes, for example, see
+what happens when you try this code</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>for (int i = 0; i &lt; 9; i += 3) {
+  System.out.printf("%d|%d|%d\n", i, i+1, i+2);
 }</code></pre>
 </div>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>$ <strong>javac-introcs Song.java</strong>
-$ <strong>java-introcs</strong> Song
-Sound: cricket (0.50s)</code></pre>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_soundlibrary">SoundLibrary</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_check_for_wins">Check for wins</h3>
 <div class="paragraph">
-<p>Write a program, <code>SoundLibrary.java</code>, which stores a list of songs</p>
-</div>
-<div class="paragraph">
-<p><strong>Features</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>SoundLibrary</code> contains the following data (all data should be private):</p>
-<div class="ulist">
-<ul>
-<li>
-<p>array of Sounds (Sound[])</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>SoundLibrary contains the following methods:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Constructor <code>SoundLibrary(String filename)</code>, initializes the object using a list of songs stored in a file</p>
-</li>
-<li>
-<p><code>void list()</code>, lists all the sounds available in the library</p>
-</li>
-<li>
-<p><code>int getNumSounds()</code>, returns the number of sounds in the library</p>
-</li>
-<li>
-<p><code>void play(int songNumber)</code>, plays the sound corresponding to the given soundNumber. The first sound in the library has soundNumber 0. The second sound has soundNumber 1, etc.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>In <code>main</code>, test all the functions in your class. For example, the following code should produce
-the following output (and play the sound entitled "magic").</p>
+<p>Implement a function, <code>isWinner</code> which tests whether either the AI or player wins.
+Below is the specification</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>public static void main(String[] args) {
-    SoundLibrary library = new SoundLibrary("sounds.txt");
-    library.list();
-    library.play(1);
-}</code></pre>
+<pre class="highlight"><code>Function: isWinner
+Returns true if the given symbol controls a complete row, col, or diagonal; False otherwise
+Input board (char[]): the 3x3 tic-tac-toe board
+Input sym (char): the character, either 'O' or 'X'
+Return (boolean): true if the sym has won the board; false otherwise</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Note that we can detect that a tie has ocurred if no turns are left and no one won the
+game.</p>
+</div>
+<div class="paragraph">
+<p>For example, calling isWinner with the following board and <code>'X'</code> returns false but with <code>'O'</code>
+returns true</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>$ <strong>javac-introcs SongLibrary.java</strong>
-$ <strong>java-introcs</strong> SongLibrary
-0) meow - 1.00s
-1) magic - 6.00s
-2) gong - 12.00s
-3) applause - 6.00s
-4) crickets - 0.50s
-5) yeah - 2.00s
-6) beat-n-bass - 3.00s
-7) whistle - 8.00s
-8) trombone - 3.00s</code></pre>
+<pre class="highlight"><code>-------
+|O|X|X|
+|O|O|O|
+|X|X|O|
+-------</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>To initialize the sound library, you will need to read in and parse the file <code>sounds.txt</code>.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The first line in <code>sounds.txt</code> contains the number of sounds in the file</p>
-</li>
-<li>
-<p>Each subsequent line corresponds to a single sound. The information for each sound is separated by spaces</p>
-<div class="ulist">
-<ul>
-<li>
-<p>sound name</p>
-</li>
-<li>
-<p>sound duration</p>
-</li>
-<li>
-<p>sound filename (relative path)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_soundboard">SoundBoard</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Write a program, <code>SoundBoard.java</code>, that uses <code>SoundLibrary</code> to list and play sounds.
-This program shows the user a menu of sounds and lets them choose different sounds to play.</p>
-</div>
-<div class="paragraph">
-<p>Your program should support the following commands:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>quit</strong>: Quit the program</p>
-</li>
-<li>
-<p><strong>&lt;id&gt;</strong>: Play the song with the given id. Prints an error if the id is invalid.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If the user enters an invalid command, your program should print an error.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>$ <strong>javac-introcs SoundBoard.java</strong>
-$ <strong>java-introcs SoundBoard</strong>
-0) meow - 1.00s
-1) magic - 6.00s
-2) gong - 12.00s
-3) applause - 6.00s
-4) crickets - 0.50s
-5) yeah - 2.00s
-6) beat-n-bass - 3.00s
-7) whistle - 8.00s
-8) trombone - 3.00s
-
-Enter a command: -1
-Invalid command: -1
-0) meow - 1.00s
-1) magic - 6.00s
-2) gong - 12.00s
-3) applause - 6.00s
-4) crickets - 0.50s
-5) yeah - 2.00s
-6) beat-n-bass - 3.00s
-7) whistle - 8.00s
-8) trombone - 3.00s
-
-Enter a command:
-Invalid command:
-0) meow - 1.00s
-1) magic - 6.00s
-2) gong - 12.00s
-3) applause - 6.00s
-4) crickets - 0.50s
-5) yeah - 2.00s
-6) beat-n-bass - 3.00s
-7) whistle - 8.00s
-8) trombone - 3.00s
-
-Enter a command: play
-Invalid command: play
-0) meow - 1.00s
-1) magic - 6.00s
-2) gong - 12.00s
-3) applause - 6.00s
-4) crickets - 0.50s
-5) yeah - 2.00s
-6) beat-n-bass - 3.00s
-7) whistle - 8.00s
-8) trombone - 3.00s
-
-Enter a command: 9
-Invalid song id: 9
-0) meow - 1.00s
-1) magic - 6.00s
-2) gong - 12.00s
-3) applause - 6.00s
-4) crickets - 0.50s
-5) yeah - 2.00s
-6) beat-n-bass - 3.00s
-7) whistle - 8.00s
-8) trombone - 3.00s
-
-Enter a command: 1
-0) meow - 1.00s
-1) magic - 6.00s
-2) gong - 12.00s
-3) applause - 6.00s
-4) crickets - 0.50s
-5) yeah - 2.00s
-6) beat-n-bass - 3.00s
-7) whistle - 8.00s
-8) trombone - 3.00s
-
-Enter a command: quit</code></pre>
 </div>
 </div>
 </div>
@@ -338,7 +312,18 @@ Enter a command: quit</code></pre>
 <h2 id="_extra_challenge">Extra challenge</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Try adding your own songs and flair!</p>
+<p>Implement your own unique minesweeper game in <code>MyMinesweeper.java</code>. Be sure to point out to us
+your work in your readme. Below are ideas</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use StdDraw to display the board with graphics</p>
+</li>
+<li>
+<p>If the user selects an empty square, uncover all adjacent cells until you reach a non-empty cells.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -348,14 +333,15 @@ Enter a command: quit</code></pre>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The programs, <code>SoundBoard.java</code>, <code>Sound.java</code>, and <code>SoundLibrary.java</code></p>
+<p>The program, <code>Minesweeper.java</code>, and if applicable, <code>MyMinesweeper.java</code></p>
 </li>
 <li>
-<p>Make sure your programs have a header containing your name, date, and description.</p>
+<p>Make sure your program has a header containing your name, date, and purpose of the program</p>
 </li>
 <li>
 <p>A brief write-up containing your name, assignment number, and a few sentences about how long you
-spent on the assignment and any interesting bugs you solved.</p>
+spent on the assignment and any interesting bugs you solved. Be sure to highlight any
+customizations you made for your game!!</p>
 </li>
 </ol>
 </div>
@@ -374,7 +360,7 @@ spent on the assignment and any interesting bugs you solved.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-27 10:36:51 -0400
+Last updated 2022-10-10 17:11:55 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">

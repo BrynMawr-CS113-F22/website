@@ -76,7 +76,7 @@
 |*Functions* anchor:week06[]
 
 * Read: Sedgewick and Wayne, Sec 2.1
-* link:.html[Assignment 5]: *Due October 20*
+* link:asst05.html[Assignment 5]: *Due October 20*
 * link:notes-alinen/notes-oct03.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct03.html[Lecture Notes and Resources (Poliak)] 
 * link:slides-azpoliak/lecture08_09_29.pdf[Lecture 09 (Poliak)] link:slides-azpoliak/lecture10_10_06.pdf[Lecture 10 (Poliak)] 

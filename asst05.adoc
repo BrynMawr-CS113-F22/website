@@ -11,222 +11,374 @@ include::header.adoc[]
 
 The goals of this assignment are:
 
+* Write programs containing multiple functions
 * Work with loops, conditionals, and variables
-* Work with arrays and strings
-* Implement and call functions
 
 :stem: latexmath
 
-= Tic-tac-toe
+= Menu
 
-_credit: Sara Mathieson_
+_credit: Jeffrey Knerr_
 
-Write a program, `Tictactoe.java`, that implements the game of 
-link:https://en.wikipedia.org/wiki/Tic-tac-toe[tic-tac-toe]. 
-In this game, players alternate between placing their symbol (either an "X" or an "O")
-inside a 3x3 grid of squares. The first player to get "3 in a row" (either on a
-row, a column, or diagonally) wins.
-
-In our version, the user will play against the computer (the Artificial Intelligence, or "AI").
-The AI will always play first and use the symbol "O", and the user will play second with a
-symbol "X". The game can end with the user winning, the AI winning, or a draw.
-
-Here are examples of these three situations:
-
-* link:logs/a5-userwin.html[User wins]
-* link:logs/a5-aiwins.html[AI wins]
-* link:logs/a5-tie.html[Tie]
-
-== 3x3 Board
-
-In order to implement tic-tac-toe we will be using a **list of characters** to represent
-the board. The board will begin as a list of 9 empty spaces:
+In the file called `Menu.java` implement a static function called `menu` that has the 
+following function signature
 
 [source]
 ----
-char[] board = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
+// Given a list of Strings (user options), displays the strings in a numerical 
+//   menu and asks the user for their choice
+// param opts (String[]): list of String representing all options
+// return (int): the id of the option chosen by the user. id is in range [0, opts.length()-1].
+public static int menu(String[] opts)
 ----
 
-The board will be modified over the course of the game. 
-For debugging, use the Java function `Array.toString(board)`. 
-For example, suppose the AI chooses 3, we can print the board with:
+This function should work with _any_ list of string options. For example, if
+the list of options is `["yes","no"]`, your function will display a
+simple menu with two options:
+
+[source,subs="quotes"]
+----
+ 1. yes
+ 2. no
+----
+
+and then ask the user to choose one of the options (1 or 2). Similarly, if
+the list of options is `["sit","stay","bark"]`, your function will
+display:
+
+[source,subs="quotes"]
+----
+ 1. sit
+ 2. stay
+ 3. bark
+----
+
+Your function needs to work for _any_ size String[] array (2 options, 5
+options, 27 options, etc), and *should return an integer* in the range
+`[0, opts.length()]`.
+
+Furthermore, **your function needs to check that the user entered a valid
+number**. You should re-use your `IsInteger` function and use it to test 
+whether the user provides a value within the valid range. 
+
+Once you know you have an integer, **make sure the user enters a number
+from the displayed menu**, asking _again_ if they enter a number too high 
+or too low. Once the function gets a _valid_ number, it should
+_return_ that number as an integer to `main()`.
+
+.Helpful Code Examples 
+* link:https://github.com/BrynMawr-CS113-F22/class-examples-normoyle/blob/main/week06-oct3/CheckInput.java[CheckInput.java - Contains the IsInteger function from class]
+* link:https://github.com/BrynMawr-CS113-F22/class-examples-normoyle/blob/main/week06-oct3/Guess.java[Guess.java - Uses IsInteger to check whether a value is a valid integer within a given range.]
+
+Here's an example of the full program, with the user entering invalid
+integers at first. Note how the function continues to ask again and again until the user
+enters a valid choice (hint: use a `while` loop for that part).
+
+[source,subs="quotes"]
+----
+$ **javac Menu.java CheckInput.java**
+$ **java Menu**
+ 1. yes
+ 2. no
+
+your choice --> **0**
+please enter a valid choice!!!
+
+your choice --> **zebra**
+please enter a positive integer...
+
+your choice --> **-1**
+please enter a positive integer...
+
+your choice --> **99**
+please enter a valid choice!!!
+
+your choice --> **1**
+You chose: 1
+----
+
+In `Menu.java`, use the following simple `main()` function to test your menu
+function. 
+
+[source,java]
+----
+public static void main(String[] args) {
+  String[] opts = {"yes","no"};
+  int choice = menu(opts);
+  System.out.println("You chose: " + choice);
+}
+----
+Once your function is working, please add at least one additional option
+("maybe"?) to `opts` in `main()` to make sure your function works with more than two options.
+
+[source,subs="quotes"]
+----
+$ **java Menu**
+ 1. yes
+ 2. no
+ 3. maybe
+
+your choice --> 
+----
+
+= Patterns
+
+This program will use various functions to draw patterns in the terminal
+window. We'll write and test each function as we go, then use the
+`menu(opts)` function from above to allow the user to pick which
+function to run.
+
+Start by writing and testing each of the following functions (in `Patterns.java`).
+
+== Block
+
+Implement the `block` function according to the following specification
 
 [source]
 ----
-board[3] = 'O';
-System.out.println(java.util.Arrays.toString(board));
+// Draw an n by n block to the console
+// param n (int): the size of the block
+// param ch (char): the character to fill the block
+public static void block(int n, char ch)
 ----
 
-The above code will print the following to the console:
+This function takes a number (`n`) and a character (`ch`) and prints a
+block of nxn characters. For example, calling `block(5,'X')` would
+display this to the terminal:
 
-[source]
+    XXXXX
+    XXXXX
+    XXXXX
+    XXXXX
+    XXXXX
+
+and calling `block(10,'Q')` would display a 10x10 block of Qs.
+
+In `Patterns.java` add your `block(n,ch)` function and call it with a
+simple `main()` function to test that it works:
+
+[source,python]
 ----
-[' ',' ',' ','O',' ',' ',' ',' ',' ']
-----
-
-And then if the user plays 7 and we print, the board will look like:
-
-[source]
-----
-[' ',' ',' ','O',' ',' ',' ','X',' ']
-----
-
-
-== Main Function
-
-Your `main()` function should use the functions below to do the bulk of the work.  
-  The general outline of the program is as follows:
-
-. Print out a welcome message. You can do this in main, or define a function for it.
-. Set up initial variables before entering the game loop. You will need at least the board and a way to keep track of whether someone has won yet.
-. Set up your game loop. Each time through the loop, either the user will play, or the AI will play. The board will be *modified* during each turn. If one of the players has won, the loop should exit. 
-. Print the output of the game, such as "AI won!", "You won!", "A tie!" 
-
-== AI turn
-
-
-Implement a function, `aiTurn`. This function should place an `O` at a random
-open spot on the board. `aiTurn` should be called from `main` during the game
-loop. 
-
-You implementation should have this specification:
-
-[source]
-----
-// Function: aiTurn
-// Implements one turn of the AI player. 
-//   Default behavior: chooses a random open spot
-// Input board (char[]): the 3x3 tic-tac-toe board 
-// Returns (int): the index of the board that is modified
-public static int aiTurn(char[] board)
-----
-
-This function takes in a **list of characters** and determines where the AI
-should place an 'O'. The cells are numbered 0-8,
-inclusive. The choice cannot be a cell that is already taken by a symbol. 
-
-You can choose whether to have the function modify the board (the change will persist 
-after the function returns because arrays are *mutable*) or to modify the 
-board after the function returns to `main`, using the returned integer. 
-
-You are welcome to make an "intelligent" AI, but the recommended approach is
-to make the computer choose a cell randomly. A simple approach is to continually 
-choose random cells until it finds a free one.
-
-After the AI's turn, `main` should print the AI's choice
-
-```
-AI chooses: 7
-```
-
-== Player turn
-
-Implement a function, `userTurn`, that implements the player's turn. This function should 
-check that the user enters a valid integer. 
-
-. The integer is between 0 and 8, inclusive.
-. The cell is not already taken by a symbol.
-
-Keep asking the user to choose an integer until they choose a valid cell. For example,
-if there were already a symbol in the 5 cell, the player turn might look like this:
-
-[source,subs=quotes]
-----
-Enter 0-8 for your choice: **5**
-Invalid input: 5
-Enter 0-8 for your choice: **10**
-Invalid input: 10
-Enter 0-8 for your choice: **-3**
-Invalid input: -3
-Enter 0-8 for your choice: **0**
-----
-
-`playerTurn` should implement the following specification
-
-[source]
-----
-// Function: playerTurn
-// Asks the user which cell they want to place their `X`. 
-//    Ensures the player chooses a valid index.
-// Input board (char[]): the 3x3 tic-tac-toe board
-// Returns (int): the index chosen by the player 
-public static int playerTurn(char[] board)
-----
-
-You can choose whether to have the function modify the board (the change will persist 
-after the function returns because arrays are *mutable*) or to modify the 
-board after the function returns in `main`, using the returned integer. 
-
-== Display the board
-
-Implement a function, `displayBoard`, that prints the current board to the screen.
-Below is the specification
-
-[source]
-----
-// Function: displayBoard
-// Displays the tic-tac-toe board as a 3x3 grid 
-// Input board (char[]): the tic-tac-toe board
-// Returns: none
-public static void displayBoard(char[] board)
-----
-
-Board is an array with 9 characters. You need to print it as a 3x3 square grid.
-One approach is the use a for loop that progresses in threes, for example, see 
-what happens when you try this code
-
-[source]
-----
-for (int i = 0; i < 9; i += 3) {
-  System.out.printf("%d|%d|%d\n", i, i+1, i+2);
+public static void main(String[] args) {
+  int n = Integer.parseInt(args[0]);
+  block(n,'X');
 }
 ----
 
-== Check for wins
+== Triangle
 
-Implement a function, `isWinner` which tests whether either the AI or player wins.
-Below is the specification
-
-[source]
-----
-Function: isWinner
-Returns true if the given symbol controls a complete row, col, or diagonal; False otherwise
-Input board (char[]): the 3x3 tic-tac-toe board
-Input sym (char): the character, either 'O' or 'X'
-Return (boolean): true if the sym has won the board; false otherwise
-----
-
-Note that we can detect that a tie has ocurred if no turns are left and no one won the 
-game.
-
-For example, calling isWinner with the following board and `'X'` returns false but with `'O'`
-returns true
+Implement the `triangle` function according to the following specification
 
 [source]
 ----
--------
-|O|X|X|
-|O|O|O|
-|X|X|O|
--------
+// Draw a right triangle with height n to the console
+// param n (int): the height of the triangle
+// param ch (char): the character to fill the shape
+public static void triangle(int n, char ch)
 ----
 
-= Extra challenge
+Similar to the `block()` function, this function takes a number and a character,
+and displays a _triangle_ pattern. Calling `triangle(7,'Y')` would display this:
 
-Implement your own unique tic-tac-toe game in `MyTicTacToe.java`. Be sure to point out to us 
-your work in your readme. Below are ideas
+    Y
+    YY
+    YYY
+    YYYY
+    YYYYY
+    YYYYYY
+    YYYYYYY
 
-* Implement more sophisticated decision making for the AI turn
-* Use StdDraw to display the board with graphics
-* Support bigger boards!
+In `Patterns.java` add your `void triangle(int n,char ch)` function and call it 
+from `main()` to test that it works.
+
+== Reverse
+
+Implement the `reverse` function according to the following specification
+
+[source]
+----
+// Draw a reverse right triangle with height n to the console
+// param n (int): the height of the triangle
+// param ch (char): the character to fill the shape
+public static void reverse(int n, char ch)
+----
+
+Similar to the `triangle()` function, this function takes a number and a character,
+and displays a _reverse triangle_ pattern. Calling `reverse(5,'P')` would display this:
+
+        P
+       PP
+      PPP
+     PPPP
+    PPPPP
+
+In `Patterns.java` add your `void reverse(int n,char ch)` function and call it 
+from `main()` to test that it works.
+
+== Diamond
+
+Implement the `diamond` function according to the following specification
+
+[source]
+----
+// Draw a diamond height 2*n to the console
+// param n (int): the half-height of the diamond
+// param ch (char): the character to fill the shape
+public static void diamond(int n, char ch)
+----
+
+Last one! Calling `diamond(5,'J')` would display this:
+
+        JJ
+       JJJJ
+      JJJJJJ
+     JJJJJJJJ
+    JJJJJJJJJJ
+    JJJJJJJJJJ
+     JJJJJJJJ
+      JJJJJJ
+       JJJJ
+        JJ
+
+Notice that, for the above example, the first 5 lines just look
+like the output of `reverse()` and `triangle()` put together. You can't
+call them together to make those 5 lines, but you _can_ use code similar
+to what's in those functions to display the first 5 lines. Then the
+bottom 5 lines can be done with a separate `for` loop.
+
+In `Patterns.java` add your `void diamond(int n, char ch)` function and call it 
+from `main()` to test that it works.
+
+== Menu
+
+Finally, call your `int menu(String[] opts)` function 
+from the previous program to `Patterns.java`.
+Then rewrite `main()` to allow the user to pick which pattern to draw, or to quit the program.
+If the user decides to display a pattern, pick the number (`n`) and the
+character (`ch`) using the random library. Make the number 
+from 5-15, and the character an uppercase letter from A-G.
+
+NOTE: To compute a random number, choose an integer from 0 to 25 inclusive 
+and then add it to the character `a`.
+
+**Your final program should allow the user to continue selecting patterns
+to draw, until they select the "quit" option**. 
+
+Here's one possible run of the final program:
+
+[source,subs="quotes"]
+----
+$ **javac Patterns.java Menu.java CheckInput.java**
+$ **java Patterns**
+ 1. block
+ 2. triangle
+ 3. reverse
+ 4. diamond
+ 5. quit
+
+your choice --> **1**
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+CCCCCCCCCC
+
+ 1. block
+ 2. triangle
+ 3. reverse
+ 4. diamond
+ 5. quit
+
+your choice --> **2**
+F
+FF
+FFF
+FFFF
+FFFFF
+FFFFFF
+FFFFFFF
+FFFFFFFF
+FFFFFFFFF
+FFFFFFFFFF
+FFFFFFFFFFF
+
+ 1. block
+ 2. triangle
+ 3. reverse
+ 4. diamond
+ 5. quit
+
+your choice --> **1**
+BBBBBB
+BBBBBB
+BBBBBB
+BBBBBB
+BBBBBB
+BBBBBB
+
+ 1. block
+ 2. triangle
+ 3. reverse
+ 4. diamond
+ 5. quit
+
+your choice --> **1**
+GGGGGGGGG
+GGGGGGGGG
+GGGGGGGGG
+GGGGGGGGG
+GGGGGGGGG
+GGGGGGGGG
+GGGGGGGGG
+GGGGGGGGG
+GGGGGGGGG
+
+ 1. block
+ 2. triangle
+ 3. reverse
+ 4. diamond
+ 5. quit
+
+your choice --> **3**
+              A
+             AA
+            AAA
+           AAAA
+          AAAAA
+         AAAAAA
+        AAAAAAA
+       AAAAAAAA
+      AAAAAAAAA
+     AAAAAAAAAA
+    AAAAAAAAAAA
+   AAAAAAAAAAAA
+  AAAAAAAAAAAAA
+ AAAAAAAAAAAAAA
+AAAAAAAAAAAAAAA
+
+ 1. block
+ 2. triangle
+ 3. reverse
+ 4. diamond
+ 5. quit
+
+your choice --> **5**
+----
+
+NOTE: You can call `javac *.java` to compile all the java files in your current directory.
 
 = What to hand-in
 
-. The program, `Tictactoe.java`, and if applicable, `MyTictactoe.java`
+. The programs, `CheckInput.java`, `Menu.java` and `Patterns.java`
 . Make sure your program has a header containing your name, date, and purpose of the program
 . A brief write-up containing your name, assignment number, and a few sentences about how long you 
-spent on the assignment and any interesting bugs you solved. Be sure to highlight any 
-customizations you made for your game!!
+spent on the assignment and any interesting bugs you solved. Be sure to describe the unique pattern 
+you implemented! 
 
 == How to hand-in
 

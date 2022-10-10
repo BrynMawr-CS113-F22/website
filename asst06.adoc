@@ -1,217 +1,229 @@
 include::header.adoc[]
 
-:title: Assignment 6: Be classy
+:title: Assignment 5: Can't spell functions without fun
 :Author Initials: ASN
 :Date:    2020-02-07
 :Revision: 0.1
 
 = {title}
 
-**Due Thursday, October 27, before midnight**
+**Due Thursday, October 20, before midnight**
 
 The goals of this assignment are:
 
-* Work with classes, and objects
+* Write programs containing multiple functions
 * Work with loops, conditionals, and variables
-* Work with arrays, Strings, and files
-
-In this assignment, you will implement a
-link:https://en.wikipedia.org/wiki/Soundboard_(computer_program)[sound
-board], a program for playing short sound clips. 
-
-We will use classes to organize our program. The `Sound` class will represent 
-individual clips, stored in a WAV file. The `SoundLibrary` class will manage 
-a list of `Sound` objects. The full program, `SoundBoard`, will 
-present the user with a list of sounds and allow them to play them.
 
 :stem: latexmath
 
-= Sound
+= Minesweeper
 
-Write a program, `Sound.java`, which implements and tests a class names `Sound`. Your sound class 
-represents a sound clip stored in a WAV. It should contain the name, duration, and WAV file of 
-the sound. 
+Write a program, `Minesweeper.java`, that implements the game of 
+link:https://minesweeper.online[minesweeper]. 
 
-*Requirements*
+In this game, players alternate between placing their symbol (either an "X" or an "O")
+inside a 3x3 grid of squares. The first player to get "3 in a row" (either on a
+row, a column, or diagonally) wins.
 
-* `Sound` contains the following data (all data should be private): 
-** mName of the sound (String)
-** mDuration of the sound in seconds (double)
-** mFilename of the WAV file (String)
+In our version, the user will play against the computer (the Artificial Intelligence, or "AI").
+The AI will always play first and use the symbol "O", and the user will play second with a
+symbol "X". The game can end with the user winning, the AI winning, or a draw.
 
-* `Sound` contains the following methods:
-** Constructor `Sound(String name, double duration, String fileName)`, which initializes the object with the given information.
-** `void play()`, which plays the sound stored in this class by calling `StdAudio.play`   
-** `String getName()`, accessor for the sound's name
-** `double getDuration()`, accessor for the sound's duration
+Here are examples of these three situations:
 
-In `main`, test all the functions in your class. For example, the following code should produce 
-the following output (and play the cricket sound). 
+* link:logs/a5-userwin.html[User wins]
+* link:logs/a5-aiwins.html[AI wins]
+* link:logs/a5-tie.html[Tie]
 
-[source]
-----
-public static void main(String[] args) {
-    Sound sound = new Sound("cricket", 0.5, "wav/337435__ev-dawg__cricket.wav");
-    System.out.printf("Sound: %s (%.2fs)\n", sound.getName(), sound.getDuration());
-    sound.play();
-}
-----
+== 3x3 Board
 
-[source,subs=quotes]
-----
-$ *javac-introcs Song.java*
-$ *java-introcs* Song
-Sound: cricket (0.50s)
-----
-
-= SoundLibrary
-
-Write a program, `SoundLibrary.java`, which stores a list of songs
-
-*Features*
-
-* `SoundLibrary` contains the following data (all data should be private): 
-** array of Sounds (Sound[])
-
-* SoundLibrary contains the following methods:
-** Constructor `SoundLibrary(String filename)`, initializes the object using a list of songs stored in a file
-** `void list()`, lists all the sounds available in the library
-** `int getNumSounds()`, returns the number of sounds in the library
-** `void play(int songNumber)`, plays the sound corresponding to the given soundNumber. The first sound in the library has soundNumber 0. The second sound has soundNumber 1, etc. 
-
-In `main`, test all the functions in your class. For example, the following code should produce 
-the following output (and play the sound entitled "magic"). 
+In order to implement tic-tac-toe we will be using a **list of characters** to represent
+the board. The board will begin as a list of 9 empty spaces:
 
 [source]
 ----
-public static void main(String[] args) {
-    SoundLibrary library = new SoundLibrary("sounds.txt");
-    library.list();
-    library.play(1);
+char[] board = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
+----
+
+The board will be modified over the course of the game. 
+For debugging, use the Java function `Array.toString(board)`. 
+For example, suppose the AI chooses 3, we can print the board with:
+
+[source]
+----
+board[3] = 'O';
+System.out.println(java.util.Arrays.toString(board));
+----
+
+The above code will print the following to the console:
+
+[source]
+----
+[' ',' ',' ','O',' ',' ',' ',' ',' ']
+----
+
+And then if the user plays 7 and we print, the board will look like:
+
+[source]
+----
+[' ',' ',' ','O',' ',' ',' ','X',' ']
+----
+
+
+== Main Function
+
+Your `main()` function should use the functions below to do the bulk of the work.  
+  The general outline of the program is as follows:
+
+. Print out a welcome message. You can do this in main, or define a function for it.
+. Set up initial variables before entering the game loop. You will need at least the board and a way to keep track of whether someone has won yet.
+. Set up your game loop. Each time through the loop, either the user will play, or the AI will play. The board will be *modified* during each turn. If one of the players has won, the loop should exit. 
+. Print the output of the game, such as "AI won!", "You won!", "A tie!" 
+
+== AI turn
+
+
+Implement a function, `aiTurn`. This function should place an `O` at a random
+open spot on the board. `aiTurn` should be called from `main` during the game
+loop. 
+
+You implementation should have this specification:
+
+[source]
+----
+// Function: aiTurn
+// Implements one turn of the AI player. 
+//   Default behavior: chooses a random open spot
+// Input board (char[]): the 3x3 tic-tac-toe board 
+// Returns (int): the index of the board that is modified
+public static int aiTurn(char[] board)
+----
+
+This function takes in a **list of characters** and determines where the AI
+should place an 'O'. The cells are numbered 0-8,
+inclusive. The choice cannot be a cell that is already taken by a symbol. 
+
+You can choose whether to have the function modify the board (the change will persist 
+after the function returns because arrays are *mutable*) or to modify the 
+board after the function returns to `main`, using the returned integer. 
+
+You are welcome to make an "intelligent" AI, but the recommended approach is
+to make the computer choose a cell randomly. A simple approach is to continually 
+choose random cells until it finds a free one.
+
+After the AI's turn, `main` should print the AI's choice
+
+```
+AI chooses: 7
+```
+
+== Player turn
+
+Implement a function, `userTurn`, that implements the player's turn. This function should 
+check that the user enters a valid integer. 
+
+. The integer is between 0 and 8, inclusive.
+. The cell is not already taken by a symbol.
+
+Keep asking the user to choose an integer until they choose a valid cell. For example,
+if there were already a symbol in the 5 cell, the player turn might look like this:
+
+[source,subs=quotes]
+----
+Enter 0-8 for your choice: **5**
+Invalid input: 5
+Enter 0-8 for your choice: **10**
+Invalid input: 10
+Enter 0-8 for your choice: **-3**
+Invalid input: -3
+Enter 0-8 for your choice: **0**
+----
+
+`playerTurn` should implement the following specification
+
+[source]
+----
+// Function: playerTurn
+// Asks the user which cell they want to place their `X`. 
+//    Ensures the player chooses a valid index.
+// Input board (char[]): the 3x3 tic-tac-toe board
+// Returns (int): the index chosen by the player 
+public static int playerTurn(char[] board)
+----
+
+You can choose whether to have the function modify the board (the change will persist 
+after the function returns because arrays are *mutable*) or to modify the 
+board after the function returns in `main`, using the returned integer. 
+
+== Display the board
+
+Implement a function, `displayBoard`, that prints the current board to the screen.
+Below is the specification
+
+[source]
+----
+// Function: displayBoard
+// Displays the tic-tac-toe board as a 3x3 grid 
+// Input board (char[]): the tic-tac-toe board
+// Returns: none
+public static void displayBoard(char[] board)
+----
+
+Board is an array with 9 characters. You need to print it as a 3x3 square grid.
+One approach is the use a for loop that progresses in threes, for example, see 
+what happens when you try this code
+
+[source]
+----
+for (int i = 0; i < 9; i += 3) {
+  System.out.printf("%d|%d|%d\n", i, i+1, i+2);
 }
 ----
 
-[source,subs=quotes]
+== Check for wins
+
+Implement a function, `isWinner` which tests whether either the AI or player wins.
+Below is the specification
+
+[source]
 ----
-$ *javac-introcs SongLibrary.java*
-$ *java-introcs* SongLibrary
-0) meow - 1.00s
-1) magic - 6.00s
-2) gong - 12.00s
-3) applause - 6.00s
-4) crickets - 0.50s
-5) yeah - 2.00s
-6) beat-n-bass - 3.00s
-7) whistle - 8.00s
-8) trombone - 3.00s
+Function: isWinner
+Returns true if the given symbol controls a complete row, col, or diagonal; False otherwise
+Input board (char[]): the 3x3 tic-tac-toe board
+Input sym (char): the character, either 'O' or 'X'
+Return (boolean): true if the sym has won the board; false otherwise
 ----
 
-To initialize the sound library, you will need to read in and parse the file `sounds.txt`. 
+Note that we can detect that a tie has ocurred if no turns are left and no one won the 
+game.
 
-* The first line in `sounds.txt` contains the number of sounds in the file
-* Each subsequent line corresponds to a single sound. The information for each sound is separated by spaces 
-** sound name
-** sound duration
-** sound filename (relative path)
+For example, calling isWinner with the following board and `'X'` returns false but with `'O'`
+returns true
 
-= SoundBoard
-
-Write a program, `SoundBoard.java`, that uses `SoundLibrary` to list and play sounds. 
-This program shows the user a menu of sounds and lets them choose different sounds to play. 
-
-Your program should support the following commands: 
-
-* *quit*: Quit the program
-* *<id>*: Play the song with the given id. Prints an error if the id is invalid. 
-
-If the user enters an invalid command, your program should print an error.
-
-[source,subs=quotes]
+[source]
 ----
-$ *javac-introcs SoundBoard.java*
-$ *java-introcs SoundBoard*
-0) meow - 1.00s    
-1) magic - 6.00s   
-2) gong - 12.00s   
-3) applause - 6.00s
-4) crickets - 0.50s
-5) yeah - 2.00s    
-6) beat-n-bass - 3.00s
-7) whistle - 8.00s
-8) trombone - 3.00s
-
-Enter a command: -1
-Invalid command: -1
-0) meow - 1.00s
-1) magic - 6.00s
-2) gong - 12.00s
-3) applause - 6.00s
-4) crickets - 0.50s
-5) yeah - 2.00s
-6) beat-n-bass - 3.00s
-7) whistle - 8.00s
-8) trombone - 3.00s
-
-Enter a command:
-Invalid command: 
-0) meow - 1.00s
-1) magic - 6.00s
-2) gong - 12.00s
-3) applause - 6.00s
-4) crickets - 0.50s
-5) yeah - 2.00s
-6) beat-n-bass - 3.00s
-7) whistle - 8.00s
-8) trombone - 3.00s
-
-Enter a command: play
-Invalid command: play
-0) meow - 1.00s
-1) magic - 6.00s
-2) gong - 12.00s
-3) applause - 6.00s
-4) crickets - 0.50s
-5) yeah - 2.00s
-6) beat-n-bass - 3.00s
-7) whistle - 8.00s
-8) trombone - 3.00s
-
-Enter a command: 9
-Invalid song id: 9
-0) meow - 1.00s
-1) magic - 6.00s
-2) gong - 12.00s
-3) applause - 6.00s
-4) crickets - 0.50s
-5) yeah - 2.00s
-6) beat-n-bass - 3.00s
-7) whistle - 8.00s
-8) trombone - 3.00s
-
-Enter a command: 1
-0) meow - 1.00s
-1) magic - 6.00s
-2) gong - 12.00s
-3) applause - 6.00s
-4) crickets - 0.50s
-5) yeah - 2.00s
-6) beat-n-bass - 3.00s
-7) whistle - 8.00s
-8) trombone - 3.00s
-
-Enter a command: quit
+-------
+|O|X|X|
+|O|O|O|
+|X|X|O|
+-------
 ----
 
 = Extra challenge
 
-Try adding your own songs and flair!
+Implement your own unique minesweeper game in `MyMinesweeper.java`. Be sure to point out to us 
+your work in your readme. Below are ideas
+
+* Use StdDraw to display the board with graphics
+* If the user selects an empty square, uncover all adjacent cells until you reach a non-empty cells.
 
 = What to hand-in
 
-. The programs, `SoundBoard.java`, `Sound.java`, and `SoundLibrary.java`
-. Make sure your programs have a header containing your name, date, and description.
+. The program, `Minesweeper.java`, and if applicable, `MyMinesweeper.java`
+. Make sure your program has a header containing your name, date, and purpose of the program
 . A brief write-up containing your name, assignment number, and a few sentences about how long you 
-spent on the assignment and any interesting bugs you solved. 
+spent on the assignment and any interesting bugs you solved. Be sure to highlight any 
+customizations you made for your game!!
 
 == How to hand-in
 
