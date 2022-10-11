@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<title>CS113 Lab 8: Memory Game</title>
+<title>Assignment 6: Be classy</title>
 <link rel="stylesheet" href="style/cs.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -14,19 +14,10 @@
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_cs113_lab_8_memory_game">CS113 Lab 8: Memory Game</a>
-<ul class="sectlevel2">
-<li><a href="#_examples_and_program_requirements">Examples and Program Requirements</a></li>
-<li><a href="#_card">Card</a></li>
-</ul>
-</li>
-<li><a href="#_memorygame">MemoryGame</a>
-<ul class="sectlevel2">
-<li><a href="#_tips">Tips</a></li>
-<li><a href="#_string_formatting">string formatting</a></li>
-<li><a href="#_recommended_functions">Recommended functions</a></li>
-</ul>
-</li>
+<li><a href="#_assignment_6_be_classy">Assignment 6: Be classy</a></li>
+<li><a href="#_sound">Sound</a></li>
+<li><a href="#_soundlibrary">SoundLibrary</a></li>
+<li><a href="#_soundboard">SoundBoard</a></li>
 <li><a href="#_what_to_hand_in">What to hand-in</a>
 <ul class="sectlevel2">
 <li><a href="#_how_to_hand_in">How to hand-in</a></li>
@@ -37,303 +28,307 @@
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_cs113_lab_8_memory_game">CS113 Lab 8: Memory Game</h2>
+<h2 id="_assignment_6_be_classy">Assignment 6: Be classy</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><em>Credit: Jeff Knerr</em></p>
-</div>
 <div class="paragraph">
 <p><strong>Due Thursday, November 3, before midnight</strong></p>
 </div>
 <div class="paragraph">
-<p><strong>Goals</strong></p>
+<p>The goals of this assignment are:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>practice writing programs with classes and functions</p>
+<p>Work with classes, and objects</p>
+</li>
+<li>
+<p>Work with loops, conditionals, and variables</p>
+</li>
+<li>
+<p>Work with arrays, Strings, and files</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>As a kid I loved playing a memory game with cards: place as many <em>pairs</em> of
-cards as you want face down on a table, then take turns turning over two
-cards at a time. If the two cards match (both red twos, or black fives, etc),
-you get to keep the pair. If they don&#8217;t match, turn them back face down, and
-let the other player pick two cards.</p>
+<p>In this assignment, you will implement a
+<a href="https://en.wikipedia.org/wiki/Soundboard_(computer_program)">sound
+board</a>, a program for playing short sound clips.</p>
 </div>
 <div class="paragraph">
-<p>For this lab we&#8217;re going to write a terminal-based memory card game, allowing
-a single user to select two cards at a time and see if they match.</p>
+<p>We will use classes to organize our program. The <code>Sound</code> class will represent
+individual clips, stored in a WAV file. The <code>SoundLibrary</code> class will manage
+a list of <code>Sound</code> objects. The full program, <code>SoundBoard</code>, will
+present the user with a list of sounds and allow them to play them.</p>
 </div>
-<div class="sect2">
-<h3 id="_examples_and_program_requirements">Examples and Program Requirements</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sound">Sound</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Here are a few examples of the running program, to help you see how
-things should work. Pay attention to how the game proceeds, and how
-input from the user is handled. As you can see from these examples, we have simplified the
-game a bit, since we&#8217;re using a terminal screen to display the game.
-For example, we don&#8217;t clear the screen between turns, making it easy to
-view past turns.</p>
+<p>Write a program, <code>Sound.java</code>, which implements and tests a class names <code>Sound</code>. Your sound class
+represents a sound clip stored in a WAV. It should contain the name, duration, and WAV file of
+the sound.</p>
 </div>
 <div class="paragraph">
-<p>We are also using a deck of "bird" cards.</p>
+<p><strong>Requirements</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="logs/mg-ex1.html">Example 1</a></p>
-</li>
-<li>
-<p><a href="logs/mg-ex2.html">Example 2</a></p>
-</li>
-<li>
-<p><a href="logs/mg-ex3.html">Example 3</a></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>You have some freedom in how you want your game to look. Here are our
-requirements for the full program:</p>
-</div>
+<p><code>Sound</code> contains the following data (all data should be private):</p>
 <div class="ulist">
 <ul>
 <li>
-<p>the program should print out adequate instructions throughout the game (see examples)</p>
+<p>mName of the sound (String)</p>
 </li>
 <li>
-<p>the program starts with 10 cards (5 pairs) face down</p>
+<p>mDuration of the sound in seconds (double)</p>
 </li>
 <li>
-<p>the user selects a card and is shown what that card is</p>
-</li>
-<li>
-<p>the user selects a second card and is shown that card and if it&#8217;s a match or not</p>
-</li>
-<li>
-<p>playing the game again should present the user with a different setup
-(i.e., the cards should be randomly shuffled each game)</p>
-</li>
-<li>
-<p>the program should handle invalid user input properly by re-asking for
-a value (see <a href="mg-ex2.html">Example 2</a>)</p>
-</li>
-<li>
-<p>the program should handle invalid selections (e.g., same card) by not doing them (and telling
-the user it was an invalid selection)</p>
-</li>
-<li>
-<p>the game should end once all cards have been matched</p>
-</li>
-<li>
-<p>when the game ends display a status message showing how many cards
-matched, how many turns it took, and a message based on those numbers
-(e.g., 10 cards in 5 turns: super!, 10 cards in 8 turns: not bad, 10
-cards in 35 turns: better luck next time)</p>
-</li>
-<li>
-<p>all output should be clean and easy to read</p>
+<p>mFilename of the WAV file (String)</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_card">Card</h3>
-<div class="paragraph">
-<p>Implement a class, <code>Card</code>, in the file <code>Card.java</code>. This class represents a card
-in our memory game.</p>
-</div>
-<div class="paragraph">
-<p><code>Card</code> should have the following data</p>
-</div>
+</li>
+<li>
+<p><code>Sound</code> contains the following methods:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>mName (String): Stores the contents of the card, e.g. "chicken" or "egret"</p>
+<p>Constructor <code>Sound(String name, double duration, String fileName)</code>, which initializes the object with the given information.</p>
 </li>
 <li>
-<p>mIsShowing (boolean): Stores whether the card is showing or not</p>
+<p><code>void play()</code>, which plays the sound stored in this class by calling <code>StdAudio.play</code></p>
+</li>
+<li>
+<p><code>String getName()</code>, accessor for the sound&#8217;s name</p>
+</li>
+<li>
+<p><code>double getDuration()</code>, accessor for the sound&#8217;s duration</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><code>Card</code> should have the following methods</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>constructor <code>Card(String name)</code>: Initializes the name of the card and set mIsShowing to false</p>
-</li>
-<li>
-<p><code>public boolean matches(Card other)</code>: Returns true if the name of the other card matches this card</p>
-</li>
-<li>
-<p><code>public boolean isShowing()</code>: Accessor which returns mIsShowing</p>
-</li>
-<li>
-<p><code>public String getName()</code> `: Accessor which returns mName</p>
-</li>
-<li>
-<p><code>void hide()</code>: Sets mIsShowing to false</p>
-</li>
-<li>
-<p><code>void show()</code>: Sets mIsShowing to true</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Test your <code>Card</code> class in a main function defined in <code>Card.java</code>. For example,
-the following <code>main</code> would produce the given output.</p>
+<p>In <code>main</code>, test all the functions in your class. For example, the following code should produce
+the following output (and play the cricket sound).</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>Card card = new Card("bluebell");
-card.show();
-System.out.println(card.getName() + " " + card.isShowing());
-
-card.hide();
-System.out.println(card.getName() + " " + card.isShowing());
-
-Card test = new Card("tulip");
-System.out.println("Matches?: "+test.matches(card));</code></pre>
+<pre class="highlight"><code>public static void main(String[] args) {
+    Sound sound = new Sound("cricket", 0.5, "wav/337435__ev-dawg__cricket.wav");
+    System.out.printf("Sound: %s (%.2fs)\n", sound.getName(), sound.getDuration());
+    sound.play();
+}</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>bluebell true
-bluebell false
-Matches?: false</code></pre>
-</div>
+<pre class="highlight"><code>$ <strong>javac-introcs Song.java</strong>
+$ <strong>java-introcs</strong> Song
+Sound: cricket (0.50s)</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_memorygame">MemoryGame</h2>
+<h2 id="_soundlibrary">SoundLibrary</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the file <code>MemoryGame.java</code> implement your memory game. Your <code>main</code> function in
-<code>MemoryGame</code> should implement the main game loop. Below is pseudocode.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>print welcome message
-create an array of cards
-shuffle the cards
-
-numMatched = 0;
-numTurns = 0;
-while not done
-    increase number of turns by 1
-    display the cards
-
-    ask the user for a card
-    show the card
-
-    ask the user for an other card
-    show the card
-
-    if the two cards match
-      increment the number of matches by 1
-    else
-      hide the cards
-
-print game over messages</code></pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_tips">Tips</h3>
-<div class="paragraph">
-<p>To initialize the cards, we suggest using an array of Strings, something like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>String[] birds = {"finch","robin","crane","macaw","stork","egret","raven"};</code></pre>
-</div>
+<p>Write a program, <code>SoundLibrary.java</code>, which stores a list of songs</p>
 </div>
 <div class="paragraph">
-<p>You can make your cards something else if you want (countries, colors, movie
-characters, etc), but it is easier if all strings in the list have the same length.</p>
-</div>
-<div class="paragraph">
-<p>For each bird, you need to create a pair of cards.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>Card[] cards = new Card[birds.length * 2];
-// create pairs of birds using a loop</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To shuffle the cards, repeatedly swap cards using random numbers.
-Below is pseudocode.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>for (i = 0; i &lt; numshuffles; i++)
-  idx1 = choose a random index
-  idx2 = choose a random index
-  swap the cards at idx1 and idx2</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_string_formatting">string formatting</h3>
-<div class="paragraph">
-<p>Using the width specifier will probably help you line up all of your
-cards. In the following example, using <code>%10s</code> means strings with fewer
-than 10 characters are padded on the left with spaces:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>String[] names = {"apple", "orange", "cupcake", "0123456789"};
-for (int i = 0; i &lt; names.length; i++) {
-  System.out.printf("===%10s===" , names[i]);
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Produces this output</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>===     apple===
-===    orange===
-===   cupcake===
-===0123456789===</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_recommended_functions">Recommended functions</h3>
-<div class="paragraph">
-<p>You have some flexibility in how you implement the functions in <code>MemoryGame.java</code>.
-However, we recommend your functions match the psuedocode given for <code>main</code>. For example,</p>
+<p><strong>Features</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>public static void printWelcome()</code>: Prints the welcome message at the start of the game</p>
-</li>
+<p><code>SoundLibrary</code> contains the following data (all data should be private):</p>
+<div class="ulist">
+<ul>
 <li>
-<p><code>public static Card[] initCards()</code>: Create the array of cards based on names of birds (or whatever you like)</p>
-</li>
-<li>
-<p><code>public static void shuffle(Card[] cards)</code>: Shuffle the cards</p>
-</li>
-<li>
-<p><code>public static void displayCards(Card[] cards)</code>: Displays the cards. Hidden cards should show a number. Showing cards should show the name</p>
-</li>
-<li>
-<p><code>public static int askForCard(Card[] cards)</code>: Asks the user for a card and returns the index. This function should re-ask the user for input if their choice is invalid.</p>
-</li>
-<li>
-<p><code>public static boolean isValid(Card[] cards, String userInput)</code>: Returns false if the input is not a valid number, is out of range, or corresponds to a card that is already showing.</p>
-</li>
-<li>
-<p><code>public static void printGoodbye(int numMatched, int numTurns)</code>: Prints end of game messages</p>
+<p>array of Sounds (Sound[])</p>
 </li>
 </ul>
+</div>
+</li>
+<li>
+<p>SoundLibrary contains the following methods:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Constructor <code>SoundLibrary(String filename)</code>, initializes the object using a list of songs stored in a file</p>
+</li>
+<li>
+<p><code>void list()</code>, lists all the sounds available in the library</p>
+</li>
+<li>
+<p><code>int getNumSounds()</code>, returns the number of sounds in the library</p>
+</li>
+<li>
+<p><code>void play(int songNumber)</code>, plays the sound corresponding to the given soundNumber. The first sound in the library has soundNumber 0. The second sound has soundNumber 1, etc.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In <code>main</code>, test all the functions in your class. For example, the following code should produce
+the following output (and play the sound entitled "magic").</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>public static void main(String[] args) {
+    SoundLibrary library = new SoundLibrary("sounds.txt");
+    library.list();
+    library.play(1);
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>javac-introcs SongLibrary.java</strong>
+$ <strong>java-introcs</strong> SongLibrary
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To initialize the sound library, you will need to read in and parse the file <code>sounds.txt</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The first line in <code>sounds.txt</code> contains the number of sounds in the file</p>
+</li>
+<li>
+<p>Each subsequent line corresponds to a single sound. The information for each sound is separated by spaces</p>
+<div class="ulist">
+<ul>
+<li>
+<p>sound name</p>
+</li>
+<li>
+<p>sound duration</p>
+</li>
+<li>
+<p>sound filename (relative path)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_soundboard">SoundBoard</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Write a program, <code>SoundBoard.java</code>, that uses <code>SoundLibrary</code> to list and play sounds.
+This program shows the user a menu of sounds and lets them choose different sounds to play.</p>
+</div>
+<div class="paragraph">
+<p>Your program should support the following commands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>quit</strong>: Quit the program</p>
+</li>
+<li>
+<p><strong>&lt;id&gt;</strong>: Play the song with the given id. Prints an error if the id is invalid.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If the user enters an invalid command, your program should print an error.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>javac-introcs SoundBoard.java</strong>
+$ <strong>java-introcs SoundBoard</strong>
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: -1
+Invalid command: -1
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command:
+Invalid command:
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: play
+Invalid command: play
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: 9
+Invalid song id: 9
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: 1
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: quit</code></pre>
 </div>
 </div>
 </div>
@@ -344,14 +339,14 @@ However, we recommend your functions match the psuedocode given for <code>main</
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The program, <code>MemoryGame.java</code>, adding <code>Card.java</code></p>
+<p>The programs, <code>SoundBoard.java</code>, <code>Sound.java</code>, and <code>SoundLibrary.java</code></p>
 </li>
 <li>
 <p>Make sure your programs have a header containing your name, date, and description.</p>
 </li>
 <li>
 <p>A brief write-up containing your name, assignment number, and a few sentences about how long you
-spent on the assignment and any interesting customizations you made.</p>
+spent on the assignment and any interesting bugs you solved.</p>
 </li>
 </ol>
 </div>
@@ -360,7 +355,7 @@ spent on the assignment and any interesting customizations you made.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Copy your files to your dropbox, into the folder called <code>A07</code>.</p>
+<p>Copy your files to your dropbox, into the folder called <code>{labnum}</code>.</p>
 </li>
 </ol>
 </div>
@@ -370,8 +365,32 @@ spent on the assignment and any interesting customizations you made.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-27 10:36:51 -0400
+Last updated 2022-10-11 10:49:15 -0400
 </div>
 </div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 </body>
 </html>

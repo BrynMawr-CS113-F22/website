@@ -1,6 +1,6 @@
 include::header.adoc[]
 
-:title: CS113 Lab 8: Searching and sorting
+:title: CS113 Lab 8: Searching
 :Author Initials: ASN
 :labnum: 08
 

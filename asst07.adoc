@@ -1,212 +1,214 @@
 include::header.adoc[]
 
-:title: CS113 Lab 8: Memory Game 
-:Author Initials: JMK
-:labnum: 08
+:title: Assignment 6: Be classy
+:Author Initials: ASN
+:Date:    2020-02-07
+:Revision: 0.1
 
 = {title}
 
-_Credit: Jeff Knerr_
-
 *Due Thursday, November 3, before midnight*
 
-*Goals*
+The goals of this assignment are:
 
-* practice writing programs with classes and functions
+* Work with classes, and objects
+* Work with loops, conditionals, and variables
+* Work with arrays, Strings, and files
 
-As a kid I loved playing a memory game with cards: place as many _pairs_ of
-cards as you want face down on a table, then take turns turning over two
-cards at a time. If the two cards match (both red twos, or black fives, etc),
-you get to keep the pair. If they don't match, turn them back face down, and
-let the other player pick two cards.
+In this assignment, you will implement a
+link:https://en.wikipedia.org/wiki/Soundboard_(computer_program)[sound
+board], a program for playing short sound clips. 
 
-For this lab we're going to write a terminal-based memory card game, allowing
-a single user to select two cards at a time and see if they match.
+We will use classes to organize our program. The `Sound` class will represent 
+individual clips, stored in a WAV file. The `SoundLibrary` class will manage 
+a list of `Sound` objects. The full program, `SoundBoard`, will 
+present the user with a list of sounds and allow them to play them.
 
-== Examples and Program Requirements
+:stem: latexmath
 
-Here are a few examples of the running program, to help you see how
-things should work. Pay attention to how the game proceeds, and how
-input from the user is handled. As you can see from these examples, we have simplified the
-game a bit, since we're using a terminal screen to display the game.
-For example, we don't clear the screen between turns, making it easy to
-view past turns.
+= Sound
 
-We are also using a deck of "bird" cards.
+Write a program, `Sound.java`, which implements and tests a class names `Sound`. Your sound class 
+represents a sound clip stored in a WAV. It should contain the name, duration, and WAV file of 
+the sound. 
 
-- link:logs/mg-ex1.html[Example 1]
-- link:logs/mg-ex2.html[Example 2]
-- link:logs/mg-ex3.html[Example 3]
+*Requirements*
 
-You have some freedom in how you want your game to look. Here are our
-requirements for the full program:
+* `Sound` contains the following data (all data should be private): 
+** mName of the sound (String)
+** mDuration of the sound in seconds (double)
+** mFilename of the WAV file (String)
 
-- the program should print out adequate instructions throughout the game (see examples)
-- the program starts with 10 cards (5 pairs) face down
-- the user selects a card and is shown what that card is
-- the user selects a second card and is shown that card and if it's a match or not
-- playing the game again should present the user with a different setup
-  (i.e., the cards should be randomly shuffled each game)
-- the program should handle invalid user input properly by re-asking for
-  a value (see link:mg-ex2.html[Example 2])
-- the program should handle invalid selections (e.g., same card) by not doing them (and telling
-  the user it was an invalid selection)
-- the game should end once all cards have been matched
-- when the game ends display a status message showing how many cards
-  matched, how many turns it took, and a message based on those numbers
-  (e.g., 10 cards in 5 turns: super!, 10 cards in 8 turns: not bad, 10
-  cards in 35 turns: better luck next time)
-- all output should be clean and easy to read
+* `Sound` contains the following methods:
+** Constructor `Sound(String name, double duration, String fileName)`, which initializes the object with the given information.
+** `void play()`, which plays the sound stored in this class by calling `StdAudio.play`   
+** `String getName()`, accessor for the sound's name
+** `double getDuration()`, accessor for the sound's duration
 
-== Card 
-
-Implement a class, `Card`, in the file `Card.java`. This class represents a card 
-in our memory game. 
-
-`Card` should have the following data
-
-* mName (String): Stores the contents of the card, e.g. "chicken" or "egret"
-* mIsShowing (boolean): Stores whether the card is showing or not 
-
-`Card` should have the following methods
-
-* constructor `Card(String name)`: Initializes the name of the card and set mIsShowing to false
-* `public boolean matches(Card other)`: Returns true if the name of the other card matches this card
-* `public boolean isShowing()`: Accessor which returns mIsShowing 
-* `public String getName()` `: Accessor which returns mName
-* `void hide()`: Sets mIsShowing to false
-* `void show()`: Sets mIsShowing to true
-
-Test your `Card` class in a main function defined in `Card.java`. For example, 
-the following `main` would produce the given output. 
+In `main`, test all the functions in your class. For example, the following code should produce 
+the following output (and play the cricket sound). 
 
 [source]
 ----
-Card card = new Card("bluebell");
-card.show();
-System.out.println(card.getName() + " " + card.isShowing());
-
-card.hide();
-System.out.println(card.getName() + " " + card.isShowing());
-
-Card test = new Card("tulip");
-System.out.println("Matches?: "+test.matches(card)); 
-----
-
-[source]
-----
-bluebell true
-bluebell false
-Matches?: false
-----
-
-= MemoryGame
-
-In the file `MemoryGame.java` implement your memory game. Your `main` function in 
-`MemoryGame` should implement the main game loop. Below is pseudocode.
-
-[source]
-----
-print welcome message
-create an array of cards
-shuffle the cards  
-
-numMatched = 0;
-numTurns = 0;
-while not done 
-    increase number of turns by 1
-    display the cards
-    
-    ask the user for a card
-    show the card
-
-    ask the user for an other card
-    show the card
-    
-    if the two cards match
-      increment the number of matches by 1
-    else 
-      hide the cards
-
-print game over messages
-----
-
-== Tips
-
-To initialize the cards, we suggest using an array of Strings, something like this:
-
-[source]
-----
-String[] birds = {"finch","robin","crane","macaw","stork","egret","raven"};
-----
-
-You can make your cards something else if you want (countries, colors, movie
-characters, etc), but it is easier if all strings in the list have the same length.
-
-For each bird, you need to create a pair of cards.
-
-[source]
-----
-Card[] cards = new Card[birds.length * 2]; 
-// create pairs of birds using a loop
-----
-
-To shuffle the cards, repeatedly swap cards using random numbers. 
-Below is pseudocode.
-
-[source]
-----
-for (i = 0; i < numshuffles; i++)
-  idx1 = choose a random index
-  idx2 = choose a random index
-  swap the cards at idx1 and idx2
-   
-----
-
-== string formatting
-
-Using the width specifier will probably help you line up all of your
-cards. In the following example, using `%10s` means strings with fewer
-than 10 characters are padded on the left with spaces:
-
-[source]
-----
-String[] names = {"apple", "orange", "cupcake", "0123456789"};
-for (int i = 0; i < names.length; i++) {
-  System.out.printf("===%10s===" , names[i]);
+public static void main(String[] args) {
+    Sound sound = new Sound("cricket", 0.5, "wav/337435__ev-dawg__cricket.wav");
+    System.out.printf("Sound: %s (%.2fs)\n", sound.getName(), sound.getDuration());
+    sound.play();
 }
 ----
 
-Produces this output
+[source,subs=quotes]
+----
+$ *javac-introcs Song.java*
+$ *java-introcs* Song
+Sound: cricket (0.50s)
+----
+
+= SoundLibrary
+
+Write a program, `SoundLibrary.java`, which stores a list of songs
+
+*Features*
+
+* `SoundLibrary` contains the following data (all data should be private): 
+** array of Sounds (Sound[])
+
+* SoundLibrary contains the following methods:
+** Constructor `SoundLibrary(String filename)`, initializes the object using a list of songs stored in a file
+** `void list()`, lists all the sounds available in the library
+** `int getNumSounds()`, returns the number of sounds in the library
+** `void play(int songNumber)`, plays the sound corresponding to the given soundNumber. The first sound in the library has soundNumber 0. The second sound has soundNumber 1, etc. 
+
+In `main`, test all the functions in your class. For example, the following code should produce 
+the following output (and play the sound entitled "magic"). 
 
 [source]
 ----
-===     apple===
-===    orange===
-===   cupcake===
-===0123456789===
+public static void main(String[] args) {
+    SoundLibrary library = new SoundLibrary("sounds.txt");
+    library.list();
+    library.play(1);
+}
 ----
 
-== Recommended functions
+[source,subs=quotes]
+----
+$ *javac-introcs SongLibrary.java*
+$ *java-introcs* SongLibrary
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+----
 
-You have some flexibility in how you implement the functions in `MemoryGame.java`. 
-However, we recommend your functions match the psuedocode given for `main`. For example, 
+To initialize the sound library, you will need to read in and parse the file `sounds.txt`. 
 
-* `public static void printWelcome()`: Prints the welcome message at the start of the game
-* `public static Card[] initCards()`: Create the array of cards based on names of birds (or whatever you like)
-* `public static void shuffle(Card[] cards)`: Shuffle the cards
-* `public static void displayCards(Card[] cards)`: Displays the cards. Hidden cards should show a number. Showing cards should show the name
-* `public static int askForCard(Card[] cards)`: Asks the user for a card and returns the index. This function should re-ask the user for input if their choice is invalid.
-* `public static boolean isValid(Card[] cards, String userInput)`: Returns false if the input is not a valid number, is out of range, or corresponds to a card that is already showing.
-* `public static void printGoodbye(int numMatched, int numTurns)`: Prints end of game messages
+* The first line in `sounds.txt` contains the number of sounds in the file
+* Each subsequent line corresponds to a single sound. The information for each sound is separated by spaces 
+** sound name
+** sound duration
+** sound filename (relative path)
+
+= SoundBoard
+
+Write a program, `SoundBoard.java`, that uses `SoundLibrary` to list and play sounds. 
+This program shows the user a menu of sounds and lets them choose different sounds to play. 
+
+Your program should support the following commands: 
+
+* *quit*: Quit the program
+* *<id>*: Play the song with the given id. Prints an error if the id is invalid. 
+
+If the user enters an invalid command, your program should print an error.
+
+[source,subs=quotes]
+----
+$ *javac-introcs SoundBoard.java*
+$ *java-introcs SoundBoard*
+0) meow - 1.00s    
+1) magic - 6.00s   
+2) gong - 12.00s   
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s    
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: -1
+Invalid command: -1
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command:
+Invalid command: 
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: play
+Invalid command: play
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: 9
+Invalid song id: 9
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: 1
+0) meow - 1.00s
+1) magic - 6.00s
+2) gong - 12.00s
+3) applause - 6.00s
+4) crickets - 0.50s
+5) yeah - 2.00s
+6) beat-n-bass - 3.00s
+7) whistle - 8.00s
+8) trombone - 3.00s
+
+Enter a command: quit
+----
 
 = What to hand-in
 
-. The program, `MemoryGame.java`, adding `Card.java`
+. The programs, `SoundBoard.java`, `Sound.java`, and `SoundLibrary.java`
 . Make sure your programs have a header containing your name, date, and description.
 . A brief write-up containing your name, assignment number, and a few sentences about how long you 
-spent on the assignment and any interesting customizations you made. 
+spent on the assignment and any interesting bugs you solved. 
 
 == How to hand-in
 
-. Copy your files to your dropbox, into the folder called `A07`. 
+. Copy your files to your dropbox, into the folder called `{labnum}`.

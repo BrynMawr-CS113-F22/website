@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<title>Assignment 5: Can't spell functions without fun</title>
+<title>Assignment 6: Minesweeper</title>
 <link rel="stylesheet" href="style/cs.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -14,15 +14,11 @@
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_assignment_5_cant_spell_functions_without_fun">Assignment 5: Can&#8217;t spell functions without fun</a></li>
+<li><a href="#_assignment_6_minesweeper">Assignment 6: Minesweeper</a></li>
 <li><a href="#_minesweeper">Minesweeper</a>
 <ul class="sectlevel2">
-<li><a href="#_3x3_board">3x3 Board</a></li>
-<li><a href="#_main_function">Main Function</a></li>
-<li><a href="#_ai_turn">AI turn</a></li>
-<li><a href="#_player_turn">Player turn</a></li>
-<li><a href="#_display_the_board">Display the board</a></li>
-<li><a href="#_check_for_wins">Check for wins</a></li>
+<li><a href="#_board">Board</a></li>
+<li><a href="#_game">Game</a></li>
 </ul>
 </li>
 <li><a href="#_extra_challenge">Extra challenge</a></li>
@@ -36,7 +32,7 @@
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_assignment_5_cant_spell_functions_without_fun">Assignment 5: Can&#8217;t spell functions without fun</h2>
+<h2 id="_assignment_6_minesweeper">Assignment 6: Minesweeper</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Due Thursday, October 20, before midnight</strong></p>
@@ -47,7 +43,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Write programs containing multiple functions</p>
+<p>Design and implement programs containing multiple functions</p>
+</li>
+<li>
+<p>Apply top-down design principles to building a larger program</p>
 </li>
 <li>
 <p>Work with loops, conditionals, and variables</p>
@@ -60,76 +59,128 @@
 <h2 id="_minesweeper">Minesweeper</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Write a program, <code>Minesweeper.java</code>, that implements the game of
-<a href="https://minesweeper.online">minesweeper</a>.</p>
+<p><span class="image"><img src="https://minesweeper.online/img/homepage/beginner.png" alt="minesweeper" width="400px"></span></p>
 </div>
 <div class="paragraph">
-<p>In this game, players alternate between placing their symbol (either an "X" or an "O")
-inside a 3x3 grid of squares. The first player to get "3 in a row" (either on a
-row, a column, or diagonally) wins.</p>
+<p>In <a href="https://minesweeper.online">minesweeper</a>, players try to uncover each cell of a NxM grid
+without hitting any bombs. N represents the number of rows in the grid and
+M represents the number of columns.</p>
 </div>
 <div class="paragraph">
-<p>In our version, the user will play against the computer (the Artificial Intelligence, or "AI").
-The AI will always play first and use the symbol "O", and the user will play second with a
-symbol "X". The game can end with the user winning, the AI winning, or a draw.</p>
+<p>When the game starts, the program will generate a board and show it to the user
+with all cells hidden. When the user selects a cell, the game will reveal the
+contents of the cell. If the cell has bombs in any of the 8 adjacent cells, the
+cell will show a count of the number of neighboring bombs. If no bombs are adjacent,
+the cell is empty. If the cell contains a bomb, the game is over. If the user
+uncovers all cells, the user wins!</p>
 </div>
 <div class="paragraph">
-<p>Here are examples of these three situations:</p>
+<p>We will build up our programs in two parts.</p>
+</div>
+<div class="sect2">
+<h3 id="_board">Board</h3>
+<div class="paragraph">
+<p>Write a program, <code>Board.java</code>, that generates and displays a NxM minesweeper board.
+The user should specify the following parameters as <em>command line arguments</em>.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="logs/a5-userwin.html">User wins</a></p>
+<p>the number of rows (integer)</p>
 </li>
 <li>
-<p><a href="logs/a5-aiwins.html">AI wins</a></p>
+<p>the number of cols (integer)</p>
 </li>
 <li>
-<p><a href="logs/a5-tie.html">Tie</a></p>
+<p>the probability that a cell contains a bomb (double in range [0,1))</p>
 </li>
 </ul>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>javac Board.java</strong>
+$ <strong>java Board 5 8 0.1</strong>
+0 0 2 X 3 2 X 1
+0 0 2 X X 2 2 2
+0 1 2 3 3 2 2 X
+0 1 X 1 1 X 2 1
+0 1 1 1 1 1 1 0
+
+$ <strong>java Board 5 8 0.9</strong>
+X X X X X X X 3
+X X X X X X X X
+X X 8 X X X X X
+X X X X X X 7 X
+X X X X X 4 X X</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Requirements/Hints:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You must use command-line arguments</p>
+</li>
+<li>
+<p>You should use a 2D array to store the board. We recommend using a 2D array of integers, where each cell contains the count of neighboring bombs. If the cell contains a bomb, you can use a special value, such as -1, to denote it.</p>
+</li>
+<li>
+<p>To decide whether a cell includes a bomb, use <code>Math.random</code> and test whether the value is less than the given probability.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We recommend that you organize your code to use functions for generating and displaying the board.
+You will re-use these functions in the next question.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>class Board {
+    public static void display(int[][] board) {
+        // todo: display board to console
+    }
+
+    public static int[][] generate(int rows, int cols, double prob) {
+        // todo: generate board with dimensions rows x cols
+        // todo: fill board with prob chance of containing a bomb
+    }
+
+    public static void main(String[] args) {
+        // call generate and display
+    }
+}</code></pre>
+</div>
+</div>
+</div>
 <div class="sect2">
-<h3 id="_3x3_board">3x3 Board</h3>
+<h3 id="_game">Game</h3>
 <div class="paragraph">
-<p>In order to implement tic-tac-toe we will be using a <strong>list of characters</strong> to represent
-the board. The board will begin as a list of 9 empty spaces:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>char[] board = {' ',' ',' ',' ',' ',' ',' ',' ',' '};</code></pre>
-</div>
+<p>Write a program, <code>Minesweeper.java</code>, that implements the game of minesweeper. Re-use your code from
+the previous question. You should also re-use your validation functions from last week
+to check for valid user input.</p>
 </div>
 <div class="paragraph">
-<p>The board will be modified over the course of the game.
-For debugging, use the Java function <code>Array.toString(board)</code>.
-For example, suppose the AI chooses 3, we can print the board with:</p>
+<p>Below are several examples showing how the game should play:</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>board[3] = 'O';
-System.out.println(java.util.Arrays.toString(board));</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The above code will print the following to the console:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>[' ',' ',' ','O',' ',' ',' ',' ',' ']</code></pre>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="logs/minesweeper-output1.txt">User wins</a></p>
+</li>
+<li>
+<p><a href="logs/minesweeper-output2.txt">User loses</a></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>And then if the user plays 7 and we print, the board will look like:</p>
+<p>Your output doesn&#8217;t need to look exactly the same but it should be clean and easy to read.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>[' ',' ',' ','O',' ',' ',' ','X',' ']</code></pre>
+<div class="paragraph">
+<p><strong>Your program should use command line arguments!</strong></p>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_main_function">Main Function</h3>
+<div class="sect3">
+<h4 id="_main_function">Main Function</h4>
 <div class="paragraph">
 <p>Your <code>main()</code> function should use the functions below to do the bulk of the work.
   The general outline of the program is as follows:</p>
@@ -140,169 +191,51 @@ System.out.println(java.util.Arrays.toString(board));</code></pre>
 <p>Print out a welcome message. You can do this in main, or define a function for it.</p>
 </li>
 <li>
-<p>Set up initial variables before entering the game loop. You will need at least the board and a way to keep track of whether someone has won yet.</p>
+<p>Set up initial variables before entering the game loop. You will need at least two boards: one with the generated bombs and one that keeps track of which cells the user has uncovered already.</p>
 </li>
 <li>
-<p>Set up your game loop. Each time through the loop, either the user will play, or the AI will play. The board will be <strong>modified</strong> during each turn. If one of the players has won, the loop should exit.</p>
+<p>Set up your game loop (hint: use a while loop). Each time through the loop, the program will ask for a cell to uncover and update the board.</p>
 </li>
 <li>
-<p>Print the output of the game, such as "AI won!", "You won!", "A tie!"</p>
+<p>Print the output of the game. If the user selects a cell with the bomb, they lose. If the user uncovers all non-bomb cells, they win.</p>
 </li>
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_ai_turn">AI turn</h3>
+<div class="sect3">
+<h4 id="_design">Design</h4>
 <div class="paragraph">
-<p>Implement a function, <code>aiTurn</code>. This function should place an <code>O</code> at a random
-open spot on the board. <code>aiTurn</code> should be called from <code>main</code> during the game
-loop.</p>
+<p>Think about how to subdivide the features of the game into functions. Each function should implement a
+single, well-defined task. For example, we don&#8217;t recommend you put your entire game loop into a function!
+But we do recommend that you use functions to help abstract sub-tasks, for example,</p>
 </div>
-<div class="paragraph">
-<p>You implementation should have this specification:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>// Function: aiTurn
-// Implements one turn of the AI player.
-//   Default behavior: chooses a random open spot
-// Input board (char[]): the 3x3 tic-tac-toe board
-// Returns (int): the index of the board that is modified
-public static int aiTurn(char[] board)</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This function takes in a <strong>list of characters</strong> and determines where the AI
-should place an 'O'. The cells are numbered 0-8,
-inclusive. The choice cannot be a cell that is already taken by a symbol.</p>
-</div>
-<div class="paragraph">
-<p>You can choose whether to have the function modify the board (the change will persist
-after the function returns because arrays are <strong>mutable</strong>) or to modify the
-board after the function returns to <code>main</code>, using the returned integer.</p>
-</div>
-<div class="paragraph">
-<p>You are welcome to make an "intelligent" AI, but the recommended approach is
-to make the computer choose a cell randomly. A simple approach is to continually
-choose random cells until it finds a free one.</p>
-</div>
-<div class="paragraph">
-<p>After the AI&#8217;s turn, <code>main</code> should print the AI&#8217;s choice</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>AI chooses: 7</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_player_turn">Player turn</h3>
-<div class="paragraph">
-<p>Implement a function, <code>userTurn</code>, that implements the player&#8217;s turn. This function should
-check that the user enters a valid integer.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
-<p>The integer is between 0 and 8, inclusive.</p>
+<p>to validate input</p>
 </li>
 <li>
-<p>The cell is not already taken by a symbol.</p>
+<p>to check whether the user has uncovered all non-bomb cells</p>
 </li>
-</ol>
+<li>
+<p>to display the current state of the board</p>
+</li>
+<li>
+<p>printing text with banners</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p>Keep asking the user to choose an integer until they choose a valid cell. For example,
-if there were already a symbol in the 5 cell, the player turn might look like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>Enter 0-8 for your choice: <strong>5</strong>
-Invalid input: 5
-Enter 0-8 for your choice: <strong>10</strong>
-Invalid input: 10
-Enter 0-8 for your choice: <strong>-3</strong>
-Invalid input: -3
-Enter 0-8 for your choice: <strong>0</strong></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><code>playerTurn</code> should implement the following specification</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>// Function: playerTurn
-// Asks the user which cell they want to place their `X`.
-//    Ensures the player chooses a valid index.
-// Input board (char[]): the 3x3 tic-tac-toe board
-// Returns (int): the index chosen by the player
-public static int playerTurn(char[] board)</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You can choose whether to have the function modify the board (the change will persist
-after the function returns because arrays are <strong>mutable</strong>) or to modify the
-board after the function returns in <code>main</code>, using the returned integer.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_display_the_board">Display the board</h3>
-<div class="paragraph">
-<p>Implement a function, <code>displayBoard</code>, that prints the current board to the screen.
-Below is the specification</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>// Function: displayBoard
-// Displays the tic-tac-toe board as a 3x3 grid
-// Input board (char[]): the tic-tac-toe board
-// Returns: none
-public static void displayBoard(char[] board)</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Board is an array with 9 characters. You need to print it as a 3x3 square grid.
-One approach is the use a for loop that progresses in threes, for example, see
-what happens when you try this code</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>for (int i = 0; i &lt; 9; i += 3) {
-  System.out.printf("%d|%d|%d\n", i, i+1, i+2);
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_check_for_wins">Check for wins</h3>
-<div class="paragraph">
-<p>Implement a function, <code>isWinner</code> which tests whether either the AI or player wins.
-Below is the specification</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>Function: isWinner
-Returns true if the given symbol controls a complete row, col, or diagonal; False otherwise
-Input board (char[]): the 3x3 tic-tac-toe board
-Input sym (char): the character, either 'O' or 'X'
-Return (boolean): true if the sym has won the board; false otherwise</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Note that we can detect that a tie has ocurred if no turns are left and no one won the
-game.</p>
-</div>
-<div class="paragraph">
-<p>For example, calling isWinner with the following board and <code>'X'</code> returns false but with <code>'O'</code>
-returns true</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>-------
-|O|X|X|
-|O|O|O|
-|X|X|O|
--------</code></pre>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can define a 2D array of booleans to keep track of which cells the user has selected already.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -313,7 +246,7 @@ returns true</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Implement your own unique minesweeper game in <code>MyMinesweeper.java</code>. Be sure to point out to us
-your work in your readme. Below are ideas</p>
+your original ideas and features in your readme. Below are ideas</p>
 </div>
 <div class="ulist">
 <ul>
@@ -360,32 +293,8 @@ customizations you made for your game!!</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-10-10 17:11:55 -0400
+Last updated 2022-10-11 13:01:30 -0400
 </div>
 </div>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  messageStyle: "none",
-  tex2jax: {
-    inlineMath: [["\\(", "\\)"]],
-    displayMath: [["\\[", "\\]"]],
-    ignoreClass: "nostem|nolatexmath"
-  },
-  asciimath2jax: {
-    delimiters: [["\\$", "\\$"]],
-    ignoreClass: "nostem|noasciimath"
-  },
-  TeX: { equationNumbers: { autoNumber: "none" } }
-})
-MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
-  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
-    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
-      data.math.root.display = "block"
-    }
-    return data
-  })
-})
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 </body>
 </html>

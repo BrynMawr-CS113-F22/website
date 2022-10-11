@@ -92,9 +92,9 @@
 //-----------------------------
 |7
 | Week of Oct 17th
-|*Functions* anchor:week07[]
+|*Object oriented programming* anchor:week07[]
 
-* Read: Sedgewick and Wayne, Sec 2.1
+* Read: Sedgewick and Wayne, Sec 3.1, 3.2
 * link:.html[Assignment 6]: *Due October 27*
 * link:notes-alinen/notes-oct17.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct17.html[Lecture Notes and Resources (Poliak)] 
@@ -106,7 +106,7 @@
 |*Object oriented programming: using objects* anchor:week08[]
 
 * Read: Sedgewick and Wayne, Sec 3.1, 3.2
-* link:.html[Assignment 7]: *Due *
+* link:.html[Assignment 7]: *Due Nov 3*
 * link:notes-alinen/notes-oct24.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct24.html[Lecture Notes and Resources (Poliak)] 
 * Lab activity: Code jam 03, link:jam3Guide.html[Jam 3 Study Guide]
@@ -114,10 +114,10 @@
 //-----------------------------
 |9
 | Week of October 31st
-|*Objects oriented programming: creating objects* anchor:week09[]
+|*Object oriented programming: creating objects* anchor:week09[]
 
 * Read: Sedgewick and Wayne, Sec 3.1, 3.2
-* link:.html[Assignment 8]: **
+* link:.html[Assignment 8]: *Due Nov 10*
 * link:notes-alinen/notes-oct31.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct31.html[Lecture Notes and Resources (Poliak)] 
 * Lab activity: Code Jam 04 Practice
@@ -129,7 +129,7 @@
 
 * Read: Sedgewick and Wayne, Sec 4.2
 * Presentations III: Arrays, strings, advanced IO
-* link:.html[Assignment 9]: *Due *
+* link:.html[Assignment 9]: *Due Nov 17*
 * link:notes-alinen/notes-nov07.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov07.html[Lecture Notes and Resources (Poliak)] 
 * Lab activity: Code jam 04, link:jam4Guide.html[Jam 4 Study Guide]
@@ -140,6 +140,7 @@
 |*More search and sort; Runtime analysis* anchor:week11[]
 
 * Read: Sedgewick and Wayne, Sec 2.3
+* link:.html[Assignment 10]: *Due Dec 1st*
 * link:jam4Guide.html[Jam 4 Guide]
 * link:notes-alinen/notes-nov14.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov14.html[Lecture Notes and Resources (Poliak)] 
@@ -161,6 +162,7 @@
 |*Data structures: List and Dictionary* anchor:week13[]
 
 * Read: Sedgewick and Wayne, Sec 4.4
+* link:.html[Assignment 11]: *Due Dec 8*
 * link:notes-alinen/notes-nov28.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov28.html[Lecture Notes and Resources (Poliak)] 
 * Lab activity: Code Jam 06 Practice

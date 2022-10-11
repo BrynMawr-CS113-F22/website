@@ -1,6 +1,6 @@
 include::header.adoc[]
 
-:title: CS113 Lab 9: Recursion excursion
+:title: CS113 Lab 9: Sorting
 :Author Initials: ASN
 :labnum: 08
 
@@ -10,136 +10,286 @@ include::header.adoc[]
 
 *Goals*
 
-* Practice writing recursive functions
+* Read data from a file
+* Use lists and classes to store data
+* Use search and sort to work with a real-life data set
 
-= Recursive functions
+NOTE: You are given basecode and data for this assignment. Check your dropbox to get started!
 
-In the file, `Recursion.java`, write each of the following functions
-*recursively*. You are given link:Recursion.java[basecode] containing
-functions stubs along with a `main` for testing. You can download the 
-link:Recursion.java[basecode] here or use the file in Dropbox.
+= Restaurant dataset
 
-* link:#q1[even numbers]
-* link:#q3[reverse a string]
-* link:#q4[blastoff]
-* link:#q5[get integer divisible by 3 ]
-* link:#q6[xerox]
-* link:#q7[raise to power]
-* link:#q8[is palindrome?]
-* link:#q12[count in string]
-//* link:#q1[sum a list]
-//* link:#q2[max of a list]
-//* link:#q9[is sorted?]
-//* link:#q10[in list? ]
-//* link:#q11[coin flips ]
+For this assignment, we will be working with data from a real life
+link:https://www.yelp.com/dataset[dataset] maintained by 
+link:https://www.yelp.com[Yelp]. Yelp provides information and reviews for a
+wide range of businesses. We will look at a subset containing only
+restaurants, bars, and cafes.
 
-NOTE: You must not modify the function parameters and return types for the given functions!
+The dataset is available as a CSV file (CSV stands for "comma separated values"). 
+Each line of the file contains information for a single restaurant. 
+The restaurants are listed in the file in *alphabetical order by name*.
 
-. even numbers anchor:q1[]
-+
-Function `reven(int n)` should recursively sum the even numbers starting at 2 and ending at n. 
-For example, `reven(10)` should return 2+4+6+8+10 = 30. 
-+
-//1) sum a list anchor:q1[]
-//Function should recursively sum all items in a given list and return the sum.
-//For example: the list `{1,2,3,4,5}` should return 15, and an empty list should
-//return 0. 
-+
-//2) max of a list anchor:q2[]
-//Function should recursively find the largest item in the list and return
-//it. For example: the list `{5,20,-4,18}` has max of 20.
-+
-. reverse a string anchor:q3[]
-+
-Function `rrevStr(String word)` should return the reverse of a given string.
-For example: the reverse of `"hello"` is `"olleh"`.
-+
-. blastoff anchor:q4[]
-+
-Function `rblastoff(int n)`should count down (print one number per line) from the given
-start number to 1, then print "blastoff!".
-For example, `rblastoff(10)` should count down from 10 to 1, then print
-"blastoff!".
-+
-. get integer divisible by 3 anchor:q5[]
-+
-Function (`rgetMod()`) asks the user to enter an integer that is divisible
-by 3. Assume the user will enter an integer. If the given integer is not divisible 
-by 3 (Hint: use `%` to check), the function should recursively ask the user for 
-another integer. This function should return the valid integer. 
-Below is console output from running `rgetMod`.
-+
-[source,subs=quotes]
-----
-Enter a number: *4*
-Not divisible by 3!
-Enter a number: *6*
-----
-+
-NOTE: `rgetMod` should return the user's number! 
-+
-. xerox anchor:q6[]
-+
-Function (`rxerox(String phrase,int n)`) should generate and
-return a String containing `n` copies of the item.
-For example, `rxerox("paper", 4)` should return `"paperpaperpaperpaper"`,
-and `rxerox("2", 10)` should return `"2222222222"`.
-+
-. raise to power anchor:q7[]
-+
-Function `rraise(int n, int m)` returns `n` raised to the mth power.
-For example, calling `rraise(6,2)` returns 36.
-+
-. is palindrome? anchor:q8[]
-+
-Function `risPalindrome(String text)` returns `true` if given text is a palindrome
-(same forwards and backwards) and `false` otherwise. For example, `risPalindrome("HANNAH")`
-should return `true`.
-+
-//9) is sorted?           anchor:q9[]
-//Function `risSorted(L)` returns `true` if the given list is in-order and `false` otherwise.
-//For example, the list `{1,2,3,4,5}` should return `true`.
-+
-//10) in list? anchor:q10[]
-//Function `rinList(x,L)` returns `true` if `x` is in the list `L`.
-//For example, `rinList` should return `true` if x is 3 and the list is 
-//`{-1,2,4,3,6}`. 
-+
-//11) coin flips anchor:q11[]
-//Function `rcoinFlip(n)` flips a coin `n` times, and returns the total
-//number of Heads. For example, `rcoinFlip(100)` might return 50 (or 49, or
-//51, etc). (Hint: to toss a coin, compute a random int which is either 0 or 1).
-+
-. count in String  anchor:q12[]
-+
-Function `rcount(char x,String S)` returns how many times `x` is in the String `S`.
-For example, `rcount("a", "aardvark")` should return 3.
+How have two datasets to work with in this assignment. They can be found in your dropbox.
 
-= Testing your functions
+* restaurants.csv
+* restaurants-small.csv
 
-You are given test code in `main`. Functions that return a value are tested using the 
-`test` function. This function throws an exception if the function returns an incorrect value. 
-For example, suppose there is a bug in our function `rrevStr`, running gives this error
+Below is an example line. 
 
 [source]
 ----
-java.lang.Exception: Test Failed: yolleh != olleh
-        at Recursion.test(Recursion.java:118)
-        at Recursion.main(Recursion.java:133)
+1 Pot,Calgary,AB,31,3.500000,Buffets; Chinese; Hot Pot; Restaurants; Dim Sum; Asian Fusion; Fondue
 ----
 
-The above error shows us that our function returned "yolleh" but should have 
-returned the value "olleh". We can also see that the function we need to fix 
-is called on line 133. 
+Each line contains the following information.
 
-We encourage you to add your own tests! 
+* Restaurant name ("1 Pot")
+* City where restaurant is located (Calgary) 
+* State/Provence where restaurant is located (AB) 
+* Number of reviews (31)
+* Average review (3.5)
+* Categories for the restaurant (Buffets; Chinese; Hot Pot; Restaurants; Dim Sum; Asian Fusion; Fondue
+) Categories are separated with a `;`  
+
+:sectnums:
+
+= Restaurant class 
+
+Implement a class, `Restaurant`, in the file `Restaurant.java`. This class should hold the data 
+we read in from our CSV files. This class should also have accessors for each instance variable. 
+Test your class in a `main` function defined in `Restaurant.java`.
+
+*Data*
+
+* Restaurant Name (String)
+* City (String)
+* State (String)
+* Average stars (double)
+* Number of reviews (int)
+* categories (array of String)
+
+*Methods*
+
+* Constructor. This function should initialize the data inside `Restaurant`
+* Accessors for the restaurant name, city, state, review count, average review, and categories
+** `public String getName()`
+** `public String getCity()`
+** `public String getState()`
+** `public int getReviewCount()`
+** `public double getStars()`
+** `public String[] getCategories()`
+
+Below is example output for a `main` which tests Restaurant. 
+
+[source,subs="quotes"]
+----
+$ *java Restaurant*
+           Name: Test
+           City: Philadelphia,PA
+        Reviews: 10
+          Stars: 3.5
+     Categories: [BBQ, Cafe]
+----
+
+= Restaurant utilities
+
+Implement a class, `RestaurantUtil`, that implements two static functions for working 
+with Restaurants.
+
+== Load
+
+In the file, `RestaurantUtil.java`, write a function, `Load`, that reads a file containing restaurant information into an array.
+
+This function should adhere to the following specification.
+
+[source]
+----
+// Function: Load
+// Read the restaurant information in filename and return an array of restaurants
+// Input: filename (String), the file to read. Should be a CSV of restaurants
+// Returns Restaurant[] (array of Restaurant)
+public static void Restaurant[] Load(String filename)
+----
+
+Hints and recommendations:
+
+* Use the class `In`, defined in java-introcs, to load the file, e.g. `In file = new In(filename)`
+* Read in all the lines of the file at once using the function `String[] lines = file.readAllLines()`
+* Use the function, `split`, to split a string based on a character. For example `String[] items = current.split(",")` would split a line into an array of `String` based on commas.
+* Initialize an array of restaurants based on the number of lines
+* For each line, create a Restaurant object and save it in the array
+
+== Print
+
+In the file, `RestaurantUtil.java`, write a function, `Print`, that prints the restaurants in an array.
+You may format the display how you wish, but the output should be clean and easy to read.
+
+This function should adhere to the following specification.
+
+[source]
+----
+// Function: Print
+// Print the first `maxToShow` restaurants in the array restaurants
+// Input: restaurants (Restaurant[]), an array containing restaurants
+// Input: maxToShow (int), the number of items to show
+// Returns none
+public static void Print(Restaurant[] restaurants, int maxToShow) 
+----
+
+== Test
+
+In the file `RestaurantUtil.java`, test `Load` and `Print` in main. 
+
+* Load the file `restaurants-small.csv`
+* Call Print with maxToShow = 3
+* Call Print with maxToShow = 100
+
+Below is sample output
+
+[source,subs="quotes"]
+----
+$ *java-introcs RestaurantUtil*
+
+                              Restaurant                    Location    Reviews Stars
+                              ----------                    --------    ------- -----
+                                   1 Pot                 Calgary, AB       31   3.5
+                                    BRGR              Pittsburgh, PA      442   3.5
+                             Brown Derby               Cleveland, OH       52   3.0
+
+Showing 3 out of 12 restaurants
+
+                              Restaurant                    Location    Reviews Stars
+                              ----------                    --------    ------- -----
+                                   1 Pot                 Calgary, AB       31   3.5
+                                    BRGR              Pittsburgh, PA      442   3.5
+                             Brown Derby               Cleveland, OH       52   3.0
+                                 Eureka!               Las Vegas, NV      231   4.5
+                                 Faberge                Montreal, QC      347   4.0
+                                  Le Lab                Montreal, QC      230   4.5
+                                Poke Bar               Charlotte, NC       26   4.0
+                                     POP                 Toronto, ON        4   4.5
+                           The Dog House               Cleveland, OH       10   4.0
+                                The Haam                 Toronto, ON       83   4.0
+                            Vitality Tap                 Calgary, AB        7   4.5
+                             Wacky Wings             Mississauga, ON       96   3.0
+
+Showing 12 out of 12 restaurants
+----
+
+= Restaurant App
+
+In the file, `RestaurantApp.java`, implement an application that lets users search 
+for restaurant information from our dataset. Your application should have three 
+features:
+
+* Searching for a restaurant by name
+* Summarizing the restaurants in a given city
+* Searching for restaurants that fit a given category
+
+Below is sample output:
+
+* link:logs/yelp-name-search.txt[Searching by restaurant name.]
+* link:logs/yelp-city-search.txt[Summarizing city restaurants.]
+* link:logs/yelp-keyword-category-search.txt[Searching by category.]
+
+General hint and requirements:
+
+* Your program should not crash on bad input
+* Your program should have an option to Quit 
+* We recommend you implement each feature in its own function. 
+* We recommend you load the data set and implement your main application loop in `main`. 
+
+Below is a possible algorithm for your application's `main`
+
+[source]
+----
+dataset = Load("restaurant.csv")
+while !timeToQuit
+    show the options to the user
+    ask the user for their choice
+    if choice == 1
+       doRestaurantNameLookup(dataset)
+    else if choice == 2
+       doCityStats(dataset)
+    else if choice == 3
+       doSearchByCategory(dataset)
+----
+
+== Search names
+
+Implement a feature which allows the user to search by name. 
+
+link:logs/yelp-name-search.txt[Click here to see examples of running this feature.]
+
+Features:
+
+* Ask the user for the name to search for
+* The search should be case *insensitive*. Hint: Use `toLowerCase()` when comparing strings.
+* Because the names are alphabetized, use binary search to find a name
+* If a restaurant is found, display all its information in a table. 
+Your output does not need to be identical, but it should be clean and easy to read. 
+* You are not allowed to use any of Python’s built-in search functions.
+
+== City summary
+
+Implement a feature which summarizes the restaurants for a given city. 
+
+link:logs/yelp-city-search.txt[Click here to see an example of running this feature.]
+
+Features:
+
+* Ask the user for a city and state to search
+* Prints the number of restaurants in that city
+* Prints the average number of reviews for a restaurant
+* Prints the max number of reviews for a restaurant
+* Prints the min number of reviews for a restaurant
+* Prints the average number of Stars 
+* Outputs the results in a table with aligned columns
+* You may not use built-in min, max, or sum functions!
+
+NOTE: This dataset includes restaurants for Las Vegas, Phoenix, Mississauga,
+Toronto, Montreal, Calgary, Cleveland, Charlotte, Pittsburgh, Scottsdale.
+
+== Search categories
+
+Implement a feature that allows the user to search restaurant categories for a 
+keyword.
+
+link:logs/yelp-keyword-category-search.txt[Click here for examples of searching categories.]
+
+Features/Hints:
+
+* You are given a function `filterByKeyword` that returns an array of restaurants which match the keyword. Study this function to see examples of
+** Doing case-insenstive string comparisons (Hint: use `toLowerCase()`)
+** The keyword can appear anywhere in the list of categories (Hint: use `contains`)
+* Sort the filtered restaurants by number of reviews
+* The program should show the name, location, review count, and stars for each restaurant 
+* You may not use Java's built-in sorting algorithms!
+* ...but you can implement any sorting algorithm you like best!
+
+To implement this feature, you should first get a list of all restaurants that match the keyword.
+Then you should sort this list based on the number of reviews. Then, you should show the top 25 
+results to the user. Below is psuedocode for this feature
+
+[source]
+----
+ask user for the keyword
+Restaurant[] filtered = searchCategoryByKeyword(keyword, dataset)
+if filtered has more than 0 items in it
+   sort filtered by number of reviews (from most reviews to least)
+   Print the top 25 items in filterByKeyword
+else
+   tell user that keyword is not found
+----
 
 = What to hand-in
 
-. The program, `Recursion.java`
+. The programs, `Restaurant.java`, RestaurantUtil.java`, and `RestaurantApp.java`
 . Make sure your programs have a header containing your name, date, and description.
-. No writeup is necessary for this assignment
+. Make sure your program can run from the Dropbox directory. You should include the data files and any supporting files your program needs to run.
+. Make sure your submitted program loads the large file, `restaurants.csv`
+. A brief write-up containing your name, assignment number, and a few sentences about how long you 
+spent on the assignment and any interesting customizations you made. 
 
 == How to hand-in
 
-. Copy your files to your dropbox, into the folder called `A09`. 
+. Copy your files to your dropbox, into the folder called `A08`. 
