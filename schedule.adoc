@@ -114,9 +114,9 @@
 //-----------------------------
 |9
 | Week of October 31st
-|*Object oriented programming: creating objects* anchor:week09[]
+|*Search and sort* anchor:week09[]
 
-* Read: Sedgewick and Wayne, Sec 3.1, 3.2
+* Read: Sedgewick and Wayne, Sec 4.2
 * link:.html[Assignment 8]: *Due Nov 10*
 * link:notes-alinen/notes-oct31.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct31.html[Lecture Notes and Resources (Poliak)] 
@@ -125,10 +125,9 @@
 //-----------------------------
 |10
 |Week of Nov 7th
-|*Search and sort* anchor:week10[]
+|*Search and sort, Runtime analysis* anchor:week10[]
 
 * Read: Sedgewick and Wayne, Sec 4.2
-* Presentations III: Arrays, strings, advanced IO
 * link:.html[Assignment 9]: *Due Nov 17*
 * link:notes-alinen/notes-nov07.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov07.html[Lecture Notes and Resources (Poliak)] 
@@ -137,7 +136,7 @@
 //-----------------------------
 |11
 |Week of Nov 14th
-|*More search and sort; Runtime analysis* anchor:week11[]
+|*Recursion* anchor:week11[]
 
 * Read: Sedgewick and Wayne, Sec 2.3
 * link:.html[Assignment 10]: *Due Dec 1st*
@@ -149,8 +148,9 @@
 //-----------------------------
 |12
 |Week of Nov 21st
-|*Recursion* anchor:week12[]
+|*Data structures: List, Hashmap and Dictionary* anchor:week12[]
 
+* Read: Sedgewick and Wayne, Sec 4.4
 * *NO CLASS THURSDAY, NOV 24th*
 * link:notes-alinen/notes-nov21.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov21.html[Lecture Notes and Resources (Poliak)] 
@@ -159,7 +159,7 @@
 //-----------------------------
 |13
 |Week of Nov 28th
-|*Data structures: List and Dictionary* anchor:week13[]
+|*Data structures: List, Hashmap and Dictionary* anchor:week13[]
 
 * Read: Sedgewick and Wayne, Sec 4.4
 * link:.html[Assignment 11]: *Due Dec 8*
@@ -170,9 +170,8 @@
 //-----------------------------
 |14
 |Week of Dec 5th
-|*Final Thoughts. ArrayList, HashMap and Dictionary* anchor:week14[]
+|*Final Thoughts* anchor:week14[]
 
-* Read: Sedgewick and Wayne, Sec 4.4
 * link:jam5Guide.html[Final exam guide]
 * link:notes-alinen/notes-dec05.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-dec05.html[Lecture Notes and Resources (Poliak)] 
