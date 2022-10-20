@@ -7,4 +7,7 @@ include::header.adoc[]
 
 link:https://brynmawr.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=96d564e8-277a-43ef-8b90-af31014f9f03[Lecture - Monday]
 
+link:https://brynmawr.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3c84defb-4199-46a9-bd2d-af3400f4fe0b[Lecture - Wednesday]
+
+link:https://github.com/BrynMawr-CS113-F22/class-examples-normoyle/tree/main/week08-oct17[Class Examples]
 
