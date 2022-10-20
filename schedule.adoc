@@ -98,6 +98,7 @@
 * link:.html[Assignment 6]: *Due October 27*
 * link:notes-alinen/notes-oct17.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct17.html[Lecture Notes and Resources (Poliak)] 
+* link:slides-azpoliak/lecture11_20_06.pdf[Lecture 11 (Poliak)] 
 * Lab activity: Code Jam 03 Practice
 
 //-----------------------------
