@@ -95,7 +95,7 @@
 |*Object oriented programming* anchor:week07[]
 
 * Read: Sedgewick and Wayne, Sec 3.1, 3.2
-* link:ass06.html[Assignment 6]: *Due October 27*
+* link:asst06.html[Assignment 6]: *Due October 27*
 * link:notes-alinen/notes-oct17.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct17.html[Lecture Notes and Resources (Poliak)] 
 * link:slides-azpoliak/lecture11_10_20.pdf[Lecture 11 (Poliak)] 
