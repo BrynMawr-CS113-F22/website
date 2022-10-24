@@ -135,7 +135,7 @@ your original ideas and features in your readme. Below are ideas
 
 = What to hand-in
 
-. The program, `Minesweeper.java`, and if applicable, `MyMinesweeper.java`
+. The programs, `Board.java` and `Minesweeper.java`, and if applicable, `MyMinesweeper.java`
 . Make sure your program has a header containing your name, date, and purpose of the program
 . A brief write-up containing your name, assignment number, and a few sentences about how long you 
 spent on the assignment and any interesting bugs you solved. Be sure to highlight any 
