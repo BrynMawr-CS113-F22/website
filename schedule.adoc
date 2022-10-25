@@ -110,7 +110,7 @@
 * link:.html[Assignment 7]: *Due Nov 3*
 * link:notes-alinen/notes-oct24.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct24.html[Lecture Notes and Resources (Poliak)] 
-* link:slides-azpoliak/lecture12_10_25[Lecture 12 (Poliak)] 
+* link:slides-azpoliak/lecture12_10_25.pdf[Lecture 12 (Poliak)] 
 * Lab activity: Code jam 03, link:jam3Guide.html[Jam 3 Study Guide]
 
 //-----------------------------
