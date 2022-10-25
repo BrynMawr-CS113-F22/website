@@ -64,7 +64,7 @@ Requirements/Hints:
 
 * You must use command-line arguments
 * You should use a 2D array to store the board. We recommend using a 2D array of integers, where each cell contains the count of neighboring bombs. If the cell contains a bomb, you can use a special value, such as -1, to denote it.
-* To decide whether a cell includes a bomb, use `Math.random` and test whether the value is less than the given probability.
+* To decide whether a cell includes a bomb, use `Math.random` and test whether the value is less than the given probability, e.g. for each cell, generate a random number. if the the value is less than `p`, place a bomb in that cell.
 
 We recommend that you organize your code to use functions for generating and displaying the board. 
 You will re-use these functions in the next question.
