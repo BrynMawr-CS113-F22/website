@@ -107,7 +107,7 @@
 |*Object oriented programming: using objects* anchor:week08[]
 
 * Read: Sedgewick and Wayne, Sec 3.1, 3.2
-* link:.html[Assignment 7]: *Due Nov 3*
+* link:asst07.html[Assignment 7]: *Due Nov 3*
 * link:notes-alinen/notes-oct24.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct24.html[Lecture Notes and Resources (Poliak)] 
 * link:slides-azpoliak/lecture12_10_25.pdf[Lecture 12 (Poliak)] link:slides-azpoliak/lecture13_10_27.pdf[Lecture 13 (Poliak)] 
