@@ -1,9 +1,9 @@
 include::header.adoc[]
 
-:title: Assignment 6: Be classy
-:Author Initials: ASN
+:title: Assignment 7: Be classy
+:Author Initials: ASN, AP
 :Date:    2020-02-07
-:Revision: 0.1
+:Revision: 0.2
 
 = {title}
 
@@ -24,6 +24,10 @@ individual clips, stored in a WAV file. The `SoundLibrary` class will manage
 a list of `Sound` objects. The full program, `SoundBoard`, will 
 present the user with a list of sounds and allow them to play them.
 
+**Note:** This assignment relies on the java-introcs library. That means you will compile 
+and run your code using the `java-introcs` command. If you do not have java-introcs
+working on your computer, please use the lab machines.
+
 :stem: latexmath
 
 = Sound
@@ -34,10 +38,11 @@ the sound.
 
 *Requirements*
 
-* `Sound` contains the following data (all data should be private): 
+* `Sound` contains the following data (**remember, all instance variables should be private**):
 ** mName of the sound (String)
 ** mDuration of the sound in seconds (double)
 ** mFilename of the WAV file (String)
+
 
 * `Sound` contains the following methods:
 ** Constructor `Sound(String name, double duration, String fileName)`, which initializes the object with the given information.
@@ -70,8 +75,8 @@ Write a program, `SoundLibrary.java`, which stores a list of songs
 
 *Features*
 
-* `SoundLibrary` contains the following data (all data should be private): 
-** array of Sounds (Sound[])
+* `SoundLibrary` contains the following data (**remember, all instance variables should be private**):
+** array of Sounds (`Sound[]`)
 
 * SoundLibrary contains the following methods:
 ** Constructor `SoundLibrary(String filename)`, initializes the object using a list of songs stored in a file
@@ -125,6 +130,8 @@ Your program should support the following commands:
 * *<id>*: Play the song with the given id. Prints an error if the id is invalid. 
 
 If the user enters an invalid command, your program should print an error.
+
+*Note:* it is recommend to use your `Menu.java` from A05 and reuse the `menu()` function.
 
 [source,subs=quotes]
 ----
@@ -211,4 +218,4 @@ spent on the assignment and any interesting bugs you solved.
 
 == How to hand-in
 
-. Copy your files to your dropbox, into the folder called `{labnum}`.
+. Copy your files to your dropbox, into the folder called `A07`.

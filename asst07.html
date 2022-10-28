@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<title>Assignment 6: Be classy</title>
+<title>Assignment 7: Be classy</title>
 <link rel="stylesheet" href="style/cs.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -14,7 +14,7 @@
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_assignment_6_be_classy">Assignment 6: Be classy</a></li>
+<li><a href="#_assignment_7_be_classy">Assignment 7: Be classy</a></li>
 <li><a href="#_sound">Sound</a></li>
 <li><a href="#_soundlibrary">SoundLibrary</a></li>
 <li><a href="#_soundboard">SoundBoard</a></li>
@@ -28,7 +28,7 @@
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_assignment_6_be_classy">Assignment 6: Be classy</h2>
+<h2 id="_assignment_7_be_classy">Assignment 7: Be classy</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Due Thursday, November 3, before midnight</strong></p>
@@ -60,6 +60,11 @@ individual clips, stored in a WAV file. The <code>SoundLibrary</code> class will
 a list of <code>Sound</code> objects. The full program, <code>SoundBoard</code>, will
 present the user with a list of sounds and allow them to play them.</p>
 </div>
+<div class="paragraph">
+<p><strong>Note:</strong> This assignment relies on the java-introcs library. That means you will compile
+and run your code using the <code>java-introcs</code> command. If you do not have java-introcs
+working on your computer, please use the lab machines.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -76,7 +81,7 @@ the sound.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>Sound</code> contains the following data (all data should be private):</p>
+<p><code>Sound</code> contains the following data (<strong>remember, all instance variables should be private</strong>):</p>
 <div class="ulist">
 <ul>
 <li>
@@ -146,11 +151,11 @@ Sound: cricket (0.50s)</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><code>SoundLibrary</code> contains the following data (all data should be private):</p>
+<p><code>SoundLibrary</code> contains the following data (<strong>remember, all instance variables should be private</strong>):</p>
 <div class="ulist">
 <ul>
 <li>
-<p>array of Sounds (Sound[])</p>
+<p>array of Sounds (<code>Sound[]</code>)</p>
 </li>
 </ul>
 </div>
@@ -255,6 +260,9 @@ This program shows the user a menu of sounds and lets them choose different soun
 <div class="paragraph">
 <p>If the user enters an invalid command, your program should print an error.</p>
 </div>
+<div class="paragraph">
+<p><strong>Note:</strong> it is recommend to use your <code>Menu.java</code> from A05 and reuse the <code>menu()</code> function.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>$ <strong>javac-introcs SoundBoard.java</strong>
@@ -355,7 +363,7 @@ spent on the assignment and any interesting bugs you solved.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Copy your files to your dropbox, into the folder called <code>{labnum}</code>.</p>
+<p>Copy your files to your dropbox, into the folder called <code>A07</code>.</p>
 </li>
 </ol>
 </div>
@@ -365,7 +373,7 @@ spent on the assignment and any interesting bugs you solved.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-10-11 10:49:15 -0400
+Last updated 2022-10-28 10:34:55 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">
