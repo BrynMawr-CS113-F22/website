@@ -13,7 +13,7 @@ include::header.adoc[]
 == Announcements
 
 * You can install Java on your own laptop! link:develEnvSetup.html[See here for instructions].
-* link:asst06.html[Assignment 6] has been posted: *Due October 27th*
+* link:asst07.html[Assignment 7] has been posted: *Due November 3rd*
 * Current week notes: link:#week08[Week 08]
 * The final exam with be link:https://www.brynmawr.edu/inside/academic-information/registrar/undergraduates/classes-exams/about-final-exams[self-scheduled] during finals week (December 11th - December 16th). link:https://www.brynmawr.edu/sites/default/files/media/documents/2022-10/SS%20Exam%20Schedule.pdf[Click here for the self-scheduled exam times.]
 
