@@ -19,6 +19,8 @@ In this assignment, you will implement a
 link:https://en.wikipedia.org/wiki/Soundboard_(computer_program)[sound
 board], a program for playing short sound clips. 
 
+You can download the data needed for this assignment from this link:https://brynmawr-cs113-f22.github.io/website/data/asst07/asst07.zip[link].
+
 We will use classes to organize our program. The `Sound` class will represent 
 individual clips, stored in a WAV file. The `SoundLibrary` class will manage 
 a list of `Sound` objects. The full program, `SoundBoard`, will 
