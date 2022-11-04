@@ -1,7 +1,7 @@
 include::header.adoc[]
 
-:title: CS113 Lab 8: Searching
-:Author Initials: ASN
+:title: CS113 Assignment 8: Veterinarian Facility - More Classes & Objects
+:Author Initials: AP
 :labnum: 08
 
 = {title}
@@ -10,283 +10,102 @@ include::header.adoc[]
 
 *Goals*
 
-* Read data from a file
+* Working with arrays
+* Subtyping and Subclassing
 * Use lists and classes to store data
-* Use search and sort to work with a real-life data set
+* Linear Search
 
-NOTE: You are given basecode and data for this assignment. Check your dropbox to get started!
+NOTE: You are given basecode for this assignment. Check your `A08` folder on dropbox to get started!
 
-= Restaurant dataset
+_credit: Joanne Selinski_
 
-For this assignment, we will be working with data from a real life
-link:https://www.yelp.com/dataset[dataset] maintained by 
-link:https://www.yelp.com[Yelp]. Yelp provides information and reviews for a
-wide range of businesses. We will look at a subset containing only
-restaurants, bars, and cafes.
+= Overview
 
-The dataset is available as a CSV file (CSV stands for "comma separated values"). 
-Each line of the file contains information for a single restaurant. 
-The restaurants are listed in the file in *alphabetical order by name*.
-
-How have two datasets to work with in this assignment. They can be found in your dropbox.
-
-* restaurants.csv
-* restaurants-small.csv
-
-Below is an example line. 
-
-[source]
-----
-1 Pot,Calgary,AB,31,3.500000,Buffets; Chinese; Hot Pot; Restaurants; Dim Sum; Asian Fusion; Fondue
-----
-
-Each line contains the following information.
-
-* Restaurant name ("1 Pot")
-* City where restaurant is located (Calgary) 
-* State/Provence where restaurant is located (AB) 
-* Number of reviews (31)
-* Average review (3.5)
-* Categories for the restaurant (Buffets; Chinese; Hot Pot; Restaurants; Dim Sum; Asian Fusion; Fondue
-) Categories are separated with a `;`  
+For this assignment, you will create classes to implement a Veterinary Facility. We have specified classes that you must implement to build and support a Veterinary Facility using inheritance (subclassing) and interfaces (subtyping). 
 
 :sectnums:
 
-= Restaurant class 
+= Pet class
+Create a class called `Pet.java` to maintain a Pet record. 
 
-Implement a class, `Restaurant`, in the file `Restaurant.java`. This class should hold the data 
-we read in from our CSV files. This class should also have accessors for each instance variable. 
-Test your class in a `main` function defined in `Restaurant.java`.
+*Data:*
 
-*Data*
+ ** `name (String)` 
+ ** `owner's name (String)`
+ ** `weight (Weight)`
+ ** along with other features necessary to implement the class methods (look at the starter code). 
+ 
+*Methods:*
 
-* Restaurant Name (String)
-* City (String)
-* State (String)
-* Average stars (double)
-* Number of reviews (int)
-* categories (array of String)
+* Constructor. This function should initialize the data inside `Pet`
+* Accessors for the instance variables
+* `equals(Pet otherPet)` - this will override the default Object equals link:https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#equals(java.lang.Object)[method]. Two Pets are equal if their name and their owner's names are the same, ignoring capitalization.
 
-*Methods*
+We will provide a skeleton of the required methods for this class (called `PetStarter.java`), 
+along with documentation to clarify the purpose of each. You will need to determine what data 
+members are necessary to represent a Pet object, and what additional methods might be necessary. 
 
-* Constructor. This function should initialize the data inside `Restaurant`
-* Accessors for the restaurant name, city, state, review count, average review, and categories
-** `public String getName()`
-** `public String getCity()`
-** `public String getState()`
-** `public int getReviewCount()`
-** `public double getStars()`
-** `public String[] getCategories()`
+You are welcome to add other methods to this class in order to support the other features.
 
-Below is example output for a `main` which tests Restaurant. 
+= Cat class
+Create a class called `Cat` that is a subclass of the Pet class.
 
-[source,subs="quotes"]
-----
-$ *java Restaurant*
-           Name: Test
-           City: Philadelphia,PA
-        Reviews: 10
-          Stars: 3.5
-     Categories: [BBQ, Cafe]
-----
+*Data:*
 
-= Restaurant utilities
+ ** `isInsideCat (boolean)` - determine if the cat is an inside cat or if it goes outside sometimes.
+ ** `owner's name (String)`
 
-Implement a class, `RestaurantUtil`, that implements two static functions for working 
-with Restaurants.
+*Methds:*
 
-== Load
+ ** `public void goOutside()` - changes a house cat to an outside cat (once a cat becomes an outside cat it will always be an outside cat.)
 
-In the file, `RestaurantUtil.java`, write a function, `Load`, that reads a file containing restaurant information into an array.
+Override the Pet base class's `visit` method so that each visit includes 1) a $40 teeth cleaning, 2) an extra shot for outside cats.
+Make sure when you override this method that any related data members in the Pet class are being updated correctly. (Hint: start by calling the visit method in the Pet class.) You are writing this class from scratch.
 
-This function should adhere to the following specification.
 
-[source]
-----
-// Function: Load
-// Read the restaurant information in filename and return an array of restaurants
-// Input: filename (String), the file to read. Should be a CSV of restaurants
-// Returns Restaurant[] (array of Restaurant)
-public static void Restaurant[] Load(String filename)
-----
+= Dog class
 
-Hints and recommendations:
+Create a class called `Dog` that is a subclass of the Pet class.
 
-* Use the class `In`, defined in java-introcs, to load the file, e.g. `In file = new In(filename)`
-* Read in all the lines of the file at once using the function `String[] lines = file.readAllLines()`
-* Use the function, `split`, to split a string based on a character. For example `String[] items = current.split(",")` would split a line into an array of `String` based on commas.
-* Initialize an array of restaurants based on the number of lines
-* For each line, create a Restaurant object and save it in the array
+*Data:*
 
-== Print
+  ** `size (String)` - a dog can be `small`, `medium`, or `large` (make sure to pass this information to the constructor).
 
-In the file, `RestaurantUtil.java`, write a function, `Print`, that prints the restaurants in an array.
-You may format the display how you wish, but the output should be clean and easy to read.
+Override the `visit()` method so that every visit includes 1) a nail trimming costing $25 and 2) a surcharge of $5.50 per shot for medium dogs and $12.75 for large dogs. Make sure when you override this method that any related data members from the Pet class are being updated correctly. (Hint: start by calling the visit method in the Pet class.) You are writing this class from scratch.
 
-This function should adhere to the following specification.
+= Vet class
 
-[source]
-----
-// Function: Print
-// Print the first `maxToShow` restaurants in the array restaurants
-// Input: restaurants (Restaurant[]), an array containing restaurants
-// Input: maxToShow (int), the number of items to show
-// Returns none
-public static void Print(Restaurant[] restaurants, int maxToShow) 
-----
+Create a class called `Vet` that implements the `Database` interface.
 
-== Test
+*Data:*
 
-In the file `RestaurantUtil.java`, test `Load` and `Print` in main. 
+  ** `name (String)` - the name of the veterinary office
+  ** `pets (Pet[])` - the collection of pets
 
-* Load the file `restaurants-small.csv`
-* Call Print with maxToShow = 3
-* Call Print with maxToShow = 100
+We have provided a starter class for you called `VetStarter.java`. 
 
-Below is sample output
+Requirement/Note: the `Vet` class must implement the `add` and `delete` methods that respectively add and delete a 
+pet from the list. Make sure the order of the list stays the same. 
+Before implementing these two functions, it is highly recommend you sketch out what happens in the array
+to the remaining elements when you remove/delete a pet from the array.
+of pets currently in the array. 
 
-[source,subs="quotes"]
-----
-$ *java-introcs RestaurantUtil*
+= Testing 
 
-                              Restaurant                    Location    Reviews Stars
-                              ----------                    --------    ------- -----
-                                   1 Pot                 Calgary, AB       31   3.5
-                                    BRGR              Pittsburgh, PA      442   3.5
-                             Brown Derby               Cleveland, OH       52   3.0
+Each class you implement must include tests that determine that the implementations
+for the class are correct. Use the main method in each class to test your implementations.
 
-Showing 3 out of 12 restaurants
-
-                              Restaurant                    Location    Reviews Stars
-                              ----------                    --------    ------- -----
-                                   1 Pot                 Calgary, AB       31   3.5
-                                    BRGR              Pittsburgh, PA      442   3.5
-                             Brown Derby               Cleveland, OH       52   3.0
-                                 Eureka!               Las Vegas, NV      231   4.5
-                                 Faberge                Montreal, QC      347   4.0
-                                  Le Lab                Montreal, QC      230   4.5
-                                Poke Bar               Charlotte, NC       26   4.0
-                                     POP                 Toronto, ON        4   4.5
-                           The Dog House               Cleveland, OH       10   4.0
-                                The Haam                 Toronto, ON       83   4.0
-                            Vitality Tap                 Calgary, AB        7   4.5
-                             Wacky Wings             Mississauga, ON       96   3.0
-
-Showing 12 out of 12 restaurants
-----
-
-= Restaurant App
-
-In the file, `RestaurantApp.java`, implement an application that lets users search 
-for restaurant information from our dataset. Your application should have three 
-features:
-
-* Searching for a restaurant by name
-* Summarizing the restaurants in a given city
-* Searching for restaurants that fit a given category
-
-Below is sample output:
-
-* link:logs/yelp-name-search.txt[Searching by restaurant name.]
-* link:logs/yelp-city-search.txt[Summarizing city restaurants.]
-* link:logs/yelp-keyword-category-search.txt[Searching by category.]
-
-General hint and requirements:
-
-* Your program should not crash on bad input
-* Your program should have an option to Quit 
-* We recommend you implement each feature in its own function. 
-* We recommend you load the data set and implement your main application loop in `main`. 
-
-Below is a possible algorithm for your application's `main`
-
-[source]
-----
-dataset = Load("restaurant.csv")
-while !timeToQuit
-    show the options to the user
-    ask the user for their choice
-    if choice == 1
-       doRestaurantNameLookup(dataset)
-    else if choice == 2
-       doCityStats(dataset)
-    else if choice == 3
-       doSearchByCategory(dataset)
-----
-
-== Search names
-
-Implement a feature which allows the user to search by name. 
-
-link:logs/yelp-name-search.txt[Click here to see examples of running this feature.]
-
-Features:
-
-* Ask the user for the name to search for
-* The search should be case *insensitive*. Hint: Use `toLowerCase()` when comparing strings.
-* Because the names are alphabetized, use binary search to find a name
-* If a restaurant is found, display all its information in a table. 
-Your output does not need to be identical, but it should be clean and easy to read. 
-* You are not allowed to use any of Python’s built-in search functions.
-
-== City summary
-
-Implement a feature which summarizes the restaurants for a given city. 
-
-link:logs/yelp-city-search.txt[Click here to see an example of running this feature.]
-
-Features:
-
-* Ask the user for a city and state to search
-* Prints the number of restaurants in that city
-* Prints the average number of reviews for a restaurant
-* Prints the max number of reviews for a restaurant
-* Prints the min number of reviews for a restaurant
-* Prints the average number of Stars 
-* Outputs the results in a table with aligned columns
-* You may not use built-in min, max, or sum functions!
-
-NOTE: This dataset includes restaurants for Las Vegas, Phoenix, Mississauga,
-Toronto, Montreal, Calgary, Cleveland, Charlotte, Pittsburgh, Scottsdale.
-
-== Search categories
-
-Implement a feature that allows the user to search restaurant categories for a 
-keyword.
-
-link:logs/yelp-keyword-category-search.txt[Click here for examples of searching categories.]
-
-Features/Hints:
-
-* You are given a function `filterByKeyword` that returns an array of restaurants which match the keyword. Study this function to see examples of
-** Doing case-insenstive string comparisons (Hint: use `toLowerCase()`)
-** The keyword can appear anywhere in the list of categories (Hint: use `contains`)
-* Sort the filtered restaurants by number of reviews
-* The program should show the name, location, review count, and stars for each restaurant 
-* You may not use Java's built-in sorting algorithms!
-* ...but you can implement any sorting algorithm you like best!
-
-To implement this feature, you should first get a list of all restaurants that match the keyword.
-Then you should sort this list based on the number of reviews. Then, you should show the top 25 
-results to the user. Below is psuedocode for this feature
-
-[source]
-----
-ask user for the keyword
-Restaurant[] filtered = searchCategoryByKeyword(keyword, dataset)
-if filtered has more than 0 items in it
-   sort filtered by number of reviews (from most reviews to least)
-   Print the top 25 items in filterByKeyword
-else
-   tell user that keyword is not found
-----
+We have also provided a file called `Asst08Driver.java` that will test your code.
+You must not change this program or the provided interface (`Database.java`) in any way, 
 
 = What to hand-in
 
-. The programs, `Restaurant.java`, RestaurantUtil.java`, and `RestaurantApp.java`
+. The programs, `Pet.java`, `Dog.java`, `Cat.java`, `Vet.java`
+. The programs, `Asst08Driver.java`, `Database.java`
 . Make sure your programs have a header containing your name, date, and description.
+. Make sure any new method you write includes a javadoc.
+. Make sure you use the correct access modifiers for instance variables and methods (all data members should be private, unless they need to be protected). 
 . Make sure your program can run from the Dropbox directory. You should include the data files and any supporting files your program needs to run.
-. Make sure your submitted program loads the large file, `restaurants.csv`
 . A brief write-up containing your name, assignment number, and a few sentences about how long you 
 spent on the assignment and any interesting customizations you made. 
 

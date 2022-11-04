@@ -119,7 +119,7 @@
 |*Search and sort* anchor:week09[]
 
 * Read: Sedgewick and Wayne, Sec 4.2
-* link:.html[Assignment 8]: *Due Nov 10*
+* link:asst08.html[Assignment 8]: *Due Nov 10*
 * link:notes-alinen/notes-oct31.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-oct31.html[Lecture Notes and Resources (Poliak)] 
 * link:slides-azpoliak/lecture14_11_01.pdf[Lecture 14 (Poliak)] link:slides-azpoliak/lecture15_11_03.pdf[Lecture 15 (Poliak)]
