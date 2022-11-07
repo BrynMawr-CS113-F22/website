@@ -4,3 +4,5 @@ include::header.adoc[]
 :Revision: 0.1
 
 = {title}
+
+link:https://brynmawr.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e70de830-50f9-4764-9890-af460176f1d7[Lecture - Monday - 11/7/2022]
