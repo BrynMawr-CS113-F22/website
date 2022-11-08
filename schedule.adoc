@@ -134,6 +134,7 @@
 * link:.html[Assignment 9]: *Due Nov 17*
 * link:notes-alinen/notes-nov07.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov07.html[Lecture Notes and Resources (Poliak)] 
+* link:slides-azpoliak/lecture16_11_08.pdf[Lecture 16 (Poliak)]
 * Lab activity: Code jam 04, link:jam4Guide.html[Jam 4 Study Guide]
 
 //-----------------------------
