@@ -6,3 +6,5 @@ include::header.adoc[]
 = {title}
 
 link:https://brynmawr.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e70de830-50f9-4764-9890-af460176f1d7[Lecture - Monday - 11/7/2022]
+
+link:https://brynmawr.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=af695191-6f1f-470c-a14f-af4900e2fc27[Lecture - Wednesday - 11/9/2022]
