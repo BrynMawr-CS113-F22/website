@@ -131,7 +131,7 @@
 |*Search and sort, Runtime analysis* anchor:week10[]
 
 * Read: Sedgewick and Wayne, Sec 4.2
-* link:.html[Assignment 9]: *Due Nov 17*
+* link:asst09.html[Assignment 9]: *Due Nov 23*
 * link:notes-alinen/notes-nov07.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov07.html[Lecture Notes and Resources (Poliak)] 
 * link:slides-azpoliak/lecture16_11_08.pdf[Lecture 16 (Poliak)] link:slides-azpoliak/lecture17_11_10.pdf[Lecture 17 (Poliak)]

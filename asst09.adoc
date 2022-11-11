@@ -6,7 +6,7 @@ include::header.adoc[]
 
 = {title}
 
-*Due Thursday, November 17, before midnight*
+*Due [.line-through]#Thursday, November 17# Wednesday November 23rd, before midnight*
 
 *Goals*
 
@@ -283,7 +283,7 @@ else
 
 = What to hand-in
 
-. The programs, `Restaurant.java`, RestaurantUtil.java`, and `RestaurantApp.java`
+. The programs, `Restaurant.java`, `RestaurantUtil.java`, and `RestaurantApp.java`
 . Make sure your programs have a header containing your name, date, and description.
 . Make sure your program can run from the Dropbox directory. You should include the data files and any supporting files your program needs to run.
 . Make sure your submitted program loads the large file, `restaurants.csv`
