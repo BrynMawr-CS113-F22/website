@@ -28,6 +28,15 @@
 <div class="ulist">
 <ul>
 <li>
+<p>Stack diagram practice with classes</p>
+</li>
+<li>
+<p>Selection sort and bubble sort</p>
+</li>
+<li>
+<p>Swapping elements in an array</p>
+</li>
+<li>
 <p>Runtime analysis/big-O notation</p>
 </li>
 <li>
@@ -42,9 +51,6 @@
 <li>
 <p>O(N<sup>2</sup>)&#8201;&#8212;&#8201;quadratic (ex: bubble sort)</p>
 </li>
-<li>
-<p>Recursion</p>
-</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -56,6 +62,67 @@ to give feedback on your responses.</p>
 <div class="sect1">
 <h2 id="_practice_questions">Practice questions</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>0) In this question, we will visualize the execution of the following program.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>class Bounds {
+   private int min;
+   private int max;
+
+   public Bounds(int min, int max) {
+      this.min = min;
+      this.max = max;
+      // A) Draw the stack diagram here
+   }
+
+   public void extend(Bounds other) {
+      if (other.min &lt; this.min) {
+         this.min = other.min;
+      }
+      if (other.max &gt; this.max) {
+         this.max = other.max;
+      }
+      // C) Draw the stack diagram here
+   }
+
+   public String toString() {
+      return "[" + this.min + ", " + this.max + "]";
+      // B) Draw the stack diagram here
+   }
+
+   public static Bounds Add(Bounds a, Bounds b) {
+      int min = a.min + b.min;
+      int max = a.max + b.max;
+      // D) Draw the stack diagram here
+      return new Bounds(min, max);
+   }
+
+   public static void main(String[] args) {
+      Bounds b1 = new Bounds(-4, 7);
+      Bounds b2 = new Bounds(2, 9);
+      System.out.println("Bounds 1: " + b1);
+      System.out.println("Bounds 2: " + b2);
+
+      b1.extend(b2);
+      System.out.println("Extended: " + b1);
+
+      Bounds c = Bounds.Add(b1, b2);
+      System.out.println("Add: " + c);
+      // E) Draw the function stack here
+   }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A) Draw the stack diagram for the <strong>first</strong> call to the Bounds constructor in <code>main</code>
+B) Draw the stack diagram for the <strong>first</strong> call to the <code>toString()</code> in <code>main</code>
+C) Draw the stack diagram for the call to <code>extend()</code> in <code>main</code>
+D) Draw the stack diagram for the call to <code>Add()</code> in <code>main</code>
+E) Draw the stack diagram at the end of <code>main</code>
+F) What is the output of the above program?</p>
+</div>
 <div class="paragraph">
 <p>1) How many <strong>steps</strong> are required for each of the following? Classify each one
 as either O(N), O(N<sup>2</sup>), O(log<sub>2</sub> N), O(N log<sub>2</sub> N), or O(1).</p>
@@ -100,12 +167,101 @@ for (int i = 0; i &lt; N; i++)
 }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>2) Which algorithm requires time directly proportional to the size of the input list?</p>
+</div>
+<div class="paragraph">
+<p>+
+    - linear search
+    - binary search
+    - bubble sort
+    - selection sort</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="paragraph">
+<p>3) Consider the following function, <code>oneLoop(int[] L)</code>, which is similar to
+the inner loop from bubble sort:</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">void oneLoop(int[] L)
+{
+   for (int j = 0; j &lt; L.length()-1; j++)
+   {
+      if (L[j] &gt; L[j+1])
+      {
+         int tmp = L[j+1];
+         L[j+1] = L[j];
+         L[j] = tmp;
+      }
+   }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>+
+Suppose we run <code>oneLoop</code> on the list <code>L={17,4,19,3,11,8}</code>. What are
+the new contents of <code>L</code>?</p>
+</div>
+<div class="paragraph">
+<p>4) Show how the list <code>L={17,4,19,3,11,8}</code> would be changed
+after selection sort does its first 3 swaps:</p>
+</div>
+<div class="paragraph">
+<p>5) Write code to load and parse a file with format [Name,Score,PowerUp,Role]</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Ressie Rask  ,3224,Mushroom,Healer
+Angelique Aust  ,1190,Mushroom,Dps
+Tiny Teamer  ,3722,Mushroom,Tank
+Michell Mancino  ,316,Tea kettle,Dps
+Amos Ackman  ,4989,Fireball,Tank
+Liz Labat  ,714,Mushroom,Healer
+Lawerence Lalonde  ,3921,Mushroom,Dps
+Madelyn Mcjunkin  ,1243,Fireball,Tank
+Echo Eckhardt  ,4831,Mushroom,Dps</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>6) True/False questions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Linear search requires a number of steps proportional to the size of the list being searched (T/F)</p>
+</li>
+<li>
+<p>Binary search is an O(N<sup>2</sup>) algorithm (T/F)</p>
+</li>
+<li>
+<p>The number of times N can be divided by 2 (before reaching 1) is
+log<sub>2</sub> N (T/F)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>7) How many steps would it take to do binary search on a list of size 1
+million, when the item you are searching for is NOT in the list?</p>
+</div>
+<div class="paragraph">
+<p>8) How many steps would it take to do linear search on a list of size 1
+million, when the item you are searching for is NOT in the list?</p>
+</div>
+<div class="paragraph">
+<p>9) Binary search is much faster than linear search, so why don&#8217;t we use it for every search problem?</p>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-27 10:36:51 -0400
+Last updated 2022-11-14 09:47:16 -0500
 </div>
 </div>
 </body>

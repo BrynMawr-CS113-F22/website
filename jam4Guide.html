@@ -49,12 +49,6 @@
 <li>
 <p>Linear and binary search</p>
 </li>
-<li>
-<p>Selection sort and bubble sort</p>
-</li>
-<li>
-<p>Swapping elements in an array</p>
-</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -392,50 +386,6 @@ phrases "elephant" and "sour patch kids".</p>
 </div>
 </div>
 <div class="paragraph">
-<p>14) Write code to load and parse a file with format [Name,Score,PowerUp,Role]</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Ressie Rask  ,3224,Mushroom,Healer
-Angelique Aust  ,1190,Mushroom,Dps
-Tiny Teamer  ,3722,Mushroom,Tank
-Michell Mancino  ,316,Tea kettle,Dps
-Amos Ackman  ,4989,Fireball,Tank
-Liz Labat  ,714,Mushroom,Healer
-Lawerence Lalonde  ,3921,Mushroom,Dps
-Madelyn Mcjunkin  ,1243,Fireball,Tank
-Echo Eckhardt  ,4831,Mushroom,Dps</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>15) True/False questions:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Linear search requires a number of steps proportional to the size of the list being searched (T/F)</p>
-</li>
-<li>
-<p>Binary search is an O(N<sup>2</sup>) algorithm (T/F)</p>
-</li>
-<li>
-<p>The number of times N can be divided by 2 (before reaching 1) is
-log<sub>2</sub> N (T/F)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>16) How many steps would it take to do binary search on a list of size 1
-million, when the item you are searching for is NOT in the list?</p>
-</div>
-<div class="paragraph">
-<p>17) How many steps would it take to do linear search on a list of size 1
-million, when the item you are searching for is NOT in the list?</p>
-</div>
-<div class="paragraph">
-<p>18) Binary search is much faster than linear search, so why don&#8217;t we use it for every search problem?</p>
-</div>
-<div class="paragraph">
 <p>19) For each iteration of the loop in <code>binarySearch(int x, int[] L)</code>, show the
 <strong>index</strong> values for <code>low</code>, <code>high</code>, and <code>mid</code>, and the value stored at
 location <code>mid</code>.  What will be returned by this function call?</p>
@@ -487,57 +437,12 @@ int indexOfSmallest(int[] ls) {
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>22) Which algorithm requires time directly proportional to the size of the input list?</p>
-</div>
-<div class="paragraph">
-<p>+
-    - linear search
-    - binary search
-    - bubble sort
-    - selection sort</p>
-</div>
-<div class="paragraph">
-<p>+</p>
-</div>
-<div class="paragraph">
-<p>23) Consider the following function, <code>oneLoop(int[] L)</code>, which is similar to
-the inner loop from bubble sort:</p>
-</div>
-<div class="paragraph">
-<p>+</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">void oneLoop(int[] L)
-{
-   for (int j = 0; j &lt; L.length()-1; j++)
-   {
-      if (L[j] &gt; L[j+1])
-      {
-         int tmp = L[j+1];
-         L[j+1] = L[j];
-         L[j] = tmp;
-      }
-   }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>+
-Suppose we run <code>oneLoop</code> on the list <code>L={17,4,19,3,11,8}</code>. What are
-the new contents of <code>L</code>?</p>
-</div>
-<div class="paragraph">
-<p>24) Show how the list <code>L={17,4,19,3,11,8}</code> would be changed
-after selection sort does its first 3 swaps:</p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-27 10:36:51 -0400
+Last updated 2022-11-14 09:31:28 -0500
 </div>
 </div>
 </body>

@@ -20,8 +20,6 @@ This quiz includes the previous topics from Jams 1, 2 and 3 plus
 ** scope of member variables
 * Reading text files 
 * Linear and binary search
-* Selection sort and bubble sort
-* Swapping elements in an array
 
 Write Java programs to check your answers. Or you can ask a TA or instructor 
 to give feedback on your responses.
@@ -279,35 +277,6 @@ for (int i = 0; i < 2; i++)
 }
 ----
 
-14) Write code to load and parse a file with format [Name,Score,PowerUp,Role]
-[source,java]
-----
-Ressie Rask  ,3224,Mushroom,Healer
-Angelique Aust  ,1190,Mushroom,Dps
-Tiny Teamer  ,3722,Mushroom,Tank
-Michell Mancino  ,316,Tea kettle,Dps
-Amos Ackman  ,4989,Fireball,Tank
-Liz Labat  ,714,Mushroom,Healer
-Lawerence Lalonde  ,3921,Mushroom,Dps
-Madelyn Mcjunkin  ,1243,Fireball,Tank
-Echo Eckhardt  ,4831,Mushroom,Dps
-----
-
-15) True/False questions:
-
-- Linear search requires a number of steps proportional to the size of the list being searched (T/F)
-- Binary search is an O(N+++<sup>2</sup>+++) algorithm (T/F)
-- The number of times N can be divided by 2 (before reaching 1) is
-  log+++<sub>2</sub>+++ N (T/F)
-
-16) How many steps would it take to do binary search on a list of size 1
-million, when the item you are searching for is NOT in the list?
-
-17) How many steps would it take to do linear search on a list of size 1
-million, when the item you are searching for is NOT in the list?
-
-18) Binary search is much faster than linear search, so why don't we use it for every search problem?
-
 19) For each iteration of the loop in `binarySearch(int x, int[] L)`, show the
 *index* values for `low`, `high`, and `mid`, and the value stored at
 location `mid`.  What will be returned by this function call?
@@ -356,35 +325,3 @@ int indexOfSmallest(int[] ls) {
 ----
 
 
-22) Which algorithm requires time directly proportional to the size of the input list?
-+
-    - linear search
-    - binary search
-    - bubble sort
-    - selection sort
-+
-
-23) Consider the following function, `oneLoop(int[] L)`, which is similar to 
-the inner loop from bubble sort:
-+
-[source,java]
-----
-void oneLoop(int[] L)
-{
-   for (int j = 0; j < L.length()-1; j++) 
-   {
-      if (L[j] > L[j+1])
-      {
-         int tmp = L[j+1];
-         L[j+1] = L[j];
-         L[j] = tmp;
-      }
-   }
-}
-----
-+
-Suppose we run `oneLoop` on the list `L={17,4,19,3,11,8}`. What are
-the new contents of `L`?
-
-24) Show how the list `L={17,4,19,3,11,8}` would be changed 
-after selection sort does its first 3 swaps:
