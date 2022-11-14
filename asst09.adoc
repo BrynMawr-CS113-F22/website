@@ -227,7 +227,7 @@ Features:
 * Because the names are alphabetized, use binary search to find a name
 * If a restaurant is found, display all its information in a table. 
 Your output does not need to be identical, but it should be clean and easy to read. 
-* You are not allowed to use any of Python’s built-in search functions.
+* You are not allowed to use any of Java’s built-in search functions.
 
 == City summary
 
