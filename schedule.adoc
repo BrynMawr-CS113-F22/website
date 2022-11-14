@@ -128,7 +128,7 @@
 //-----------------------------
 |10
 |Week of Nov 7th
-|*Search and sort, Runtime analysis* anchor:week10[]
+|*Search and sort* anchor:week10[]
 
 * Read: Sedgewick and Wayne, Sec 4.2
 * link:asst09.html[Assignment 9]: *Due Nov 23*
@@ -140,7 +140,7 @@
 //-----------------------------
 |11
 |Week of Nov 14th
-|*Recursion* anchor:week11[]
+|*Runtime analysis, Recursion* anchor:week11[]
 
 * Read: Sedgewick and Wayne, Sec 2.3
 * link:.html[Assignment 10]: *Due Dec 1st*
@@ -152,7 +152,7 @@
 //-----------------------------
 |12
 |Week of Nov 21st
-|*Data structures: List, Hashmap and Dictionary* anchor:week12[]
+|*Recursion, Data structures: ArrayList, Hashmap and Dictionary* anchor:week12[]
 
 * Read: Sedgewick and Wayne, Sec 4.4
 * *NO CLASS THURSDAY, NOV 24th*
@@ -163,7 +163,7 @@
 //-----------------------------
 |13
 |Week of Nov 28th
-|*Data structures: List, Hashmap and Dictionary* anchor:week13[]
+|*Data structures: ArrayList, Hashmap and Dictionary* anchor:week13[]
 
 * Read: Sedgewick and Wayne, Sec 4.4
 * link:.html[Assignment 11]: *Due Dec 8*

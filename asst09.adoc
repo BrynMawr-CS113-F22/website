@@ -258,7 +258,7 @@ link:logs/yelp-keyword-category-search.txt[Click here for examples of searching 
 
 Features/Hints:
 
-* You are given a function `filterByKeyword` that returns an array of restaurants which match the keyword. Study this function to see examples of
+* You are given a function `searchCategoryByKeyword` that returns an array of restaurants which match the keyword. Study this function to see examples of
 ** Doing case-insenstive string comparisons (Hint: use `toLowerCase()`)
 ** The keyword can appear anywhere in the list of categories (Hint: use `contains`)
 * Sort the filtered restaurants by number of reviews
