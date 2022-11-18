@@ -147,6 +147,7 @@
 * link:jam4Guide.html[Jam 4 Guide]
 * link:notes-alinen/notes-nov14.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov14.html[Lecture Notes and Resources (Poliak)] 
+* link:slides-azpoliak/lecture18_11_15.pdf[Lecture 18 (Poliak)]
 * Lab activity: Code Jam 05 Practice
 
 //-----------------------------
