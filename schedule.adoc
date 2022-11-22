@@ -159,6 +159,7 @@
 * *NO CLASS THURSDAY, NOV 24th*
 * link:notes-alinen/notes-nov21.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov21.html[Lecture Notes and Resources (Poliak)] 
+* link:slides-azpoliak/lecture20_11_22.pdf[Lecture 20 (Poliak)]
 * Lab activity: Code Jam 05, link:jam5Guide.html[Code jam 05]
 
 //-----------------------------
