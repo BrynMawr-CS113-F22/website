@@ -158,7 +158,7 @@
 * *NO CLASS THURSDAY, NOV 24th*
 * link:asst10.html[Assignment 10]: *Due Dec 1st*
 * link:notes-alinen/notes-nov21.html[Lecture Notes and Resources (Normoyle)] 
-* link:notes-azpoliak/notes-nov21.html[Lecture Notes and Resources (Poliak)] 
+* link:slides-azpoliak/lecture20_11_22.pdf[Lecture 20 (Poliak)]
 
 //-----------------------------
 |13
