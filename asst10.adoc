@@ -14,12 +14,13 @@ include::header.adoc[]
 
 = Recursive functions
 
-In the file, `Recursion.java`, write each of the following functions
+In the file, `Recursion.java`, implement each of the following functions
 *recursively*. You are given link:Recursion.java[basecode] containing
 functions stubs along with a `main` for testing. You can download the 
 link:Recursion.java[basecode] here or use the file in Dropbox.
 
 * link:#q1[even numbers]
+* link:#q2[max of a list]
 * link:#q3[reverse a string]
 * link:#q4[blastoff]
 * link:#q5[get integer divisible by 3 ]
@@ -27,13 +28,16 @@ link:Recursion.java[basecode] here or use the file in Dropbox.
 * link:#q7[raise to power]
 * link:#q8[is palindrome?]
 * link:#q12[count in string]
+* link:#q13[average of a list]
+* link:#q14[max value in a list]
 //* link:#q1[sum a list]
-//* link:#q2[max of a list]
 //* link:#q9[is sorted?]
 //* link:#q10[in list? ]
 //* link:#q11[coin flips ]
 
-NOTE: You must not modify the function parameters and return types for the given functions!
+NOTE: You must not modify the function parameters and return types for the given functions! BUT you can 
+add additional functions. For example, when working with arrays, define a recursive function 
+that takes an index (like the examples from class). 
 
 . even numbers anchor:q1[]
 +
@@ -45,9 +49,9 @@ For example, `reven(10)` should return 2+4+6+8+10 = 30.
 //For example: the list `{1,2,3,4,5}` should return 15, and an empty list should
 //return 0. 
 +
-//2) max of a list anchor:q2[]
-//Function should recursively find the largest item in the list and return
-//it. For example: the list `{5,20,-4,18}` has max of 20.
+. max of a list anchor:q2[]
+Function should recursively find the largest item in the list and return
+it. For example: the list `{5,20,-4,18}` has max of 20.
 +
 . reverse a string anchor:q3[]
 +
@@ -96,6 +100,19 @@ Function `risPalindrome(String text)` returns `true` if given text is a palindro
 (same forwards and backwards) and `false` otherwise. For example, `risPalindrome("HANNAH")`
 should return `true`.
 +
+. Average of a list anchor:q13[]
++
+Function `raverage(int[] L)` returns the average of a list of integers. Hint: implement this using a 
+recursive function that computes the sum.
++
+. Max value in a list anchor:q14[]
++
+Function `rmax(int[] L)` returns the max value of a list of integers. 
++
+. Reverse a list anchor:q15[]
++
+Function `rreverse(int[] L)` reverses the contents of a list inline (e.g. without creating a copy of the list)
++
 //9) is sorted?           anchor:q9[]
 //Function `risSorted(L)` returns `true` if the given list is in-order and `false` otherwise.
 //For example, the list `{1,2,3,4,5}` should return `true`.
@@ -132,7 +149,54 @@ The above error shows us that our function returned "yolleh" but should have
 returned the value "olleh". We can also see that the function we need to fix 
 is called on line 133. 
 
-We encourage you to add your own tests! 
+We encourage you to add your own tests! When your program is free of errors, it will 
+produce the following output.
+
+[source,subs="quotes"]
+----
+$ **java RecursionSoln**
+5
+4
+3
+2
+1
+blastoff
+Enter an integer: **10**
+10 is not divisble by 3!
+Enter an integer: **-1**
+-1 is not divisble by 3!
+Enter an integer: **22**
+22 is not divisble by 3!
+Enter an integer: **33**
+SUCCESS: rgetMod 0.0 = 0.0
+SUCCESS: reven 30.0 = 30.0
+SUCCESS: reven 30.0 = 30.0
+SUCCESS: reven 0.0 = 0.0
+SUCCESS: rrevStr olleh = olleh
+SUCCESS: rrevStr A = A
+SUCCESS: rrevStr  =
+SUCCESS: rrevStr HANNAH = HANNAH
+SUCCESS: rxerox lalalala = lalalala
+SUCCESS: rxerox  =
+SUCCESS: rraise 8.0 = 8.0
+SUCCESS: rraise 1.0 = 1.0
+SUCCESS: risPalindrome true = true
+SUCCESS: risPalindrome false = false
+SUCCESS: risPalindrome true = true
+SUCCESS: risPalindrome true = true
+SUCCESS: risPalindrome true = true
+SUCCESS: rcount 2.0 = 2.0
+SUCCESS: rcount 0.0 = 0.0
+SUCCESS: raverage 6.25 = 6.25
+SUCCESS: raverage 0.0 = 0.0
+SUCCESS: rmax 10.0 = 10.0
+SUCCESS: rmax 10.0 = 10.0
+SUCCESS: rmax 2.0 = 2.0
+SUCCESS: rmax -1.0 = -1.0
+SUCCESS: rreverse [8, 10, 5, 2] = [8, 10, 5, 2]
+SUCCESS: rreverse [8, 5, 2] = [8, 5, 2]
+SUCCESS: rreverse [] = []
+----
 
 = What to hand-in
 

@@ -45,7 +45,7 @@ Enter a city: las vegas
 Enter a state: nv
 Statistics for las vegas,nv:
 
-        Count:                                     4356
+        Count:                                     4355
         Average number of stars:                   3.69
         Average number of reviews:               210.40
         Max number of reviews:                     8348

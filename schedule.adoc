@@ -143,7 +143,6 @@
 |*Runtime analysis, Recursion* anchor:week11[]
 
 * Read: Sedgewick and Wayne, Sec 2.3
-* link:.html[Assignment 10]: *Due Dec 1st*
 * link:jam4Guide.html[Jam 4 Guide]
 * link:notes-alinen/notes-nov14.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov14.html[Lecture Notes and Resources (Poliak)] 
@@ -157,9 +156,9 @@
 
 * Read: Sedgewick and Wayne, Sec 4.4
 * *NO CLASS THURSDAY, NOV 24th*
+* link:asst10.html[Assignment 10]: *Due Dec 1st*
 * link:notes-alinen/notes-nov21.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov21.html[Lecture Notes and Resources (Poliak)] 
-* Lab activity: Code Jam 05, link:jam5Guide.html[Code jam 05]
 
 //-----------------------------
 |13
@@ -167,10 +166,10 @@
 |*Data structures: ArrayList, Hashmap and Dictionary* anchor:week13[]
 
 * Read: Sedgewick and Wayne, Sec 4.4
-* link:.html[Assignment 11]: *Due Dec 8*
+* link:.html[Assignment 10]: *Due Dec 8*
 * link:notes-alinen/notes-nov28.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov28.html[Lecture Notes and Resources (Poliak)] 
-* Lab activity: Code Jam 06 Practice
+* Lab activity: Code Jam 05, link:jam5Guide.html[Code jam 05]
 
 //-----------------------------
 |14
@@ -180,7 +179,7 @@
 * link:jam5Guide.html[Final exam guide]
 * link:notes-alinen/notes-dec05.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-dec05.html[Lecture Notes and Resources (Poliak)] 
-* Lab activity: Code Jam 06, link:jam6Guide.html[Code jam 06 study guide]
+* Lab activity: final practice link:jam6Guide.html[Code jam 06 study guide]
 * Final exam study guide, link:[Final exam study guide]
 
 |===

@@ -48,7 +48,7 @@
 <h2 id="_recursive_functions">Recursive functions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the file, <code>Recursion.java</code>, write each of the following functions
+<p>In the file, <code>Recursion.java</code>, implement each of the following functions
 <strong>recursively</strong>. You are given <a href="Recursion.java">basecode</a> containing
 functions stubs along with a <code>main</code> for testing. You can download the
 <a href="Recursion.java">basecode</a> here or use the file in Dropbox.</p>
@@ -57,6 +57,9 @@ functions stubs along with a <code>main</code> for testing. You can download the
 <ul>
 <li>
 <p><a href="#q1">even numbers</a></p>
+</li>
+<li>
+<p><a href="#q2">max of a list</a></p>
 </li>
 <li>
 <p><a href="#q3">reverse a string</a></p>
@@ -79,6 +82,12 @@ functions stubs along with a <code>main</code> for testing. You can download the
 <li>
 <p><a href="#q12">count in string</a></p>
 </li>
+<li>
+<p><a href="#q13">average of a list</a></p>
+</li>
+<li>
+<p><a href="#q14">max value in a list</a></p>
+</li>
 </ul>
 </div>
 <div class="admonitionblock note">
@@ -88,7 +97,9 @@ functions stubs along with a <code>main</code> for testing. You can download the
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-You must not modify the function parameters and return types for the given functions!
+You must not modify the function parameters and return types for the given functions! BUT you can
+add additional functions. For example, when working with arrays, define a recursive function
+that takes an index (like the examples from class).
 </td>
 </tr>
 </table>
@@ -101,6 +112,11 @@ You must not modify the function parameters and return types for the given funct
 <p>Function <code>reven(int n)</code> should recursively sum the even numbers starting at 2 and ending at n.
 For example, <code>reven(10)</code> should return 2+4+6+8+10 = 30.</p>
 </div>
+</li>
+<li>
+<p>max of a list <a id="q2"></a>
+Function should recursively find the largest item in the list and return
+it. For example: the list <code>{5,20,-4,18}</code> has max of 20.</p>
 </li>
 <li>
 <p>reverse a string <a id="q3"></a></p>
@@ -172,6 +188,25 @@ should return <code>true</code>.</p>
 </div>
 </li>
 <li>
+<p>Average of a list <a id="q13"></a></p>
+<div class="paragraph">
+<p>Function <code>raverage(int[] L)</code> returns the average of a list of integers. Hint: implement this using a
+recursive function that computes the sum.</p>
+</div>
+</li>
+<li>
+<p>Max value in a list <a id="q14"></a></p>
+<div class="paragraph">
+<p>Function <code>rmax(int[] L)</code> returns the max value of a list of integers.</p>
+</div>
+</li>
+<li>
+<p>Reverse a list <a id="q15"></a></p>
+<div class="paragraph">
+<p>Function <code>rreverse(int[] L)</code> reverses the contents of a list inline (e.g. without creating a copy of the list)</p>
+</div>
+</li>
+<li>
 <p>count in String  <a id="q12"></a></p>
 <div class="paragraph">
 <p>Function <code>rcount(char x,String S)</code> returns how many times <code>x</code> is in the String <code>S</code>.
@@ -203,7 +238,54 @@ returned the value "olleh". We can also see that the function we need to fix
 is called on line 133.</p>
 </div>
 <div class="paragraph">
-<p>We encourage you to add your own tests!</p>
+<p>We encourage you to add your own tests! When your program is free of errors, it will
+produce the following output.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java RecursionSoln</strong>
+5
+4
+3
+2
+1
+blastoff
+Enter an integer: <strong>10</strong>
+10 is not divisble by 3!
+Enter an integer: <strong>-1</strong>
+-1 is not divisble by 3!
+Enter an integer: <strong>22</strong>
+22 is not divisble by 3!
+Enter an integer: <strong>33</strong>
+SUCCESS: rgetMod 0.0 = 0.0
+SUCCESS: reven 30.0 = 30.0
+SUCCESS: reven 30.0 = 30.0
+SUCCESS: reven 0.0 = 0.0
+SUCCESS: rrevStr olleh = olleh
+SUCCESS: rrevStr A = A
+SUCCESS: rrevStr  =
+SUCCESS: rrevStr HANNAH = HANNAH
+SUCCESS: rxerox lalalala = lalalala
+SUCCESS: rxerox  =
+SUCCESS: rraise 8.0 = 8.0
+SUCCESS: rraise 1.0 = 1.0
+SUCCESS: risPalindrome true = true
+SUCCESS: risPalindrome false = false
+SUCCESS: risPalindrome true = true
+SUCCESS: risPalindrome true = true
+SUCCESS: risPalindrome true = true
+SUCCESS: rcount 2.0 = 2.0
+SUCCESS: rcount 0.0 = 0.0
+SUCCESS: raverage 6.25 = 6.25
+SUCCESS: raverage 0.0 = 0.0
+SUCCESS: rmax 10.0 = 10.0
+SUCCESS: rmax 10.0 = 10.0
+SUCCESS: rmax 2.0 = 2.0
+SUCCESS: rmax -1.0 = -1.0
+SUCCESS: rreverse [8, 10, 5, 2] = [8, 10, 5, 2]
+SUCCESS: rreverse [8, 5, 2] = [8, 5, 2]
+SUCCESS: rreverse [] = []</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -238,7 +320,7 @@ is called on line 133.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-10-11 10:41:44 -0400
+Last updated 2022-11-23 17:25:35 -0500
 </div>
 </div>
 </body>
