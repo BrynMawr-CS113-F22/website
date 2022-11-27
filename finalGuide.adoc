@@ -1,0 +1,23 @@
+include::header.adoc[]
+
+:title: Final Exam: Study Guide
+:Author Initials: ASN
+:Date:    2020-08-15
+:Revision: 0.1
+:!toc:
+
+= {title}
+
+The final exam will be 3 hours. Open book.
+
+*Topics:*
+
+This final includes the topics from jams 1-5 plus
+
+* Recursion
+* ArrayList and Hashmap
+
+Write Java programs to check your answers. Or you can ask a TA or instructor 
+to give feedback on your responses.
+
+= Practice questions
