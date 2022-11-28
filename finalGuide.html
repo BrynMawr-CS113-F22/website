@@ -44,13 +44,90 @@ to give feedback on your responses.</p>
 <div class="sect1">
 <h2 id="_practice_questions">Practice questions</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>1) Write a recursive function, <code>String rremove(char c, String word)</code> that
+removes the letter <code>c</code> from the given string <code>word.</code> Test your function in <code>main</code>.</p>
+</div>
+<div class="paragraph">
+<p>2) Visualize the execution of <code>String rremove(char c, String word)</code> when
+c is 'a' and word is "cat".
+&#160;
+&#160;
+&#160;
+&#160;
+&#160;
+&#160;</p>
+</div>
+<div class="paragraph">
+<p>3) Visualize the execution of <code>String rremove(char c, String word)</code> when
+c is 'a' and word is "bee".
+&#160;
+&#160;
+&#160;
+&#160;
+&#160;
+&#160;</p>
+</div>
+<div class="paragraph">
+<p>4) Write a recursive function, <code>int rmax(int[] L)</code>, that computes the max
+value in a list.  Test your function in <code>main</code>.</p>
+</div>
+<div class="paragraph">
+<p>5) Visualize the execution of  <code>int rmax(int[] L)</code> when L is <code>{3, 18, 5}</code>.</p>
+</div>
+<div class="paragraph">
+<p>&#160;
+&#160;
+&#160;
+&#160;
+&#160;
+&#160;</p>
+</div>
+<div class="paragraph">
+<p>6) Implement a program, <code>SnailRace.java</code>, that loads snail names and speeds from
+the user and stores them in a HashMap. Then print all snails that have above average
+speeds.</p>
+</div>
+<div class="paragraph">
+<p>7) Implement a program, <code>CountLetters.java</code>, that computes counts for each letter in a given phrase.</p>
+</div>
+<div class="paragraph">
+<p>8) Implement a program, <code>LoadWords.java</code>, that stores words from a user using an ArrayList.
+Stop storing words when the user enters the word "QUIT". Then print the longest word.</p>
+</div>
+<div class="paragraph">
+<p>9) Draw a stack diagram for the following program.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.ArrayList;
 
+class Mystery {
+  public static void main(String[] args) {
+
+    HashMap&lt;String,Integer&gt; names = new HashMap&lt;String,Integer&gt;();
+    ArrayList&lt;Double&gt; values = new ArrayList&lt;Double&gt;();
+
+    int N = 5;
+    for (int i = 0; i &lt; N; i++) {
+      values.add(i * 0.25);
+      names.put(Integer.toString(i), i);
+    }
+
+    // Draw stack and objects here
+
+  }
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-11-27 15:57:54 -0500
+Last updated 2022-11-27 18:20:33 -0500
 </div>
 </div>
 </body>

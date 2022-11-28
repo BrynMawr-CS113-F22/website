@@ -2,7 +2,7 @@ include::header.adoc[]
 
 :title: CS113 Lab 9: Sorting
 :Author Initials: ASN
-:labnum: 08
+:ASST: A09
 
 = {title}
 
@@ -292,4 +292,4 @@ spent on the assignment and any interesting customizations you made.
 
 == How to hand-in
 
-. Copy your files to your dropbox, into the folder called `A08`. 
+. Copy your files to your dropbox, into the folder called `{ASST}`. 

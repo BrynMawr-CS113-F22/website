@@ -2,7 +2,7 @@ include::header.adoc[]
 
 :title: CS113 Lab 10: Recursion excursion
 :Author Initials: ASN
-:labnum: 08
+:labnum: 10
 
 = {title}
 
@@ -206,4 +206,4 @@ SUCCESS: rreverse [] = []
 
 == How to hand-in
 
-. Copy your files to your dropbox, into the folder called `A09`. 
+. Copy your files to your dropbox, into the folder called `{ASST}`. 

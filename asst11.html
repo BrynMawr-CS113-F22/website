@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.17">
+<title>CS113 Lab 11: Let's hash it out</title>
+<link rel="stylesheet" href="style/cs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_cs113_lab_11_lets_hash_it_out">CS113 Lab 11: Let&#8217;s hash it out</a></li>
+<li><a href="#_word">1. Word</a></li>
+<li><a href="#_word_counts">2. Word counts</a></li>
+<li><a href="#_what_to_hand_in">3. What to hand-in</a>
+<ul class="sectlevel2">
+<li><a href="#_how_to_hand_in">3.1. How to hand-in</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_cs113_lab_11_lets_hash_it_out">CS113 Lab 11: Let&#8217;s hash it out</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Due Thursday December 8th, before midnight, for <em>extra credit</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Goals</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read data from a file</p>
+</li>
+<li>
+<p>Use ArrayList and HashMap to analyze text</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You are given input files for this assignment. Check your dropbox to get started!
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is an <strong>Extra Credit</strong> assignment! But to receive the extra credit, you must submit the full assignment. Partial submissions will not be accepted.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_word">1. Word</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In a file, <code>Word.java</code>, implement a class that stores a word along with a
+count.</p>
+</div>
+<div class="paragraph">
+<p><strong>Data</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>private String text</code>: a single word</p>
+</li>
+<li>
+<p><code>private int count</code>: the number of times the word appears</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Methods</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Constructor <code>public Word(String text)</code>: should initialize the text and set the count to zero</p>
+</li>
+<li>
+<p><code>public void incrementCount()</code>: increments count by one</p>
+</li>
+<li>
+<p><code>public int getCount()</code>: returns the count</p>
+</li>
+<li>
+<p><code>public void setCount(int c)</code>: sets the count</p>
+</li>
+<li>
+<p><code>public String toString()</code>: returns a string representation of the word, for example, "Text: 0"</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Below is an implementation of <code>main</code> that tests the functions in your class.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>  public static void main(String[] args) {
+    Word word = new Word("Test");
+    System.out.println(word); // should print "Test: 0"
+
+    word.incrementCount();
+    System.out.println(word); // should print "Test: 1"
+
+    word.setCount(10);
+    System.out.println(word); // should print "Test: 10"
+    System.out.println(word.getCount()); // should print "10"
+  }</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_word_counts">2. Word counts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In a file, <code>WordCounts.java</code>, implement a program that counts the
+number of times each word appears in a file. Your program should
+use <strong>command line arguments</strong> to load a filename, and threshold of
+counts, and (optionally) a list of words to ignore in the analysis.</p>
+</div>
+<div class="paragraph">
+<p>For example, the following output runs <code>WordCounts</code> on the "Cat in the Hat".
+All words having counts greater than 10 are displayed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java-introcs WordCounts catinhat.txt 10</strong>
+The number of unique words is: 432
+The number of words with counts greater than 10: 35
+the: 97
+and: 68
+i: 48
+not: 37
+to: 32
+a: 32
+you: 30
+said: 29
+in: 26
+we: 26
+with: 22
+is: 22
+will: 21
+that: 20
+on: 17
+then: 17
+he: 17
+of: 16
+things: 15
+up: 15
+do: 15
+what: 14
+can: 14
+cat: 14
+at: 14
+our: 13
+like: 13
+they: 13
+thing: 12
+fish: 12
+this: 12
+should: 11
+oh,: 11
+mother: 11
+one: 11</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the next example, we run <code>WordCounts</code> on the "Cat in the Hat" again,
+but this time we ignore small words, such as "the", "a", "he", etc.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ <strong>java-introcs WordCounts catinhat.txt 10 ignorewords.txt</strong>
+The number of unique words is: 374
+The number of words with counts greater than 10: 12
+will: 21
+things: 15
+up: 15
+can: 14
+cat: 14
+our: 13
+like: 13
+thing: 12
+fish: 12
+should: 11
+mother: 11
+oh,: 11</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Requirements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use the class <code>In</code>, defined in java-introcs, to load the file, e.g. <code>In file = new In(filename)</code></p>
+</li>
+<li>
+<p>Your program should use <strong>command line arguments</strong>.</p>
+</li>
+<li>
+<p>Use a HashMap to store &lt;String,Word&gt; pairs.</p>
+</li>
+<li>
+<p>To sort, create an ArrayList&lt;Word&gt; that contains all words with count greater &lt;NumWords&gt;. Then use a sorting algorithm to sort from greatest to least counts.</p>
+</li>
+<li>
+<p>You can load the list of "ignore" words into an ArrayList&lt;String&gt; using <code>In</code>. ArrayList&lt;String&gt; has a method <code>contains</code> that will return true if the list contains a word.</p>
+</li>
+</ul>
+</div>
+<h3 id="_optional_command_line_arguments" class="discrete">Optional command line arguments</h3>
+<div class="paragraph">
+<p>This assignment uses an optional command line argument. Below is
+example code for handling an optional argument and printing usage
+information if the user inputs the wrong number of command line arguments.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>  public static void main(String[] args) {
+
+    if (args.length &lt; 2) {
+      System.out.println("Usage: java-introcs WordCounts &lt;filename&gt; &lt;NumWords&gt; [&lt;IgnoreWords&gt;]");
+      System.exit(0);
+    }
+
+    int N = Integer.parseInt(args[1]);
+    String ignorefile = "";
+    if (args.length == 3) {
+      ignorefile = args[2];
+    }
+
+    // your work here
+    // Only load the ignorefile if the filename is not empty
+  }</code></pre>
+</div>
+</div>
+<h3 id="_more_examples" class="discrete">More examples</h3>
+<div class="paragraph">
+<p>Below is sample output for the text, "tolstoy.txt", from your program <code>Frequency.java</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="logs/a11-allwords.txt">Word counts for tolstoy.txt</a></p>
+</li>
+<li>
+<p><a href="logs/a11-withignore.txt">Word counts (ignoring common words) for tolstoy.txt</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_to_hand_in">3. What to hand-in</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The programs, <code>Word.java</code> and <code>WordCount.java</code></p>
+</li>
+<li>
+<p>Make sure your programs have a header containing your name, date, and description.</p>
+</li>
+<li>
+<p>Make sure your program can run from the Dropbox directory. You should include the data files and any supporting files your program needs to run.</p>
+</li>
+<li>
+<p>No write-up is necessary for this submission&#8201;&#8212;&#8201;wlthough feel free to add one if you would like to communicate any feedback to us!</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_how_to_hand_in">3.1. How to hand-in</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Copy your files to your dropbox, into the folder called <code>A11</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-11-28 08:54:05 -0500
+</div>
+</div>
+</body>
+</html>

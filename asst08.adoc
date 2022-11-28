@@ -2,7 +2,7 @@ include::header.adoc[]
 
 :title: CS113 Assignment 8: Veterinarian Facility - More Classes & Objects
 :Author Initials: AP
-:labnum: 08
+:ASST: A08
 
 = {title}
 
@@ -111,4 +111,4 @@ spent on the assignment and any interesting customizations you made.
 
 == How to hand-in
 
-. Copy your files to your dropbox, into the folder called `A08`. 
+. Copy your files to your dropbox, into the folder called `{ASST}`. 

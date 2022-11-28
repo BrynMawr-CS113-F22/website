@@ -1,0 +1,183 @@
+include::header.adoc[]
+
+:title: CS113 Lab 11: Let's hash it out
+:Author Initials: ASN
+:ASST: A11
+
+= {title}
+
+*Due Thursday December 8th, before midnight, for _extra credit_*
+
+*Goals*
+
+* Read data from a file
+* Use ArrayList and HashMap to analyze text
+
+NOTE: You are given input files for this assignment. Check your dropbox to get started!
+
+NOTE: This is an *Extra Credit* assignment! But to receive the extra credit, you must submit the full assignment. Partial submissions will not be accepted.
+
+:sectnums:
+= Word
+
+In a file, `Word.java`, implement a class that stores a word along with a 
+count. 
+
+*Data*
+
+* `private String text`: a single word 
+* `private int count`: the number of times the word appears 
+
+*Methods*
+
+* Constructor `public Word(String text)`: should initialize the text and set the count to zero
+* `public void incrementCount()`: increments count by one
+* `public int getCount()`: returns the count 
+* `public void setCount(int c)`: sets the count
+* `public String toString()`: returns a string representation of the word, for example, "Text: 0"
+
+Below is an implementation of `main` that tests the functions in your class.
+
+[source]
+----
+  public static void main(String[] args) {
+    Word word = new Word("Test");
+    System.out.println(word); // should print "Test: 0"
+
+    word.incrementCount();
+    System.out.println(word); // should print "Test: 1"
+
+    word.setCount(10);
+    System.out.println(word); // should print "Test: 10"
+    System.out.println(word.getCount()); // should print "10"
+  }
+----
+
+= Word counts 
+
+In a file, `WordCounts.java`, implement a program that counts the 
+number of times each word appears in a file. Your program should 
+use *command line arguments* to load a filename, and threshold of 
+counts, and (optionally) a list of words to ignore in the analysis. 
+
+For example, the following output runs `WordCounts` on the "Cat in the Hat".
+All words having counts greater than 10 are displayed.
+
+[source,subs="quotes"]
+----
+$ **java-introcs WordCounts catinhat.txt 10**
+The number of unique words is: 432
+The number of words with counts greater than 10: 35
+the: 97
+and: 68
+i: 48
+not: 37
+to: 32
+a: 32
+you: 30
+said: 29
+in: 26
+we: 26
+with: 22
+is: 22
+will: 21
+that: 20
+on: 17
+then: 17
+he: 17
+of: 16
+things: 15
+up: 15
+do: 15
+what: 14
+can: 14
+cat: 14
+at: 14
+our: 13
+like: 13
+they: 13
+thing: 12
+fish: 12
+this: 12
+should: 11
+oh,: 11
+mother: 11
+one: 11
+----
+
+In the next example, we run `WordCounts` on the "Cat in the Hat" again, 
+but this time we ignore small words, such as "the", "a", "he", etc.
+
+[source,subs="quotes"]
+----
+$ **java-introcs WordCounts catinhat.txt 10 ignorewords.txt**
+The number of unique words is: 374
+The number of words with counts greater than 10: 12
+will: 21
+things: 15
+up: 15
+can: 14
+cat: 14
+our: 13
+like: 13
+thing: 12
+fish: 12
+should: 11
+mother: 11
+oh,: 11
+----
+
+Requirements:
+
+* Use the class `In`, defined in java-introcs, to load the file, e.g. `In file = new In(filename)`
+* Your program should use *command line arguments*. 
+* Use a HashMap to store <String,Word> pairs. 
+* To sort, create an ArrayList<Word> that contains all words with count greater <NumWords>. Then use a sorting algorithm to sort from greatest to least counts.
+* You can load the list of "ignore" words into an ArrayList<String> using `In`. ArrayList<String> has a method `contains` that will return true if the list contains a word. 
+
+[discrete]
+== Optional command line arguments
+
+This assignment uses an optional command line argument. Below is 
+example code for handling an optional argument and printing usage 
+information if the user inputs the wrong number of command line arguments.
+
+[source]
+----
+
+  public static void main(String[] args) {
+
+    if (args.length < 2) {
+      System.out.println("Usage: java-introcs WordCounts <filename> <NumWords> [<IgnoreWords>]");
+      System.exit(0);
+    }
+
+    int N = Integer.parseInt(args[1]);
+    String ignorefile = "";
+    if (args.length == 3) {
+      ignorefile = args[2];
+    }
+
+    // your work here
+    // Only load the ignorefile if the filename is not empty
+  }
+----
+
+[discrete]
+== More examples
+
+Below is sample output for the text, "tolstoy.txt", from your program `Frequency.java`
+
+* link:logs/a11-allwords.txt[Word counts for tolstoy.txt]
+* link:logs/a11-withignore.txt[Word counts (ignoring common words) for tolstoy.txt]
+
+= What to hand-in
+
+. The programs, `Word.java` and `WordCount.java`
+. Make sure your programs have a header containing your name, date, and description.
+. Make sure your program can run from the Dropbox directory. You should include the data files and any supporting files your program needs to run.
+. No write-up is necessary for this submission -- wlthough feel free to add one if you would like to communicate any feedback to us!
+
+== How to hand-in
+
+. Copy your files to your dropbox, into the folder called `{ASST}`. 
