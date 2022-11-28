@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-class RecursionSoln {
+class Recursion {
     
     public static void rblastoff(int val) {
         return;
@@ -39,6 +39,7 @@ class RecursionSoln {
     }
 
     public static double raverage(int[] L) {
+        return 0.0;
     }
 
     public static void rreverse(int[] L) {
