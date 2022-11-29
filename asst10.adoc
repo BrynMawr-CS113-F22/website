@@ -206,4 +206,4 @@ SUCCESS: rreverse [] = []
 
 == How to hand-in
 
-. Copy your files to your dropbox, into the folder called `{ASST}`. 
+. Copy your files to your dropbox, into the folder called `A10`. 
