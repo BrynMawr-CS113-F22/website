@@ -4,3 +4,7 @@ include::header.adoc[]
 :Revision: 0.1
 
 = {title}
+
+link:https://brynmawr.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4d2c9b66-0214-43eb-923f-af5b0163ea4e[Video - Monday]
+
+
