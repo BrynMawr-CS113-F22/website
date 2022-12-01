@@ -172,7 +172,7 @@ Below is sample output using your program `WordCount.java`, `for the text, "tols
 * link:logs/a11-allwords.txt[Word counts for tolstoy.txt]
 * link:logs/a11-withignore.txt[Word counts (ignoring common words) for tolstoy.txt]
 
-NOTE: "tolstoy.txt" is the same input you used in link:asst04.html[Assignment 04] with `Frequency.java`
+NOTE: "tolstoy.txt" is the same input you used in link:asst04.html#_letter_frequency[Assignment 04: Letter Frequency] 
 
 = What to hand-in
 
