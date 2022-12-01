@@ -168,7 +168,7 @@
 * link:asst11.html[Assignment 11]: *Extra credit, Due Dec 8*
 * link:notes-alinen/notes-nov28.html[Lecture Notes and Resources (Normoyle)] 
 * link:notes-azpoliak/notes-nov28.html[Lecture Notes and Resources (Poliak)] 
-* link:slides-azpoliak/lecture21_11_29.pdf[Lecture 21 (Poliak)]
+* link:slides-azpoliak/lecture21_11_29.pdf[Lecture 21 (Poliak)] link:slides-azpoliak/lecture22_12_01.pdf[Lecture 22 (Poliak)]
 * Lab activity: Code Jam 05, link:jam5Guide.html[Code jam 05]
 
 //-----------------------------
