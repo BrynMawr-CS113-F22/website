@@ -7,4 +7,4 @@ include::header.adoc[]
 
 link:https://brynmawr.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4d2c9b66-0214-43eb-923f-af5b0163ea4e[Video - Monday]
 
-
+link:https://brynmawr.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=942932da-35c1-4dd5-9a52-af5d0143c7b7[Video - Wednesday]
