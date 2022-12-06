@@ -178,7 +178,7 @@
 
 * Lab activity: link:finalGuide.html[Final exam Study guide]
 * link:notes-alinen/notes-dec05.html[Lecture Notes and Resources (Normoyle)] 
-* link:slides-azpoliak/lecturelecture23_12_06.pdf[Lecture 23 (Poliak)]
+* link:slides-azpoliak/lecture23_12_06.pdf[Lecture 23 (Poliak)]
 * link:notes-azpoliak/notes-dec05.html[Lecture Notes and Resources (Poliak)] 
 
 |===
