@@ -1,7 +1,5 @@
-$ javac-introcs WordCounts.java Word.java
-$ java-introcs WordCounts tolstoy.txt 500
-The number of unique words is: 17890
-The number of words with counts greater than 500: 145
+The number of unique words is: 17798
+The number of words with counts greater than 500: 146
 the: 34544
 and: 22227
 to: 16673
@@ -67,7 +65,7 @@ man: 1084
 will: 1067
 more: 1056
 andrew: 1047
-do: 1040
+do: 1041
 himself: 1020
 about: 1011
 into: 1004
@@ -87,8 +85,8 @@ old: 833
 before: 831
 eyes: 827
 your: 811
-very: 803
 well: 803
+very: 803
 men: 771
 room: 769
 thought: 767
@@ -119,8 +117,8 @@ our: 622
 where: 618
 away: 615
 mary: 615
-life: 611
 left: 611
+life: 611
 another: 607
 something: 601
 over: 599
@@ -128,6 +126,7 @@ two: 594
 such: 591
 these: 590
 seemed: 583
+: 572
 other: 570
 just: 568
 head: 567

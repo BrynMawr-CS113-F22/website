@@ -1,7 +1,5 @@
-$ javac-introcs WordCounts.java Word.java
-$ java-introcs WordCounts tolstoy.txt 500 ignorewords.txt
-The number of unique words is: 17822
-The number of words with counts greater than 500: 77
+The number of unique words is: 17730
+The number of words with counts greater than 500: 78
 prince: 1891
 pierre: 1796
 up: 1577
@@ -53,8 +51,8 @@ our: 622
 where: 618
 mary: 615
 away: 615
-life: 611
 left: 611
+life: 611
 another: 607
 something: 601
 over: 599
@@ -62,6 +60,7 @@ two: 594
 such: 591
 these: 590
 seemed: 583
+: 572
 other: 570
 just: 568
 head: 567
